@@ -1,0 +1,27 @@
+Manual 
+
+Using the man command you can find out any information concerning any type of system call
+man man: gives you the instrution manual on the man command, here will dictate how to navigate between the sections the manual of any command
+  -s: section you are looking for (1-9)
+  -k: will search for commands similar to description you provided
+ex:
+```
+   man -s 5 -k compression: will give you all all the commands related to compression listed on section 5 of the manual
+```
+
+Whereis:
+The whereis command allows you to locate the binary of any comman on your system. With this, even if you have different versions of a command, you can use its specific path when calling a specific version
+
+ex:
+``` 
+  whereis python (calls the location of all python binaries in your system
+  ./usr/bin/python2.7 --args (will call upon the python2.7 version)
+```
+
+Whatis:
+Whatis gives a short description of any command within the system
+
+ex:
+```
+  whatis ls (will display a short description of the file, will also provide manual section available for the command)
+```
