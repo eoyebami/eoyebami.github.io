@@ -5,10 +5,15 @@ Server has a public key (Specific User has the key)
 Client has the private key 
 
 What happens during this ssh connection?
-  1. Client sends a connection request to the server on port 22 (default) and sends its public key as part of the authentication process
-  2. Server responds to the request and generates a challengne message and sends it to the client (the public key is sent to the ssh client)
-  3. The client signs the message with its private key and sends it back to the server (the client generates a hash of the public key using a cryptographic has function, which can be a sha-256 or md5, and this hash becomes the fingerprint. (you can verify if this hash matches what you expect, user can then choose to save the server's public key to their known_hosts file for future connection).
-  4. The server verifies the signature with its own public key and if it is valid, the connection is established
+  1. Client sends a connection request (via a TCP SYN packet) to the server on port 22 (default) and sends its public key as part of the authentication process
+  2. Server responds to the request (with a SYN-ACK packet, client responds with a ACK-packet {3-way handshake})
+    a. server and client negotiate the ssh protocol version and identification strings 
+    b. server sends the public host key to the client as part of the ssh key exchange process, the client generates a hash (typically sha256 cryptographic function; which can be a sha-256 or md5, and this hash becomes the fingerprint.) of the host public key to be verified by the user (then the host public key will be save into the user's known_hosts file for future connections, which will be automatic because the client will recognize the host).     
+    c. the client generates a key pair consisting of the public key and private key (ssh-keygen). the public key is sent to the server. along with a request to authenticate a specific user account within the server.
+    d. the server retrieves the public key of the specific user from its authorized_keys file and then generates a randon challenge message (a sequence of bytes). 
+    e. this challenge message is sent to the client as a SSH_MSG_USERAUTH_REQUEST message, along with a request for the client to sign the message with its private key
+  3. The client signs the message with its private key and sends it back to the server as a SSH_MSG_USERAUTH_RESPONSE message.
+  4. The server verifies the signature with the clients public key (that it received earlier, to verify the public key matches the private ket signature) and if it is valid, the connection is established
 This is done via a cryptographic authentication, a handshake is down. The connection is encrypted and the crypted keys will verfied between the public and private keys
 If they match, connection is continued, and if the do not match, then the server will immediately terminate the connection for failed authentication.  
 
