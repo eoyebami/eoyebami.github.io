@@ -1,4 +1,5 @@
 <h2>EZ BLOG: DevOps Notes</h2>
+
 *[2023-04-15-compression](2023-04-15-compression.md)
 *[2023-04-15-example-ssh-log](2023-04-15-example-ssh-log.md)
 *[2023-04-15-filtration](2023-04-15-filtration.md)
