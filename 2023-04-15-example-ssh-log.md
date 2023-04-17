@@ -1,3 +1,4 @@
+```
 $ ssh -vvv ez-bastion
 OpenSSH_9.2p1, OpenSSL 1.1.1t  7 Feb 2023 (which version of SSH and SSL client is using)
 debug1: Reading configuration data /c/Users/eoyeb/.ssh/config (reading ssh config file)
@@ -176,3 +177,4 @@ debug2: shell request accepted on channel 0
        _/m/'
 Last login: Sat Apr 15 20:54:32 2023 from 209.194.208.149
 [excellent@ip-172-31-56-105 ~]$ 
+```

@@ -1,3 +1,5 @@
+<h2>Archiving & Compression</h2>
+
 Archiving: is placing a group of files into one (usually files that may ended up being deleted later, similar to AWS Redshift for warehousing) 
   tar: mainly used to archive multiple files (will retain unix metadata)
     flags: 
@@ -18,7 +20,7 @@ Archiving: is placing a group of files into one (usually files that may ended up
        tar -xvzf [name.tar.gz] -C /path/to/directory (will unarchive into directory specified)
        tar -uvzf [archived tar] [updated_files} (will update archive with specified files, if files arent updated, then tar will ignore those files)
        tar -tf [archived tar] (will list all the files that are in this archive)
-````
+```
 
 Compression: the files will be reduced to a certain size
   There are 3 times of compressions (compression alogrithm is different)

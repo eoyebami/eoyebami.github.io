@@ -1,4 +1,4 @@
-Filtering linux content
+<h2>Filtering linux content</h2>
 
 Grep: allows you to filter through files for specific patterns or phrases
 ```  

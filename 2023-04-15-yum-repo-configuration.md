@@ -1,4 +1,4 @@
-Yum Repo Configuration
+<h2>Yum Repo Configuration</h2>
 
 Appstream: used to installed the application
 BaseOS: used to install base packages for OS
@@ -26,7 +26,7 @@ Extras:
   What key is specified in the yum.repo.d conf? The key specified is the public key, the creator of the repo signs all the packages in the repo with the private key and then specifies the public key in the GPG keyring. In the repo.d conf for the yum repo, the gpg public key can be specified, else yum will use the default key in the GPG keyring. 
 
 
-  Project: 
+<h2>Project:</h2> 
    1. Create your own yum repo
    2. Create a gpgkey and give your yum repo a digital signature
    3. See what happens when you try to install packages from the repo, when gpgcheck is enabled but the repo has no digital signature
