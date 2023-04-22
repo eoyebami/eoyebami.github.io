@@ -42,12 +42,11 @@ In order to create a cross account role:
 2. Next you create the cross account role. Below is a table describing how the role should be created:
 
 
+  | Sections                 | Input                                     |
+  | ---                      | ---                                       |
   |`Trusted Entity type`     | AWS account #                             |
-  | ---                      |                                           |
   |`Permissions Policies`    | Select policy with necessay permissions   |
-  | ---                      |                                           |
   |`Name, Review, and Create`| Name Role, Review Role, and Create        |
-  | ---                      |                                           |
 
 3. Make sure the service in `Account B` has the `sts:AssumeRole` permission
 4. Assume role. Command below will retrieve temporary credentials and export them into env:
