@@ -35,7 +35,6 @@ Compression: the files will be reduced to a certain size
         -fr: will update zip file 
 ```
       ex:
- 
 ```  
         zip [zip_file] file1 ... filen -x filen (will compress all the files into a zip file, works like a tar -cvzf, will also exclude specified file)
         zip -d [zip_file] [file_name] (will delete a file from within the zip file 
