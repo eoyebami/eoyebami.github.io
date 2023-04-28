@@ -7,3 +7,6 @@
 * [2023-04-15-ssh-client-and-server](2023-04-15-ssh-client-and-server.md)
 * [2023-04-15-yum-repo-configuration](2023-04-15-yum-repo-configuration.md)
 * [2023-04-22-assume-role](2023-04-22-assume-role.md)
+* [2023-04-20-ntp-client-and-server](2023-04-20-ntp-client-and-server.md) 
+* [2023-04-22-assume-role](2023-04-22-assume-role.md)
+* [2023-04-27-systemd](2023-04-27-systemd.md)
