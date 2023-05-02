@@ -1,5 +1,6 @@
 <h2>EZ BLOG: DevOps Notes</h2>
 
+<h2>General Knowledge</h2>
 * [2023-04-15-compression](2023-04-15-compression.md)
 * [2023-04-15-example-ssh-log](2023-04-15-example-ssh-log.md)
 * [2023-04-15-filtration](2023-04-15-filtration.md)
@@ -9,3 +10,7 @@
 * [2023-04-20-ntp-client-and-server](2023-04-20-ntp-client-and-server.md) 
 * [2023-04-22-assume-role](2023-04-22-assume-role.md)
 * [2023-04-27-systemd](2023-04-27-systemd.md)
+
+<h2>APIs and HTTPs</h2>
+* [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md) 
+* [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
