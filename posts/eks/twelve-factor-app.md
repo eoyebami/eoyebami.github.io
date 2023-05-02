@@ -1,4 +1,4 @@
-<h2>Twelve Factor App Methodology</h2>
+<h1>Twelve Factor App Methodology</h1>
 
 1. Codebase: Each service or application should have its own codebase where developers can modify and change code at the same time (ex. `Git/Github`)
 2. Dependencies: Never relies on implicit existence of system-wide packages (ex: `explicitly declare and isolate the dependencies for the application`)

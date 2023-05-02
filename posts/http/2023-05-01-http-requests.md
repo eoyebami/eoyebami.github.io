@@ -1,4 +1,4 @@
-<h3>HTTP (Hyper Text Transfer Protocol) Requests</h3>
+<h1>HTTP (Hyper Text Transfer Protocol) Requests</h1>
 
 HTTP is responsible for communication between web servers and clients, it is the protocol of the web. Everytime you log on to a browser or site, you enter what is called the HTTP Request & Reponse cycle.
 * HTTP is stateless: Meaning each transaction is completely independent
@@ -6,7 +6,7 @@ HTTP is responsible for communication between web servers and clients, it is the
 * HTTPS (Hyper Text Transfer Protocol Secure): Data that is sent is encrypted
   - Data is encrypted by SSL (Secure Socket Layer) or by TLS (Transport Security Layer)
 
-<h2>HTTP Methods:</h2>
+<h3>HTTP Methods:</h3>
 When a request is made to a server it has so kind of method attached to it, the main ones are included below:
 * GET: retrieves data from the server 
   - loading a webpage
@@ -27,7 +27,7 @@ When a request is made to a server it has so kind of method attached to it, the 
   - deleting a form
   - deleting a blog post
 
-<h2>HTTP HEADER Fields:</h2>
+<h3>HTTP HEADER Fields:</h3>
 
 |Method | Path                                         | Protocol |
 |GET    | /tutorials/other/top-20-mysql-best-practices | HTTP/1.1 |
@@ -62,7 +62,7 @@ Testing:
 - Click on a request -> Headers
   * Here you can viewe the `GENERAL, RESPONSE, and REQUEST` header fields
 
-<h2>Error Codes:</h2>
+<h3>Error Codes:</h3>
 * 1xx: Informational
   - Request received/processing
 * 2xx: Success

@@ -1,10 +1,10 @@
-<h2>OpenSSH Server & Client Configuration</h2>
+<h1>OpenSSH Server & Client Configuration</h1>
 
 OpenSSH forms a server connection between the Remote server and the SSH client (default port: 22)
 Server has a public key (Specific User has the key)
 Client has the private key 
 
-<h2>What happens during this ssh connection?</h2>
+<h3>What happens during this ssh connection?</h3>
   1. Client sends a connection request (via a ````TCP SYN packet````) to the server on ````port 22```` (default) and sends its public key as part of the authentication process
   2. Server responds to the request (with a ````SYN-ACK packet````, client responds with a ````ACK-packet```` {3-way handshake})
     a. server and client negotiate the ssh protocol version and identification strings 
@@ -17,7 +17,7 @@ Client has the private key
 This is done via a cryptographic authentication, a handshake is down. The connection is encrypted and the crypted keys will verfied between the public and private keys
 If they match, connection is continued, and if the do not match, then the server will immediately terminate the connection for failed authentication.  
 
-<h2>What is a fingerprint?</h2>
+<h3>What is a fingerprint?</h3>
 
 The fingerprint of a host key is the hash of the ssh host key of a remote server itself, which is a short, human-readable string that can be used to verify the authenticitiy of the host key. 
 
@@ -25,7 +25,7 @@ A fingerprint is based on the host' public key, used to verify the host you are 
 If the fingerprint changes, the machine you are connecting to has changed their public key, or you could be connecting to a different machine with the same domain/ip.
 When you answer yes, the fingerprint will be stored within the ````~/.ssh/known_hosts````. Once this key is stored in the ````known_hosts```` file, then the client system can connect to the server automatically, without needing any approvals because the host key will authenticate the connection. 
 
-<h2>What is a hash?</h2>
+<h3>What is a hash?</h3>
 A mathematical function that takes input data of arbitrary size and prodcues a fixed-size ouput, which is usually a sequence of characters or digits. Also known as a "hash value" or "message digest".
 
 Hash functions are deterministics, meaning if given the same imput data, they will always produce the same output data (similar to a base64 encode). Which makes its good for checking and authentication purposes (you can verify its the right key because the hash value will always be the same). 

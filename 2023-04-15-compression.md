@@ -1,4 +1,4 @@
-<h2>Archiving & Compression</h2>
+<h1>Archiving & Compression</h1>
 
 Archiving: is placing a group of files into one (usually files that may ended up being deleted later, similar to AWS Redshift for warehousing) 
   tar: mainly used to archive multiple files (will retain unix metadata)
