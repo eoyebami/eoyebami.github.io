@@ -29,12 +29,57 @@ An API is an `Application Programming Interface`, which is a set of rules that a
     * ex: [github-repos-api](https://api.github.com/users/eoyebami/repos?sort=pushed) : this api requests all data partaining to my pushed repos
     * try using the curl command to make this api call from the terminal: `curl https://api.github.com/users/eoyebami/repos\?sort\=pushed`
    
-* [Note]: the common format for sending and requesting data through a REST API is json, also when making an API call with curl, ensure you prepend all special charaters with `\` so that the cli will interpret them as normal characters
+* Note: the common format for sending and requesting data through a REST API is json, also when making an API call with curl, ensure you prepend all special charaters with `\` so that the cli will interpret them as normal characters
 
 | Root endpoint                     | Path            |
 | ---                               | ---             |
 | https://www.smashingmagazine.com/ | /tag/javascript |
 
 * The method:
+  - GET
+  - POST
+  - PUT
+  - PATCH
+  - DELETE
+* <h5>Curl Command Utilizing HTTP Methods:</h5>
+  * `curl -X GET https://api.github.com/users/eoyebami/repos?sort=pushed` 
+    - `-X` or `--request` indicates the type of request you'd like to make
+    - If you try to `curl -X POST https://api.github.com/user/repos` to create a new repo it will fail with the below error
+```
+{
+  "message": "Requires authentication",
+  "documentation_url": "https://developer.github.com/v3"
+}
+``` 
 * The headers:
+  - Headers are used to provide information to both the client and server, it can be used for:
+    * Authentication
+    * Providing information about the body content
+    * More info on headers at [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
+* <h5>Curl Command Utilizing Header Flag:</h5>
+  * Headers are property-value pairs that are separated with a colon
+    - "Content-Type: application/json" : which tells the server to expect JSON content
+  * `curl -X GET -H "Content-Type: application/json" https://api.github.com`
+    - to view the headers you've sent, you can use `v` or `--verbose` option 
+    - `curl -X GET -H "Content-Type: application/json" https://api.github.com -v`
 * The data(or body):
+  - The data contains information you want to send to the server
+  - The data option is only used in `POST`, `PUT`, `PATCH`, `DELETE` requests
+* <h5>Curl Command Utilizing Data Flag:</h5>
+  * You used the `-d` or `--data` option to send data via curl
+  * `curl -X POST <URL> -d property1=vale1 -d property2=value2`
+    ```
+    curl -X POST <URL> \
+     -d property1=vale1 \
+     -d property2=value2
+    ```
+  * If you wish to send you data in json format, you can do this:
+    ```
+    curl -X POST https://requestb.in/1ix963n1 \
+     -H "Content-Type: application/json" \
+     -d '{
+      "property1":"value1",
+      "property2":"value2"
+    }'
+    ```
+
