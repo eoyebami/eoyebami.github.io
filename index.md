@@ -14,3 +14,5 @@
 <h3>APIs and HTTPs</h3>
 * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md) 
 * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
+  - <h4>JQ and JSON parsing</h4>
+    * [2023-05-06-jq-json](posts/http/2023-05-06-jq-json.md)

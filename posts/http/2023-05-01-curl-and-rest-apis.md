@@ -82,4 +82,9 @@ An API is an `Application Programming Interface`, which is a set of rules that a
       "property2":"value2"
     }'
     ```
-
+  * If you wish to add a file as your source of data, you can do this:
+   ```
+    curl -X POST https://requestb.in/1ix963n1 \
+     -H "Content-Type: application/json" \
+     -d @file.txt
+   ```
