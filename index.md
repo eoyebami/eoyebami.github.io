@@ -13,6 +13,7 @@
 * [2023-04-15-manual](2023-04-15-manual.md)
 * [2023-04-27-systemd](2023-04-27-systemd.md)
 * [2023-05-10-misc-cmd](2023-05-10-misc-cmd.md)
+* [2023-05-17-fs-partitions](2023-05-17-fs-partitions.md)
   - <h4>Linux: Virtual Box</h4>
     * [2023-04-29-vbox-configuration](posts/vbox/2023-04-29-vbox-configuration.md) 
     * [2023-04-29-vbox-networking](posts/vbox/2023-04-29-vbox-networking.md)
