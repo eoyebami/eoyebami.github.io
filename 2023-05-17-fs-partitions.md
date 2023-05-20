@@ -46,6 +46,7 @@ Note: it is important to have backups of all paritions
   - Primary Partion: a type of partition that can be directly bootable, a standalone partition that exisits within the master boot record (MBR)
   - Extended Partition: a special parition that servers as a container for logical paritions, it used when you want to create more than 4 partitions on a disk using the MBR partitioning scheme, it does not contain any data itself, but acts as a wrapper for logial partitions within it. 
     * You can only have one extended partition on a disk
+    * You can create logical partitions within that extended partition (allows for more partitions instead of just the default 4)
 * Select `p` for primary partition
   - First sector select where you want the partition to begin on the disk (use default in most cases, linux will choose next available first sector
   - Last sector: select where you want the partition to end on the disk (you can use values and sizes)
@@ -83,6 +84,7 @@ Partition table entries are not in disk order.
 <h5>Resizing an exisiting Partition</h5>
 * Umount the partition you'd like to resize
   - `sudo unmount /dev/<disk_name>`
+  - As well as shut down all applications that are using the partitions
 * Run `fdisk /dev/<disk_name>` to use fdisk utility 
 * Delete the partition you want to extend `d`
   - select which partition you'd like to delete
@@ -90,6 +92,8 @@ Partition table entries are not in disk order.
   - recreate this partition with an increased last sector
   - the filesystem that was on th deleted partition will be reassigned to the new partition (because it will have the same name)
 * Run `w` to write the changes to the disk 
+* Run `resize2fs /dev/<partition_name>` 
+  - You can also `reszie2fs -p /dev/<partition_name> 1G` to increase it by 1G instead of the maximum set by the fdisk utility
 <h3>Deleting a partition</h3>
 * Run final archive backup, to backup all data
 * Bring down all applications hosted on that partition
