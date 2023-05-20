@@ -56,6 +56,7 @@ Note: it is important to have backups of all paritions
 <h5>Expanding an exisiting disk</h5>
 * Modify the existing drive(volume)
 * Run `sudo fdisk -l` to list all volumes, this should also show a discrepency within the disk space size
+
 ```
 [excellent@ip-172-31-56-105 eoyebami.github.io]$ sudo fdisk -l
 GPT PMBR size mismatch (16777215 != 20971519) will be corrected by write.
@@ -74,6 +75,7 @@ Device       Start      End  Sectors Size Type
 
 Partition table entries are not in disk order.
 ```
+
 * Correct discrepency by running a write on the disk
   - `sudo fdisk /dev/xvda`: Note: you are modifying the disk drive not the parition `(/dev/xvda1)`
   - find disk by running `lsblk`
