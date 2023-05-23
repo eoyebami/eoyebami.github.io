@@ -16,9 +16,10 @@
   - <h4>Linux: Virtual Box</h4>
     * [2023-04-29-vbox-configuration](posts/vbox/2023-04-29-vbox-configuration.md) 
     * [2023-04-29-vbox-networking](posts/vbox/2023-04-29-vbox-networking.md)
-  - <h4>Linux: Partitions</h4>
+  - <h4>Linux: Partitions, File Systems, and LVMs</h4>
     * [2023-05-17-fdisk](2023-05-17-fdisk.md)
     * [2023-05-22-parted](2023-05-22-parted.md)
+    * [2023-05-23-lvm-logical-volumes](2023-05-23-lvm-logical-volumes.md)
 
 <h3>Linux: APIs and HTTPs Methods</h3>
 * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md) 
