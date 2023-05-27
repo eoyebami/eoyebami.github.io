@@ -20,6 +20,7 @@
     * [2023-05-17-fdisk](2023-05-17-fdisk.md)
     * [2023-05-22-parted](2023-05-22-parted.md)
     * [2023-05-23-lvm-logical-volumes](2023-05-23-lvm-logical-volumes.md)
+    * [2023-05-26-swap-space](2023-05-26-swap-space.md)
 
 <h3>Linux: APIs and HTTPs Methods</h3>
 * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md) 
