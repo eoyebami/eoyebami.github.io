@@ -176,5 +176,5 @@ debug2: shell request accepted on channel 0
          _/ _/
        _/m/'
 Last login: Sat Apr 15 20:54:32 2023 from 209.194.208.149
-[excellent@ip-172-31-56-105 ~]$ 
+[excellent@ip-ip-addr ~]$ 
 ```

@@ -27,3 +27,10 @@
 * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
   - <h4>JQ and JSON parsing</h4>
     * [2023-05-06-jq-json](posts/http/2023-05-06-jq-json.md)
+
+<h3>Linux: Logging & Monitoring</h3>
+* [2023-05-27-intro-to-elk](posts/elk/2023-05-27-intro-to-elk.md)
+  - <h4>ELK Stack: ElasticSearch</h4>
+    * [2023-05-28-elasticsearch-config](posts/elk/2023-05-28-elasticsearch-config.md)
+  - <h4>ELK Stack: Kibana</h4>
+    * [2023-05-28-kibana-config](posts/elk/2023-05-28-kibana-config.md) 

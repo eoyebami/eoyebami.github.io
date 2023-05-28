@@ -29,9 +29,9 @@ sudo pvdisplay /dev/xvdf2
   - The `pvdisplay` output should now be different 
 
 ```
-[excellent@ip-172-31-56-105 eoyebami.github.io]$ sudo vgcreate myvg0 /dev/xvdf2
+[excellent@ip-ip-addr eoyebami.github.io]$ sudo vgcreate myvg0 /dev/xvdf2
   Volume group "myvg0" successfully created
-[excellent@ip-172-31-56-105 eoyebami.github.io]$ sudo pvdisplay /dev/xvdf2
+[excellent@ip-ip-addr eoyebami.github.io]$ sudo pvdisplay /dev/xvdf2
   --- Physical volume ---
   PV Name               /dev/sdf2
   VG Name               myvg0
@@ -78,7 +78,7 @@ sudo vgdisplay myvg0
 ```
 sudo lvcreate -n lv1 -L 100M myvg0
   Logical volume "lv1" created.
-[excellent@ip-172-31-56-105 eoyebami.github.io]$ lsblk
+[excellent@ip-ip-addr eoyebami.github.io]$ lsblk
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 xvda          202:0    0   10G  0 disk
 ├─xvda1       202:1    0    8G  0 part /
@@ -88,9 +88,9 @@ xvdf          202:80   0    8G  0 disk
 ├─xvdf1       202:81   0  5.6G  0 part /backups
 └─xvdf2       202:82   0    1G  0 part
   └─myvg0-lv1 253:0    0  100M  0 lvm
-[excellent@ip-172-31-56-105 eoyebami.github.io]$ sudo ls /dev/mapper/myvg0-*
+[excellent@ip-ip-addr eoyebami.github.io]$ sudo ls /dev/mapper/myvg0-*
 /dev/mapper/myvg0-lv1
-[excellent@ip-172-31-56-105 eoyebami.github.io]$
+[excellent@ip-ip-addr eoyebami.github.io]$
 ```
 
 * Create a fs in that logical volume and the mount it 
@@ -115,9 +115,9 @@ xvdf          202:80   0    8G  0 disk
   - `vgextend <VG_name> /dev/<PV_name>`
 
 ```
-[excellent@ip-172-31-56-105 eoyebami.github.io]$ sudo vgextend myvg0 /dev/xvdf3
+[excellent@ip-ip-addr eoyebami.github.io]$ sudo vgextend myvg0 /dev/xvdf3
   Volume group "myvg0" successfully extended
-[excellent@ip-172-31-56-105 eoyebami.github.io]$ sudo vgdisplay myvg0
+[excellent@ip-ip-addr eoyebami.github.io]$ sudo vgdisplay myvg0
   --- Volume group ---
   VG Name               myvg0
   System ID
@@ -161,7 +161,7 @@ When resizing a LV, umount is not necessary, you can directly increase it by ext
 sudo lvextend -L +200M /dev/mapper/myvg0-lv1
   Size of logical volume myvg0/lv1 changed from 100.00 MiB (25 extents) to 300.00 MiB (75 extents).
   Logical volume myvg0/lv1 successfully resized.
-[excellent@ip-172-31-56-105 eoyebami.github.io]$ lsblk
+[excellent@ip-ip-addr eoyebami.github.io]$ lsblk
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 xvda          202:0    0   10G  0 disk
 ├─xvda1       202:1    0    8G  0 part /
@@ -173,9 +173,9 @@ xvdf          202:80   0    8G  0 disk
 │ ├─myvg0-lv1 253:0    0  300M  0 lvm
 │ └─myvg0-lv2 253:1    0  200M  0 lvm
 └─xvdf3       202:83   0    1G  0 part
-[excellent@ip-172-31-56-105 eoyebami.github.io]$ sudo resize2fs /dev/mapper/myvg0-lv1
+[excellent@ip-ip-addr eoyebami.github.io]$ sudo resize2fs /dev/mapper/myvg0-lv1
 resize2fs 1.46.5 (30-Dec-2021)
 Resizing the filesystem on /dev/mapper/myvg0-lv1 to 307200 (1k) blocks.
 The filesystem on /dev/mapper/myvg0-lv1 is now 307200 (1k) blocks long.
-[excellent@ip-172-31-56-105 eoyebami.github.io]$
+[excellent@ip-ip-addr eoyebami.github.io]$
 ```

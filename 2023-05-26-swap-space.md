@@ -15,7 +15,7 @@ You can set modify when swap is used based on the ammount of memory allocation u
 <h3>How to create a swap area</h3>
 * Use `free -m` to see how much avaliable memory you have, including how much avaliable swap space you have
 ```
-[excellent@ip-172-31-56-105 eoyebami.github.io]$ free -h
+[excellent@ip-ip-addr eoyebami.github.io]$ free -h
                total        used        free      shared  buff/cache   available
 Mem:           963Mi       193Mi        59Mi       2.0Mi       711Mi       615Mi
 Swap:             0B          0B          0B
@@ -31,7 +31,7 @@ Swap:             0B          0B          0B
   * `count` is how many blocks
 - conversion total-disk-space-allocation=(bs * count)
 ```
-[excellent@ip-172-31-56-105 backups]$ sudo dd if=/dev/zero of=/backups/myswap bs=100M count=10
+[excellent@ip-ip-addr backups]$ sudo dd if=/dev/zero of=/backups/myswap bs=100M count=10
 10+0 records in
 10+0 records out
 1048576000 bytes (1.0 GB, 1000 MiB) copied, 14.004 s, 74.9 MB/s
@@ -48,8 +48,8 @@ sudo mkswap myswap
 mkswap: myswap: warning: wiping old swap signature.
 Setting up swapspace version 1, size = 1000 MiB (1048571904 bytes)
 no label, UUID=a336af9e-85db-4caa-8506-4c27cb881a7e
-[excellent@ip-172-31-56-105 backups]$ sudo swapon myswap
-[excellent@ip-172-31-56-105 backups]$ free -m
+[excellent@ip-ip-addr backups]$ sudo swapon myswap
+[excellent@ip-ip-addr backups]$ free -m
                total        used        free      shared  buff/cache   available
 Mem:             963         207         117           2         638         595
 Swap:            999           0         999

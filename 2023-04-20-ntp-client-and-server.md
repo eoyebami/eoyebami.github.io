@@ -39,7 +39,7 @@ NTP uses Stratum values to represent the distance from the reference clock (accu
    ```
    MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ===============================================================================
-^? ip-172-31-56-105.ec2.int>     0   7     0     -     +0ns[   +0ns] +/-    0ns
+^? ip-ip-addr.ec2.int>     0   7     0     -     +0ns[   +0ns] +/-    0ns
 ^+ haka.ruselabs.com             2   6   377    61  -4880us[-4782us] +/-   49ms
 ^+ four10.gac.edu                2   6   377    61  +1859us[+1958us] +/-   29ms
 ^* 108.61.73.243                 2   6   377    60   +236us[ +335us] +/-   34ms
