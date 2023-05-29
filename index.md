@@ -31,6 +31,9 @@
 <h3>Linux: Logging & Monitoring</h3>
 * [2023-05-27-intro-to-elk](posts/elk/2023-05-27-intro-to-elk.md)
   - <h4>ELK Stack: ElasticSearch</h4>
-    * [2023-05-28-elasticsearch-config](posts/elk/2023-05-28-elasticsearch-config.md)
+    * [2023-05-28-elasticsearch.yml-config](posts/elk/2023-05-28-elasticsearch.yml-config.md)
+  - <h4>ELK Stack: Logstash</h4>
+    * [2023-05-29-logstash.yml-config](posts/elk/2023-05-29-logstash.yml-config.md)
+    * [2023-05-29-logstash-pipeline-input](2023-05-29-logstash-pipeline-input.md)
   - <h4>ELK Stack: Kibana</h4>
-    * [2023-05-28-kibana-config](posts/elk/2023-05-28-kibana-config.md) 
+    * [2023-05-28-kibana.yml-config](posts/elk/2023-05-28-kibana.yml-config.md) 

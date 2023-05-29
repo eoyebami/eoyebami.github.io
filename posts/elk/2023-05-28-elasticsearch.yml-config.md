@@ -1,4 +1,4 @@
-<h1>Configuring ElasticSearch</h1>
+<h1>Configuring ElasticSearch: elasticsearch.yml</h1>
 <h3>Installation</h3>
 ```
 # Update ubuntu server and Install Java 8
@@ -24,7 +24,7 @@ sudo apt update
 sudo apt install elasticsearch
 ```
 
-<h3>ElasticSearch File Configuration: elasticsearch.yml</h3>
+<h3>ElasticSearch.yml File Configuration</h3>
 * TO configure your elasticsearch, you need to modify the `elasticsearch.yml` file located in `/etc/elasticsearch` directory. Here you can set the config values as follows:
   - `cluster.name: my-elasticsearch` : sets the name of the Elasticsearch cluster
     * All nodes with the same cluster name will join the same cluster
