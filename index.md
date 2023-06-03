@@ -41,7 +41,7 @@
 - <h4>AWS: IAM</h4>
     * [2023-04-22-cross-account-assume-role](posts/aws/2023-04-22-cross-account-assume-role.md)
 
-<h3>GCP</h3>
+<h2>GCP</h2>
 - <h4>GCP: VPC Networks</h4>
     * [2023-05-30-gcp-networking](posts/gcp/2023-05-30-gcp-networking.md)
     * [2023-05-30-gcp-ssh-tunneling](posts/gcp/2023-05-30-gcp-ssh-tunneling.md)
