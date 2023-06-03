@@ -83,3 +83,4 @@ sudo systemctl enable filebeat
 sudo apt update && sudo apt install kibana
 sudo systemctl enable kibana
 ```
+

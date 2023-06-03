@@ -15,27 +15,12 @@ The input option specifies where Logstash will be retrieving the data from, it c
 input {
   # Specify the input source, such as a file, syslog, or Beats input
   file {
-    path => "/home/ubuntu/apache.log"
+    path => "/var/log/logstash/apache.log"
     start_position => "beginning"
-    sincedb_path => "/home/ubuntu/sincedb/apache-sincedb"
+    sincedb_path => "/var/log/logstash/apache-sincedb"
     sincedb_write_interval => 5
     file_completed_action => "log"
-  }
-}
-
-filter {
-  # Apply various filters to process and transform the incoming data
-  grok {
-    match => { "message" => "%{COMBINEDAPACHELOG}" }
-  }
-  # Additional filters can be added based on your requirements
-}
-
-output {
-  # Define the output destination, such as Elasticsearch or another system
-  elasticsearch {
-    hosts => ["ip-addr:9200"]
-    index => "logs"
+    file_completed_log_path => "/var/log/logstash/completed_logs/apache_completed.log"
   }
 }
 ```
@@ -43,6 +28,7 @@ output {
   - Specify an input source: (files, beats input, syslog, tcp/udp inputs, http, etc)
     * There are multiple different sources, but file sources are the most commonly used for applications. This will be the main use case for this example
   - `path => "/path/to/log_file"` : give path to your logfile
+    * Make sure its a directory that logstash can access such as a `/var/log/*` directory
   - `start_position => "beginning"` : where you want logstash to start reading the input data, and it can have the following values:
     * `beginning`: Logstash will start reading from the beginning
     * `end`: Logstash will start reading from the end, only new lines appended will be read
@@ -55,6 +41,8 @@ output {
     * `delete` : deletes file
     * `log` : Logstash will log a message indicating the file has been fully processed in its own logstash log file
     * `nothing` : this is the default, logstash will do nothing
+    * `file_completed_log_path =>` must be specified when using this option that contains the values `log` or `log_delete`
+  -`file_completed_log_path => "/home/ubuntu/apache_completed.log"` : specifies the path to the file where logstash will write all complete logs
   - `discover_interbal => 15` : controls how often logstash checks for new files matching the `path` pattern
     * default is 15 seconds
   - `ignore_older => "2hr"` : ignores files that have not been modified for a specified time 
