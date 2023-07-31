@@ -37,6 +37,10 @@
     * [2023-05-28-kibana.yml-config](posts/elk/2023-05-28-kibana.yml-config.md) 
     * [2023-06-04-kibana-index-patterns](posts/elk/2023-06-04-kibana-index-patterns.md)
 
+<h2>Kubernetes</h2>
+  - <h4>Docker</h4>
+    * [2023-07-31-docker-run-complexities](posts/eks/docker/2023-07-31-docker-run-complexities.md)
+
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>
     * [2023-04-22-cross-account-assume-role](posts/aws/2023-04-22-cross-account-assume-role.md)
