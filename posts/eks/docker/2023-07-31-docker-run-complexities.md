@@ -17,3 +17,8 @@ We can persist data from a containere by mapping it to a volume (fs/file/path) w
 We can retrieve all information about a container in json format using `docker inspect`
 * Ex:
   - `docker inspect <docker-container>`
+<h6>Docker: Env Variables</h6>
+We can set env variables in Docker containers by using a `-e` flag when we run the container
+* Ex:
+  - `docker run -itd -e APP_COLOR=red --name webapp -p 8383:8080 webapp:lite`
+    - After running the container we can view the env variables of the container by running `docker inspect`. Which will inspect the properties of a running container in json format, which will also include the ENV variables within the container

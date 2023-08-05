@@ -40,6 +40,9 @@
 <h2>Kubernetes</h2>
   - <h4>Docker</h4>
     * [2023-07-31-docker-run-complexities](posts/eks/docker/2023-07-31-docker-run-complexities.md)
+    * [2023-08-05-dockerfile-cmd-and-entrypoint](posts/eks/docker/2023-08-05-dockerfile-cmd-and-entrypoint.md)
+    * [2023-08-06-docker-compose](posts/eks/docker/2023-08-06-docker-compose.md)
+    * [2023-08-06-docker-run-link](posts/eks/docker/2023-08-06-docker-run-link.md)
 
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>
