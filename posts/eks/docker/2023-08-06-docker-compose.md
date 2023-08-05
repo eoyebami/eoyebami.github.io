@@ -40,7 +40,7 @@ worker:
   - This version also includes a `depends_on` feature to let docker compose know which order to spin up the containers
     * For more information on networks check out this [page](posts/vbox/2023-04-29-vbox-networking.md)
 ```
-version: 2
+version: "2"
 services:
   redis: [name of container]
     image: redis [image to pull]
