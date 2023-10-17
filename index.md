@@ -37,13 +37,18 @@
     * [2023-05-28-kibana.yml-config](posts/elk/2023-05-28-kibana.yml-config.md) 
     * [2023-06-04-kibana-index-patterns](posts/elk/2023-06-04-kibana-index-patterns.md)
 
-<h2>Kubernetes</h2>
+<h2>Container Orchestration</h2>
   - <h4>Docker</h4>
     * [2023-07-31-docker-run-complexities](posts/eks/docker/2023-07-31-docker-run-complexities.md)
     * [2023-08-05-dockerfile-cmd-and-entrypoint](posts/eks/docker/2023-08-05-dockerfile-cmd-and-entrypoint.md)
     * [2023-08-06-docker-compose](posts/eks/docker/2023-08-06-docker-compose.md)
     * [2023-08-06-docker-run-link](posts/eks/docker/2023-08-06-docker-run-link.md)
-
+    * [2023-10-02-docker-networking](posts/eks/docker/2023-10-02-docker-networking.md)
+    * [2023-10-02-docker-storage](posts/eks/docker/2023-10-02-docker-storage.md)
+  - <h4>Kubernetes</h4>
+    * [2023-10-03-k8-pods](posts/eks/2023-10-03-k8-pods.md)
+    * [2023-10-03-k8-replicaset](posts/eks/2023-10-03-k8-replicaset.md)
+    * [2023-10-03-k8-deployments](posts/eks/2023-10-03-k8-replicaset.md)
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>
     * [2023-04-22-cross-account-assume-role](posts/aws/2023-04-22-cross-account-assume-role.md)
