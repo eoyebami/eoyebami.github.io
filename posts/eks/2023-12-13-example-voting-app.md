@@ -23,8 +23,8 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: redis
-      type: back-end
+      app: voting-app
+      type: front-end
   replicas: 3
   strategy: 
     type: RollingUpdate
@@ -47,9 +47,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: voting-app
+  name: voting-app-svc
   labels:
-    app: voting-app
+    app: voting-app-svc
     type: front-end
 spec:
   selector:
@@ -81,8 +81,8 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels:
-      app: db
-      type: back-end
+      app: result-app
+      type: front-end
   spec:
     template:
       metadata:
@@ -99,9 +99,9 @@ spec:
 apiVersion: apps/v1
 kind: Service
 metadata:
-  name: result-app
+  name: result-app-svc
   labels:
-    app: result-app
+    app: result-app-svc
     type: front-end
 spec:
   selector:
@@ -131,6 +131,10 @@ spec:
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: redis
+      type: back-end
   template:
     metadata:
       app: redis
@@ -148,7 +152,7 @@ kind: Service
 metadata:
   name: redis
   labels:
-    app: redis
+    app: redis-svc
     type: back-end
 spec:
   selector:
@@ -159,7 +163,11 @@ spec:
   - name: redis-db-port-svc
     protocol: TCP
     targetPort: 6379
-    port: 6379
+    port: 6379env:
+        - name: POSTGRES_USER
+          value: "xxxxx"
+        - name: POSTGRES_PASSWORD
+          value: "xxxxx"
 ```
 
 <h2>PostgreSql App Deployment & Service:</h2>
@@ -178,6 +186,10 @@ spec:
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: db
+      type: back-end
   template:
     metadata:
       labels:
@@ -190,13 +202,18 @@ spec:
         ports:
         - containerPort: 5432
           name: postgresql-db-port
+        env:
+        - name: POSTGRES_USER
+          value: "xxxxx"
+        - name: POSTGRES_PASSWORD
+          value: "xxxxx"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: db
   labels:
-    app: db
+    app: db-svc
     type: back-end
 spec:
   selector: 
@@ -229,7 +246,8 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels:
-      type: backend
+      app: worker-app
+      type: back-end
   template:
     metadata:
       app: worker-app

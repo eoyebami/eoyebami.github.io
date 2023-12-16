@@ -15,8 +15,8 @@ metadata:
      type: front-end
 spec:
   replicas: 3
-  selector: (match to the label of a service, which it will use to communicate to it's endpoints)
-    matchLabels:
+  selector: (matches pods created by a Deployment, labels here will be selected by the Service)
+    matchLabels: (can be either matchLabels or matchExpressions)
       type: front-end
   strategy:
     type: RollingUpdate
@@ -38,10 +38,37 @@ spec:
           name: nginx-http-port
         - containerPort: 443
           name: nginx-https-port
+        env: (you can add environment variables directly through the deployment.yaml)
+        - name: USER
+          value: "xxxxx"
+        - name: PASSWORD
+          value: "xxxxx"
 ```
 
 * NOTE: status `4/4` means 4 out of the 4 containers specified in the template, have been deployed (includes the helper containers)
 * NOTE: replicas, spin up 1 application pod per replica
+<h2>Deployments: Selectors for Services</h2>
+* You can use label to match pods created by deployments, through selectors `matchLabels` or `matchExpressions`. This value will be given to a `Service` to ensure it matches to pods managed by that specific `Deployment`.
+  - The label you define here, is what you provide the `Service` to ensure traffic is directed to pods managed by that `Deployment`.
+  - Common practice is to make the `Deployment Selectors` and the `Pod Selectors` match.
+<h4>matchLabels</h4>
+* You can match Labels from the selector you'd like exposed, through key/value pairs
+```
+selector:
+  matchLabels:
+    app: voting-app
+```
+
+<h4>matchExpressions</h4>
+* You can use match labels from the selector you'd like exposed, through key/operator/values which give you more options
+  - In `operator` you can use `In, NotIn, Exists(if the key exists), DoesNotExist(if key does not exist), Gt, Lt`
+  - In `values` you can define an array that will allow an `OR` requirement rather than an `AND` for labels
+```
+selector:
+  matchExpressions:
+  - {key: app, operator: In, values: [production, staging]}
+```
+
 <h2>Deployments: Update and Rollback</h2>
 * With Kubernetes Deployments, you are able to check past deployment histories and status of current deployments:
   - Ex:
