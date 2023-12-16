@@ -14,11 +14,16 @@ metadata:
      apps: myapp
      type: front-end
 spec:
-  template:
   replicas: 3
-  selector:
+  selector: (match to the label of a service, which it will use to communicate to it's endpoints)
     matchLabels:
       type: front-end
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
     metadata:
       name: myapp-pod
       labels: 
@@ -28,6 +33,11 @@ spec:
       containers:
       - name: nginx-container
         image: nginx
+        ports:
+        - containerPort: 80
+          name: nginx-http-port
+        - containerPort: 443
+          name: nginx-https-port
 ```
 
 * NOTE: status `4/4` means 4 out of the 4 containers specified in the template, have been deployed (includes the helper containers)
@@ -45,3 +55,33 @@ spec:
   - `kubectl rollout undo deployment <deploy_name>`
 * When you rollout a deployment, if you give it a `--record` flag, kubernetes will record why the change was made, when you check the history.
   - This will usually show which command was used to initiate the change
+<h2>Deployments: Strategies</h2>
+* With Kubernetes Deployments, you can specifiy the type of strategy an update and a rollout will do
+<h4>Recreate</h4>
+* This strategy will terminate all pods and replace them with the new version. Beneficial when old and new versions of the application cannot run at the same time. 
+  - Will cause downtime
+* Ex:
+```
+spec:
+  replicas: 10
+  strategy:
+    type: Recreate
+```
+
+<h4>RollingUpdate</h4>
+* This is the default strategy for kubernetes, it runs new and old versions of application together and spins up new ones and terminates the one versions of the application as the new version becomes available
+  - It uses `readiness probes`, which monitor when the application becomes available, which in turn disables traffic to the old version of the application and terminates
+  - If there is a problem, the rollout can be stopped and rollbacked to previous version
+  - It can refined with the below parameters:
+    * `maxSurge`: specifies the maxium number of pods the deployment can create at one time
+    * `maxUnavailable`: specifies the maximum number of pods that are allowed to be unavailable during the rollout
+* Ex: 
+```
+spec:
+  replicas: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25% (integers/percentages accepted)
+      maxUnavailable: 25% (integers/percentages accepted)
+```
