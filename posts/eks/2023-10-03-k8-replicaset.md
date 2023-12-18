@@ -31,6 +31,7 @@ spec:
 * This is the latest version of a replica controller in kubernetes, below is an example of one:
 * It is a process that monitors the pods that it governs
   - We use labels to allow the `ReplicaSet` to filter for pods that only match a specific label
+
 ```
 apiversion: apps/v1
 kind: ReplicaSet

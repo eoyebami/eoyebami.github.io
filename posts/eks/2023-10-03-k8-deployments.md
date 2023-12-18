@@ -5,6 +5,7 @@ Kubernetes Deployments allow for rolling updates and rollbacks in case of applic
 <h2>YAML: Deployments</h2>
 * The formating of a `Deployment` is almost completely identical to a `ReplicaSet`
   - When you launch a `Deployment` it creates a `ReplicaSet`, `Pods`, and `Containers`
+
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -63,6 +64,7 @@ selector:
 * You can use match labels from the selector you'd like exposed, through key/operator/values which give you more options
   - In `operator` you can use `In, NotIn, Exists(if the key exists), DoesNotExist(if key does not exist), Gt, Lt`
   - In `values` you can define an array that will allow an `OR` requirement rather than an `AND` for labels
+
 ```
 selector:
   matchExpressions:

@@ -9,6 +9,7 @@
 <h4>Multiple Bridge Networks</h4>
 * Here we can define multiple bridge networks and assigned containers to isolated bridge networks on the host
   - We can do this by running:
+
 ```
 docker network create \
   --driver bridge \
