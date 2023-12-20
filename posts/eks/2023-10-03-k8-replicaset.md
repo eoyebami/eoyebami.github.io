@@ -13,7 +13,7 @@ metadata:
     type: front-end
 spec:
   template: <here we provide the template for the replication, in this case the pod yaml>
-  replicas: 3 <how many replicas of this template do we want>MYSQL_ROOT_PASSWORD 
+  replicas: 3 <how many replicas of this template do we want>
     metadata:
       name: myapp-pod
       labels:

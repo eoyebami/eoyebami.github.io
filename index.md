@@ -47,6 +47,9 @@
   * [2023-10-02-docker-storage](posts/eks/docker/2023-10-02-docker-storage.md)
 - <h4>Kubernetes</h4>
   - <h5>Kubernetes: Introduction</h5>
+    * [2023-12-18-k8-architecture](posts/eks/2023-12-18-k8-architecture.md)
+    * [2023-12-19-k8-command-tricks](posts/eks/2023-12-19-k8-command-tricks.md)
+    * [2023-12-19-namespaces](posts/eks/2023-12-19-namespaces.md)
     * [2023-10-03-k8-pods](posts/eks/2023-10-03-k8-pods.md)
     * [2023-10-03-k8-replicaset](posts/eks/2023-10-03-k8-replicaset.md)
     * [2023-10-03-k8-deployments](posts/eks/2023-10-03-k8-deployments.md)

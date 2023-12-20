@@ -16,7 +16,7 @@ metadata:
      type: front-end
 spec:
   replicas: 3
-  selector: (matches pods created by a Deployment, labels here will be selected by the Service)
+  selector: (matches pods created by a Deployment, this matchLabels must be the same as the labels included in the template for proper matching, labels here will be selected by the Service)
     matchLabels: (can be either matchLabels or matchExpressions)
       type: front-end
   strategy:
