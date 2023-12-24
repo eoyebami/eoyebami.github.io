@@ -55,6 +55,9 @@
     * [2023-10-03-k8-deployments](posts/eks/2023-10-03-k8-deployments.md)
     * [2023-10-17-services](posts/eks/2023-10-17-services.md)
     * [2023-12-13-example-voting-app](posts/eks/2023-12-13-example-voting-app.md)
+  - <h5>Kubernetes: Scheduling</h5>
+    * [2023-12-24-manual-scheduling](posts/eks/2023-12-24-manual-scheduling.md)
+    * [2023-12-24-taints-and-tolerations](posts/eks/2023-12-24-taints-and-tolerations)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>

@@ -14,6 +14,8 @@ metadata:
    labels:
      apps: myapp
      type: front-end
+   annotations:
+     buildVersion: "1.x" (records details for informative purposes, must be in quotes)
 spec:
   replicas: 3
   selector: (matches pods created by a Deployment, this matchLabels must be the same as the labels included in the template for proper matching, labels here will be selected by the Service)

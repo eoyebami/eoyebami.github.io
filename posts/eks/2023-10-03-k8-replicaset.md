@@ -3,6 +3,12 @@ A ReplicaSet is used to manage how many instances of a pod are hosted in a clust
   - Replicas also self-heal, so if a replica goes down, the ReplicaSet will spin up a new one
 <h3>Replication Controller</h3>
 * This is the legacy version of a `ReplicaSet`, below is an example of one:
+- `spec`: specifications of the rs
+  * `replicas`: amount of replica pods
+  * `template`: template for containers in rs
+    - `metadata`: metadata for the containers in pod
+    - `spec`: specifications for the containers
+        
 ```
 apiVersion: v1
 kind: ReplicationController
@@ -11,9 +17,11 @@ metadata:
   labels:
     app: myapp
     type: front-end
+  annotations:
+    buildVersion: "1.x"
 spec:
-  template: <here we provide the template for the replication, in this case the pod yaml>
   replicas: 3 <how many replicas of this template do we want>
+  template: <here we provide the template for the replication, in this case the pod yaml>
     metadata:
       name: myapp-pod
       labels:
