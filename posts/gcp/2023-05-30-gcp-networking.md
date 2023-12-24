@@ -16,24 +16,28 @@ IN GCP subnets are known as subnetworks, which have their own CIDR
 GCP routes define the paths that the network traffic takes from a VM to other destinations (these can be inside or outside the network)
 * NOTE: a `hop` is a device that receives the traffic and forwards it to the next hop until it reaches the final destination
 * System-generated routes:
+
 | Types                           | Hop         | Notes                                                 |
 | ---                             | ---         | ---                                                   |
 | System-generated default routes | igw         | Applies to whole Network                              |
 | Subnet Route                    | VPC network | Applies to whole Network (Contains Cidr of subnework) |
 
 * Custom Routes
+
 | Types          | Hop                      | Notes                                                                                                                         |
 | ---            | ---                      | ---                                                                                                                           |
 | Static routes  | forwards to a static hop | Used to control routing of traffic within or between VPCs; you define a destination route and a next hop to reach destination |
 | Dynamic Routes | Peer of a BGP session    | Allow for automatic adaptation to changes in network topology                                                                 |
 
 * Peering Routes
+
 | Types                 | Hop                       | Notes                                                            |
 | ---                   | ---                       | ---                                                              |
 | Peering subnet routes | Peer VPC Netowrk          | Applies to whole Network                                         |
 | Peering custom routes | Next hope in Peer Network | static or dynamic route in a network connected using VPC peering |
 
 * Policy Based Routes
+
 | Types                 | Hop        | Notes                                                                   |                                                            
 | ---                   | ---        | ---                                                                     |
 | Policy-based routes   | TCP/UDP LB | matches traffic by a combination of protocol, source and dest ip ranges |
