@@ -35,7 +35,7 @@ spec:
   - key: "app"
     operator: "Equal"
     value: "jenkins"
-    effect: NoSchedule
+    effect: "NoSchedule"
   containers:
   - name: nginx
     image: nginx

@@ -30,4 +30,8 @@
 <h4>Filtering Labels</h4>
   - `kubectl get <object> --selector app=webapp --selector tier=front-end`: will for objects with match the labels in the selectors flag
     * NOTE: If you are looking to run a `wc -l` to count the pods, use `--no-headers` to remove the headers when retrieving the data.
-      
+  - `kubectl get <object> <resource_name> -o json`
+    * outputs the resource data in json format, which you can use `jq` to filter through
+  - `kubectl get <object> <resource_name> -o jsonpath='{.metadata.labels}'`
+    * outputs the resource in json, then parses through the data, in this case, for the labels of the resource
+    * you can filter for anything in the json, as long as you know what you're looking for    

@@ -58,6 +58,9 @@
   - <h5>Kubernetes: Scheduling</h5>
     * [2023-12-24-manual-scheduling](posts/eks/2023-12-24-manual-scheduling.md)
     * [2023-12-24-taints-and-tolerations](posts/eks/2023-12-24-taints-and-tolerations)
+    * [2023-12-28-node-affinity](posts/eks/2023-12-28-node-affinity.md)
+    * [2023-12-24-taints-and-tolerations](posts/eks/2023-12-24-taints-and-tolerations.md)
+    * [2023-12-28-taints-tolerations-&-node-affinity](posts/eks/2023-12-28-taints-tolerations-&-node-affinity.md)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>
