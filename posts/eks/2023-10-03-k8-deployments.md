@@ -36,16 +36,20 @@ spec:
       containers:
       - name: nginx-container
         image: nginx
-        ports:
-        - containerPort: 80
-          name: nginx-http-port
-        - containerPort: 443
-          name: nginx-https-port
         env: (you can add environment variables directly through the deployment.yaml)
         - name: USER
           value: "xxxxx"
         - name: PASSWORD
           value: "xxxxx"
+        - name: MESSAGE
+          value: "Hello World"
+        command: ["/bin/sh"] (defines command to be run when the container spins up [in this case we ran a shell])
+        args: ["-c", "while true; do echo $(MESSAGE); sleep 10; done"] (defines arguments for that command [we can provide flags as args, multiple can be set, env variables set in the pod can also be used]) 
+        ports:
+        - containerPort: 80
+          name: nginx-http-port
+        - containerPort: 443
+          name: nginx-https-port
 ```
 
 * NOTE: status `4/4` means 4 out of the 4 containers specified in the template, have been deployed (includes the helper containers)

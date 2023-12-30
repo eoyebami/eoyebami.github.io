@@ -61,6 +61,8 @@
     * [2023-12-28-node-selectors](posts/eks/2023-12-28-node-selectors.md)
     * [2023-12-28-node-affinity](posts/eks/2023-12-28-node-affinity.md)
     * [2023-12-28-taints-tolerations-&-node-affinity](posts/eks/2023-12-28-taints-tolerations-&-node-affinity.md)
+    * [2023-12-29-resource-allocation](posts/eks/2023-12-29-resource-allocation.md)
+    * [2023-12-29-daemonsets](posts/eks/2023-12-29-daemonsets.md)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>

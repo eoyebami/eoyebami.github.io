@@ -17,7 +17,6 @@
     * The `-o yaml` outputs the yaml and its all redirected into a yaml file
   - `kubectl set image deployment nginx nginx=nginx:1.18`: will set a new image to the deployment
 <h4>ReplicaSets</h4>
-  - `kubectl create replicaset myapp-replicaset --image=myapp:latest --replicas=3 --namespace=default`: creates a `replicaset` set to 3
   - `kubectl scale rs --replicas=n`: scales up a `replicaset` to the value desired
 <h4>Services</h4>
   - `kubectl expose deployment myapp-deployment --type=ClusterIP --name=myapp-service --port=80 --target-port=8080 --namespace=default  --name=myapp-svc`: creates a `ClusterIP` svc exposed to the deployment myapp-deployment, the `targetPort` is `8080` and the svc `port` is 80

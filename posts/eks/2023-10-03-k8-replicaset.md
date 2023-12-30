@@ -31,6 +31,11 @@ spec:
       containers: <we are listing the containers we want deployed in this replica controller>
       - name: nginx-container
         image: nginx
+        ports:
+        - containerPort: 8080
+          name: http-port
+        command: ["sleep"]
+        args: ["1000"]
 ```
 
 * All pods deployed by this replication controller will have the name of the `ReplicationController` as their pod name
