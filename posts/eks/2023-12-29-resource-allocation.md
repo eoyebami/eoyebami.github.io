@@ -17,6 +17,7 @@
     * `cpu`: expresses allocation limits in `Gi` and `m`
     * `memory`: expresses allocation limits as `G, M, K, Gi, Mi, Ki`
 * Ex:
+
 ```
 spec:
   tolerations:
@@ -50,6 +51,7 @@ spec:
   - `max`: maximum `limits` a container can have
   - `min`: minimum `requests` a container can have
 * Ex:
+
 ```
 apiVersion: v1
 kind: LimitRange
@@ -72,3 +74,4 @@ spec:
       cpu: 100m
     type: Container
 ```
+

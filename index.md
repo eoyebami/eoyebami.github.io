@@ -63,6 +63,7 @@
     * [2023-12-28-taints-tolerations-&-node-affinity](posts/eks/2023-12-28-taints-tolerations-&-node-affinity.md)
     * [2023-12-29-resource-allocation](posts/eks/2023-12-29-resource-allocation.md)
     * [2023-12-29-daemonsets](posts/eks/2023-12-29-daemonsets.md)
+    * [2023-12-30-static-pods](posts/eks/2023-12-30-static-pods.md)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>
