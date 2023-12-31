@@ -70,6 +70,8 @@ metadata:
   labels:
     app: myapp
     type: front-end
+  annotations:
+    buildVersion: "1.0"
 spec:
   template: 
   replicas: 3 
@@ -82,9 +84,28 @@ spec:
         app: myapp
         type: frontend
     spec:
+      affinity:
+        nodeAffinity: (labels should exist first)
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: size
+                operator: In
+                values:
+                - Small
+                - Medium
+      tolerations:  (taint should exist)
+      - key: "app"
+        operator: "Equal"
+        value: "jenkins"
+        effect: "NoSchedule"
+      priorityClassName: high-priority
       containers: 
       - name: nginx-container
         image: nginx
+        imagePullPolicy: IfNotPresent
+        commands: ["/usr/bin/echo"]
+        args: ["Hello World"]
 ```
 
 * To scale a replicaset you can use:
