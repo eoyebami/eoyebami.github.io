@@ -29,7 +29,7 @@ spec:
         tier: monitoring
     spec:
       affinity:
-        nodeAffinity:
+        nodeAffinity: (labels should exist first)
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
@@ -37,9 +37,16 @@ spec:
                 operator: In
                 values:
                 - controlplane
+      tolerations: (taint should exist)
+      - key: "app"
+        operator: "Equal"
+        value: "Jenkins"
+        effect: "NoExecute"
+      priorityClassName: high-priority
       containers:
       - name: fluentd
         image: registry.k8s.io/fluentd-elasticsearch:1.20
+        imagePullPolicy: IfNotPresent
         command: ["/bin/echo"]
         args: ["Hello World"]
         ports:

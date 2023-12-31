@@ -54,6 +54,7 @@
     * [2023-10-03-k8-replicaset](posts/eks/2023-10-03-k8-replicaset.md)
     * [2023-10-03-k8-deployments](posts/eks/2023-10-03-k8-deployments.md)
     * [2023-10-17-services](posts/eks/2023-10-17-services.md)
+    * [2023-12-29-daemonsets](posts/eks/2023-12-29-daemonsets.md)
     * [2023-12-13-example-voting-app](posts/eks/2023-12-13-example-voting-app.md)
   - <h5>Kubernetes: Scheduling</h5>
     * [2023-12-24-manual-scheduling](posts/eks/2023-12-24-manual-scheduling.md)
@@ -62,8 +63,10 @@
     * [2023-12-28-node-affinity](posts/eks/2023-12-28-node-affinity.md)
     * [2023-12-28-taints-tolerations-&-node-affinity](posts/eks/2023-12-28-taints-tolerations-&-node-affinity.md)
     * [2023-12-29-resource-allocation](posts/eks/2023-12-29-resource-allocation.md)
-    * [2023-12-29-daemonsets](posts/eks/2023-12-29-daemonsets.md)
     * [2023-12-30-static-pods](posts/eks/2023-12-30-static-pods.md)
+    * [2023-12-31-kube-scheduler-config](posts/eks/2023-12-31-kube-scheduler-config.md)
+    * [2023-12-31-priority-classes](posts/eks/2023-12-31-priority-classes.md)
+  - <h5>Kubernetes: Logging & Monitoring</h5>
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>

@@ -3,7 +3,7 @@
   - With no `apiserver` or other kubernetes components, the `kubelet` can only manage pods
   - `kubelet` recieves these instructions by looking in a `pod-manifest-path` set during the `kubelet` configuration
     * `--pod-manifest-path=/path/to/manifest` 
-    * `--config=kubeconfig.yaml (which will contain: `staticPodPath: /path/to/manifest` to locate the pod-definitions) -> Used by `KubeAdm`
+    * `--config=kubeconfig.yaml` (which will contain: `staticPodPath: /path/to/manifest` to locate the pod-definitions) -> Used by `KubeAdm`
     * `ps -ef | grep kubelet` : to find the service in a preexisting cluster
   * `kubelet` will periodically check this path for new manifest or changed manifests and will destroy and create them based on the changes in this directory (removed manifests, result in corresponding pods being immediately terminated)
     - pods created by `kubelet` will be suffixed with the hostname of the node that the `kubelet` is hosted on

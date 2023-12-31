@@ -33,9 +33,41 @@ spec:
         app: myapp
         type: front-end
     spec:
+      affinity:
+        nodeAffinity: (labels must exist first)
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: env
+                operator: In
+                values:
+                - Production
+                - Pre-Production
+          preferredDuringSchedulingIgnoredDUringExecution:
+          - weight: 50
+            preference:
+              matchExpressions:
+              - key: size
+                operator: In
+                values:
+                - Large
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: size
+                operator: In
+                values:
+                - Medium
+      tolerations: (taint must be set first)
+      - key: "size"
+        operator: "Equal"
+        value: "Large"
+        effect: "NoSchedule"
+      priorityClassName: high-priority
       containers:
       - name: nginx-container
         image: nginx
+        imagePullPolicy: IfNotPresent
         env: (you can add environment variables directly through the deployment.yaml)
         - name: USER
           value: "xxxxx"

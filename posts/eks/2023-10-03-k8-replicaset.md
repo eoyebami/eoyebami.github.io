@@ -28,9 +28,26 @@ spec:
         app: myapp
         type: frontend
     spec:
+      affinity:
+        nodeAffinity: (labels should exist first)
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: size
+                operator: In
+                values:
+                - Small
+                - Medium
+      tolerations:  (taint should exist)
+      - key: "app"
+        operator: "Equal"
+        value: "jenkins"
+        effect: "NoSchedule"
+      priorityClassName: high-priority
       containers: <we are listing the containers we want deployed in this replica controller>
       - name: nginx-container
         image: nginx
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
           name: http-port
