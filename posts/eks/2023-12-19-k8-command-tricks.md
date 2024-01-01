@@ -34,3 +34,16 @@
   - `kubectl get <object> <resource_name> -o jsonpath='{.metadata.labels}'`
     * outputs the resource in json, then parses through the data, in this case, for the labels of the resource
     * you can filter for anything in the json, as long as you know what you're looking for    
+  - `kubectl get deploy <name> -o jsonpath='{.spec.template.spec.containers[*].name}'`
+  - `kubectl get pod <name> -o jsonpath='{.spec.containers[*].name}'`
+    * outputs the name of the containers running in this pod
+  - `kubectl get deploy <name> -o jsonpath='{.spec.template.spec.containers[*].image}'`
+  - `kubectl get pod <name> -o jsonpath='{.spec.containers[*].image}'`
+    * outputs the images of the containers running in this pod
+  - `kubectl get pods webapp-2 -o jsonpath='{range .spec.containers[*]}{.name} {.image}{"\n"}'`
+    * outputs both image and name
+<h4>Logs</h4>
+  - `kubectl logs -f <pod>`
+    * outputs the logs of the first container that was defined in the yaml file
+  - `kubectl logs -f <pod> <container-name>`
+    * outputs the logs of the specified container in that pod

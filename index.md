@@ -67,6 +67,7 @@
     * [2023-12-31-kube-scheduler-config](posts/eks/2023-12-31-kube-scheduler-config.md)
     * [2023-12-31-priority-classes](posts/eks/2023-12-31-priority-classes.md)
   - <h5>Kubernetes: Logging & Monitoring</h5>
+    * [2024-01-01-metrics-server](posts/eks/2024-01-01-metrics-server.md)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>
