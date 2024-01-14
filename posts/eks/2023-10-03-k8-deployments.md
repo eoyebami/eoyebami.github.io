@@ -75,6 +75,14 @@ spec:
           value: "xxxxx"
         - name: MESSAGE
           value: "Hello World"
+        - name: USER
+          valueFrom: 
+            configMapKeyRef:
+              name: <config-map-name>
+              key: <key-name>
+        envFrom: 
+        - configMapRef:
+            name: <config-map-name>
         command: ["/bin/sh"] (defines command to be run when the container spins up [in this case we ran a shell])
         args: ["-c", "while true; do echo $(MESSAGE); sleep 10; done"] (defines arguments for that command [we can provide flags as args, multiple can be set, env variables set in the pod can also be used]) 
         ports:

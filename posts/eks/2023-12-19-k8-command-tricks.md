@@ -16,6 +16,8 @@
   - `kubectl create deployment --image=nginx nginix --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml`: creates a deployment with the name `nginx` image, with the name `nginx`, with a `replicaset` set tot 4, then previews the object creation
     * The `-o yaml` outputs the yaml and its all redirected into a yaml file
   - `kubectl set image deployment nginx nginx=nginx:1.18`: will set a new image to the deployment
+  - `kubectl rollout history deploy <deployment-name>`: shows history of revisions made to that deployment
+  - `kubectl rollout undo deploy <deployment-name>`: allows you to rollback a deployment revision to a previous one
 <h4>ReplicaSets</h4>
   - `kubectl scale rs --replicas=n`: scales up a `replicaset` to the value desired
 <h4>Services</h4>
@@ -24,6 +26,9 @@
   * Ex:
     - `kubectl expose deployment myapp-deployment --type=LoadBalancer --name=myapp-svc --target-port=80 --port=80`
     - `kubectl create svc nodeport nginx --tcp=80:80--node-port=30000`: the only way to create a svc and specify the NodePort; creates a nodeport svc named nginx
+<h4>ConfigMaps</h4>
+  * `kubectl create configmap <cm-name> --from-literal=<key-name>=<value>  --from-literal=key-name-2=value-2`: provide the key/value pairs directly in the command
+  * `kubectl create configmap <cm-name> --from-file=<key-name>=app-config.properties`: provide the key/value pairs from a properties file as a multi-lined string
 <h4>Namespaces</h4>
   - `kubectl create ns dev`: creates ns named dev
 <h4>Filtering Labels</h4>

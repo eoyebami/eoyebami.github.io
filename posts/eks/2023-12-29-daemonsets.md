@@ -49,6 +49,15 @@ spec:
         imagePullPolicy: IfNotPresent
         command: ["/bin/echo"]
         args: ["Hello World"]
+        env:
+        - name: USER
+          valueFrom: 
+            configMapKeyRef:
+              name: <config-map-name>
+              key: <key-name>
+        envFrom: 
+        - configMapRef:
+            name: <config-map-name>
         ports:
         - containerPort: 8080
           name: elasticsearch

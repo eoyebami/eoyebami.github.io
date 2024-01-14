@@ -53,6 +53,15 @@ spec:
           name: http-port
         command: ["sleep"]
         args: ["1000"]
+        env:
+        - name: USER
+          valueFrom: (injects a key/value pair from the configmap as an environment variable)
+            configMapKeyRef:
+              name: <config-map-name>
+              key: <key-name>
+        envFrom: (injects the entire configmap as an environment variables)
+        - configMapRef:
+            name: <config-map-name>
 ```
 
 * All pods deployed by this replication controller will have the name of the `ReplicationController` as their pod name
@@ -106,6 +115,15 @@ spec:
         imagePullPolicy: IfNotPresent
         commands: ["/usr/bin/echo"]
         args: ["Hello World"]
+        env:
+        - name: USER
+          valueFrom: 
+            configMapKeyRef:
+              name: <config-map-name>
+              key: <key-name>
+        envFrom:
+        - configMapRef:
+            name: <config-map-name>
 ```
 
 * To scale a replicaset you can use:
