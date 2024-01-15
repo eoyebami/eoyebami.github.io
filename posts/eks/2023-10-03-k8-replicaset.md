@@ -59,9 +59,16 @@ spec:
             configMapKeyRef:
               name: <config-map-name>
               key: <key-name>
+        - name: DB_HOST
+          valueFrom: (injects a key/value pair from the secret as an environment variable)
+            secretKeyRef:
+              name: <secret-name>
+              key: <key-name>
         envFrom: (injects the entire configmap as an environment variables)
         - configMapRef:
             name: <config-map-name>
+        - secretRef:
+            name: <secret-map-name>
 ```
 
 * All pods deployed by this replication controller will have the name of the `ReplicationController` as their pod name
@@ -121,9 +128,16 @@ spec:
             configMapKeyRef:
               name: <config-map-name>
               key: <key-name>
-        envFrom:
+        - name: DB_HOST
+          valueFrom: (injects a key/value pair from the secret as an environment variable)
+            secretKeyRef:
+              name: <secret-name>
+              key: <key-name>
+        envFrom: (injects the entire configmap as an environment variables)
         - configMapRef:
             name: <config-map-name>
+        - secretRef:
+            name: <secret-map-name>
 ```
 
 * To scale a replicaset you can use:

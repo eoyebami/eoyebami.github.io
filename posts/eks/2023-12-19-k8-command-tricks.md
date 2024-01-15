@@ -29,6 +29,9 @@
 <h4>ConfigMaps</h4>
   * `kubectl create configmap <cm-name> --from-literal=<key-name>=<value>  --from-literal=key-name-2=value-2`: provide the key/value pairs directly in the command
   * `kubectl create configmap <cm-name> --from-file=<key-name>=app-config.properties`: provide the key/value pairs from a properties file as a multi-lined string
+<h4>Secrets</h4>
+  * `kubectl create secret generic <secret-name> --from-literal=<key-name>=<value>`: used to create individual key/value pairs in the object
+  * `kubectl create secret generic <secret-name> --from-file=<key-name>=app-config.properties`: used to add the contents of the file in a key as a multi-lined string
 <h4>Namespaces</h4>
   - `kubectl create ns dev`: creates ns named dev
 <h4>Filtering Labels</h4>

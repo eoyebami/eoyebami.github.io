@@ -71,6 +71,7 @@
   - <h5>Kubernetes: Application Lifecycle Management</h5>
     * [2024-01-14-commands-and-args](posts/eks/2024-01-14-commands-and-args.md)
     * [2024-01-14-configmaps](posts/eks/2024-01-14-configmaps.md)
+    * [2024-01-15-secrets](posts/eks/2024-01-15-secrets.md)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>
