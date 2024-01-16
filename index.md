@@ -72,6 +72,8 @@
     * [2024-01-14-commands-and-args](posts/eks/2024-01-14-commands-and-args.md)
     * [2024-01-14-configmaps](posts/eks/2024-01-14-configmaps.md)
     * [2024-01-15-secrets](posts/eks/2024-01-15-secrets.md)
+    * [2024-01-16-initContainers](posts/eks/2024-01-16-initContainers.md)
+    * [2024-01-16-liveness-startup-readiness](posts/eks/2024-01-16-liveness-startup-readiness.md)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>

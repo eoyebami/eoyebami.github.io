@@ -45,8 +45,8 @@ spec:
     volumeMounts:
     - name: app-properties
       mountPath: /path/in/container
-volumes:
-- name: app-properties
-  configMap: (mounts the configmap as a file in the pod)
-    name: <config-map-name>
+  volumes:
+  - name: app-properties
+    configMap: (mounts the configmap as a file in the pod)
+      name: <config-map-name>
 ```

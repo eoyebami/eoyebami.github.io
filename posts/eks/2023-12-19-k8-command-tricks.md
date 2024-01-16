@@ -50,6 +50,10 @@
     * outputs the images of the containers running in this pod
   - `kubectl get pods webapp-2 -o jsonpath='{range .spec.containers[*]}{.name} {.image}{"\n"}'`
     * outputs both image and name
+  - `kubectl get pods <pod-name> -o jsonpath='{.status.containerStatuses}'`: displays status of containers
+  - `kubectl get pods <pod-name> -o jsonpath='{.status.containerStatuses[].state}'`: displays state of containers
+  - `kubectl get pods <pod-name> -o jsonpath='{.status.initcontainerStatuses}'`: displays status of initcontainers
+  - `kubectl get pods <pod-name> -o jsonpath='{.status.initcontainerStatuses[].state}'`: displays state of initcontainers
 <h4>Logs</h4>
   - `kubectl logs -f <pod>`
     * outputs the logs of the first container that was defined in the yaml file
