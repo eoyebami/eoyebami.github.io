@@ -6,6 +6,8 @@
   * [2023-04-15-ssh-client-and-server](2023-04-15-ssh-client-and-server.md)
   * [2023-04-15-yum-repo-configuration](2023-04-15-yum-repo-configuration.md)
   * [2023-04-20-ntp-client-and-server](2023-04-20-ntp-client-and-server.md) 
+  - <h5>Linux: TLS</h5>
+    * [2024-01-16-tls](2024-01-16-tls.md)
   - <h5>Linux: Virtual Box</h5>
     * [2023-04-29-vbox-configuration](posts/vbox/2023-04-29-vbox-configuration.md) 
     * [2023-04-29-vbox-networking](posts/vbox/2023-04-29-vbox-networking.md)
@@ -74,6 +76,9 @@
     * [2024-01-15-secrets](posts/eks/2024-01-15-secrets.md)
     * [2024-01-16-initContainers](posts/eks/2024-01-16-initContainers.md)
     * [2024-01-16-liveness-startup-readiness](posts/eks/2024-01-16-liveness-startup-readiness.md)
+  - <h5>Kubernetes: Security</h5>
+    * [2024-01-16-kube-api-authentication](posts/eks/2024-01-16-kube-api-authentication.md)
+    * [2024-01-17-kubernetes-tls](posts/eks/2024-01-17-kubernetes-tls.md)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>
