@@ -54,6 +54,8 @@
   - `kubectl get pods <pod-name> -o jsonpath='{.status.containerStatuses[].state}'`: displays state of containers
   - `kubectl get pods <pod-name> -o jsonpath='{.status.initcontainerStatuses}'`: displays status of initcontainers
   - `kubectl get pods <pod-name> -o jsonpath='{.status.initcontainerStatuses[].state}'`: displays state of initcontainers
+  - `kubectl get csr user01 -o jsonpath='{.status.certificate}' | base64 -d > user01.crt`: retrieves certificate signed by cluster and outputs to a crt file
+  - `<stdin> | kubectl apply -f -`: will apply whatever input it receives into the cluster
 <h4>Logs</h4>
   - `kubectl logs -f <pod>`
     * outputs the logs of the first container that was defined in the yaml file

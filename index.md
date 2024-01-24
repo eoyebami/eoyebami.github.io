@@ -79,6 +79,8 @@
   - <h5>Kubernetes: Security</h5>
     * [2024-01-16-kube-api-authentication](posts/eks/2024-01-16-kube-api-authentication.md)
     * [2024-01-17-kubernetes-tls](posts/eks/2024-01-17-kubernetes-tls.md)
+    * [2024-01-22-certificate-signing-request](posts/eks/2024-01-22-certificate-signing-request.md)
+    * [2024-01-22-kubeconfig.md](posts/eks/2024-01-22-kubeconfig.md)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>

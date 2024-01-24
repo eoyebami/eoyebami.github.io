@@ -28,3 +28,4 @@ spec:
   volumes:
   - name: html-volume
     emptyDir: {}
+```

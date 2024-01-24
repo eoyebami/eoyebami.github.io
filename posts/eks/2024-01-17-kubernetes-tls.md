@@ -1,22 +1,23 @@
 <h1>TLS in Kubernetes</h1>
 * Similarily to how server's and clients use tls to authenticate with one another, each individual component within the kubernetes infrastructure will also use tls to authenticate with one another
   - Clients: that will require their own keys and certificates to validate itself to servers
-    * endusers # those making calls to the api-server
-    * scheduler # makes api calls to api-server in order to schedule pods
-    * controller-manager # makes api call to api-server to maintain desired state of objects in cluster
-    * kube-proxy # monitors services and rules created
-    * api-server # handles all management of the cluster, only component that communicates to the etcd server
-    * kubelet # makes calls to the api-server to register nodes to the cluster and send reports to etcd through api-server, also loads and unloads pods in cluster
+    * `endusers` # those making calls to the api-server
+    * `scheduler` # makes api calls to api-server in order to schedule pods
+    * `controller-manager` # makes api call to api-server to maintain desired state of objects in cluster
+    * `kube-proxy` # monitors services and rules created
+    * `api-server` # handles all management of the cluster, only component that communicates to the etcd server
+    * `kubelet` # makes calls to the api-server to register nodes to the cluster and send reports to etcd through api-server, also loads and unloads pods in cluster
   - Servers: that will require their own keys and certificates to validate itself to the clients
-    * etcd server # db of the cluster, api-server communicates with it to update it on cluster status and object info
-    * api-server # management of cluster, all other communicates will communicate with it in other to update cluster resources on update status on etcd
-    * kubelet # api-server will communicate with it to schedule pods on nodes
+    * `etcd server` # db of the cluster, api-server communicates with it to update it on cluster status and object info
+    * `api-server` # management of cluster, all other communicates will communicate with it in other to update cluster resources on update status on etcd
+    * `kubelet` # api-server will communicate with it to schedule pods on nodes
 * For our first step we want to generate keys for our own CA, that will sign all other certificates in the clusters
   - This is so that if any cert is not signed by this CA, it will not be able to authenticate
   * `openssl genpkey -algorithm ed25519 -out ca.key 2048`: generate the CA key
   * `openssl req -new -key ca.key -subj "/CN=KUBERNETES-CA" -out ca.csr`: generate a certificate request with the certificate name "KUBERNETES-CA"
     - `CN`: common name
   * `openssl x509 -in ca.csr -signkey ca.key -out ca.crt`: self sign the cert with the private key 
+  - NOTE: the server which has this CA, will be known as the CA server
 * For all other kubernetes components, we will use this generated CA key to sign all certificates
   * `openssl genpkey -alogrithm ed25519 -out <component-nams>.key 2048`: generate a private key for the component
   * `openssl req -new -key <component-name>.key -subj "/CN=<component-name>" -out <component>.csr`: generate cert request for the component key
