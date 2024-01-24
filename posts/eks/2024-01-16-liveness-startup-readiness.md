@@ -1,9 +1,9 @@
 <h1>Liveness, StartUp, and Readiness Probe</h1>
 * These probes are methods used by kubernetes to determine if an application running on the pod is alive, healthy, and ready for use
   - If these probes fail, kubernetes can take action to resolve this (usually by restarting the container)
-* The `livelnessProbe` is used to determine if a container is healthy or not
+* The `livenessProbe` is used to determine if a container is healthy or not
 * The `readinessProbe` is used to determine if a container is ready to accept traffic
-* The `startUpProbe` is used to deal with containers/apps that require additional start up time
+* The `startupProbe` is used to deal with containers/apps that require additional start up time
   - in which case, you would give it the same fields as the `livenessProbe`
   - add an additional field `failureThreshold`; which is multipled with `periodSeconds` to provide additoinal startup time before the `livenessProbe` takes over to allow for faster responses to issues in the container
 <h4>Probes: httpGet</h4>
