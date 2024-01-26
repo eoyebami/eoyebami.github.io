@@ -5,7 +5,7 @@
    * Quick Decryption for debugging
    * Migration of secrets from one Jenkins server to another
    * Helm implementation
-<h2>Decrypt all SSHKey Credentials</h2>
+<h2>Decrypt all BasicSSHUserPrivateKey Credentials</h2>
 * This script will decrypt all `BasicSSHUserPrivateKey Credentials` stored in Jenkins Credential Store
 
 ```
@@ -26,7 +26,7 @@ for(c in creds) {
 }
 ```
 
-<h2>Getting Content of SecretFile Credential</h2>
+<h2>Getting Content of FileCredentials</h2>
 * This script will decrypt the contents of a `FileCredentials` stored in the Jenkins Credential Store
 
 ```
@@ -49,7 +49,7 @@ SystemCredentialsProvider.getInstance().getCredentials().stream().
   }
 ```
 
-<h2>Updating Description of SecretFile Credential</h2>
+<h2>Updating Description of FileCredentials</h2>
 * This script will update the description of a `FileCredentials` stored in the Jenkins Credential Store
 
 ```
@@ -95,7 +95,7 @@ def updateSecretFileDescription = { cred_id, file_name ->
 updateSecretFileDescription(${credId}, ${fileName})
 ```
 
-<h2>Updating Content of SecretFile Credential</h2>
+<h2>Updating Content of FileCredentials</h2>
 * This script will update the content of a `FileCredentials` stored in the Jenkins Credential Store
 
 ```
@@ -133,7 +133,7 @@ def updateSecretContent = { cred_id, file_name ->
 updateSecretContent(${credId}, ${fileName})
 ```
 
-<h2>Updating Password for UsernamePassword Credential</h2>
+<h2>Updating Password for UsernamePassword Credentials</h2>
 * This script will update the Password of a `UsernamePasswordCredentials` stored in the Jenkins Credential Store
 
 ```
