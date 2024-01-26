@@ -27,17 +27,18 @@
   * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
     - <h5>JQ and JSON parsing</h5>
     * [2023-05-06-jq-json](posts/http/2023-05-06-jq-json.md)
-- <h4>Linux: Logging & Monitoring</h4>
+
+<h2>Logging and Monitoring</h2>
+- <h4>ELK Stack: ElasticSearch</h4>
   * [2023-05-27-intro-to-elk](posts/elk/2023-05-27-intro-to-elk.md)
-  - <h5>ELK Stack: ElasticSearch</h5>
-    * [2023-05-28-elasticsearch.yml-config](posts/elk/2023-05-28-elasticsearch.yml-config.md)
-  - <h5>ELK Stack: Logstash</h5>
-    * [2023-05-29-logstash.yml-config](posts/elk/2023-05-29-logstash.yml-config.md)
-    * [2023-05-29-logstash-pipeline-input](posts/elk/2023-05-29-logstash-pipeline-input.md)
-    * [023-05-29-logstash-pipeline-filter](posts/elk/2023-05-29-logstash-pipeline-filter.md)
-  - <h5>ELK Stack: Kibana</h5>
-    * [2023-05-28-kibana.yml-config](posts/elk/2023-05-28-kibana.yml-config.md) 
-    * [2023-06-04-kibana-index-patterns](posts/elk/2023-06-04-kibana-index-patterns.md)
+  * [2023-05-28-elasticsearch.yml-config](posts/elk/2023-05-28-elasticsearch.yml-config.md)
+- <h4>ELK Stack: Logstash</h4>
+  * [2023-05-29-logstash.yml-config](posts/elk/2023-05-29-logstash.yml-config.md)
+  * [2023-05-29-logstash-pipeline-input](posts/elk/2023-05-29-logstash-pipeline-input.md)
+  * [023-05-29-logstash-pipeline-filter](posts/elk/2023-05-29-logstash-pipeline-filter.md)
+- <h4>ELK Stack: Kibana</h4>
+  * [2023-05-28-kibana.yml-config](posts/elk/2023-05-28-kibana.yml-config.md) 
+  * [2023-06-04-kibana-index-patterns](posts/elk/2023-06-04-kibana-index-patterns.md)
 
 <h2>Container Orchestration</h2>
 - <h4>Docker</h4>
@@ -80,7 +81,10 @@
     * [2024-01-16-kube-api-authentication](posts/eks/2024-01-16-kube-api-authentication.md)
     * [2024-01-17-kubernetes-tls](posts/eks/2024-01-17-kubernetes-tls.md)
     * [2024-01-22-certificate-signing-request](posts/eks/2024-01-22-certificate-signing-request.md)
-    * [2024-01-22-kubeconfig.md](posts/eks/2024-01-22-kubeconfig.md)
+    * [2024-01-22-kubeconfig](posts/eks/2024-01-22-kubeconfig.md)
+
+<h2>Jenkins</h2>
+  * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
        
 <h2>AWS</h2>
 - <h4>AWS: IAM</h4>
