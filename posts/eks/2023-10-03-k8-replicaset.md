@@ -20,8 +20,8 @@ metadata:
   annotations:
     buildVersion: "1.x"
 spec:
-  replicas: 3 <how many replicas of this template do we want>
-  template: <here we provide the template for the replication, in this case the pod yaml>
+  replicas: 3 # how many replicas of this template do we want
+  template: # here we provide the template for the replication, in this case the pod yaml
     metadata:
       name: myapp-pod
       labels:
@@ -29,7 +29,7 @@ spec:
         type: frontend
     spec:
       affinity:
-        nodeAffinity: (labels should exist first)
+        nodeAffinity: # labels should exist first
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
@@ -38,13 +38,13 @@ spec:
                 values:
                 - Small
                 - Medium
-      tolerations:  (taint should exist)
+      tolerations:  # taint should exist
       - key: "app"
         operator: "Equal"
         value: "jenkins"
         effect: "NoSchedule"
       priorityClassName: high-priority
-      containers: <we are listing the containers we want deployed in this replica controller>
+      containers: # we are listing the containers we want deployed in this replica controller
       - name: nginx-container
         image: nginx
         imagePullPolicy: IfNotPresent
@@ -55,20 +55,21 @@ spec:
         args: ["1000"]
         env:
         - name: USER
-          valueFrom: (injects a key/value pair from the configmap as an environment variable)
+          valueFrom: # injects a key/value pair from the configmap as an environment variable 
             configMapKeyRef:
               name: <config-map-name>
               key: <key-name>
         - name: DB_HOST
-          valueFrom: (injects a key/value pair from the secret as an environment variable)
+          valueFrom: # injects a key/value pair from the secret as an environment variable 
             secretKeyRef:
               name: <secret-name>
               key: <key-name>
-        envFrom: (injects the entire configmap as an environment variables)
+        envFrom: # injects the entire configmap as an environment variables
         - configMapRef:
             name: <config-map-name>
         - secretRef:
             name: <secret-map-name>
+      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s    
 ```
 
 * All pods deployed by this replication controller will have the name of the `ReplicationController` as their pod name
@@ -91,8 +92,8 @@ metadata:
 spec:
   template: 
   replicas: 3 
-  selector: <allows replicaset to identify pods that fall under it, even pods created before the replicaset>
-    matchLabels: <this will govern pods that have the labels defined in this dictionary>
+  selector: # allows replicaset to identify pods that fall under it, even pods created before the replicaset
+    matchLabels: # this will govern pods that have the labels defined in this dictionary
       type: front-end
     metadata:
       name: myapp-pod
@@ -101,7 +102,7 @@ spec:
         type: frontend
     spec:
       affinity:
-        nodeAffinity: (labels should exist first)
+        nodeAffinity: # labels should exist first
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
@@ -110,7 +111,7 @@ spec:
                 values:
                 - Small
                 - Medium
-      tolerations:  (taint should exist)
+      tolerations: # taint should exist
       - key: "app"
         operator: "Equal"
         value: "jenkins"
@@ -129,15 +130,16 @@ spec:
               name: <config-map-name>
               key: <key-name>
         - name: DB_HOST
-          valueFrom: (injects a key/value pair from the secret as an environment variable)
+          valueFrom: # injects a key/value pair from the secret as an environment variable
             secretKeyRef:
               name: <secret-name>
               key: <key-name>
-        envFrom: (injects the entire configmap as an environment variables)
+        envFrom: # injects the entire configmap as an environment variables
         - configMapRef:
             name: <config-map-name>
         - secretRef:
             name: <secret-map-name>
+      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s
 ```
 
 * To scale a replicaset you can use:

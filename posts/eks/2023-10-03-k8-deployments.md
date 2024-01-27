@@ -15,11 +15,11 @@ metadata:
      apps: myapp
      type: front-end
    annotations:
-     buildVersion: "1.x" (records details for informative purposes, must be in quotes)
+     buildVersion: "1.x" # records details for informative purposes, must be in quotes
 spec:
   replicas: 3
-  selector: (matches pods created by a Deployment, this matchLabels must be the same as the labels included in the template for proper matching, labels here will be selected by the Service)
-    matchLabels: (can be either matchLabels or matchExpressions)
+  selector: # matches pods created by a Deployment, this matchLabels must be the same as the labels included in the template for proper matching, labels here will be selected by the Service
+    matchLabels: # can be either matchLabels or matchExpressions
       type: front-end
   strategy:
     type: RollingUpdate
@@ -34,7 +34,7 @@ spec:
         type: front-end
     spec:
       affinity:
-        nodeAffinity: (labels must exist first)
+        nodeAffinity: # labels must exist first
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
@@ -58,7 +58,7 @@ spec:
                 operator: In
                 values:
                 - Medium
-      tolerations: (taint must be set first)
+      tolerations: # taint must be set first
       - key: "size"
         operator: "Equal"
         value: "Large"
@@ -68,7 +68,7 @@ spec:
       - name: nginx-container
         image: nginx
         imagePullPolicy: IfNotPresent
-        env: (you can add environment variables directly through the deployment.yaml)
+        env: # you can add environment variables directly through the deployment.yaml
         - name: USER
           value: "xxxxx"
         - name: PASSWORD
@@ -81,22 +81,23 @@ spec:
               name: <config-map-name>
               key: <key-name>
         - name: DB_HOST
-          valueFrom: (injects a key/value pair from the secret as an environment variable)
+          valueFrom: # injects a key/value pair from the secret as an environment variable
             secretKeyRef:
               name: <secret-name>
               key: <key-name>
-        envFrom: (injects the entire configmap as an environment variables)
+        envFrom: # injects the entire configmap as an environment variables
         - configMapRef:
             name: <config-map-name>
         - secretRef:
             name: <secret-map-name>
         command: ["/bin/sh"] (defines command to be run when the container spins up [in this case we ran a shell])
-        args: ["-c", "while true; do echo $(MESSAGE); sleep 10; done"] (defines arguments for that command [we can provide flags as args, multiple can be set, env variables set in the pod can also be used]) 
+        args: ["-c", "while true; do echo $(MESSAGE); sleep 10; done"] # defines arguments for that command [we can provide flags as args, multiple can be set, env variables set in the pod can also be used] 
         ports:
         - containerPort: 80
           name: nginx-http-port
         - containerPort: 443
           name: nginx-https-port
+      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s
 ```
 
 * NOTE: status `4/4` means 4 out of the 4 containers specified in the template, have been deployed (includes the helper containers)

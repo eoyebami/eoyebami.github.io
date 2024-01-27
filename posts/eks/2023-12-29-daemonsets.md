@@ -29,7 +29,7 @@ spec:
         tier: monitoring
     spec:
       affinity:
-        nodeAffinity: (labels should exist first)
+        nodeAffinity: # labels should exist first
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
@@ -37,7 +37,7 @@ spec:
                 operator: In
                 values:
                 - controlplane
-      tolerations: (taint should exist)
+      tolerations: # taint should exist
       - key: "app"
         operator: "Equal"
         value: "Jenkins"
@@ -56,11 +56,11 @@ spec:
               name: <config-map-name>
               key: <key-name>
         - name: DB_HOST
-          valueFrom: (injects a key/value pair from the secret as an environment variable)
+          valueFrom: # injects a key/value pair from the secret as an environment variable
             secretKeyRef:
               name: <secret-name>
               key: <key-name>
-        envFrom: (injects the entire configmap as an environment variables)
+        envFrom: # injects the entire configmap as an environment variables
         - configMapRef:
             name: <config-map-name>
         - secretRef:
@@ -68,4 +68,5 @@ spec:
         ports:
         - containerPort: 8080
           name: elasticsearch
+      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s
 ```

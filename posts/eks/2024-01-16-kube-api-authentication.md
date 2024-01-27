@@ -37,10 +37,10 @@ xxxx,user2,u0002,group2
 * For certificate authentication, you'll first need to generate asymmetric keys and have them signed by an Admin, using the CA cert generated in the master node
   - For more information on tls read [here](https://eoyebami.github.io/2024-01-16-tls.html)
   - For more information on kubernetes tls read [here](https://eoyebami.github.io/posts/eks/2024-01-17-kubernetes-tls.html)
-* Generate a certificate and the steps [here](https://eoyebami.github.io/posts/eks/2024-01-22-certificate-signing-request.md) to give a user access to the cluster through the cert
+* Generate a certificate and the steps [here](https://eoyebami.github.io/posts/eks/2024-01-22-certificate-signing-request.html) to give a user access to the cluster through the cert
   - The user will then be able to make calls to the cluster using curl command
     * `curl https://kube-api:6443/api/v1/pods --key admin.key --cert admin.crt --cacert ca.crt`
   - They can also using `kubectl`
     * `kubectl get pods --server <kube-api-server> --client-key admin.key --client-certificate admin.crt --certificate-authority ca.crt`
 * The above methods can be a bit tedious, to simply the text using a `kubeConfig` file
-  - More information on this [here](https://eoyebami.github.io/posts/eks/2024-01-22-kubeconfig)
+  - More information on this [here](https://eoyebami.github.io/posts/eks/2024-01-22-kubeconfig.html)

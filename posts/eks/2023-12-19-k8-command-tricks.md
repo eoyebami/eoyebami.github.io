@@ -56,6 +56,17 @@
   - `kubectl get pods <pod-name> -o jsonpath='{.status.initcontainerStatuses[].state}'`: displays state of initcontainers
   - `kubectl get csr user01 -o jsonpath='{.status.certificate}' | base64 -d > user01.crt`: retrieves certificate signed by cluster and outputs to a crt file
   - `<stdin> | kubectl apply -f -`: will apply whatever input it receives into the cluster
+<h4>KubeConfig</h4>
+  - `kubectl config view`: displays kubeconfig data
+    * you can specify a kubeconfig by using `--kubeconfig=<fileName>`
+  - `kubectl config use-context <context-name>`: change context, otherwise known as switching between cluster/user pairs
+  - `kubectl config set-context --current --namespace <ns>`: setting a namespace for the current context
+<h4>Authorization</h4>
+  - `kubectl auth can-i <verb> <object>`: will return `yes` or `no` depending on your authorization level
+    * verbs can include: `get, create, patch, update, delete, list, watch`
+  - `kubectl auth can-i <verb> <object> --as <user>`: will check if a user you specified can run that verb on that object
+  - `kubectl api-resources --namespaced=true`: lists all namespaced resources
+  - `kubectl api-resources --namespaced=false`: lists all non-namespaced resources
 <h4>Logs</h4>
   - `kubectl logs -f <pod>`
     * outputs the logs of the first container that was defined in the yaml file
