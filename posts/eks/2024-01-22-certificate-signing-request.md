@@ -27,6 +27,7 @@ spec:
   - client auth
   request:
     xxxxx # csr in base64
+EOF
 ```
   
   - See if you can view csr object and approve it

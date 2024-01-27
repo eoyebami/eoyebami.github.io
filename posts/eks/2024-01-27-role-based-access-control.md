@@ -19,6 +19,7 @@ rules:
 - apiGroups: ["apps"] # using the apps named group
   resources: ["deployments", "replicasets"]
   verbs: ["get", "list", "create", "patch", "update"]
+EOF
 ```
 
 <h2>RBAC: RoleBinding</h2>
@@ -38,6 +39,7 @@ roleRef:
   kind: Role
   name: dev
   apiGroup: rbac.authorization.k8s.io
+EOF
 ```
 
 * To test these permissions you can run `kubectl auth can-i`
@@ -61,6 +63,7 @@ rules:
 - apiGroups: [""] # leaving it blank will denote it as core group
   resources: ["nodes"]
   verbs: ["get", "list", "create", "delete"]
+EOF
 
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/v1
@@ -75,4 +78,5 @@ roleRef:
   kind: ClusterRole
   name: Node-Admin
   apiGroup: rbac.authorization.k8s.io
+EOF
 ```
