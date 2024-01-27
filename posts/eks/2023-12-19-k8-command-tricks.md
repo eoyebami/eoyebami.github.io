@@ -65,6 +65,11 @@
   - `kubectl auth can-i <verb> <object>`: will return `yes` or `no` depending on your authorization level
     * verbs can include: `get, create, patch, update, delete, list, watch`
   - `kubectl auth can-i <verb> <object> --as <user>`: will check if a user you specified can run that verb on that object
+  - `kubectl auth can-i <verb> <object> --as-group <user> --as <random-string>`: will check if a group you specified can run that verb on that object
+    * random string is used impersonate a user who would be in that group, command fails without a name for a user to identify the group with
+  - `kubectl get <object> <object-name> --as <user>`: will allow you to test any kubectl command as that user
+  - `kubectl get <object> <object-name> --as-group <user> --as <random-string>`: will allow you to test any kubectl command as a user in that group
+    * random string is used impersonate a user who would be in that group, command fails without a name for a user to identify the group with
   - `kubectl api-resources --namespaced=true`: lists all namespaced resources
   - `kubectl api-resources --namespaced=false`: lists all non-namespaced resources
 <h4>Logs</h4>
