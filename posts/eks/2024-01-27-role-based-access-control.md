@@ -43,7 +43,7 @@ EOF
 ```
 
 * To test these permissions you can run `kubectl auth can-i`
-  - `kubectl auth can-i create deployments --namespace`: k8 will return a `yes` or `no` depending on your authorization level
+  - `kubectl auth can-i create deployments --namespace --as <user>`: k8 will return a `yes` or `no` depending on your authorization level
 <h2>RBAC: ClusterRoles</h2>
 * `Role` and `RoleBinding` are only meant for namespace-scoped objects and cannot be used to grant cluster-scoped permissions
   - Example of cluster-scoped objects:

@@ -43,6 +43,8 @@ spec:
         value: "Jenkins"
         effect: "NoExecute"
       priorityClassName: high-priority
+      serviceAccountName: <name-of-service-account>
+      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s
       containers:
       - name: fluentd
         image: registry.k8s.io/fluentd-elasticsearch:1.20
@@ -68,5 +70,4 @@ spec:
         ports:
         - containerPort: 8080
           name: elasticsearch
-      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s
 ```

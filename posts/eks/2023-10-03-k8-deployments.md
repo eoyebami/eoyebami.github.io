@@ -64,6 +64,8 @@ spec:
         value: "Large"
         effect: "NoSchedule"
       priorityClassName: high-priority
+      serviceAccountName: <name-of-service-account>
+      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s
       containers:
       - name: nginx-container
         image: nginx
@@ -97,7 +99,6 @@ spec:
           name: nginx-http-port
         - containerPort: 443
           name: nginx-https-port
-      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s
 ```
 
 * NOTE: status `4/4` means 4 out of the 4 containers specified in the template, have been deployed (includes the helper containers)

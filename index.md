@@ -84,6 +84,7 @@
     * [2024-01-22-kubeconfig](posts/eks/2024-01-22-kubeconfig.md)
     * [2024-01-26-k8-apigroups](posts/eks/2024-01-26-k8-apigroups.md)
     * [2024-01-27-role-based-access-control](posts/eks/2024-01-27-role-based-access-control.md)
+    * [2024-01-29-service-accounts](posts/eks/2024-01-29-service-accounts.md)
 
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
@@ -91,6 +92,7 @@
 <h2>AWS</h2>
   * [2023-04-22-cross-account-assume-role](posts/aws/2023-04-22-cross-account-assume-role.md)
   * [2024-01-27-eks-rbac](posts/aws/2024-01-27-eks-rbac.md)
+  * [2024-01-29-iam-roles-and-serviceaccounts](posts/aws/2024-01-29-iam-roles-and-serviceaccounts.md)
 
 <h2>GCP</h2>
 - <h4>GCP: VPC Networks</h4>

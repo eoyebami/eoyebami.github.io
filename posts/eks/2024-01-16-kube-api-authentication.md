@@ -44,3 +44,8 @@ xxxx,user2,u0002,group2
     * `kubectl get pods --server <kube-api-server> --client-key admin.key --client-certificate admin.crt --certificate-authority ca.crt`
 * The above methods can be a bit tedious, to simply the text using a `kubeConfig` file
   - More information on this [here](https://eoyebami.github.io/posts/eks/2024-01-22-kubeconfig.html)
+<h2>Identity Services</h2>
+* Identity services use `serviceaccounts` to authenticate to the `api-server`
+  - More information on `serviceaccounts` can be found [here](https://eoyebami.github.io/posts/eks/2024-01-29-service-accounts.html)
+* Using the token generated in the creation of the `serviceaccount` to make calls to the `api-server`
+  - `curl -v -k https://host-ip:6443/api/v1/pods --header "Authorization: Bearer: <token>"`

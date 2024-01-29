@@ -72,6 +72,9 @@
     * random string is used impersonate a user who would be in that group, command fails without a username for `kube-apiserver` to identify the group with
   - `kubectl api-resources --namespaced=true`: lists all namespaced resources
   - `kubectl api-resources --namespaced=false`: lists all non-namespaced resources
+<h4>ServiceAccounts</h4>
+  - `kubectl create serviceaccount <name>`: creates service account
+  - `kubectl create token <service-account-name> --duration <can be in sec(s) or hrs(h)>`: creates a token for a service account with a set duration
 <h4>Logs</h4>
   - `kubectl logs -f <pod>`
     * outputs the logs of the first container that was defined in the yaml file

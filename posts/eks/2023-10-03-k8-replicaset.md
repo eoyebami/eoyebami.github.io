@@ -44,6 +44,8 @@ spec:
         value: "jenkins"
         effect: "NoSchedule"
       priorityClassName: high-priority
+      serviceAccountName: <name-of-service-account> 
+      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s    
       containers: # we are listing the containers we want deployed in this replica controller
       - name: nginx-container
         image: nginx
@@ -69,7 +71,6 @@ spec:
             name: <config-map-name>
         - secretRef:
             name: <secret-map-name>
-      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s    
 ```
 
 * All pods deployed by this replication controller will have the name of the `ReplicationController` as their pod name
@@ -117,6 +118,8 @@ spec:
         value: "jenkins"
         effect: "NoSchedule"
       priorityClassName: high-priority
+      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s
+      serviceAccountName: <name-of-service-account> 
       containers: 
       - name: nginx-container
         image: nginx
@@ -139,7 +142,6 @@ spec:
             name: <config-map-name>
         - secretRef:
             name: <secret-map-name>
-      terminationGracePeriodSeconds: 30 # grace period for kubelet to wait between triggering a shut down of a failed container, default is 30s
 ```
 
 * To scale a replicaset you can use:
