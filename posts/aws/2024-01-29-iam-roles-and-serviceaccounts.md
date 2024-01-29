@@ -12,8 +12,7 @@
 * Create an OIDC provider for your EKS Cluster, this should automatically be created at cluster startup
   - This will act as the issuer for the JWT tokens in the cluster
 * Create the `IAM` Role in AWS
-  - Add the necessary permissions and modify the `Trust Relationships`
-    - The OIDC JWT Token 
+  - Add the necessary permissions and modify the `Trust Relationships` to include the OIDC JWT Token 
 
 ```
 {
