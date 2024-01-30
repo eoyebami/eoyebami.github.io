@@ -9,8 +9,10 @@
   - One token will be validated by kubernetes to make calls to `kube-apiserver` and the second will be validated by AWS to make `aws sts` calls to it
   - The mutating webhook will iso inject environment variables necessary to make the assume-role call 
 
+<h2>Create OIDC Provider</h2>
 * Create an OIDC provider for your EKS Cluster, this should automatically be created at cluster startup
   - This will act as the issuer for the JWT tokens in the cluster
+<h2>Create Role</h2>
 * Create the `IAM` Role in AWS
   - Add the necessary permissions and modify the `Trust Relationships` to include the OIDC JWT Token 
 
@@ -35,6 +37,7 @@
 }
 ```
 
+<h2>Create ServiceAccount</h2>
 * Create the `ServiceAccount` and annotate it with the aws role you'd like to attach
 
 ```
@@ -48,6 +51,7 @@ metadata:
   name: <name-of-servicce-account>
 ```
 
+<h2>Map ServiceAccount to Pod</h2>
 * Specify the `ServiceAccount` Pod Manifest File
 
 ```
