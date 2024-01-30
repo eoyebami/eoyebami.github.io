@@ -13,8 +13,6 @@
 - <h4>Linux: APIs and HTTPs Methods</h4>
   * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md)
   * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
-<details>
-<summary>Linux Subcategories</summary>
 - <h5>JSON parsing</h5>
     * [2023-05-06-jq-json](posts/http/2023-05-06-jq-json.md)
   - <h5>Linux: TLS</h5>
@@ -27,7 +25,6 @@
     * [2023-05-22-parted](2023-05-22-parted.md)
     * [2023-05-23-lvm-logical-volumes](2023-05-23-lvm-logical-volumes.md)
     * [2023-05-26-swap-space](2023-05-26-swap-space.md)
-</details>
 
 <h2>Logging and Monitoring</h2>
 - <h4>ELK Stack: ElasticSearch</h4>
