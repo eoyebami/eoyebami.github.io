@@ -1,5 +1,3 @@
-<h1>EZ BLOG: DevOps Notes</h1>
-
 <h2>Linux</h2>
 - <h4>Linux: General Knowledge</h4>
   * [2023-04-15-example-ssh-log](2023-04-15-example-ssh-log.md)
