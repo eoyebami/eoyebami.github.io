@@ -50,11 +50,6 @@ How-to Installing gpu
   7. Import key to rpm db   ```(rpm --import /path/to/key.asc)```
   8. Build rpm              ```(if necessary)```
   9. Sign key               ```(rpmsign --addsign /path/to/rpmpackage)```
-    
-> [!Note]
-> May fail with "define %_gpg_name" if so define in command ```rpm --define "_gpg_name <your email or name>" --addsign <RPM to sign>```
-> when you sign the rpm, it is signed with your private key. When you import the key to rpm db, it imports the public key into the gpg keyring for the repository
-
   10. Create the yum.repo.d (for the repository you created)
     ex:
 ```
@@ -66,3 +61,9 @@ How-to Installing gpu
       gpgkey=file:///opt/ExcellentOS/ezkey.asc
 ```  
   11. Install pkg          ```(yum install httpd --enablerepo=ExcellentOS)```
+
+> [!NOTE]
+> May fail with "define %_gpg_name" if so define in command ```rpm --define "_gpg_name <your email or name>" --addsign <RPM to sign>```
+
+> [!NOTE
+> When you sign the rpm, it is signed with your private key. When you import the key to rpm db, it imports the public key into the gpg keyring for the repository
