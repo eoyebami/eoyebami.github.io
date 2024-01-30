@@ -19,7 +19,7 @@ Go into /etc/ (which contains all the configuration files), and go into the yum.
 
 3. Do a yum clean all (which will remove all cached packages and headers of all enabled yum repositories). To temporarily enable a repo to clear the cache, added the --enablerepo="*" flag. TO check the cache on the yum repos go to /var/cache/
 4. Yum replist (will give you a list of all the yum repos) 
-5. Yum update (will update your server with the packages from the yum repo
+5. Yum update (will update your server with the packages from the yum repo)
 
 Extras: 
   Why are gpgkeys important? A gpg key can be used to create a digitial signature that can verify the authenticity of files or messages (by signing a the packages in your repo, you provide a tamper-evident seal that lets others know that the package has not been alterned since you signed it, only others with the private key can read the message)
@@ -50,8 +50,11 @@ How-to Installing gpu
   7. Import key to rpm db   ```(rpm --import /path/to/key.asc)```
   8. Build rpm              ```(if necessary)```
   9. Sign key               ```(rpmsign --addsign /path/to/rpmpackage)```
-    Note: may fail with "define %_gpg_name" if so define in command ```rpm --define "_gpg_name <your email or name>" --addsign <RPM to sign>```
-    Note: when you sign the rpm, it is signed with your private key. When you import the key to rpm db, it imports the public key into the gpg keyring for the repository
+    
+> [!Note]
+> May fail with "define %_gpg_name" if so define in command ```rpm --define "_gpg_name <your email or name>" --addsign <RPM to sign>```
+> when you sign the rpm, it is signed with your private key. When you import the key to rpm db, it imports the public key into the gpg keyring for the repository
+
   10. Create the yum.repo.d (for the repository you created)
     ex:
 ```
