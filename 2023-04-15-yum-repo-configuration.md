@@ -62,8 +62,8 @@ How-to Installing gpu
 ```  
   11. Install pkg          ```(yum install httpd --enablerepo=ExcellentOS)```
 
-> [!NOTE]
+> **Note**
 > May fail with "define %_gpg_name" if so define in command ```rpm --define "_gpg_name <your email or name>" --addsign <RPM to sign>```
 
-> [!NOTE
+> [!NOTE]
 > When you sign the rpm, it is signed with your private key. When you import the key to rpm db, it imports the public key into the gpg keyring for the repository
