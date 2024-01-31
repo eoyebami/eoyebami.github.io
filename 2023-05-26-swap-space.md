@@ -46,7 +46,7 @@ $ sudo dd if=/dev/zero of=/backups/myswap bs=100M count=10
 * Ex:
 
 ```console
-sudo mkswap myswap 
+$ sudo mkswap myswap 
 mkswap: myswap: warning: wiping old swap signature.
 Setting up swapspace version 1, size = 1000 MiB (1048571904 bytes)
 no label, UUID=a336af9e-85db-4caa-8506-4c27cb881a7e

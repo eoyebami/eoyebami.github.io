@@ -10,16 +10,16 @@
 * Here we can define multiple bridge networks and assigned containers to isolated bridge networks on the host
   - We can do this by running:
 
-```
-docker network create \
-  --driver bridge \
-  --subnet 192.68.0.0/16 \
-  --gateway 192.68.0.1 \
-  custom-isolated-network
+   ```console
+   $ docker network create \
+     --driver bridge \
+     --subnet 192.68.0.0/16 \
+     --gateway 192.68.0.1 \
+     custom-isolated-network
 
-docker network ls (lists all networks)
-docker inspect <container_name> (we'll be able to see the network its attached to as well as the ip address)
-```
+   $ docker network ls (lists all networks)
+   $ docker inspect <container_name> (we'll be able to see the network its attached to as well as the ip address)
+   ```
 
 <h3>None</h3>
 * This attaches the container to no network, and completely isolates the container

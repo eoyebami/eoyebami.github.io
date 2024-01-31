@@ -16,26 +16,26 @@
 * Create the `IAM` Role in AWS
   - Add the necessary permissions and modify the `Trust Relationships` to include the OIDC JWT Token 
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Federated": "arn:aws:iam::111122223333:oidc-provider/oidc.eks.us-east-2.amazonaws.com/id/xxxx"
-      },
-      "Action": "sts:AssumeRoleWithWebIdentity",
-      "Condition": {
-        "StringEquals": {
-          "oidc.eks.us-east-2.amazonaws.com/id/xxxx:aud": "sts.amazonaws.com",
-          "oidc.eks.us-east-2.amazonaws.com/id/xxxx:sub": "system:serviceaccount:default:<name-of-service-account"
-        }
-      }
-    }
-  ]
-}
-```
+   ```json
+   {
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Effect": "Allow",
+         "Principal": {
+           "Federated": "arn:aws:iam::111122223333:oidc-provider/oidc.eks.us-east-2.amazonaws.com/id/xxxx"
+         },
+         "Action": "sts:AssumeRoleWithWebIdentity",
+         "Condition": {
+           "StringEquals": {
+             "oidc.eks.us-east-2.amazonaws.com/id/xxxx:aud": "sts.amazonaws.com",
+             "oidc.eks.us-east-2.amazonaws.com/id/xxxx:sub": "system:serviceaccount:default:<name-of-service-account"
+           }
+         }
+       }
+     ]
+   }
+   ```
 
 <h2>Create ServiceAccount</h2>
 * Create the `ServiceAccount` and annotate it with the aws role you'd like to attach

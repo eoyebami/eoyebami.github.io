@@ -67,23 +67,28 @@ An API is an `Application Programming Interface`, which is a set of rules that a
   - The data option is only used in `POST`, `PUT`, `PATCH`, `DELETE` requests
 * <h5>Curl Command Utilizing Data Flag:</h5>
   * You used the `-d` or `--data` option to send data via curl
-    ```console
+
+```console
     curl -X POST <URL> \
      -d property1=vale1 \
      -d property2=value2
-    ```
+```
   * If you wish to send you data in json format, you can do this:
-    ```console
+
+```console
     curl -X POST https://requestb.in/1ix963n1 \
      -H "Content-Type: application/json" \
      -d '{
       "property1":"value1",
       "property2":"value2"
     }'
-    ```
+```
+
   * If you wish to add a file as your source of data, you can do this:
-   ```console
+
+```console
     curl -X POST https://requestb.in/1ix963n1 \
      -H "Content-Type: application/json" \
      -d @file.txt
-   ```
+```
+
