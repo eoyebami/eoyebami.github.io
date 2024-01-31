@@ -67,18 +67,18 @@ Testing:
   - Request received/processing
 * 2xx: Success
   - Success received, understood, and accepted
-  - 200: OK
-  - 201: OK created
+  - `200`: OK
+  - `201`: OK created
 * 3xx: Redirect
   - Further action must be taked/ redirect
-  - 301: moved to new URL
-  - 304: Not modified
+  - `301`: moved to new URL
+  - `304`: Not modified
 * 4xx: Client Error
   - Request does not have what it needs
-  - 400: Bad request
-  - 401: unauthorized
-  - 404: not found
+  - `400`: Bad request
+  - `401`: unauthorized
+  - `404`: not found
 * 5xx: Server Error
   - Server failed to fulfil an apparent valid request
-  - 500: Internal server error
-  - 503: Service Unavailable 
+  - `500`: Internal server error
+  - `503`: Service Unavailable 

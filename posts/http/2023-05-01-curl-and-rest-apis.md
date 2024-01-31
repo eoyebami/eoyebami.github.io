@@ -45,7 +45,7 @@ An API is an `Application Programming Interface`, which is a set of rules that a
   * `curl -X GET https://api.github.com/users/eoyebami/repos?sort=pushed` 
     - `-X` or `--request` indicates the type of request you'd like to make
     - If you try to `curl -X POST https://api.github.com/user/repos` to create a new repo it will fail with the below error
-```
+```json
 {
   "message": "Requires authentication",
   "documentation_url": "https://developer.github.com/v3"
@@ -67,14 +67,13 @@ An API is an `Application Programming Interface`, which is a set of rules that a
   - The data option is only used in `POST`, `PUT`, `PATCH`, `DELETE` requests
 * <h5>Curl Command Utilizing Data Flag:</h5>
   * You used the `-d` or `--data` option to send data via curl
-  * `curl -X POST <URL> -d property1=vale1 -d property2=value2`
-    ```
+    ```console
     curl -X POST <URL> \
      -d property1=vale1 \
      -d property2=value2
     ```
   * If you wish to send you data in json format, you can do this:
-    ```
+    ```console
     curl -X POST https://requestb.in/1ix963n1 \
      -H "Content-Type: application/json" \
      -d '{
@@ -83,7 +82,7 @@ An API is an `Application Programming Interface`, which is a set of rules that a
     }'
     ```
   * If you wish to add a file as your source of data, you can do this:
-   ```
+   ```console
     curl -X POST https://requestb.in/1ix963n1 \
      -H "Content-Type: application/json" \
      -d @file.txt

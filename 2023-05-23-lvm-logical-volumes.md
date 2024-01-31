@@ -9,8 +9,8 @@ LVM is used when dealing with changing storage needs. With LVM, disk partitions 
 * If a partition is type lvm, then you can use the `pvdisplay` command to display information about that physical volume
   - Use `pvcreate /dev/<disk_partition>` to make a partition into a lvm physical volume (PV)
 
-```
-sudo pvdisplay /dev/xvdf2
+```console
+$ sudo pvdisplay /dev/xvdf2
   "/dev/sdf2" is a new physical volume of "1.00 GiB"
   --- NEW Physical volume ---
   PV Name               /dev/sdf2
@@ -27,11 +27,12 @@ sudo pvdisplay /dev/xvdf2
 * Create the volume group (VG) using the PV
   - `sudo vgcreate myvg0 /dev/xvdf2`
   - The `pvdisplay` output should now be different 
+  - Ex:
 
-```
-[excellent@ip-ip-addr eoyebami.github.io]$ sudo vgcreate myvg0 /dev/xvdf2
+```console
+$ sudo vgcreate myvg0 /dev/xvdf2
   Volume group "myvg0" successfully created
-[excellent@ip-ip-addr eoyebami.github.io]$ sudo pvdisplay /dev/xvdf2
+$ sudo pvdisplay /dev/xvdf2
   --- Physical volume ---
   PV Name               /dev/sdf2
   VG Name               myvg0
@@ -45,9 +46,10 @@ sudo pvdisplay /dev/xvdf2
 ```
 
 * Run `vgdisplay myvg0` to display information about that VG
+  * Ex:
 
-```
-sudo vgdisplay myvg0
+```console
+$ sudo vgdisplay myvg0
   --- Volume group ---
   VG Name               myvg0
   System ID
@@ -74,9 +76,10 @@ sudo vgdisplay myvg0
   - `lvcreate -n lv1 -L 100M myvg0`: creates a LV called `lvl` with `100M` from VG `myvg0`
   - locate the new LV in `/dev/mapper/myvg0-<LV-name>`
   - run `lvdisplay <VG_name>` or `lsblk` to see the new logical volume
+  * Ex:
 
-```
-sudo lvcreate -n lv1 -L 100M myvg0
+```console
+$ sudo lvcreate -n lv1 -L 100M myvg0
   Logical volume "lv1" created.
 [excellent@ip-ip-addr eoyebami.github.io]$ lsblk
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
@@ -101,8 +104,9 @@ xvdf          202:80   0    8G  0 disk
 <h3>Modifying Disk Space to a VG</h3>
 <h5>Adding more Disk Space to a VG</h5>
 * Create another partition using fdisk
-
-```
+  * Ex:
+0
+```console
 xvdf          202:80   0    8G  0 disk
 ├─xvdf1       202:81   0  5.6G  0 part /backups
 ├─xvdf2       202:82   0    1G  0 part
@@ -113,11 +117,12 @@ xvdf          202:80   0    8G  0 disk
 * Create another PV with `pvcreate /dev/xvdf3`
 * Extend the VG size using this new PV
   - `vgextend <VG_name> /dev/<PV_name>`
+  * Ex:
 
-```
-[excellent@ip-ip-addr eoyebami.github.io]$ sudo vgextend myvg0 /dev/xvdf3
+```console
+$ sudo vgextend myvg0 /dev/xvdf3
   Volume group "myvg0" successfully extended
-[excellent@ip-ip-addr eoyebami.github.io]$ sudo vgdisplay myvg0
+$ sudo vgdisplay myvg0
   --- Volume group ---
   VG Name               myvg0
   System ID
@@ -156,26 +161,27 @@ When resizing a LV, umount is not necessary, you can directly increase it by ext
     - `lvreduce -L -200M /dev/mapper/myvg0-lv1`
 * Run a resize on the fs so the Kernel is aware of the changes
   - `resize2fs -p /dev/mapper/myvg0-lv1`
+  * Ex:
 
+```console
+    $ sudo lvextend -L +200M /dev/mapper/myvg0-lv1
+      Size of logical volume myvg0/lv1 changed from 100.00 MiB (25 extents) to 300.00 MiB (75 extents).
+      Logical volume myvg0/lv1 successfully resized.
+    $ lsblk
+    NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+    xvda          202:0    0   10G  0 disk
+    ├─xvda1       202:1    0    8G  0 part /
+    ├─xvda127     259:0    0    1M  0 part
+    └─xvda128     259:1    0   10M  0 part /boot/efi
+    xvdf          202:80   0    8G  0 disk
+    ├─xvdf1       202:81   0  5.6G  0 part /backups
+    ├─xvdf2       202:82   0    1G  0 part
+    │ ├─myvg0-lv1 253:0    0  300M  0 lvm
+    │ └─myvg0-lv2 253:1    0  200M  0 lvm
+    └─xvdf3       202:83   0    1G  0 part
+    $ sudo resize2fs /dev/mapper/myvg0-lv1
+    resize2fs 1.46.5 (30-Dec-2021)
+    Resizing the filesystem on /dev/mapper/myvg0-lv1 to 307200 (1k) blocks.
+    The filesystem on /dev/mapper/myvg0-lv1 is now 307200 (1k) blocks long.
 ```
-sudo lvextend -L +200M /dev/mapper/myvg0-lv1
-  Size of logical volume myvg0/lv1 changed from 100.00 MiB (25 extents) to 300.00 MiB (75 extents).
-  Logical volume myvg0/lv1 successfully resized.
-[excellent@ip-ip-addr eoyebami.github.io]$ lsblk
-NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
-xvda          202:0    0   10G  0 disk
-├─xvda1       202:1    0    8G  0 part /
-├─xvda127     259:0    0    1M  0 part
-└─xvda128     259:1    0   10M  0 part /boot/efi
-xvdf          202:80   0    8G  0 disk
-├─xvdf1       202:81   0  5.6G  0 part /backups
-├─xvdf2       202:82   0    1G  0 part
-│ ├─myvg0-lv1 253:0    0  300M  0 lvm
-│ └─myvg0-lv2 253:1    0  200M  0 lvm
-└─xvdf3       202:83   0    1G  0 part
-[excellent@ip-ip-addr eoyebami.github.io]$ sudo resize2fs /dev/mapper/myvg0-lv1
-resize2fs 1.46.5 (30-Dec-2021)
-Resizing the filesystem on /dev/mapper/myvg0-lv1 to 307200 (1k) blocks.
-The filesystem on /dev/mapper/myvg0-lv1 is now 307200 (1k) blocks long.
-[excellent@ip-ip-addr eoyebami.github.io]$
-```
+

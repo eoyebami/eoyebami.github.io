@@ -4,7 +4,7 @@ In order to enable a user to assume a role:
 
 1. It will first need the `sts:AssumeRole` permission enabled. Here is an example:
 
-```
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -22,7 +22,7 @@ This will allow the role to assume the specified role in the resource block.
 
 2. After this, a trust relationship needs to be formed between the role `(that is to be assumed)` and the resource `(which is attempting to assume the role)`. Below is an example of the added permissions to the trust relationship of the role `(which is to be assumed)`.
 
-```
+```json
 {
             "Effect": "Allow",
             "Principal": {

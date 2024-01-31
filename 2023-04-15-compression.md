@@ -34,12 +34,15 @@ Compression: the files will be reduced to a certain size
         -d: will delete a file from within the zip file
         -fr: will update zip file 
 ```
+
       ex:
+
 ```  
         zip [zip_file] file1 ... filen -x filen (will compress all the files into a zip file, works like a tar -cvzf, will also exclude specified file)
         zip -d [zip_file] [file_name] (will delete a file from within the zip file 
         zip -fr [zip_file] [updated_files] (will update zip files with specified files)
 ```
+
 These are functionally equivalent, however decompression speed, compression speen, and availiability may differ. 
 zip: used on windows machines (does not preserve all unix metadata (ownership and permissions); alternative is to use tar for archiving
 gzip: used on unix machines

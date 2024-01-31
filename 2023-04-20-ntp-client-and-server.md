@@ -9,7 +9,7 @@ The Nework Time Protocol (NTP) is a client/server application. The client softwa
 <h3>NTP Servers</h3>
 The NTP servers provide a source of accurate time to the clients on the network. They work by regularly querying a set of reference clocks that are known to be accurate, and uses this information to adjust its own clock and provide the correct time to the client that requests it. 
   * Installing NTP Server side:
-  ```
+  ```console
   yum install ntp/chronyd
   vi /etc/chrony.conf
   allow <ip_addr_of_client>
@@ -20,7 +20,7 @@ The NTP servers provide a source of accurate time to the clients on the network.
 <h3>NTP Client</h3>
 The NTP clients retrieve the correct date and time from the source on the networl. They work by initiating a time-request exchange with the NTP server. The client is then able to calculate the link delay and its local offset and adjust its local clock to match the clock at the servers.
   * Installing NTP client side:
-    ```
+    ```console
     yum install ntp/chronyd
     vi /etc/chrony.conf
     Server <ip_addr_of_server>
@@ -36,7 +36,7 @@ NTP uses Stratum values to represent the distance from the reference clock (accu
     - All other time servers connected to that reference clock have a stratum value of 1 (known as primary time servers)
     - Servers connected to that server have a increase in stratum by 1 level, and so on and so forth
   ex:
-   ```
+   ```console
    MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ===============================================================================
 ^? ip-ip-addr.ec2.int>     0   7     0     -     +0ns[   +0ns] +/-    0ns
@@ -46,3 +46,4 @@ NTP uses Stratum values to represent the distance from the reference clock (accu
 ^+ time.richiemcintosh.com       2   6   377    61  +1099us[+1197us] +/-   41ms
 ^+ li1150-42.members.linode>     2   6   377    61   +106us[ +204us] +/-   61ms
   ```
+

@@ -17,7 +17,7 @@ metadata:
 data:
   APP_COLOR: blue
   APP_MODE: prod
-  APP_PROPS: | (this pipe allows me to create a multi-line string)
+  APP_PROPS: |- # this pipe allows me to create a multi-line string
     db_user: xxx
     db_pass: xxx
 ```
@@ -35,11 +35,11 @@ spec:
     command: ["nginx"]
     env:
     - name: USER
-      valueFrom: (injects a key/value pair from the configmap as an environment variable)
+      valueFrom: # injects a key/value pair from the configmap as an environment variable
         configMapKeyRef:
           name: <config-map-name>
           key: <key-name>
-    envFrom: (injects the entire configmap as an environment variables)
+    envFrom: # injects the entire configmap as an environment variables
     - configMapRef:
         name: <config-map-name>  
     volumeMounts:
@@ -47,6 +47,6 @@ spec:
       mountPath: /path/in/container
   volumes:
   - name: app-properties
-    configMap: (mounts the configmap as a file in the pod)
+    configMap: # mounts the configmap as a file in the pod
       name: <config-map-name>
 ```
