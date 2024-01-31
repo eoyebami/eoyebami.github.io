@@ -6,7 +6,7 @@ Kubernetes Deployments allow for rolling updates and rollbacks in case of applic
 * The formating of a `Deployment` is almost completely identical to a `ReplicaSet`
   - When you launch a `Deployment` it creates a `ReplicaSet`, `Pods`, and `Containers`
 
-```
+```yml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
