@@ -3,6 +3,7 @@
   - Ex:
     * Jenkins using a service account to make deployments to the cluster
     * Prometheus using a service account to pull metrics
+
 1. First you would need to create a service account
   - `kubectl create serviceaccount jenkins`: will create a service account called jenkins
     * Because of v1.24, tokens are no longer automatically generated for each serviceaccount
@@ -24,6 +25,7 @@
     ```
   * This token is used by any service using this `ServiceAccount` to authenticate to the `kube-apiserver`
     - `curl -v -k https://host-ip:6443/api/v1/pods --header "Authorization: Bearer: <token>"`
+
 2. Next you would create a `Role` and bind to the `ServiceAccount` with `RoleBinding`
 
 ```yml

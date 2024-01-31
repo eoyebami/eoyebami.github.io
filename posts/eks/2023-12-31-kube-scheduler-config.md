@@ -59,27 +59,27 @@ spec:
     * set weights for plugins with greater priority
   * Ex:
 
-```yml
-apiVersion: kubescheduler.config.k8.io/v1
-kind: KubeSchedulerConfiguration
-profiles:
-- schedulerName: my-scheduler
-leaderElection:
-  leaderElect: true (selecting with scheduler will be the leader in a cluster)
-  resourceNamespace: kube-system
-  resourceName: lock-object-my-scheduler
-```
+   ```yml
+   apiVersion: kubescheduler.config.k8.io/v1
+   kind: KubeSchedulerConfiguration
+   profiles:
+   - schedulerName: my-scheduler
+   leaderElection:
+     leaderElect: true (selecting with scheduler will be the leader in a cluster)
+     resourceNamespace: kube-system
+     resourceName: lock-object-my-scheduler
+   ```
 
 * The main point in all this is you can specify which scheduler you want managing the scheduling of a pod 
   - Ex:
 
-```yml
-spec:
-  schedulerName: my-scheduler
-  containers:
-  - name: nginx
-    image: nginx
-```
+   ```yml
+   spec:
+     schedulerName: my-scheduler
+     containers:
+     - name: nginx
+       image: nginx
+   ```
 
 * To see which scheduler scheduled a pod, you can check the events or view the logs of the `kube-scheduler` pod
   - `kubectl get events -o wide`

@@ -24,18 +24,18 @@ metadata:
   - sql connection inside namespace
   * convention: `<name-of-service>`
      
-```
-mysql.connect("db-service")
-```
+   ```console
+   mysql.connect("db-service")
+   ```
 
   - sql connection outside namespace
   * convention: `<name-of-service>.<namespace>.<object>.cluster.local`: this works because when a service is created, a DNS entry is added in this format
     - `cluster.local`: default domain name of the k8 cluster
     - `<object>/service`: sub-domain of the k8 cluster
 
-```
-mysql.connect("db-service.dev.svc.cluster.local")
-```
+   ```console
+   mysql.connect("db-service.dev.svc.cluster.local")
+   ```
 
 <h2>Namespace in other Objects</h2>
 * The Namespace can be defined for an object in the metadata section of the yaml file
@@ -57,20 +57,20 @@ metadata:
 * Ex:
   - YAML
 
-```yml
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  name: compute-quota
-  namespace: dev
-spac:
-  hard:
-    pods: "10"
-    requests.cpu: "4"
-    requests.memory: 5Gi
-    requests.storage: 10Gi (across all pvc)
-    limits.cpu: "10"
-    limits.memory: 10Gi
-    limits.storage: 20Gi
-```
+   ```yml
+   apiVersion: v1
+   kind: ResourceQuota
+   metadata:
+     name: compute-quota
+     namespace: dev
+   spac:
+     hard:
+       pods: "10"
+       requests.cpu: "4"
+       requests.memory: 5Gi
+       requests.storage: 10Gi (across all pvc)
+       limits.cpu: "10"
+       limits.memory: 10Gi
+       limits.storage: 20Gi
+   ```
 

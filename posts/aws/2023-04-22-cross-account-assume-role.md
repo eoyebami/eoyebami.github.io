@@ -26,7 +26,7 @@ This will allow the role to assume the specified role in the resource block.
 {
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::738921266859:role/ssm-ec2" # this could either be a user or a role
+                "AWS": "arn:aws:iam::738921266859:role/ssm-ec2"
             },
             "Action": "sts:AssumeRole"
         }

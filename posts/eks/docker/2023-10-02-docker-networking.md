@@ -18,7 +18,7 @@
      custom-isolated-network
 
    $ docker network ls (lists all networks)
-   $ docker inspect <container_name> (we'll be able to see the network its attached to as well as the ip address)
+   $ docker inspect <container_name> # we'll be able to see the network its attached to as well as the ip address)
    ```
 
 <h3>None</h3>

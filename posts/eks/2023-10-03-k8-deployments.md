@@ -109,7 +109,7 @@ spec:
   - Common practice is to make the `Deployment Selectors` and the `Pod Selectors` match.
 <h4>matchLabels</h4>
 * You can match Labels from the selector you'd like exposed, through key/value pairs
-```
+```yml
 selector:
   matchLabels:
     app: voting-app
@@ -120,11 +120,11 @@ selector:
   - In `operator` you can use `In, NotIn, Exists(if the key exists), DoesNotExist(if key does not exist), Gt, Lt`
   - In `values` you can define an array that will allow an `OR` requirement rather than an `AND` for labels
 
-```
-selector:
-  matchExpressions:
-  - {key: app, operator: In, values: [production, staging]}
-```
+   ```yml
+   selector:
+     matchExpressions:
+     - {key: app, operator: In, values: [production, staging]}
+   ```
 
 <h2>Deployments: Update and Rollback</h2>
 * With Kubernetes Deployments, you are able to check past deployment histories and status of current deployments:
@@ -145,7 +145,7 @@ selector:
 * This strategy will terminate all pods and replace them with the new version. Beneficial when old and new versions of the application cannot run at the same time. 
   - Will cause downtime
 * Ex:
-```
+```yml
 spec:
   replicas: 10
   strategy:
@@ -160,7 +160,7 @@ spec:
     * `maxSurge`: specifies the maxium number of pods the deployment can create at one time
     * `maxUnavailable`: specifies the maximum number of pods that are allowed to be unavailable during the rollout
 * Ex: 
-```
+```yml
 spec:
   replicas: 10
   strategy:

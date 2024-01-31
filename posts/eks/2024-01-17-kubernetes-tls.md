@@ -35,15 +35,15 @@
     * `"/CN=SYSTEM:KUBE-PROXY"`
   - NOTE: `kube-apiserver` goes by many names in the cluster, so you'll need to generate a openssl.cnf file to specify all of these alternate names when generating the keys and certs
 
-```
-[alt_names]
-DNS.1 = kubernetes
-DNS.2 = kubernetes.default
-DNS.3 = kubernetes.default.svc
-DNS.4 = kubernetes.default.svc.cluster.local
-IP.1 = <pod-IP> # as needed
-IP.2 = <host-IP> # as needed
-```
+   ```console
+   [alt_names]
+   DNS.1 = kubernetes
+   DNS.2 = kubernetes.default
+   DNS.3 = kubernetes.default.svc
+   DNS.4 = kubernetes.default.svc.cluster.local
+   IP.1 = <pod-IP> # as needed
+   IP.2 = <host-IP> # as needed
+   ```
 
   * `openssl req -new -key apiserver.key -subj "/CN=kube-apiserver" -out apiserver.csr --config openssl.cnf`: generate csr using `openssl.cnf`
   * `openssl -req -in apiserver.csr -CA ca.cert -CAkey ca.key -CAcreateserial -out apiserver.crt -extensions V3_req -extfile openssl.cnf -days 1000`: generate cert for apiserver

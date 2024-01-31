@@ -23,7 +23,7 @@
   - By adding tolerations that match the `<key=value>/<taint-effect>` on the node, the pods can now be scheduled on that node
     * NOTE: the values need to be in double quotes `""`
 
-  * Pod YAML:
+* Pod YAML:
 
 ```yml
 apiVersion: vi
@@ -41,7 +41,7 @@ spec:
     image: nginx
 ```
 
-  * Deployment YAML:
+* Deployment YAML:
 
 ```yml
 apiVersion: apps/v1

@@ -12,23 +12,23 @@
   - Then add this value into the `CertificateSigningRequest` yaml before applying it
     * YAML:
  
-```yml
-cat <<EOF | kubectl apply -f - # applies piped content
-apiVersion: certificates.k8s.io/v1
-kind: CertificateSigningRequest
-metadata:
-  name: user01
-spec:
-  groups:
-  - system:masters
-  expirationSeconds: 600
-  signerName: kubernetes.io/kube-apiserver-client # who will be signing the certificate
-  usages:
-  - client auth
-  request:
-    xxxxx # csr in base64
-EOF
-```
+   ```yml
+   cat <<EOF | kubectl apply -f - # applies piped content
+   apiVersion: certificates.k8s.io/v1
+   kind: CertificateSigningRequest
+   metadata:
+     name: user01
+   spec:
+     groups:
+     - system:masters
+     expirationSeconds: 600
+     signerName: kubernetes.io/kube-apiserver-client # who will be signing the certificate
+     usages:
+     - client auth
+     request:
+       xxxxx # csr in base64
+   EOF
+   ```
   
   - See if you can view csr object and approve it
     * `kubetl get csr`
