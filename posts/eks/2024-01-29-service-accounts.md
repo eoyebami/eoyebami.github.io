@@ -9,9 +9,11 @@
   - `kubectl create serviceaccount jenkins`: will create a service account called jenkins
     * Because of v1.24, tokens are no longer automatically generated for each serviceaccount
     * You'll need to manually generate the jwt token by running `kubectl create token jenkins` which will create a jwt token for that service account that will have an expiry date of 1hr
-    - `kubectl create token jenkins --duration 10h # can be h or s`
+  - `kubectl create token jenkins --duration 10h # can be h or s`
     - Confirm by putting jwt token [here](https://jwt.io/)
     * If you want to generate a long-live api token, you can manually create a secret for it
+  - This token is used by any service using this `ServiceAccount` to authenticate to the `kube-apiserver`
+    * `curl -v -k https://host-ip:6443/api/v1/pods --header "Authorization: Bearer: <token>"`
      
     ```yml
       cat <<EOF | kubectl apply -f -
@@ -24,9 +26,6 @@
         type: kubernetes.io/service-account-token
       EOF
     ```
-
-  * This token is used by any service using this `ServiceAccount` to authenticate to the `kube-apiserver`
-    - `curl -v -k https://host-ip:6443/api/v1/pods --header "Authorization: Bearer: <token>"`
 
 2. Next you would create a `Role` and bind to the `ServiceAccount` with `RoleBinding`
 
