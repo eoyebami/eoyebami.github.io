@@ -8,7 +8,7 @@
 <h2>Decrypt all BasicSSHUserPrivateKey Credentials</h2>
 * This script will decrypt all `BasicSSHUserPrivateKey Credentials` stored in Jenkins Credential Store
 
-```
+```ruby
 def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
     com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class,
     Jenkins.instance,
@@ -29,7 +29,7 @@ for(c in creds) {
 <h2>Getting Content of FileCredentials</h2>
 * This script will decrypt the contents of a `FileCredentials` stored in the Jenkins Credential Store
 
-```
+```ruby
  import com.cloudbees.plugins.credentials.*;
 import com.cloudbees.plugins.credentials.domains.Domain;
 import org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl;
@@ -52,7 +52,7 @@ SystemCredentialsProvider.getInstance().getCredentials().stream().
 <h2>Updating Description of FileCredentials</h2>
 * This script will update the description of a `FileCredentials` stored in the Jenkins Credential Store
 
-```
+```ruby
 import org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl
 import com.cloudbees.plugins.credentials.SecretBytes
 def updateSecretFileDescription = { cred_id, file_name ->
@@ -98,7 +98,7 @@ updateSecretFileDescription(${credId}, ${fileName})
 <h2>Updating Content of FileCredentials</h2>
 * This script will update the content of a `FileCredentials` stored in the Jenkins Credential Store
 
-```
+```ruby
 import org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl
 import com.cloudbees.plugins.credentials.SecretBytes
 def password_expired = false
@@ -136,7 +136,7 @@ updateSecretContent(${credId}, ${fileName})
 <h2>Updating Password for UsernamePassword Credentials</h2>
 * This script will update the Password of a `UsernamePasswordCredentials` stored in the Jenkins Credential Store
 
-```
+```ruby
 import com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl
 def changePassword = { id, new_password ->
     def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
