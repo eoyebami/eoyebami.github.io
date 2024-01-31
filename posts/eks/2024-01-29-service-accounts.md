@@ -5,7 +5,6 @@
     * Prometheus using a service account to pull metrics
 
 1. First you would need to create a service account
-
   - `kubectl create serviceaccount jenkins`: will create a service account called jenkins
     * Because of v1.24, tokens are no longer automatically generated for each serviceaccount
     * You'll need to manually generate the jwt token by running `kubectl create token jenkins` which will create a jwt token for that service account that will have an expiry date of 1hr
