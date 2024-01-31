@@ -16,7 +16,7 @@
 * Create the `IAM` Role in AWS
   - Add the necessary permissions and modify the `Trust Relationships` to include the OIDC JWT Token 
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
