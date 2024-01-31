@@ -8,7 +8,7 @@
 <h2>Decrypt all BasicSSHUserPrivateKey Credentials</h2>
 * This script will decrypt all `BasicSSHUserPrivateKey Credentials` stored in Jenkins Credential Store
 
-```ruby
+```groovy
 def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
     com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class,
     Jenkins.instance,
