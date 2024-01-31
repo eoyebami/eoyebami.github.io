@@ -22,7 +22,7 @@
     * `DuringExecution`: will monitor changes to environment that affect `nodeAffinity` rules, if node is no longer matching, pod will be moved from that node
 * Ex: specifies pod has to be scheduled on any node with the label size that has any value in the list of values specified
 
-```
+```yml
 spec: 
   containers:
   - name: nginx

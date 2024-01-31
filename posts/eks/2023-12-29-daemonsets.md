@@ -6,7 +6,7 @@
   - if a node is removed from a cluster, then the `daemonset` will remove the replica from that node
   - `Taints, tolerations, and nodeAffinity` can be used to define which nodes these pods will be scheduled on in the cluster
 * Ex:
-```
+```yml
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:

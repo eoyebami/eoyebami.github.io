@@ -9,7 +9,7 @@ A ReplicaSet is used to manage how many instances of a pod are hosted in a clust
     - `metadata`: metadata for the containers in pod
     - `spec`: specifications for the containers
         
-```
+```yml
 apiVersion: v1
 kind: ReplicationController
 metadata:
@@ -80,7 +80,7 @@ spec:
 * It is a process that monitors the pods that it governs
   - We use labels to allow the `ReplicaSet` to filter for pods that only match a specific label
 
-```
+```yml
 apiversion: apps/v1
 kind: ReplicaSet
 metadata: 

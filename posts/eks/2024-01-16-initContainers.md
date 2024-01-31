@@ -6,7 +6,7 @@
     * pulls code from a repo that will be used by main application
 * Init containers are configured in a manifest file the same way they are configured for regular containers:
 
-```
+```yml
 spec:
   initContainers:
   - name: init-busybox

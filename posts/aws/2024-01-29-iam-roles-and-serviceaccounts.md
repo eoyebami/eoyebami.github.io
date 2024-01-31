@@ -40,7 +40,7 @@
 <h2>Create ServiceAccount</h2>
 * Create the `ServiceAccount` and annotate it with the aws role you'd like to attach
 
-```
+```yml
 apiVersion: v1
 kind: ServiceAccount
 metadata: 
@@ -54,7 +54,7 @@ metadata:
 <h2>Map ServiceAccount to Pod</h2>
 * Specify the `ServiceAccount` Pod Manifest File
 
-```
+```yml
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Pod

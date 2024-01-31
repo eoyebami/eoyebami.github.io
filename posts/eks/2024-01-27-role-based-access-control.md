@@ -4,7 +4,7 @@
 <h2>RBAC: Role</h2>
 * Create a `Role` object defining the desired permissions in a yaml file
 
-```
+```yml
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/vi
 kind: Role
@@ -25,7 +25,7 @@ EOF
 <h2>RBAC: RoleBinding</h2>
 * Bind the role we previously created to a user/group using a `RoleBinding` Object
 
-```
+```yml
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -52,7 +52,7 @@ EOF
 * Hence `ClusterRole` and `ClusterRolebinding` must be used instead
   - NOTE: `ClusterRole` can also be used to grant access to namespace-scoped resources but at a cluster-scoped level
 
-```
+```yml
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/vi
 kind: ClusterRole

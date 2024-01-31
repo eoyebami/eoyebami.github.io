@@ -7,7 +7,7 @@
 <h2>Args</h2>
 * Similar to this override process in docker, you can provide args to the `ENTRYPOINT` in an image, within a kubernetes manifest file
 
-```
+```yml
 spec:
   containers:
   - name: ubuntu-sleep
@@ -18,7 +18,7 @@ spec:
 <h2>Command</h2>
 * Similar to the override process in docker, you can provide an entire command to override that which was specified by either `CMD` or `ENTRYPOINT`, within a kubernetes manifest file
 
-```
+```yml
 spec:
   containers:
   - name: ubuntu-sleep

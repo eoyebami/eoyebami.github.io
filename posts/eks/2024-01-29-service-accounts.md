@@ -11,22 +11,22 @@
     - Confirm by putting jwt token [here](https://jwt.io/)
     * If you want to generate a long-live api token, you can manually create a secret for it
      
+    ```yml
+      cat <<EOF | kubectl apply -f -
+      apiVersion: v1
+      kind: Secret
+      metadata:
+        name: jenkins-secret
+        annotations:
+          kubernetes.io/service-account.name: jenkins
+        type: kubernetes.io/service-account-token
+      EOF
     ```
-    cat <<EOF | kubectl apply -f -
-    apiVersion: v1
-    kind: Secret
-    metadata:
-      name: jenkins-secret
-      annotations:
-        kubernetes.io/service-account.name: jenkins
-      type: kubernetes.io/service-account-token
-    EOF
-    ```
-  * This token is used by any service using this `ServiceAccount` to authenticate to the `kube-apiserver 
+  * This token is used by any service using this `ServiceAccount` to authenticate to the `kube-apiserver`
     - `curl -v -k https://host-ip:6443/api/v1/pods --header "Authorization: Bearer: <token>"`
 2. Next you would create a `Role` and bind to the `ServiceAccount` with `RoleBinding`
 
-```
+```yml
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/vi
 kind: Role
@@ -62,7 +62,7 @@ EOF
 3. Specify the `ServiceAccount` in the Manifest File
   * In the case that your service that requires this `ServiceAccount` is running on that cluster, you will need to specify the account in the manifest file
 
-```
+```yml
 spec: 
   serviceAccount: jenkins
   serviceAccountName: jenkins

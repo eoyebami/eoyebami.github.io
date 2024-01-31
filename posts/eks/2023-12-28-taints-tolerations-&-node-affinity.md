@@ -11,7 +11,7 @@
   3. Set a toleration for the pods you want to allow scheduling, on those nodes, for
   4. Add node affinity rules for the pods to ensure they are scheduled on those nodes
      
-```
+```yml
 apiVersion: v1
 kind: Deployment
 metadata:

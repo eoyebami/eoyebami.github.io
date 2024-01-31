@@ -18,7 +18,7 @@
   3. `Contexts`: defines which users will access which cluster
 * Ex:
 
-```
+```yml
 apiVersion: v1
 kind: Config
 current-context: user01@my-cluster # sets a context to use

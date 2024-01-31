@@ -18,7 +18,7 @@
     * `memory`: expresses allocation limits as `G, M, K, Gi, Mi, Ki`
 * Ex:
 
-```
+```yml
 spec:
   tolerations:
     ...
@@ -52,7 +52,7 @@ spec:
   - `min`: minimum `requests` a container can have
 * Ex:
 
-```
+```yml
 apiVersion: v1
 kind: LimitRange
 metadata:

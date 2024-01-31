@@ -5,7 +5,7 @@
     * `kubectl label nodes node-01 size=Large` 
 * Ex:
 
-```
+```yml
 spec:
   containers:
   - name: nginx

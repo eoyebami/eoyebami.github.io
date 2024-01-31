@@ -3,7 +3,7 @@
 * A block is set by kubernetes when a pod is created called `nodeName`: dictates which node the pod will be scheduled on
   - You can manually set this value yourself, and the pod will be assigned this node on creation time
 
-```
+```yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -24,7 +24,7 @@ spec:
   - Assigning a node to a preexisting pod is more complicated, as kubernetes does not let you edit the `nodeName` value after its created
     * You'll need to first create a `Binding` Object for that node and submit a `POST` request to the pods binding api with the data set to the target of the `Binding` object
 
-```
+```yml
 apiVersion: v1
 kind: Binding
 metadata: 

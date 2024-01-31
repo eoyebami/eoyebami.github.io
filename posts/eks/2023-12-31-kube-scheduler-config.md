@@ -20,7 +20,7 @@
   - You can define plugins you'd like disabled/enabled for an `Extension Point` for each profile
 * Ex:
 
-```
+```yml
 apiVersion: kubescheduler.config.k8.io/v1
 kind: KubeSchedulerConfiguration
 profiles:
@@ -43,7 +43,7 @@ profiles:
 
 * With this you can now specify a profile you'd like to be in charge of scheduling a pod
 
-```
+```yml
 spec:
   schedulerName: my-scheduler
   containers:
@@ -59,7 +59,7 @@ spec:
     * set weights for plugins with greater priority
   * Ex:
 
-```
+```yml
 apiVersion: kubescheduler.config.k8.io/v1
 kind: KubeSchedulerConfiguration
 profiles:
@@ -73,7 +73,7 @@ leaderElection:
 * The main point in all this is you can specify which scheduler you want managing the scheduling of a pod 
   - Ex:
 
-```
+```yml
 spec:
   schedulerName: my-scheduler
   containers:

@@ -28,7 +28,7 @@
 
 * NOTE: notice how it syncs with the `apiVersion` and `kind` specified when creating a manifest file
 
-```
+```yml
 apiVersion: v1
 kind: Pod
 ```

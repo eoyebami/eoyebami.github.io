@@ -11,7 +11,7 @@
    - `preemptionPolicy`: a field to define if a pod can evict lower priority pods, if set to `Never` these pods will have higher priority than low priority pods
 * `priorityClass` Ex:
 
-```
+```yml
 apiVersion: scheduling.k8s.io/vi
 kind: PriorityClass
 metadata:
@@ -24,7 +24,7 @@ description: "for production pods"
 
 * `priorityClassName` Ex:
 
-```
+```yml
 spec:
   priorityClassName: high-priority
   containers:

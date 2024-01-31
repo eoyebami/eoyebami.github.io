@@ -9,7 +9,7 @@
     * `kubectl apply -f <config-map.yaml>`
     * YAML:
 
-```
+```yml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -24,7 +24,7 @@ data:
 
 * Inject the data into the pod
 
-```
+```yml
 spec:
   containers:
   - name: nginx

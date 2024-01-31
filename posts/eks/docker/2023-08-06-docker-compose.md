@@ -9,7 +9,7 @@ Below is an example of a Docker Compose Yaml File:
 * This is version 1 of a docker compose yaml file; it is in its most basic form and has many limitations
   - In version one docker compose attaches all the containers it runs in a default brigde network and uses links to enable communication between the containers
 
-```
+```yml
 redis: [name of container]
   image: redis [image to pull]
 db: 
@@ -41,7 +41,7 @@ worker:
   - This version also includes a `depends_on` feature to let docker compose know which order to spin up the containers
     * For more information on networks check out this [page](posts/vbox/2023-04-29-vbox-networking.md)
 
-```
+```yml
 version: "2"
 services:
   redis: [name of container]

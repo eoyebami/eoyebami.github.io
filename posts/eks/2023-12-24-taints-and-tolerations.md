@@ -25,7 +25,7 @@
 
   * Pod YAML:
 
-```
+```yml
 apiVersion: vi
 kind: Pod
 metadata:
@@ -43,7 +43,7 @@ spec:
 
   * Deployment YAML:
 
-```
+```yml
 apiVersion: apps/v1
 kind: Deployment
 metadata:

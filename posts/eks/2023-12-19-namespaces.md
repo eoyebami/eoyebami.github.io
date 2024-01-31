@@ -9,7 +9,7 @@ kubectl create namespace dev
 
   - YAML:
 
-```
+```yml
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -39,7 +39,7 @@ mysql.connect("db-service.dev.svc.cluster.local")
 
 <h2>Namespace in other Objects</h2>
 * The Namespace can be defined for an object in the metadata section of the yaml file
-```
+```yml
 metadata:
   name: myapp-deploy
   namespace: dev
@@ -50,14 +50,14 @@ metadata:
   - `kubectl config set-context $(kubectl config current-context) --namespace=dev`: switches from the current context to the dev one
   - `kubectl get pods --all-namespaces`: will get objects from all namespaces
 <h2>Namespaces: ResourceQuota</h2>
-* Resource limits can be set to a namespace using the `ResourceQuota` object, very similar to how limits are set in `Deployments
+* Resource limits can be set to a namespace using the `ResourceQuota` object, very similar to how limits are set in `Deployments`
   - limits can be set on the amount of each object that exist in that namespace
     * `count/<resource>.<group>`: for 
     * `count/<resource>`:
 * Ex:
   - YAML
 
-```
+```yml
 apiVersion: v1
 kind: ResourceQuota
 metadata:
@@ -73,3 +73,4 @@ spac:
     limits.memory: 10Gi
     limits.storage: 20Gi
 ```
+

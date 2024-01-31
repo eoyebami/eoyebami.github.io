@@ -12,7 +12,7 @@
   - Then add this value into the `CertificateSigningRequest` yaml before applying it
     * YAML:
  
-```
+```yml
 cat <<EOF | kubectl apply -f - # applies piped content
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
