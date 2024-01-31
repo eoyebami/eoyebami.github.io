@@ -23,65 +23,66 @@
         type: kubernetes.io/service-account-token
       EOF
     ```
+
   * This token is used by any service using this `ServiceAccount` to authenticate to the `kube-apiserver`
     - `curl -v -k https://host-ip:6443/api/v1/pods --header "Authorization: Bearer: <token>"`
 
 2. Next you would create a `Role` and bind to the `ServiceAccount` with `RoleBinding`
 
-```yml
-cat <<EOF | kubectl apply -f -
-apiVersion: rbac.authorization.k8s.io/vi
-kind: Role
-metadata:
-  name: jenkins
-  namespace: default # should be defined because roles are namespace bound
-rules: 
-- apiGroups: [""] # leaving it blank will denote it as core group
-  resources: ["pods"]
-  resourceNames: ["my-pod"]
-  verbs: ["list", "get", "create", "update", "delete"] # were giving the role these action to the pod resource named "my-pod"
-- apiGroups: ["apps"] # using the apps named group
-  resources: ["deployments", "replicasets"]
-  verbs: ["get", "list", "create", "patch", "update"]
-EOF
+   ```yml
+   cat <<EOF | kubectl apply -f -
+   apiVersion: rbac.authorization.k8s.io/vi
+   kind: Role
+   metadata:
+     name: jenkins
+     namespace: default # should be defined because roles are namespace bound
+   rules: 
+   - apiGroups: [""] # leaving it blank will denote it as core group
+     resources: ["pods"]
+     resourceNames: ["my-pod"]
+     verbs: ["list", "get", "create", "update", "delete"] # were giving the role these action to the pod resource named "my-pod"
+   - apiGroups: ["apps"] # using the apps named group
+     resources: ["deployments", "replicasets"]
+     verbs: ["get", "list", "create", "patch", "update"]
+   EOF
 
-cat <<EOF | kubectl apply -f -
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: jenkins
-subjects:
-- kind: ServiceAccount
-  name: jenkins # name of serviceaccount
-  apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: Role
-  name: jenkins
-  apiGroup: rbac.authorization.k8s.io
-EOF
-```
+   cat <<EOF | kubectl apply -f -
+   apiVersion: rbac.authorization.k8s.io/v1
+   kind: RoleBinding
+   metadata:
+     name: jenkins
+   subjects:
+   - kind: ServiceAccount
+     name: jenkins # name of serviceaccount
+     apiGroup: rbac.authorization.k8s.io
+   roleRef:
+     kind: Role
+     name: jenkins
+     apiGroup: rbac.authorization.k8s.io
+   EOF
+   ```
 
 3. Specify the `ServiceAccount` in the Manifest File
   * In the case that your service that requires this `ServiceAccount` is running on that cluster, you will need to specify the account in the manifest file
 
-```yml
-spec: 
-  serviceAccount: jenkins
-  serviceAccountName: jenkins
-  containers:
-  - name: jenkins
-    image: jenkins
-    volumeMounts: # will be automounted by Token Request API
-    - mountPath: /var/run/secrets/tokens
-      name: jenkins-token
-  volumes:
-  - name: jenkins-token # the token for the serviceAccount will be automounted and rotated at expiration by Token Request API
-    projected:
-      sources:
-      - serviceAccountToken:
-          path: jenkins-token
-          expirationSeconds: 7200
-```
+   ```yml
+   spec: 
+     serviceAccount: jenkins
+     serviceAccountName: jenkins
+     containers:
+     - name: jenkins
+       image: jenkins
+       volumeMounts: # will be automounted by Token Request API
+       - mountPath: /var/run/secrets/tokens
+         name: jenkins-token
+     volumes:
+     - name: jenkins-token # the token for the serviceAccount will be automounted and rotated at expiration by Token Request API
+       projected:
+         sources:
+         - serviceAccountToken:
+             path: jenkins-token
+             expirationSeconds: 7200
+   ```
 
   * By default, each namespace in your cluster will have a default `ServiceAccount` that is restricted in its authorization
     - This `ServiceAccount's` token will be projected mounted unto every pod created into your cluster at the path `/var/run/secrets/kubernetes.io/serviceaccount/token
