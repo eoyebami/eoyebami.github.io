@@ -92,7 +92,7 @@ def updateSecretFileDescription = { cred_id, file_name ->
    // return result
 }
 
-updateSecretFileDescription(\${credId}, \${fileName})
+updateSecretFileDescription('${credId}', '${fileName}')
 ```
 
 <h2>Updating Content of FileCredentials</h2>
@@ -130,7 +130,7 @@ def updateSecretContent = { cred_id, file_name ->
       println "Password for ${cred_id} has not expired, skipping..."
   }
 }
-updateSecretContent(\${credId}, \${fileName})
+updateSecretContent('${credId}', '${fileName}')
 ```
 
 <h2>Updating Password for UsernamePassword Credentials</h2>
@@ -169,6 +169,6 @@ def changePassword = { id, new_password ->
       error("could not find credential for ${id}, failing build ...")
     }
 }
-changePassword(\${credID}, '${RANDOM_STRING}')
+changePassword('${credID}', '${RANDOM_STRING}')
 ```
 
