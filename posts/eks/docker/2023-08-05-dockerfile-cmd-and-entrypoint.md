@@ -6,6 +6,8 @@ Values set within the `CMD` instructions, are commands that should be run with t
 ```
 FROM ubuntu
 
+USER 1000
+
 RUN apt-get update
 RUN apt-get python-pip
 

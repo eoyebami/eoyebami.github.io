@@ -52,6 +52,26 @@ spec:
         command: ["/bin/echo"]
         args: ["Hello World"]
         env:
+        livenessProbe:
+          initialDelaySeconds: 3 # seconds k8 should wait before performing first liveness probe
+          periodSeconds: 3 # time between liveness probes
+          failureThreshold: 12 # how many times the probe can fail becuase k8 considers the overall check a fail and triggers a restart
+          timeoutSeconds: 10 # number of seconds before probe times outs, default is 1s
+          httpGet: # specifies a HTTP-based liveness check at a path and port
+            path: /healthz
+            port: 80
+        readinessProbe:
+          initialDelaySeconds: 3 # seconds k8 should wait before performing first readiness probe
+          timeoutSeconds: 10 # number of seconds before probe times outs, default is 1s
+          periodSeconds: 3 # time between readiness probes
+          failureThreshold: 12 # how many times the probe can fail becuase k8 considers the overall check a fail and triggers a restart
+          httpGet: # specifies a HTTP-based readiness check at a path and port
+            path: /index.html
+            port: 80
+        securityContext:
+          runAsUser: 1001
+          runAsNonRoot: true # boolean param
+          allowPrivilegeEscalation: false # boolean, can this container gain more privilege than the parent proces
         - name: USER
           valueFrom: 
             configMapKeyRef:

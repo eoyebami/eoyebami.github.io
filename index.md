@@ -46,6 +46,7 @@
   * [2023-08-06-docker-run-link](posts/eks/docker/2023-08-06-docker-run-link.md)
   * [2023-10-02-docker-networking](posts/eks/docker/2023-10-02-docker-networking.md)
   * [2023-10-02-docker-storage](posts/eks/docker/2023-10-02-docker-storage.md)
+  * [2024-01-31-docker-container-capabilities](posts/eks/docker/2024-01-31-docker-container-capabilities.md)
 - <h4>Kubernetes</h4>
   - <h5>Kubernetes: Introduction</h5>
     * [2023-12-18-k8-architecture](posts/eks/2023-12-18-k8-architecture.md)
@@ -83,16 +84,21 @@
     * [2024-01-26-k8-apigroups](posts/eks/2024-01-26-k8-apigroups.md)
     * [2024-01-27-role-based-access-control](posts/eks/2024-01-27-role-based-access-control.md)
     * [2024-01-29-service-accounts](posts/eks/2024-01-29-service-accounts.md)
+    * [2024-01-31-image-security](posts/eks/2024-01-31-image-security.md)
+    * [2024-01-31-security-contexts](posts/eks/2024-01-31-security-contexts.md)
 
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
        
 <h2>AWS</h2>
+- <h4>IAM</h4>
   * [2023-04-22-cross-account-assume-role](posts/aws/2023-04-22-cross-account-assume-role.md)
+- <h4>EKS</h4>
   * [2024-01-27-eks-rbac](posts/aws/2024-01-27-eks-rbac.md)
   * [2024-01-29-iam-roles-and-serviceaccounts](posts/aws/2024-01-29-iam-roles-and-serviceaccounts.md)
+  * [2024-01-31-aws-image-security](posts/aws/2024-01-31-aws-image-security.md)
 
 <h2>GCP</h2>
-- <h4>GCP: VPC Networks</h4>
+- <h4>VPC Networks</h4>
   * [2023-05-30-gcp-networking](posts/gcp/2023-05-30-gcp-networking.md)
   * [2023-05-30-gcp-ssh-tunneling](posts/gcp/2023-05-30-gcp-ssh-tunneling.md)

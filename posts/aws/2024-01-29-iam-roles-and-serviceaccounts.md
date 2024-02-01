@@ -14,7 +14,7 @@
   - This will act as the issuer for the JWT tokens in the cluster
 <h2>Create Role</h2>
 * Create the `IAM` Role in AWS
-  - Add the necessary permissions and modify the `Trust Relationships` to include the OIDC JWT Token 
+  - Add the necessary permissions and modify the `Trust Relationships` to include the OIDC Provider
 
    ```json
    {
@@ -48,7 +48,7 @@ metadata:
     eks.amazonaws.com/role-arn: arn:aws:iam::<account-id>:role/<role-name>
     eks.amazonaws.com/token-expiration: 3600 # optional, default expiration for token before rotation
     eks.amazonaws.com/sts-regional-endpoints: "true" # optional 
-  name: <name-of-servicce-account>
+  name: <name-of-service-account>
 ```
 
 <h2>Map ServiceAccount to Pod</h2>

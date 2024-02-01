@@ -28,3 +28,8 @@ We can set limits to resources a container can use by using the `--cpus` and `--
 * Ex:
   - `docker run --cpus=.5 ubuntu` will limit the container to use up to 50% of the cpus of the host machine
   - `docker run --memory-100m ubuntu` will limit the container to use up to 100m of RAM in the host machine
+<h6>Docker: Container Security</h6>
+We can set users with less more privileges by using the `--user` and `--cap-add` flag to a containter
+* Ex:
+  - `docker run --user=1001 ubuntu sleep 3600`: will run as uuid 1001
+  - `docker run --cap-add MAC_ADMIN ubuntu`: adds more host privileges to the container
