@@ -1,5 +1,5 @@
 <h1>Jenkins Credential Manipulation Groovy Scripts</h1>
-* Here are recorded groovy scripts created to manipulate Jenkins Credentials without have to go through their complicated api
+* Here are recorded groovy scripts created to manipulate Jenkins Credentials without havin to go through their complicated api
  - Use cases include the following:
    * Implementation in Jenkins jobs
    * Quick Decryption for debugging
