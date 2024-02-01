@@ -5,6 +5,32 @@
    * Quick Decryption for debugging
    * Migration of secrets from one Jenkins server to another
    * Helm implementation
+<h2>Decrypt Keys for AWSCredentials</h2>
+* This script will decrypt `AWSCredentials` stored in Jenkins Credential Store
+
+```groovy
+import com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl
+
+def getKeys = { id ->
+    def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl.class,
+        Jenkins.instance
+    )
+
+    def c = creds.findResult { it.id == id ? it : null }
+
+    if ( c ) {
+        println "found credential ${c.id}"
+        println(c.accessKey)
+        println(c.secretKey)
+
+    } else {
+      error("could not find credential for ${id}, failing build ...")
+    }
+} 
+getKeys('${credential_id}')
+```
+
 <h2>Decrypt all BasicSSHUserPrivateKey Credentials</h2>
 * This script will decrypt all `BasicSSHUserPrivateKey Credentials` stored in Jenkins Credential Store
 
