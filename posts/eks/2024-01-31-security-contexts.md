@@ -1,6 +1,7 @@
 <h1>Security Contexts</h1>
 * Similarly to how we can define a user and/or add extra privileges to that container, we can define this as well in kubernetes
   - We can configure this is a way that can impact the pod or the container level
+  
   ```yml
   apiVersion: v1
   kind: Pod
