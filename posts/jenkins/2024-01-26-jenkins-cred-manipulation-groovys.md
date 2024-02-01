@@ -25,6 +25,68 @@ for(c in creds) {
   }
 }
 ```
+<h2>Decrypt UsernamePassword Credentials</h2>
+* This script will decrypt a `UsernamePassword Credential` stored in the Jenkins Credential Store
+
+```groovy
+import com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl
+def getPassword = { id ->
+    def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class,
+        Jenkins.instance
+    )
+
+    def c = creds.findResult { it.id == id ? it : null }
+
+    if ( c ) {
+        println "found credential ${c.id}"
+        println(c.password)
+
+    } else {
+      error("could not find credential for ${id}, failing build ...")
+    }
+} 
+getPassword('${credential_id}')
+```
+
+<h2>Updating Password for UsernamePassword Credentials</h2>
+* This script will update the Password of a `UsernamePasswordCredentials` stored in the Jenkins Credential Store
+
+```groovy
+import com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl
+def changePassword = { id, new_password ->
+    def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class,
+        Jenkins.instance
+    )
+
+    def c = creds.findResult { it.id == id ? it : null }
+
+    if ( c ) {
+        println "found credential ${c.id}"
+
+        def credentials_store = Jenkins.instance.getExtensionList(
+            'com.cloudbees.plugins.credentials.SystemCredentialsProvider'
+            )[0].getStore()
+
+        def result = credentials_store.updateCredentials(
+            com.cloudbees.plugins.credentials.domains.Domain.global(),
+            c,
+            new UsernamePasswordCredentialsImpl(c.scope, c.id, c.description, c.username, new_password)
+            )
+
+        if (result) {
+            println "password changed for ${id}"
+        } else {
+            error("failed to change password for ${id}, failing build ...")
+
+        }
+    } else {
+      error("could not find credential for ${id}, failing build ...")
+    }
+}
+changePassword('${credID}', '${RANDOM_STRING}')
+```
 
 <h2>Getting Content of FileCredentials</h2>
 * This script will decrypt the contents of a `FileCredentials` stored in the Jenkins Credential Store
@@ -47,6 +109,44 @@ SystemCredentialsProvider.getInstance().getCredentials().stream().
     println "XXXXXX END a secret file with fileName=" + fileName + " XXXXXXXXXXXX"
     println ""
   }
+```
+
+<h2>Updating Content of FileCredentials</h2>
+* This script will update the content of a `FileCredentials` stored in the Jenkins Credential Store
+
+```groovy
+import org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl
+import com.cloudbees.plugins.credentials.SecretBytes
+def password_expired = false
+def updateSecretContent = { cred_id, file_name ->
+    if (password_expired == true) {
+      def String file_content = readFile(file_name)
+      def String content = file_content.bytes.encodeBase64().toString()
+      def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+          com.cloudbees.plugins.credentials.common.StandardCredentials.class,
+          Jenkins.instance
+      )
+      def credentials_store = Jenkins.instance.getExtensionList(
+        'com.cloudbees.plugins.credentials.SystemCredentialsProvider'
+      )[0].getStore()
+      def c = creds.findResult { it.id == cred_id ? it : null }
+      if (c) {
+          try {
+            def result = credentials_store.updateCredentials(
+              com.cloudbees.plugins.credentials.domains.Domain.global(),
+              c,
+              new FileCredentialsImpl(c.scope, c.id, c.description, c.fileName, SecretBytes.fromString(content))
+            )
+          println "updated credential ${c.id}'s content"
+          } catch (Exception e) {
+            error "failed to update credential ${c.id}'s content"
+          }
+      }
+  } else {
+      println "Password for ${cred_id} has not expired, skipping..."
+  }
+}
+updateSecretContent('${credId}', '${fileName}')
 ```
 
 <h2>Updating Description of FileCredentials</h2>
@@ -93,82 +193,5 @@ def updateSecretFileDescription = { cred_id, file_name ->
 }
 
 updateSecretFileDescription('${credId}', '${fileName}')
-```
-
-<h2>Updating Content of FileCredentials</h2>
-* This script will update the content of a `FileCredentials` stored in the Jenkins Credential Store
-
-```groovy
-import org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl
-import com.cloudbees.plugins.credentials.SecretBytes
-def password_expired = false
-def updateSecretContent = { cred_id, file_name ->
-    if (password_expired == true) {
-      def String file_content = readFile(file_name)
-      def String content = file_content.bytes.encodeBase64().toString()
-      def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
-          com.cloudbees.plugins.credentials.common.StandardCredentials.class,
-          Jenkins.instance
-      )
-      def credentials_store = Jenkins.instance.getExtensionList(
-        'com.cloudbees.plugins.credentials.SystemCredentialsProvider'
-      )[0].getStore()
-      def c = creds.findResult { it.id == cred_id ? it : null }
-      if (c) {
-          try {
-            def result = credentials_store.updateCredentials(
-              com.cloudbees.plugins.credentials.domains.Domain.global(),
-              c,
-              new FileCredentialsImpl(c.scope, c.id, c.description, c.fileName, SecretBytes.fromString(content))
-            )
-          println "updated credential ${c.id}'s content"
-          } catch (Exception e) {
-            error "failed to update credential ${c.id}'s content"
-          }
-      }
-  } else {
-      println "Password for ${cred_id} has not expired, skipping..."
-  }
-}
-updateSecretContent('${credId}', '${fileName}')
-```
-
-<h2>Updating Password for UsernamePassword Credentials</h2>
-* This script will update the Password of a `UsernamePasswordCredentials` stored in the Jenkins Credential Store
-
-```groovy
-import com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl
-def changePassword = { id, new_password ->
-    def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
-        com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class,
-        Jenkins.instance
-    )
-
-    def c = creds.findResult { it.id == id ? it : null }
-
-    if ( c ) {
-        println "found credential ${c.id}"
-
-        def credentials_store = Jenkins.instance.getExtensionList(
-            'com.cloudbees.plugins.credentials.SystemCredentialsProvider'
-            )[0].getStore()
-
-        def result = credentials_store.updateCredentials(
-            com.cloudbees.plugins.credentials.domains.Domain.global(),
-            c,
-            new UsernamePasswordCredentialsImpl(c.scope, c.id, c.description, c.username, new_password)
-            )
-
-        if (result) {
-            println "password changed for ${id}"
-        } else {
-            error("failed to change password for ${id}, failing build ...")
-
-        }
-    } else {
-      error("could not find credential for ${id}, failing build ...")
-    }
-}
-changePassword('${credID}', '${RANDOM_STRING}')
 ```
 
