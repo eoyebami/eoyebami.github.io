@@ -8,6 +8,7 @@
 * This is different depending on CSP or if you are using a private repository to host your images
 <h2>Private Repository</h2>
 * To pull images from a private repository, you must first authenticate through the CRT: `docker login <registry> -u <user> -p`
+
 1. In order to mimic this action to allow kubernetes to pull images from a private repository, you'll need to create a `Secret` to host your credentials
 
   ```console
