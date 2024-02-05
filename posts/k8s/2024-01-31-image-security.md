@@ -9,7 +9,7 @@
 <h2>Private Repository</h2>
 * To pull images from a private repository, you must first authenticate through the CRT: `docker login <registry> -u <user> -p`
 
-1. In order to mimic this action to allow kubernetes to pull images from a private repository, you'll need to create a `Secret` to host your credentials
+- In order to mimic this action to allow kubernetes to pull images from a private repository, you'll need to create a `Secret` to host your credentials
 
   ```console
   $ kubectl create secret docker-registry regcred \
@@ -19,7 +19,7 @@
       --docker-email=<email>
   ```
 
-2. Specify the Secret under the `imagePullSecrets` field 
+- Specify the Secret under the `imagePullSecrets` field 
 
   ```yml
   spec:
