@@ -86,6 +86,7 @@
     * [2024-01-29-service-accounts](posts/eks/2024-01-29-service-accounts.md)
     * [2024-01-31-image-security](posts/eks/2024-01-31-image-security.md)
     * [2024-01-31-security-contexts](posts/eks/2024-01-31-security-contexts.md)
+    * [2024-02-05-network-policies](posts/eks/2024-02-05-network-policies.md)
 
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
