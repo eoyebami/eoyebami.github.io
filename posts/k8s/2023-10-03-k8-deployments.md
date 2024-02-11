@@ -70,7 +70,14 @@ spec:
       - name: nginx-container
         image: nginx
         imagePullPolicy: IfNotPresent
-        env: # you can add environment variables directly through the deployment.yaml
+        startupProbe:
+          initialDelaySeconds: 3 # seconds k8 should wait before performing first liveness probe
+          periodSeconds: 3 # time between liveness probes
+          failureThreshold: 12 # how many times the probe can fail becuase k8 considers the overall check a fail and triggers a restart
+          timeoutSeconds: 10 # number of seconds before probe times outs, default is 1s
+          httpGet: # specifies a HTTP-based liveness check at a path and port
+            path: /healthz
+            port: 80
         livenessProbe:
           initialDelaySeconds: 3 # seconds k8 should wait before performing first liveness probe
           periodSeconds: 3 # time between liveness probes
@@ -90,7 +97,8 @@ spec:
         securityContext:
           runAsUser: 1001
           runAsNonRoot: true # boolean param
-          allowPrivilegeEscalation: false # boolean, can this container gain more privilege than the parent proces
+          allowPrivilegeEscalation: false # boolean, can this container gain more privilege than the parent process
+        env: # you can add environment variables directly through the deployment.yaml
         - name: USER
           value: "xxxxx"
         - name: PASSWORD
