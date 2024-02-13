@@ -29,7 +29,7 @@ spec:
   template:
     metadata:
       name: myapp-pod
-      labels: 
+      labels:
         app: myapp
         type: front-end
     spec:
@@ -70,6 +70,8 @@ spec:
       - name: nginx-container
         image: nginx
         imagePullPolicy: IfNotPresent
+        restartPolicy: Always # can be Never, or OnFailure
+        env: # you can add environment variables directly through the deployment.yaml
         startupProbe:
           initialDelaySeconds: 3 # seconds k8 should wait before performing first liveness probe
           periodSeconds: 3 # time between liveness probes
@@ -97,8 +99,7 @@ spec:
         securityContext:
           runAsUser: 1001
           runAsNonRoot: true # boolean param
-          allowPrivilegeEscalation: false # boolean, can this container gain more privilege than the parent process
-        env: # you can add environment variables directly through the deployment.yaml
+          allowPrivilegeEscalation: false # boolean, can this container gain more privilege than the parent proces
         - name: USER
           value: "xxxxx"
         - name: PASSWORD
@@ -106,7 +107,7 @@ spec:
         - name: MESSAGE
           value: "Hello World"
         - name: USER
-          valueFrom: 
+          valueFrom:
             configMapKeyRef:
               name: <config-map-name>
               key: <key-name>
@@ -121,12 +122,38 @@ spec:
         - secretRef:
             name: <secret-map-name>
         command: ["/bin/sh"] (defines command to be run when the container spins up [in this case we ran a shell])
-        args: ["-c", "while true; do echo $(MESSAGE); sleep 10; done"] # defines arguments for that command [we can provide flags as args, multiple can be set, env variables set in the pod can also be used] 
+        args: ["-c", "while true; do echo $(MESSAGE); sleep 10; done"] # defines arguments for that command [we can provide flags as args, multiple can be set, env variables set in the pod can also be used]
         ports:
         - containerPort: 80
           name: nginx-http-port
         - containerPort: 443
           name: nginx-https-port
+        volumeMounts:
+        - name: data-volume
+          mountPath: /opt # mount path of volume in container
+        - name: app-properties
+          mountPath: /path/in/container
+        - name: app-secrets
+          mountPath: /path/in/container
+        - name: mypd
+          mountPath: /var/www/html
+      volumes:
+      - name: mypd
+        persistentVolumeClaim
+          claimName: myclaim
+      - name: data-volume
+        hostPath:
+          path: /data
+          type: Directory # potential values are; DirectoryOrCreate, Directory, FileorCreate, File, Socket, CharDevice, BlockDevice
+      - name: app-properties
+        configMap: # mounts the configmap as a file in the pod
+          name: <config-map-name>
+      - name: app-secrets
+        secret: # mounts each secret as a seperate file in the pod; 3 data attributes = 3 files
+          secretName: <secret-name>
+      - name: empty-volume
+        emptyDir:
+          sizeLimit: 500Mi # can specifiy a limit to the size of this empty directory
 ```
 
 * NOTE: status `4/4` means 4 out of the 4 containers specified in the template, have been deployed (includes the helper containers)
@@ -170,7 +197,7 @@ selector:
 <h2>Deployments: Strategies</h2>
 * With Kubernetes Deployments, you can specifiy the type of strategy an update and a rollout will do
 <h4>Recreate</h4>
-* This strategy will terminate all pods and replace them with the new version. Beneficial when old and new versions of the application cannot run at the same time. 
+* This strategy will terminate all pods and replace them with the new version. Beneficial when old and new versions of the application cannot run at the same time.
   - Will cause downtime
 * Ex:
 ```yml
@@ -187,7 +214,7 @@ spec:
   - It can refined with the below parameters:
     * `maxSurge`: specifies the maxium number of pods the deployment can create at one time
     * `maxUnavailable`: specifies the maximum number of pods that are allowed to be unavailable during the rollout
-* Ex: 
+* Ex:
 ```yml
 spec:
   replicas: 10
