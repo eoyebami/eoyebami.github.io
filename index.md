@@ -87,7 +87,9 @@
     * [2024-01-31-image-security](posts/k8s/2024-01-31-image-security.md)
     * [2024-01-31-security-contexts](posts/k8s/2024-01-31-security-contexts.md)
     * [2024-02-05-network-policies](posts/k8s/2024-02-05-network-policies.md)
-
+  - <h5>Kubernetes: Storage</h5>
+    * [2024-02-12-volumes](posts/k8s/2024-02-12-volumes.md)
+    * [2024-02-12-persistent-volumes](posts/k8s/2024-02-12-persistent-volumes.md)
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
        

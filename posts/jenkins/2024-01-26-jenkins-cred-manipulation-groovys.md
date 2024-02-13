@@ -5,6 +5,37 @@
    * Quick Decryption for debugging
    * Migration of secrets from one Jenkins server to another
    * Helm implementation
+<h2>Decrypt Keys for Jenkins Credentials</h2>
+* This script will decrypt secrets stored in Jenkins xml
+
+```groovy
+import hudson.util.Secret;
+println Secret.decrypt("xxxx"); //Find value in plugin xml in jenkins server
+```
+
+<h2>Decrypt Keys for StringCredentials</h2>
+* This script will decrypt `StringCredentials` stored in Jenkins Credential Store
+
+```groovy
+import org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl
+def getSecret = { id ->
+    def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.common.StandardCredentials.class,
+        Jenkins.instance
+    )
+
+    def c = creds.findResult { it.id == id ? it : null }
+
+    if ( c ) {
+        println "found credential ${c.id}"
+        println (c.secret)
+
+    } else {
+      error("could not find credential for ${id}, failing build ...")
+    }
+} 
+getSecret("${credential_id}")
+```
 <h2>Decrypt Keys for AWSCredentials</h2>
 * This script will decrypt `AWSCredentials` stored in Jenkins Credential Store
 
@@ -123,7 +154,7 @@ import com.cloudbees.plugins.credentials.domains.Domain;
 import org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl;
 println "Jenkins credentials config file location=" + SystemCredentialsProvider.getConfigFile();
 println ""
-def fileName = "my-secret-file.txt" # Give the fileName specified in the SecretFile
+def fileName = "my-secret-file.txt" // Give the fileName specified in the SecretFile
 SystemCredentialsProvider.getInstance().getCredentials().stream().
   filter { cred -> cred instanceof FileCredentialsImpl }.
   map { fileCred -> (FileCredentialsImpl) fileCred }.

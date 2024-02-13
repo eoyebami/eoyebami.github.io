@@ -49,6 +49,7 @@ spec:
       - name: fluentd
         image: registry.k8s.io/fluentd-elasticsearch:1.20
         imagePullPolicy: IfNotPresent
+        restartPolicy: Always # can be Never, or OnFailure
         command: ["/bin/echo"]
         args: ["Hello World"]
         env:
@@ -90,4 +91,30 @@ spec:
         ports:
         - containerPort: 8080
           name: elasticsearch
+        volumeMounts:
+        - name: data-volume
+          mountPath: /opt # mount path of volume in container
+        - name: app-properties
+          mountPath: /path/in/container
+        - name: app-secrets
+          mountPath: /path/in/container
+        - name: mypd
+          mountPath: /var/www/html
+      volumes: 
+      - name: mypd
+        persistentVolumeClaim
+          claimName: myclaim
+      - name: data-volume
+        hostPath:
+          path: /data
+          type: Directory # potential values are; DirectoryOrCreate, Directory, FileorCreate, File, Socket, CharDevice, BlockDevice
+      - name: app-properties
+        configMap: # mounts the configmap as a file in the pod
+          name: <config-map-name>
+      - name: app-secrets
+        secret: # mounts each secret as a seperate file in the pod; 3 data attributes = 3 files
+          secretName: <secret-name>
+      - name: empty-volume
+        emptyDir:
+          sizeLimit: 500Mi # can specifiy a limit to the size of this empty directory
 ```
