@@ -102,7 +102,7 @@ spec:
           mountPath: /var/www/html
       volumes: 
       - name: mypd
-        persistentVolumeClaim
+        persistentVolumeClaim:
           claimName: myclaim
       - name: data-volume
         hostPath:
