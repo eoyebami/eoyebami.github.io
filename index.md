@@ -91,6 +91,7 @@
     * [2024-02-12-volumes](posts/k8s/2024-02-12-volumes.md)
     * [2024-02-12-persistent-volumes](posts/k8s/2024-02-12-persistent-volumes.md)
     * [2024-02-13-storageclass](posts/k8s/2024-02-13-storageclass.md)
+    * [2024-02-13-projected-volumes](posts/k8s/2024-02-13-projected-volumes.md)
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
        
