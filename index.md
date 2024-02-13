@@ -63,7 +63,7 @@
     * [2023-12-24-taints-and-tolerations](posts/k8s/2023-12-24-taints-and-tolerations)
     * [2023-12-28-node-selectors](posts/k8s/2023-12-28-node-selectors.md)
     * [2023-12-28-node-affinity](posts/k8s/2023-12-28-node-affinity.md)
-    * [2023-12-28-taints-tolerations-&-node-affinity](posts/k8s/2023-12-28-taints-tolerations-&-node-affinity.md)
+    * [2023-12-28-taints-tolerations-and-node-affinity](posts/k8s/2023-12-28-taints-tolerations-and-node-affinity.md)
     * [2023-12-29-resource-allocation](posts/k8s/2023-12-29-resource-allocation.md)
     * [2023-12-30-static-pods](posts/k8s/2023-12-30-static-pods.md)
     * [2023-12-31-kube-scheduler-config](posts/k8s/2023-12-31-kube-scheduler-config.md)
@@ -90,6 +90,7 @@
   - <h5>Kubernetes: Storage</h5>
     * [2024-02-12-volumes](posts/k8s/2024-02-12-volumes.md)
     * [2024-02-12-persistent-volumes](posts/k8s/2024-02-12-persistent-volumes.md)
+    * [2024-02-13-storageclass](posts/k8s/2024-02-13-storageclass.md)
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
        

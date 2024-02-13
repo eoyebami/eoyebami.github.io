@@ -15,7 +15,7 @@
 | /apis     | certificates.k8.io/v1            | certificatesigningrequest                                  |
 | /apis     | extensions/v1                    |                                                            |
 | /apis     | networking.k8s.io/v1             | networkpolices                                             |
-| /apis     | storage.k8s.io/v1                |                                                            |
+| /apis     | storage.k8s.io/v1                | storageclass                                               |
 | /apis     | authentication.k8s.io/v1         |                                                            |
 | /apis     | rbac.authorization.k8s.io/v1     | role, clusterrole, rolebinding, clusterrolebinding         |
 

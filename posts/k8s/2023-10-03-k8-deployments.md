@@ -135,6 +135,7 @@ spec:
           mountPath: /path/in/container
         - name: app-secrets
           mountPath: /path/in/container
+          readOnly: true
         - name: mypd
           mountPath: /var/www/html
       volumes:

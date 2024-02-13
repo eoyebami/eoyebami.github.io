@@ -87,3 +87,4 @@ spec:
       claimName: pvc-claim
 ```
 
+* NOTE: this is the process for static provisioning of storage in a cluster, for information on dynamic provisioning go [here](https://eoyebami.github.io/posts/k8s/2024-02-13-storageclass.html)
