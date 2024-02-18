@@ -49,16 +49,16 @@
   * [2024-01-31-docker-container-capabilities](posts/k8s/docker/2024-01-31-docker-container-capabilities.md)
 - <h4>Kubernetes</h4>
   - <h5>Kubernetes: Introduction</h5>
-    * [2023-12-18-k8-architecture](posts/k8s/2023-12-18-k8-architecture.md)
-    * [2023-12-19-k8-command-tricks](posts/k8s/2023-12-19-k8-command-tricks.md)
-    * [2023-12-19-namespaces](posts/k8s/2023-12-19-namespaces.md)
     * [2023-10-03-k8-pods](posts/k8s/2023-10-03-k8-pods.md)
     * [2023-10-03-k8-replicaset](posts/k8s/2023-10-03-k8-replicaset.md)
     * [2023-10-03-k8-deployments](posts/k8s/2023-10-03-k8-deployments.md)
     * [2023-10-17-services](posts/k8s/2023-10-17-services.md)
+    * [2023-12-13-example-voting-app](posts/k8s/2023-12-13-example-voting-app.md)
+    * [2023-12-18-k8-architecture](posts/k8s/2023-12-18-k8-architecture.md)
+    * [2023-12-19-k8-command-tricks](posts/k8s/2023-12-19-k8-command-tricks.md)
+    * [2023-12-19-namespaces](posts/k8s/2023-12-19-namespaces.md)
     * [2023-12-29-daemonsets](posts/k8s/2023-12-29-daemonsets.md)
     * [2024-02-18-environment-vars](posts/k8s/2024-02-18-environment-vars.md.md)
-    * [2023-12-13-example-voting-app](posts/k8s/2023-12-13-example-voting-app.md)
   - <h5>Kubernetes: Scheduling</h5>
     * [2023-12-24-manual-scheduling](posts/k8s/2023-12-24-manual-scheduling.md)
     * [2023-12-24-taints-and-tolerations](posts/k8s/2023-12-24-taints-and-tolerations)
