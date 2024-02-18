@@ -101,6 +101,8 @@ spec:
           readOnly: true
         - name: mypd
           mountPath: /var/www/html
+        - name: podinfo
+          mountPath: /etc/podinfo
       volumes: 
       - name: mypd
         persistentVolumeClaim:
@@ -118,4 +120,13 @@ spec:
       - name: empty-volume
         emptyDir:
           sizeLimit: 500Mi # can specifiy a limit to the size of this empty directory
+      - name: podinfo
+        downwardAPI:
+          items:
+          - path: "labels"
+            fieldRef:
+              fieldPath: metadata.labels
+          - path: "annotations"
+            fieldRef:
+              fieldPath: metadata.annotations
 ```

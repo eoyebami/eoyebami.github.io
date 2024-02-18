@@ -57,6 +57,7 @@
     * [2023-10-03-k8-deployments](posts/k8s/2023-10-03-k8-deployments.md)
     * [2023-10-17-services](posts/k8s/2023-10-17-services.md)
     * [2023-12-29-daemonsets](posts/k8s/2023-12-29-daemonsets.md)
+    * [2024-02-18-environment-vars.md](posts/k8s/2024-02-18-environment-vars.md.md)
     * [2023-12-13-example-voting-app](posts/k8s/2023-12-13-example-voting-app.md)
   - <h5>Kubernetes: Scheduling</h5>
     * [2023-12-24-manual-scheduling](posts/k8s/2023-12-24-manual-scheduling.md)
