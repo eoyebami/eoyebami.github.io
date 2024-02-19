@@ -10,6 +10,9 @@
   * [2023-04-15-manual](2023-04-15-manual.md)
   * [2023-04-27-systemd](2023-04-27-systemd.md)
   * [2023-05-10-misc-cmd](2023-05-10-misc-cmd.md)
+- <h4>Linux: Networking</h4>
+  * [2024-02-19-networking-in-linux](2024-02-19-networking-in-linux.md)
+  * [2024-02-19-dns](2024-02-19-dns.md)
 - <h4>Linux: APIs and HTTPs Methods</h4>
   * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md)
   * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
@@ -93,6 +96,9 @@
     * [2024-02-12-persistent-volumes](posts/k8s/2024-02-12-persistent-volumes.md)
     * [2024-02-13-storageclass](posts/k8s/2024-02-13-storageclass.md)
     * [2024-02-13-projected-volumes](posts/k8s/2024-02-13-projected-volumes.md)
+  - <h5>Kubernetes: Networking</h5>
+    * [2024-02-19-coredns](posts/k8s/2024-02-19-coredns.md)
+
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
        
