@@ -13,6 +13,7 @@
 - <h4>Linux: Networking</h4>
   * [2024-02-19-networking-in-linux](2024-02-19-networking-in-linux.md)
   * [2024-02-19-dns](2024-02-19-dns.md)
+  * [2024-02-19-network-namespaces](2024-02-19-network-namespaces.md)
 - <h4>Linux: APIs and HTTPs Methods</h4>
   * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md)
   * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
@@ -47,9 +48,9 @@
   * [2023-08-05-dockerfile-cmd-and-entrypoint](posts/k8s/docker/2023-08-05-dockerfile-cmd-and-entrypoint.md)
   * [2023-08-06-docker-compose](posts/k8s/docker/2023-08-06-docker-compose.md)
   * [2023-08-06-docker-run-link](posts/k8s/docker/2023-08-06-docker-run-link.md)
-  * [2023-10-02-docker-networking](posts/k8s/docker/2023-10-02-docker-networking.md)
   * [2023-10-02-docker-storage](posts/k8s/docker/2023-10-02-docker-storage.md)
   * [2024-01-31-docker-container-capabilities](posts/k8s/docker/2024-01-31-docker-container-capabilities.md)
+  * [2024-02-19-docker-networking](posts/k8s/docker/2024-02-19-docker-networking.md)
 - <h4>Kubernetes</h4>
   - <h5>Kubernetes: Introduction</h5>
     * [2023-10-03-k8-pods](posts/k8s/2023-10-03-k8-pods.md)
@@ -98,6 +99,8 @@
     * [2024-02-13-projected-volumes](posts/k8s/2024-02-13-projected-volumes.md)
   - <h5>Kubernetes: Networking</h5>
     * [2024-02-19-coredns](posts/k8s/2024-02-19-coredns.md)
+    * [2024-02-19-cni](posts/k8s/2024-02-19-cni.md)
+    * [2024-02-19-pod-networking](posts/k8s/2024-02-19-pod-networking.md)
 
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)

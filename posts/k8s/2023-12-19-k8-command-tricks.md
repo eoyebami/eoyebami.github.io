@@ -80,3 +80,14 @@
     * outputs the logs of the first container that was defined in the yaml file
   - `kubectl logs -f <pod> <container-name>`
     * outputs the logs of the specified container in that pod
+<h4>Commands for Debugging</h4>
+  - `ip a` or `ip address`: displays information about IP addresses assigned to interfaces
+    * `ip address show <eth-name>`: will display information about a specific interface
+    * `ip address show type bridge`: will display information about bridge type interfaces
+  - `ip link`: displays and manipulates network interfaces
+    * gives info on whether they are up or down, gives MAC addresses as well
+  - `netstat -nplt`: gives all ports that are being listened on the host and by what pid/program
+    * `-n`: does not resolve the names, leave it as ip
+    * `-p`: displays pid/program
+    * `-l`: displays all listenting sockets
+    * `-t`: for tcp sockets
