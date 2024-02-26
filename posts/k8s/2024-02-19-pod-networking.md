@@ -14,7 +14,8 @@
 4. Give each bridge network an ip addr
   * `ip addr add 10..244.n.1/24`: `n` for the thrid octet of each virtual bridge network
 5. Next we'll need a script that will attach each container to the bridge network across all nodes
-  ```console
+  
+   ```console
      # create veth pair
      ip link add veth-$(NETNS) type veth peer name veth-$(NETNS)-br
      
