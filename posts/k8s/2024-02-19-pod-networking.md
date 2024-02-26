@@ -35,6 +35,7 @@
      ip route add $(NETNS-ADDR) via $(HOSTMACHINE-IP)
      # this is more easily managed by dedicating a node as a router to which all cluster nodes will go through for routing traffic
   ``` 
+
 6. Configure script to be run automatically by the crt, by formatting it to cni standards
   ```console
      ADD)
