@@ -1,6 +1,7 @@
 <h1>Kubernetes: Replicas</h1>
 A ReplicaSet is used to manage how many instances of a pod are hosted in a cluster, for example we can have 3 replicas of an nginx pod so that if one crashes, we will still have 2 replicas remaining
   - Replicas also self-heal, so if a replica goes down, the ReplicaSet will spin up a new one
+
 <h3>Replication Controller</h3>
 * This is the legacy version of a `ReplicaSet`, below is an example of one:
 - `spec`: specifications of the rs
@@ -265,4 +266,5 @@ spec:
 * To scale a replicaset you can use:
   - `kubectl replace -f replicaset-def.yml` after modifying the file
   - `kubectl scale --replicas=6 replicaset <replica-name>`
+
 * To replace old pods in a replicaset, you'll need to delete either the pods and let it self-heal or delete and recreate the `rs`
