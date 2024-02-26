@@ -4,12 +4,14 @@
   - In order to allow applications to flow seemlessly, we use `services` to ensure a dns is attached to a virtual lb that distributes traffic to specified endpoints
   - By default, all pods on this virtual network have are open to all ingress and egress traffic from any other pod in the cluster
     * We can restrict this access by using `Network Policies` which are similar to `security groups` in AWS
+
 * `Network Policies` are only functionaly when a networking solution is used that supports this object
   - Networking Solutions:
     1. `kube-router`: [setup-info](https://github.com/cloudnativelabs/kube-router/blob/master/docs/generic.md)
     2. `calico`: [setup-info](https://docs.tigera.io/calico/latest/operations/calicoctl/install)
     3. `romana`: [setup-info](https://github.com/romana/romana/tree/master/containerize)
     4. `weave-net`: [setup-info](https://www.weave.works/docs/net/latest/kubernetes/kube-addon/)
+
 * YAML:
 
 ```yml
