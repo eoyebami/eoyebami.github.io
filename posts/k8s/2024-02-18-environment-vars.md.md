@@ -4,6 +4,7 @@
   - `Downward API`
   - `ConfigMaps`
   - `Secrets`
+
 <h2>Direct Referencing</h2>
 * Defining a variable and its value directly in the manifest file
 
@@ -28,6 +29,7 @@ spec:
     - `metadata.uid`
     - `metadata.annotations['<KEY>']`
     - `metadata.labels['<KEY>']`
+
   * Available via `fieldRef` for environment variables only:
     - `spec.servieAccountName`
     - `spec.nodeName`
@@ -35,9 +37,11 @@ spec:
     - `status.hostIPs`
     - `status.podIP`
     - `status.podIPs`
+
   * Available via `fieldRef` for volumes only:
     - `metadata.labels`
     - `metadata.annotations`
+
   * Available via `resourceFieldRef` for environment variables only:
     - `resource: limits.cpu`
     - `resource: requests.cpu`
