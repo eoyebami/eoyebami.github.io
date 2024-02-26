@@ -9,15 +9,18 @@
     * Plugins: `NodeResourceFit, ImageLocality`: assigns higher score to nodes with enough resources or with the image already pulled on the node
   - `binding`: pod is found to a node with the highest score
     * Plugins: `DefaultBinder`: facilitates the pod binding to the node
+
 * Kubernetes allows us to configure which plugins go to which stage by defining these stages as `Extension Points`, and assigning plugins to those points
   - `queueSort`
   - `filer`
   - `score`
   - `bind`
+
   * NOTE: these are just the main `Extension Points`, there are many more that can be found [here](https://kubernetes.io/docs/reference/scheduling/config/#extension-points)
 <h2>Profiles</h2>
 * With Profiles, you can have one `Kube-Scheduler` behave as multiple by using the `KubeSchedulerConfiguration`
   - You can define plugins you'd like disabled/enabled for an `Extension Point` for each profile
+
 * Ex:
 
 ```yml
@@ -57,7 +60,8 @@ spec:
   - You can use this object to:
     * disable/enable specific plugins for a scheduler's extension points (stages scheduler goes through for assigning pods; which have plugins that affect their functionality; more info [here](https://kubernetes.io/docs/reference/scheduling/config/))
     * set weights for plugins with greater priority
-  * Ex:
+
+* Ex:
 
    ```yml
    apiVersion: kubescheduler.config.k8.io/v1
