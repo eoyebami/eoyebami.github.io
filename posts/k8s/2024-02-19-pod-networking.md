@@ -3,6 +3,7 @@
   - Every pod should have an IP address
   - Eery pod should be able to communicate with every other pod in the same node
   - Every pod should be able to communicate with every other pod on other nodes without a NAT
+
 1. A multi-node cluster configured on an external network at `192.168.1.0/20`
    * `node01: 192.168.1.11` `node02: 192.168.1.12` `node03: 192.168.1.13`
 2. A bridge network is configured on each node 
@@ -11,6 +12,7 @@
    * `ip link set dev v-net-0 up`
    * Decide what cidr you'd like to give to each bridge network
      - `10.244.1.1` `10.244.2.1` `10.244.3.1`
+
 4. Give each bridge network an ip addr
    * `ip addr add 10..244.n.1/24`: `n` for the thrid octet of each virtual bridge network
 5. Next we'll need a script that will attach each container to the bridge network across all nodes
