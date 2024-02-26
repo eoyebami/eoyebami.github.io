@@ -1,6 +1,7 @@
 <h1>Storage Class</h1>
 * When working with PVs, you will need manually create the PV before users can claim them in the cluster
   - This is known as dynamic provisioning
+
 * Storage Classes allow for dynamic provisioning, where the cluster creates the PVs on-demanded as needed by pods on the system
   - `storageClasses` dictate how storage is created, the pvc will dictate how it is accessed
   - A `storageClass` that does not support dynamic provisioning can be used to delay pvc binding until a pod requiring it is scheduled
