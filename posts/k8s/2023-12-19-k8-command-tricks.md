@@ -6,11 +6,13 @@
     * `kubectl replace`
   - declarative: you give specifications and allow k8 to figure out the rest. Knows to replace if the object already exists, and to create if it doesn't.
     * `k apply`: can be applied on individual yaml files, or against directories
+
 * If you dont want to have to write out the yaml file, heres a couple `kubectl` cmds to remember for easy resource creation
 <h4>Pods</h4>
   - `kubectl run nginx --image=nginx --namespace=default --labels tier=front-end --port=8080`: creates an `nginx pod` in default ns, with labels and a port
   - `kubectl run nginx --image=nginx --dry-run=client -o yaml`: generates the pod manifest yaml file
     * `--dry-run=client`:  previews object that would be sent to cluster, without creating it
+
 <h4>Deployments</h4>
   - `kubectl create deployment --image=nginx nginx --replicas=4 --namespace=default --port=8080`: creates a deployment with the name `nginx` and sets the `replicaset` to 4
   - `kubectl create deployment --image=nginx nginix --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml`: creates a deployment with the name `nginx` image, with the name `nginx`, with a `replicaset` set tot 4, then previews the object creation
@@ -18,22 +20,28 @@
   - `kubectl set image deployment nginx nginx=nginx:1.18`: will set a new image to the deployment
   - `kubectl rollout history deploy <deployment-name>`: shows history of revisions made to that deployment
   - `kubectl rollout undo deploy <deployment-name>`: allows you to rollback a deployment revision to a previous one
+
 <h4>ReplicaSets</h4>
   - `kubectl scale rs --replicas=n`: scales up a `replicaset` to the value desired
+
 <h4>Services</h4>
   - `kubectl expose deployment myapp-deployment --type=ClusterIP --name=myapp-service --port=80 --target-port=8080 --namespace=default  --name=myapp-svc`: creates a `ClusterIP` svc exposed to the deployment myapp-deployment, the `targetPort` is `8080` and the svc `port` is 80
   - `kubectl expose pod myapp-deployment --type=ClusterIP --name=myapp-service --port=80 --target-port=8080 --namespace=default --name=myapp-svc`: creates a `ClusterIP` svc exposed to the deployment myapp-deployment, the `targetPort` is `8080` and the svc `port` is 80
   * Ex:
     - `kubectl expose deployment myapp-deployment --type=LoadBalancer --name=myapp-svc --target-port=80 --port=80`
     - `kubectl create svc nodeport nginx --tcp=80:80--node-port=30000`: the only way to create a svc and specify the NodePort; creates a nodeport svc named nginx
+
 <h4>ConfigMaps</h4>
   * `kubectl create configmap <cm-name> --from-literal=<key-name>=<value>  --from-literal=key-name-2=value-2`: provide the key/value pairs directly in the command
   * `kubectl create configmap <cm-name> --from-file=<key-name>=app-config.properties`: provide the key/value pairs from a properties file as a multi-lined string
+
 <h4>Secrets</h4>
   * `kubectl create secret generic <secret-name> --from-literal=<key-name>=<value>`: used to create individual key/value pairs in the object
   * `kubectl create secret generic <secret-name> --from-file=<key-name>=app-config.properties`: used to add the contents of the file in a key as a multi-lined string
+
 <h4>Namespaces</h4>
   - `kubectl create ns dev`: creates ns named dev
+
 <h4>Filtering Labels</h4>
   - `kubectl get <object> --selector app=webapp --selector tier=front-end`: will for objects with match the labels in the selectors flag
     * NOTE: If you are looking to run a `wc -l` to count the pods, use `--no-headers` to remove the headers when retrieving the data.
@@ -56,11 +64,13 @@
   - `kubectl get pods <pod-name> -o jsonpath='{.status.initcontainerStatuses[].state}'`: displays state of initcontainers
   - `kubectl get csr user01 -o jsonpath='{.status.certificate}' | base64 -d > user01.crt`: retrieves certificate signed by cluster and outputs to a crt file
   - `<stdin> | kubectl apply -f -`: will apply whatever input it receives into the cluster
+
 <h4>KubeConfig</h4>
   - `kubectl config view`: displays kubeconfig data
     * you can specify a kubeconfig by using `--kubeconfig=<fileName>`
   - `kubectl config use-context <context-name>`: change context, otherwise known as switching between cluster/user pairs
   - `kubectl config set-context --current --namespace <ns>`: setting a namespace for the current context
+
 <h4>Authorization</h4>
   - `kubectl auth can-i <verb> <object>`: will return `yes` or `no` depending on your authorization level
     * verbs can include: `get, create, patch, update, delete, list, watch`
@@ -72,14 +82,17 @@
     * random string is used impersonate a user who would be in that group, command fails without a username for `kube-apiserver` to identify the group with
   - `kubectl api-resources --namespaced=true`: lists all namespaced resources
   - `kubectl api-resources --namespaced=false`: lists all non-namespaced resources
+
 <h4>ServiceAccounts</h4>
   - `kubectl create serviceaccount <name>`: creates service account
   - `kubectl create token <service-account-name> --duration <can be in sec(s) or hrs(h)>`: creates a token for a service account with a set duration
+
 <h4>Logs</h4>
   - `kubectl logs -f <pod>`
     * outputs the logs of the first container that was defined in the yaml file
   - `kubectl logs -f <pod> <container-name>`
     * outputs the logs of the specified container in that pod
+
 <h4>Commands for Debugging</h4>
   - `ip a` or `ip address`: displays information about IP addresses assigned to interfaces
     * `ip address show <eth-name>`: will display information about a specific interface
