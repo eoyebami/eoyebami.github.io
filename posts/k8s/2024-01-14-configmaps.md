@@ -1,6 +1,7 @@
 <h1>ConfigMaps</h1>
 * A configmap is a way to abstract environment data such as properties files, outside of your deployment files. In this way all deployments, no matter how vast, will pull from one singular object
   - Rather than having to modify multiple deployments to update a env variable, you only need to update the configmap and do a rollout restart on all deployments to pick up the changes
+
 * Create the config maps with the application configuration data:
   - imperative: 
     * `kubectl create configmap <cm-name> --from-literal=<key-name>=<value>  --from-literal=key-name-2=value-2`: provide the key/value pairs directly in the command
