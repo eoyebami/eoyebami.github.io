@@ -23,6 +23,7 @@ spec:
 <h2>Downward API</h2>
 * Exposes Pod Information to Containers as vars or volumes
 * Supported Values 
+
   * Available via `fieldRef` for both environment variables and volumes:
     - `metadata.name`
     - `metadata.namespace`
