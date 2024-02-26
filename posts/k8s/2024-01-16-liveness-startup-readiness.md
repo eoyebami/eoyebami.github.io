@@ -1,6 +1,7 @@
 <h1>Liveness, StartUp, and Readiness Probe</h1>
 * These probes are methods used by kubernetes to determine if an application running on the pod is alive, healthy, and ready for use
   - If these probes fail, kubernetes can take action to resolve this (usually by restarting the container)
+
 * The `livenessProbe` is used to determine if a container is healthy or not
 * The `readinessProbe` is used to determine if a container is ready to accept traffic
 * The `startupProbe` is used to deal with containers/apps that require additional start up time
