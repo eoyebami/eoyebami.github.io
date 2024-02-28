@@ -37,10 +37,10 @@
      # add gateway to route tables to expose pods from other machines in the same network
      ip route add $(NETNS-ADDR) via $(HOSTMACHINE-IP)
      # this is more easily managed by dedicating a node as a router to which all cluster nodes will go through for routing traffic
-  ``` 
+   ``` 
 
 6. Configure script to be run automatically by the crt, by formatting it to cni standards
-  ```console
+   ```console
      ADD)
      # create veth pair
      ip link add veth-$(NETNS) type veth peer name veth-$(NETNS)-br
@@ -63,9 +63,11 @@
      # this is more easily managed by dedicating a node as a router to which all cluster nodes will go through for routing traffic
      DEL)
      ip link del veth-$(NETNS)
-  ```
+   ```
+
 7. Configure crt to use this script
    * `/etc/cni/net.d/net-script.conflist`: configures name of script
    * `/opt/cni/bin/script.sh`: where script can be found
+
 8. CRT will use this script everytime a container is brought up
    * `./sript.sh add <cid> <netns>`
