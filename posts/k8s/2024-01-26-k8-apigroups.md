@@ -14,8 +14,8 @@
 | /api      | core/v1                          | pods, cm, secrets, events, ns, pv, pvc, services, nodes    |
 | /apis     | apps/v1                          | deploy, rs, statefulset                                    |
 | /apis     | certificates.k8.io/v1            | certificatesigningrequest                                  |
-| /apis     | extensions/v1                    |                                                            |
-| /apis     | networking.k8s.io/v1             | networkpolices                                             |
+| /apis     | extensions/v1                    | ingress                                                    |
+| /apis     | networking.k8s.io/v1             | networkpolices ingress(1.20+)                              |
 | /apis     | storage.k8s.io/v1                | storageclass                                               |
 | /apis     | authentication.k8s.io/v1         |                                                            |
 | /apis     | rbac.authorization.k8s.io/v1     | role, clusterrole, rolebinding, clusterrolebinding         |

@@ -102,6 +102,7 @@
     * [2024-02-19-cni](posts/k8s/2024-02-19-cni.md)
     * [2024-02-19-pod-networking](posts/k8s/2024-02-19-pod-networking.md)
     * [2024-03-04-service-networking](posts/k8s/2024-03-04-service-networking.md)
+    * [2024-03-04-ingress](posts/k8s/2024-03-04-ingress.md)
 
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)

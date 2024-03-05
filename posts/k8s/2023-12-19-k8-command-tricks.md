@@ -45,6 +45,10 @@
   - `kubectl create secret generic <secret-name> --from-literal=<key-name>=<value>`: used to create individual key/value pairs in the object
   - `kubectl create secret generic <secret-name> --from-file=<key-name>=app-config.properties`: used to add the contents of the file in a key as a multi-lined string
 
+<h4>Ingress</h4>
+* CMDs for Ingress manipulation
+  - `kubectl create ingress <ingress-name> --rule="<host>/<path>=<service>:<port>"`: creates ingress resources in a cluster
+
 <h4>Namespaces</h4>
 * CMDs for Ns manipulation 
   - `kubectl create ns dev`: creates ns named dev
