@@ -53,6 +53,12 @@
 * CMDs for Ns manipulation 
   - `kubectl create ns dev`: creates ns named dev
 
+<h4>Nodes</h4>
+* CMDs for Node manipulation:
+  - `kubectl drain <node-name>`: drains pods and reschedules them on active nodes; marks node as `Unscheduleable`
+  - `kubectl cordon <node-name>`: marks node as `Unscheduleable`
+  - `kubectl uncordon <node-name>`: marks node as `Scheduleable`
+
 <h4>Filtering Labels</h4>
 * CMDs for Filter manipulation 
   - `kubectl get <object> --selector app=webapp --selector tier=front-end`: will for objects with match the labels in the selectors flag
