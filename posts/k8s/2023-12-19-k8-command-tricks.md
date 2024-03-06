@@ -89,6 +89,8 @@
     * you can specify a kubeconfig by using `--kubeconfig=<fileName>`
   - `kubectl config use-context <context-name>`: change context, otherwise known as switching between cluster/user pairs
   - `kubectl config set-context --current --namespace <ns>`: setting a namespace for the current context
+    - `kubectl config set-context <cluster> --namespace <ns>`: setting a namespace for a context
+  - `kubectl config get-clusters`: gets clusters in that kubeconfig
 
 <h4>Authorization</h4>
 * CMDs for Auth manipulation 

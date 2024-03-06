@@ -105,6 +105,7 @@
     * [2024-03-04-ingress](posts/k8s/2024-03-04-ingress.md)
   - <h5>Kubernetes: Cluster Maintenance</h5>
     * [2024-03-05-cluster-maintenance](posts/k8s/2024-03-05-cluster-maintenance.md)
+    * [2024-03-06-backup-and-restore](posts/k8s/2024-03-06-backup-and-restore.md)
 
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
