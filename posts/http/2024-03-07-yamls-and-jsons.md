@@ -51,23 +51,19 @@
 * JSON
   ```json
   {
-    "fruits": ["apple", "banana", "orange"]
-  },
-  { # a list of dictionaries
+    "fruits": ["apple", "banana", "orange"],
     "people": [
       {"name": "Alice", "age": 30},
       {"name": "Bob", "age": 25},
       {"name": "Charlie", "age": 35}
-    ]
-  },
-  {
+    ],
     "matrix": [
       [1, 2, 3],
       [4, 5, 6],
       [7, 8, 9]
     ]
   }
-```
+  ```
 
 <h2>Combination</h2>
 * Below is an example of using both `maps` and `arrays` together
@@ -97,15 +93,15 @@
 * JSON
   ```json
   {
-    "industry": { # map
-        "company": "Apple"
+    "industry": {
+        "company": "Apple",
         "location": "New York"
-     }
-    "employees": [ # list of maps
+     },
+    "employees": [
       {
         "name": "Alice",
         "age": 30,
-        "departments": ["Sales", "Marketing"] # nested list
+        "departments": ["Sales", "Marketing"]
       },
       {
         "name": "Bob",
@@ -119,5 +115,4 @@
       }
     ]
   }
-```
-
+  ```
