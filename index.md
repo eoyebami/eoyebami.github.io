@@ -18,8 +18,9 @@
   * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md)
   * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
 - <h5>YAMLS and JSON parsing</h5>
-    * [2023-05-06-jq-json](posts/http/2023-05-06-jq-json.md)
-    * [2024-03-07-yamls-and-jsons](posts/http/2024-03-07-yamls-and-jsons.md)
+    * [2023-05-06-jq-json](2023-05-06-jq-json.md)
+    * [2024-03-07-yamls-and-jsons](2024-03-07-yamls-and-jsons.md)
+    * [2024-03-07-jsonpath](2024-03-07-jsonpath.md)
   - <h5>Linux: TLS</h5>
     * [2024-01-16-tls](2024-01-16-tls.md)
   - <h5>Linux: Virtual Box</h5>
