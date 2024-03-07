@@ -17,8 +17,9 @@
 - <h4>Linux: APIs and HTTPs Methods</h4>
   * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md)
   * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
-- <h5>JSON parsing</h5>
+- <h5>YAMLS and JSON parsing</h5>
     * [2023-05-06-jq-json](posts/http/2023-05-06-jq-json.md)
+    * [2024-03-07-yamls-and-jsons](posts/http/2024-03-07-yamls-and-jsons.md)
   - <h5>Linux: TLS</h5>
     * [2024-01-16-tls](2024-01-16-tls.md)
   - <h5>Linux: Virtual Box</h5>
@@ -106,6 +107,8 @@
   - <h5>Kubernetes: Cluster Maintenance</h5>
     * [2024-03-05-cluster-maintenance](posts/k8s/2024-03-05-cluster-maintenance.md)
     * [2024-03-06-backup-and-restore](posts/k8s/2024-03-06-backup-and-restore.md)
+  - <h5>Kubernetes: Cluster DIY</h5>
+    * [2024-03-06-intro-to-cluster-diy](posts/k8s/2024-03-06-intro-to-cluster-diy.md)
 
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
