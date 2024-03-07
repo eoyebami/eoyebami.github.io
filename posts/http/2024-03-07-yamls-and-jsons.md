@@ -5,6 +5,7 @@
 <h2>Dictionary</h2>
 * `Dictionary`: are also known as `maps` that use key-value pairs
 * YAML
+
   ```yml
   person:
     name: John Doe
@@ -16,6 +17,7 @@
   ```
 
 * JSON
+
   ```json
   {
     "person": { # map
@@ -34,6 +36,7 @@
 <h2>Lists</h2>
 * `Lists`: are also known as `arrays`, are used to record a sequence of items
 * YAML
+
   ```yml
   fruits:
   - apple
@@ -49,6 +52,7 @@
   ```
 
 * JSON
+
   ```json
   {
     "fruits": ["apple", "banana", "orange"],
@@ -68,6 +72,7 @@
 <h2>Combination</h2>
 * Below is an example of using both `maps` and `arrays` together
 * JSON
+
   ```yaml
   industry: # map
     company: Apple
@@ -91,6 +96,7 @@
 ```
 
 * JSON
+
   ```json
   {
     "industry": {
@@ -116,3 +122,4 @@
     ]
   }
   ```
+
