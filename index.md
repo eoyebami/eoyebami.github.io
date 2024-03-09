@@ -14,23 +14,28 @@
   * [2024-02-19-networking-in-linux](2024-02-19-networking-in-linux.md)
   * [2024-02-19-dns](2024-02-19-dns.md)
   * [2024-02-19-network-namespaces](2024-02-19-network-namespaces.md)
-- <h4>Linux: APIs and HTTPs Methods</h4>
-  * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md)
-  * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
-- <h5>YAMLS and JSON parsing</h5>
-    * [2023-05-06-jq-json](2023-05-06-jq-json.md)
-    * [2024-03-07-yamls-and-jsons](2024-03-07-yamls-and-jsons.md)
-    * [2024-03-07-jsonpath](2024-03-07-jsonpath.md)
-  - <h5>Linux: TLS</h5>
-    * [2024-01-16-tls](2024-01-16-tls.md)
+- <h4>Linux: Virtual Machines</h4>
   - <h5>Linux: Virtual Box</h5>
     * [2023-04-29-vbox-configuration](posts/vbox/2023-04-29-vbox-configuration.md)
     * [2023-04-29-vbox-networking](posts/vbox/2023-04-29-vbox-networking.md)
-  - <h5>Linux: Partitions, File Systems, and LVMs</h5>
-    * [2023-05-17-fdisk](2023-05-17-fdisk.md)
-    * [2023-05-22-parted](2023-05-22-parted.md)
-    * [2023-05-23-lvm-logical-volumes](2023-05-23-lvm-logical-volumes.md)
-    * [2023-05-26-swap-space](2023-05-26-swap-space.md)
+  - <h5>Linux: Vagrant</h5>
+    * [2024-03-07-intro-to-vagrant](posts/vagrant/2024-03-07-intro-to-vagrant.md)
+    * [2024-03-07-vagrantfile-config](posts/vagrant/2024-03-07-vagrantfile-config.md)
+    * [2024-03-07-vm-backups-and-restore](posts/vagrant/2024-03-07-vm-backups-and-restore.md)
+- <h4>Linux: APIs and HTTPs Methods</h4>
+  * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md)
+  * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
+- <h4>YAMLS and JSON parsing</h4>
+  * [2023-05-06-jq-json](2023-05-06-jq-json.md)
+  * [2024-03-07-yamls-and-jsons](2024-03-07-yamls-and-jsons.md)
+  * [2024-03-07-jsonpath](2024-03-07-jsonpath.md)
+- <h4>Linux: TLS</h4>
+  * [2024-01-16-tls](2024-01-16-tls.md)
+- <h4>Linux: Partitions, File Systems, and LVMs</h4>
+  * [2023-05-17-fdisk](2023-05-17-fdisk.md)
+  * [2023-05-22-parted](2023-05-22-parted.md)
+  * [2023-05-23-lvm-logical-volumes](2023-05-23-lvm-logical-volumes.md)
+  * [2023-05-26-swap-space](2023-05-26-swap-space.md)
 
 <h2>Logging and Monitoring</h2>
 - <h4>ELK Stack: ElasticSearch</h4>
@@ -65,6 +70,7 @@
     * [2023-12-19-namespaces](posts/k8s/2023-12-19-namespaces.md)
     * [2023-12-29-daemonsets](posts/k8s/2023-12-29-daemonsets.md)
     * [2024-02-18-environment-vars](posts/k8s/2024-02-18-environment-vars.md.md)
+    * [2024-03-07-k8-jsonpath](posts/k8s/2024-03-07-k8-jsonpath.md)
   - <h5>Kubernetes: Scheduling</h5>
     * [2023-12-24-manual-scheduling](posts/k8s/2023-12-24-manual-scheduling.md)
     * [2023-12-24-taints-and-tolerations](posts/k8s/2023-12-24-taints-and-tolerations)
@@ -108,8 +114,9 @@
   - <h5>Kubernetes: Cluster Maintenance</h5>
     * [2024-03-05-cluster-maintenance](posts/k8s/2024-03-05-cluster-maintenance.md)
     * [2024-03-06-backup-and-restore](posts/k8s/2024-03-06-backup-and-restore.md)
-  - <h5>Kubernetes: Cluster DIY</h5>
+  - <h5>Kubernetes: KubeAdm</h5>
     * [2024-03-06-intro-to-cluster-diy](posts/k8s/2024-03-06-intro-to-cluster-diy.md)
+    * [2024-03-07-kubeadm-k8-installation](posts/k8s/2024-03-07-kubeadm-k8-installation.md)
 
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
