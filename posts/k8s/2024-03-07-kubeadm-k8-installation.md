@@ -1,4 +1,4 @@
-<h1>KubeAdm: Kubernetes Cluster</h1>
+<h1>Kube     sudo sysctl --systemAdm: Kubernetes Cluster</h1>
 * Installing a Kubernetes Cluster using KubeAdm
 * There are a couple of prerequisites that need to be completed before we can begin
   1. Install a `Container Runtime` prereqs
@@ -62,6 +62,8 @@
      [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
        [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
          SystemdCgroup = true
+    
+     sudo systemctl restart containerd
      ``` 
 
   3. Install `Kubeadm`, `kubelet`, and `kubectl`
@@ -74,7 +76,14 @@
      # download signing key for k8 package repo     
      # If the folder `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
      # sudo mkdir -p -m 755 /etc/apt/keyrings, Ubuntu 22.04 and Debian 12 do not have this dir
+     if ! [ -f /etc/apt/keyrings ]; then
+       sudo mkdir -p -m 755 /etc/apt/keyrings
+     fi
+     sudo rm -rf /etc/apt/keyrings/kubernetes-apt-keyring.gpg
      curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    
+     # This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
+     echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
   
      sudo apt-get update
      sudo apt-get install -y kubelet kubeadm kubectl
@@ -98,7 +107,19 @@
      sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
      sudo chown $(id -u):$(id -g) $HOME/.kube/config
      ```
-  5. Deploy Pod Network to the Cluster
+
+  5. Modify Kubelet to use the nodeAddress
+    
+    ```console
+    # find path to kubelet config.yaml 
+    # /var/lib/kubelet/config
+    # modify configmap as well
+    address: node-address
+    
+    # in worker node add a bind-address
+    ```
+       
+  6. Deploy Pod Network to the Cluster
   
      ```console
      # Test adding 8.8.8.8 nameserver to /etc/resolv.conf if it fails ¯_(ツ)_/¯
@@ -109,12 +130,14 @@
      # Verify
      kubectl get pods -n kube-system -o wide
      ```
-  6. Join Worker Nodes to Cluster
+  7. Join Worker Nodes to Cluster
   
      ```console
      sudo kubeadm join xxxxx:6443 --token xxxx \
          --discovery-token-ca-cert-hash sha256:xxxxx
      # if token expires, which it will after 24hrs, generate a new one
-     kubeadm token create
+     kubeadm token create --print-join-command
+     # route master and worker node to cluster-service
+     ip route add 10.96.0.0/16 dev enp0s8 proto kernel scope link src xxx.xxx.xxx.xxx
      ```
 
