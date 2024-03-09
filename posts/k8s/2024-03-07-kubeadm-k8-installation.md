@@ -89,6 +89,12 @@
      sudo apt-get install -y kubelet kubeadm kubectl
      sudo apt-mark hold kubelet kubeadm kubectl
      # kubelet will restart every few seconds as it waits for kubeadm to tell it what to do
+     
+     # set primary ip for kubelet
+     export PRIMARY_IP=$(hostname -I | awk '{print$2}' | tr -d '\n')
+     cat <<EOF | sudo tee /etc/default/kubelet
+     KUBELET_EXTRA_ARGS='--node-ip ${PRIMARY_IP}'
+     EOF
      ```
 
   4. Initialize the control-plane node
@@ -108,18 +114,7 @@
      sudo chown $(id -u):$(id -g) $HOME/.kube/config
      ```
 
-  5. Modify Kubelet to use the nodeAddress
-    
-    ```console
-    # find path to kubelet config.yaml 
-    # /var/lib/kubelet/config
-    # modify configmap as well
-    address: node-address
-    
-    # in worker node add a bind-address
-    ```
-       
-  6. Deploy Pod Network to the Cluster
+  5. Deploy Pod Network to the Cluster
   
      ```console
      # Test adding 8.8.8.8 nameserver to /etc/resolv.conf if it fails ¯_(ツ)_/¯
@@ -130,14 +125,15 @@
      # Verify
      kubectl get pods -n kube-system -o wide
      ```
-  7. Join Worker Nodes to Cluster
+  6. Join Worker Nodes to Cluster
   
      ```console
      sudo kubeadm join xxxxx:6443 --token xxxx \
          --discovery-token-ca-cert-hash sha256:xxxxx
      # if token expires, which it will after 24hrs, generate a new one
      kubeadm token create --print-join-command
-     # route master and worker node to cluster-service
      ip route add 10.96.0.0/16 dev enp0s8 proto kernel scope link src xxx.xxx.xxx.xxx
      ```
+<h2>FAW</h2>
+* The script I used for my vms can be found here
 

@@ -117,6 +117,7 @@
   - <h5>Kubernetes: KubeAdm</h5>
     * [2024-03-06-intro-to-cluster-diy](posts/k8s/2024-03-06-intro-to-cluster-diy.md)
     * [2024-03-07-kubeadm-k8-installation](posts/k8s/2024-03-07-kubeadm-k8-installation.md)
+    * [2024-03-09-kubeadmn-k8-vagrant](posts/k8s/2024-03-09-kubeadmn-k8-vagrant.md)
 
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
