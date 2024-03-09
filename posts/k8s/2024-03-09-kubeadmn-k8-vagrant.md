@@ -162,12 +162,12 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 # set primary ip for kubelet
 cat <<EOF | sudo tee /etc/default/kubelet
-KUBELET_EXTRA_ARGS='--node-ip ${PRIMARY_IP}'
+KUBELET_EXTRA_ARGS="--node-ip ${PRIMARY_IP}"
 EOF
 
 if [[ "$HOSTNAME" == *"controlplane"* ]]; then
   echo "**********Initalizing KubeAdm**********"
-  sudo kubeadm init --pod-network-cidr "$POD_CIDR" --apiserver-advertise-address "$PRIMARY_IP --service-network-cidr "${SVC_CIDR}"
+  sudo kubeadm init --pod-network-cidr "$POD_CIDR" --apiserver-advertise-address "$PRIMARY_IP" --service-network-cidr "${SVC_CIDR}"
   create config file
   mkdir -p $HOME/.kube
   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
