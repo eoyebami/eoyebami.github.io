@@ -20,6 +20,7 @@
   - `kubectl create deployment --image=nginx nginix --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml`: creates a deployment with the name `nginx` image, with the name `nginx`, with a `replicaset` set tot 4, then previews the object creation
     * The `-o yaml` outputs the yaml and its all redirected into a yaml file
   - `kubectl set image deployment nginx nginx=nginx:1.18`: will set a new image to the deployment
+    * Add a `--record` so k8 will keep create of what command upgraded the deployment
   - `kubectl rollout history deploy <deployment-name>`: shows history of revisions made to that deployment
   - `kubectl rollout undo deploy <deployment-name>`: allows you to rollback a deployment revision to a previous one
 
