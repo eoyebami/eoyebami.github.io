@@ -25,6 +25,7 @@
     * For multiple nodes, try to contain within a cidr block
   - `config.vm.boot_timeout = 600`: timeout for vm, default is 300s
   - `config.vm.provision`: this step is used for provisioning the vm, like packages installations and scripts
+
     ```ruby
     # Using inline script
     config.vm.provision "shell", inline: <<-SHELL
@@ -43,6 +44,7 @@
 <h2>For loops in Vagrant</h2>
 * A more efficient way to generate your `Vagrantfile` is to use for loops, which are especially beneficial when creating more than one vm
 - Use a range:
+
   ```ruby
   (1..4).each do |i|
     # lines of code
@@ -54,6 +56,7 @@
 <h2>Block Variables in Vagrant</h2>
 * Defining block vars help when trying to shorten the amount of characters needed to write a line of code
 - Define vm allocations under the block var vm
+
   ```ruby
   config.vm.provider "virtualbox" do |vm|
     vm.name = "master-node"
@@ -64,6 +67,7 @@
 
 * NOTE: regular vars in ruby use this format: `#{}`
 * Ex:
+
   ```ruby
   # -*- mode: ruby -*-
   # vi: set ft=ruby :
@@ -86,10 +90,12 @@
     SHELL
   end
   ```
+
 <h2>Multi-VM Environment</h2>
 * In a multi-vm environemnt, you'll use a new config for separating vms 
   - `config.vm.define "vm-def" do |controlplane|`
 * Ex:
+
   ```ruby
   # -*- mode: ruby -*-
   # vi: set ft=ruby :
