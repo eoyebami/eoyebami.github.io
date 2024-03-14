@@ -36,6 +36,7 @@ def getSecret = { id ->
 } 
 getSecret("${credential_id}")
 ```
+
 <h2>Decrypt Keys for AWSCredentials</h2>
 * This script will decrypt `AWSCredentials` stored in Jenkins Credential Store
 
@@ -60,6 +61,40 @@ def getKeys = { id ->
     }
 } 
 getKeys('${credential_id}')
+```
+
+<h2>Updating Password for AWSCredentials</h2>
+* This script updates `AWSCredentials` stored in Jenkins Credentials Store
+
+```groovy
+import com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl
+
+def updateKeys = { id, new_AccessKey, new_SecretKey ->
+    def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl.class,
+        Jenkins.instance
+    )
+
+    def c = creds.findResult { it.id == id ? it : null }
+
+    if ( c ) {
+        println "found credential ${c.id}"
+        def credentials_store = Jenkins.instance.getExtensionList(
+            'com.cloudbees.plugins.credentials.SystemCredentialsProvider'
+            )[0].getStore()
+
+        def result = credentials_store.updateCredentials(
+            com.cloudbees.plugins.credentials.domains.Domain.global(),
+            c,
+            new AWSCredentialsImpl(c.scope, c.id, new_AccessKey, new_SecretKey, c.description)
+            )
+        println "Updated credential ${c.id}"
+
+    } else {
+      error("could not find credential for ${id}, failing build ...")
+    }
+}  
+updateKeys('${credentialId}', '${accessKey}', '${secreKey}')
 ```
 
 <h2>Decrypt all BasicSSHUserPrivateKey Credentials</h2>
