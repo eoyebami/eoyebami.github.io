@@ -63,7 +63,7 @@ def getKeys = { id ->
 getKeys('${credential_id}')
 ```
 
-<h2>Updating Password for AWSCredentials</h2>
+<h2>Updating Keys for AWSCredentials</h2>
 * This script updates `AWSCredentials` stored in Jenkins Credentials Store
 
 ```groovy

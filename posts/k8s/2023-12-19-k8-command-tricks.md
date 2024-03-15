@@ -13,6 +13,7 @@
   - `kubectl run nginx --image=nginx --namespace=default --labels tier=front-end --port=8080`: creates an `nginx pod` in default ns, with labels and a port
   - `kubectl run nginx --image=nginx --dry-run=client -o yaml`: generates the pod manifest yaml file
     * `--dry-run=client`:  previews object that would be sent to cluster, without creating it
+  - `kubectl run nginx --image=nginx --restart=Always -- sh -c 'sleep 4800'`: allows you to set restart policy and commands with args
 
 <h4>Deployments</h4>
 * CMDs for Deployment manipulation 
@@ -100,6 +101,8 @@
   - `kubectl auth can-i <verb> <object> --as <user>`: will check if a user you specified can run that verb on that object
   - `kubectl auth can-i <verb> <object> --as-group <user> --as <random-string>`: will check if a group you specified can run that verb on that object
     * random string is used impersonate a user who would be in that group, command fails without a username for `kube-apiserver` to identify the group with
+  - `kubectl auth can-i <verb> <object> --as system:serviceaccount:<namespace>:<serviceaccount>`: testing permissions for service accounts
+  - `kubectl auth can-i * * --as <user>`: testing is user has all perms in that namespace
   - `kubectl get <object> <object-name> --as <user>`: will allow you to test any kubectl command as that user
   - `kubectl get <object> <object-name> --as-group <user> --as <random-string>`: will allow you to test any kubectl command as a user in that group
     * random string is used impersonate a user who would be in that group, command fails without a username for `kube-apiserver` to identify the group with
@@ -110,6 +113,18 @@
 * CMDs for Serviceaccount manipulation 
   - `kubectl create serviceaccount <name>`: creates service account
   - `kubectl create token <service-account-name> --duration <can be in sec(s) or hrs(h)>`: creates a token for a service account with a set duration
+
+<h4>Roles</h4>
+* CMDs for Role manipulation
+  - `kubectl create clusterrole <name> --verb=get,list --resource <object> --resource-name <object-name>`
+    * `kubectl create clusterrole <name> --verb=get,list --resource pods`
+  - `kubectl create clusterrolebinding <name> --clusterrole <clusterrole> --user <user>`
+  - `kubectl create clusterrolebinding <name> --clusterrole <clusterrole> --group <group>`
+  - `kubectl create clusterrolebinding <name> --clusterrole <clusterrole> --serviceaccount <serviceaccount>`
+  - `kubectl create role <name> --verb=get,list --resource <object> --resource-name <object-name>`
+  - `kubectl create rolebinding <name> --role <role> --user <user>`
+  - `kubectl create rolebinding <name> --role <role> --group <group>`
+  - `kubectl create rolebinding <name> --role <role> --serviceaccount <serviceaccount>`
 
 <h4>Logs</h4>
 * CMDs for Log manipulation 
