@@ -25,7 +25,7 @@
 - <h4>Linux: APIs and HTTPs Methods</h4>
   * [2023-05-01-curl-and-rest-apis](posts/http/2023-05-01-curl-and-rest-apis.md)
   * [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.md)
-- <h4>YAMLS and JSON parsing</h4>
+- <h4>Linux: YAMLS and JSON parsing</h4>
   * [2023-05-06-jq-json](2023-05-06-jq-json.md)
   * [2024-03-07-yamls-and-jsons](2024-03-07-yamls-and-jsons.md)
   * [2024-03-07-jsonpath](2024-03-07-jsonpath.md)
