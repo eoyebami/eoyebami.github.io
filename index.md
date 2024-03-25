@@ -81,6 +81,8 @@
     * [2023-12-30-static-pods](posts/k8s/2023-12-30-static-pods.md)
     * [2023-12-31-kube-scheduler-config](posts/k8s/2023-12-31-kube-scheduler-config.md)
     * [2023-12-31-priority-classes](posts/k8s/2023-12-31-priority-classes.md)
+    * [2024-03-25-pod-affinity](posts/k8s/2024-03-25-pod-affinity.md)
+    * [2024-03-25-pod-disruption-budget](posts/k8s/2024-03-25-pod-disruption-budget.md)
   - <h5>Kubernetes: Logging & Monitoring</h5>
     * [2024-01-01-metrics-server](posts/k8s/2024-01-01-metrics-server.md)
   - <h5>Kubernetes: Application Lifecycle Management</h5>

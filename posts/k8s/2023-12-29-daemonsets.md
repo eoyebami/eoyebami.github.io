@@ -38,6 +38,26 @@ spec:
                 operator: In
                 values:
                 - controlplane
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector: # requires that pods with these labels be scheduled together
+              matchExpressions:
+              - key: security
+                operator: In
+                values:
+                - S1
+            topologyKey: kubernetes.io/hostname # nodes with this key will be treated as the same
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100 # scheduler will prefer to schedule pods, with matching labels, away from one another
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: security
+                  operator: In
+                  values:
+                  - S2
+              topologyKey: kubernetes.io/hostname # nodes with this key will be treated the same
       tolerations: # taint should exist
       - key: "app"
         operator: "Equal"

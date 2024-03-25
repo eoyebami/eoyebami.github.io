@@ -19,6 +19,7 @@
 | /apis     | storage.k8s.io/v1                | storageclass                                               |
 | /apis     | authentication.k8s.io/v1         |                                                            |
 | /apis     | rbac.authorization.k8s.io/v1     | role, clusterrole, rolebinding, clusterrolebinding         |
+| /apis     | policys/v1                       | poddisruptionbudget                                        |
 
 * Each of these resource in the `apiGroup` has a set of actions associated with them
   - `list, get, create, delete, update, watch`
