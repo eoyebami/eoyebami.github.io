@@ -1,7 +1,9 @@
 <h1>Configuring LDAP</h1>
 * There are a variety of steps that need to first be taken when configuring an ldap server
+
 <h2>Installing LDAP</h2>
 * I'm under the pretense that a debian/ubuntu linux machine will be used
+
 ```console
 sudo apt install slapd ldap-utils # install ldap
 slappasswd -h {SSHA} # set passwd
@@ -60,6 +62,7 @@ olcAccess: to *
 
 <h2>Setting Base OU</h2>
 * You'll need to set the `Peoples` and `Groups` ou before you can start creating groups and users
+
 ```console
 dn: ou=People,dc=example,dc=com
 objectClass: organizationalUnit
@@ -75,6 +78,7 @@ ou: Group
 
 <h2>Add a Group to LDAP</h2>
 * Lets add a group to our OU
+
 ```console
 # Group employees
 dn: cn=employees,ou=Group,dc=mydom,dc=com
