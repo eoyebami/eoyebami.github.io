@@ -125,7 +125,11 @@
     * [2024-03-06-intro-to-cluster-diy](posts/k8s/2024-03-06-intro-to-cluster-diy.md)
     * [2024-03-07-kubeadm-k8-installation](posts/k8s/2024-03-07-kubeadm-k8-installation.md)
     * [2024-03-09-kubeadmn-k8-vagrant](posts/k8s/2024-03-09-kubeadmn-k8-vagrant.md)
-
+- <h4>Helm</h4>
+  - <h5>Helm: Introduction</h5>
+    * [2024-04-12-intro-to-helm](posts/helm/2024-04-12-intro-to-helm.md)
+    * [2024-04-12-helm-install-and-configuration](posts/helm/2024-04-12-helm-install-and-configuration.md)
+  
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
        
