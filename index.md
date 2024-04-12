@@ -36,6 +36,11 @@
   * [2023-05-22-parted](2023-05-22-parted.md)
   * [2023-05-23-lvm-logical-volumes](2023-05-23-lvm-logical-volumes.md)
   * [2023-05-26-swap-space](2023-05-26-swap-space.md)
+- <h4>Linux: LDAP</h4>
+  * [2024-03-29-intro-to-ldap](2024-03-29-intro-to-ldap.md)
+  * [2024-03-31-configure-ldap](2024-03-31-configure-ldap.md)
+  * [2024-03-31-ldap-account-manager](2024-03-31-ldap-account-manager.md)
+  * [2024-04-06-ssl-tls-and-ldap](2024-04-06-ssl-tls-and-ldap.md)
 
 <h2>Logging and Monitoring</h2>
 - <h4>ELK Stack: ElasticSearch</h4>
