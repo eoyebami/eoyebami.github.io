@@ -17,4 +17,5 @@
     * Using this strategy, Helm is now smart enough to compare the previous revision, current revision, and the live state of that chart
     * `Helm 3` is smart enough to notice drift and revert these changes back to the original state
   - `Drift Retention`: `Helm 3` will preserve drift in objects configuration when an upgrade is performed
-    * Only changing custom settings that were directly changed in the `values.yaml`
+    * Only updating custom settings that were directly changed in the `values.yaml`
+
