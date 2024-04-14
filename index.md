@@ -129,6 +129,8 @@
   - <h5>Helm: Introduction</h5>
     * [2024-04-12-intro-to-helm](posts/helm/2024-04-12-intro-to-helm.md)
     * [2024-04-12-helm-install-and-configuration](posts/helm/2024-04-12-helm-install-and-configuration.md)
+    * [2024-04-14-helm-charts](posts/helm/2024-04-14-helm-charts.md)
+    * [2024-04-14-helm-command-tricks](posts/helm/2024-04-14-helm-command-tricks.md)
   
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
