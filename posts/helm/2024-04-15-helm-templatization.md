@@ -41,7 +41,8 @@
     * this is a dynamic root object, its own objects are case sensitive, depending on values in `values.yaml`
 * Ex: Template file
 
-  ```
+  ```yml
+  {% raw %}
   apiVersion: v1
   kind: Service
   metadata:
@@ -77,6 +78,7 @@
           - name: {{ .Values.image_ports.name }}
             containerPort: {{ .Values.image_ports.port }}
             protocol: {{ .Values.image_ports.protocol }}
+  {% endraw %}
   ```
 
 * Ex: Values.yaml
