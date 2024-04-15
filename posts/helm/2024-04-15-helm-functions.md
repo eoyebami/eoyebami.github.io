@@ -1,12 +1,12 @@
 <h1>Helm Functions</h1>
-* `Templative directives` go beyon just placing information into templates of your helm chart
+* `Templative directives` bash beyon just placing information into templates of your helm chart
   - By using functions, conditionals, vars, etc; we can further templatize and improve our templates in helm; creating a smarter more flexible package for helm to manage
 <h2>Functions</h2>
 * A function takes in an input, processes it, and outputs in the desired format. Its basically a data transformer
 * There are various types of functions that can be used, and I;ve included ones I feel are most commonly used:
   - [String Functions](https://helm.sh/docs/chart_template_guide/function_list/#string-functions):
  
-    ```go
+    ```bash
     {% raw %}
     upper: {{ .Values.image.repository | upper }} # converts value to uppercase
     lower: {{ .Values.image.repository | lower }} # converts value to lowercase
@@ -28,7 +28,7 @@
   - [Date Functions](https://helm.sh/docs/chart_template_guide/function_list/#date-functions):
     * NOTE: Go Lang Time formats that can be used are found [here](https://eoyebami.github.io/posts/helm/2024-04-15-helm-date-formats.html)
   
-    ```go
+    ```bash
     {% raw %}
     now: {{ now | quote }} # gives date in "2024-04-15 20:07:54.775125162 +0000 UTC m=+0.052137226" format and adds quotes
     date: {{ now | date "2006-01-02" | quote }} # gives date in +%Y-%m-%d format and adds quotes
@@ -39,7 +39,7 @@
 
   - [Dictionary Functions](https://helm.sh/docs/chart_template_guide/function_list/#dictionaries-and-dict-functions):
  
-    ```go
+    ```bash
     {% raw %}
     dict: {{ $mydict := dict "name1" "value1" "name2" "value2" "name3" "value 3" }} # creates a map with values specified
     get: {{ get $mydict "name1" }} # retrieves value1 from mydict map
@@ -52,7 +52,7 @@
     
   - [File Functions](https://helm.sh/docs/chart_template_guide/builtin_objects/):
   
-    ```go
+    ```bash
     {% raw %}
     Files.Get: {{ .Files.Get "config.yaml" }} # gets files by name
     Files.GetBytes: {{ .Files.GetBytes "config.yaml" }} # gets content of files as bytes
@@ -65,7 +65,7 @@
 
   - [Encoding Functions](https://helm.sh/docs/chart_template_guide/function_list/#encoding-functions):
      
-    ```go
+    ```bash
     {% raw %}
     b64enc: {{ .Files.Get "server.key" | b64enc }} # grabs keyfile and encodes 
     {% endraw %}
@@ -73,7 +73,7 @@
 
   - [List Functions](https://helm.sh/docs/chart_template_guide/function_list/#lists-and-list-functions):
 
-    ```go
+    ```bash
     {% raw %}
     list: {{ $myList := 1 2 3 4 5 }} # creates array and saves as var
     {% endraw %}
@@ -81,9 +81,9 @@
 
   - [Network Functions](https://helm.sh/docs/chart_template_guide/function_list/#network-functions)
  
-    ```go
+    ```bash
     {% raw %}
-    getHostByName: {{ getHostByName "www.google.com" }} gets ip of given domain
+    getHostByName: {{ getHostByName "www.bashogle.com" }} gets ip of given domain
     ```
 
   - [Math Functions](https://helm.sh/docs/chart_template_guide/function_list/#math-functions):
@@ -94,7 +94,7 @@
     * Includes operators that can be used for conditionals
   - [Reflection Functions](https://helm.sh/docs/chart_template_guide/function_list/#reflection-functions):
  
-    ```go
+    ```bash
     {% raw %}
     kindOf: {{ kindOf "hello" }} returns object type, like string, slice, int64, and bool
     kindIs: {{ kindIs "ini" 123 }} verifies type of object
@@ -106,7 +106,7 @@
 
   - [RegEx Functions](https://helm.sh/docs/chart_template_guide/function_list/#regular-expressions):
  
-    ```go
+    ```bash
     {% raw %}
     regexSplit: {{ regexSplit "z+" "pizza" -1 }} # splits string by experssions and returns slices of the string, -1 returns all
     mustregexSplit: {{ regexSplit "z+" "pizza" -1 }} # returns error of template engine if theres a problem
@@ -115,7 +115,7 @@
 
   - [Semantic Version Functions](https://helm.sh/docs/chart_template_guide/function_list/#semantic-version-functions):
  
-    ```go
+    ```bash
     {% raw %}
     semver: {{ $version := semver "1.0.0-SNAPSHOT+123" }} # parses string to semantic version
     *.Major: {{ $version.Major }} # returns major number
@@ -129,7 +129,7 @@
 
   - [Type Conversion Functions](https://helm.sh/docs/chart_template_guide/function_list/#type-conversion-functions):
  
-    ```go
+    ```bash
     {% raw %}
      int: {{ "8" | int }} convert to int at system's width
      int64: {{ "8" int }} convert to int64
@@ -148,14 +148,14 @@
     ```
   - [URL Functions](https://helm.sh/docs/chart_template_guide/function_list/#url-functions):
   
-    ```go
+    ```bash
     {% raw %}
      urlParse: {{ $url := urlParse "http://admin:secret@server.com:8080/api?list=false#anchor" }} returns dict, which values for scheme, host, path, query, opaque, fragment, and userinfo
     {% endraw %}
     ```
   - [UUID](https://helm.sh/docs/chart_template_guide/function_list/#uuid-functions):
  
-    ```go
+    ```bash
     {% raw %}
      uuidv4: {{ $id := uuidv4 }} generates a UUID v4 unique ID and saves it to a var
     {% endraw %}
