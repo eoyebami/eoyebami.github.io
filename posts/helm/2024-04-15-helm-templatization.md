@@ -86,7 +86,7 @@
   container_name: hello-world
   image:
     repository: nginx
-    tag "1.16.0"
+    tag: "1.16.0"
   image_ports:
     name: http
     port: 80
