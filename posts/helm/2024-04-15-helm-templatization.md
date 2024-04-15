@@ -1,9 +1,9 @@
 <h1>Templatizing Helm Charts</h1>
 * When it comes to creating helm charts, one thing we must understand is templatizing, which allows us to remove static values from our templates in the charts
   - Replace them with dynamic values that are referenced elsewhere, in something like a `values.yaml` file
-* In helm, we what is known as a `template directive` which uses `Go templating language`
+* In helm, we have what is known as a `template directive` which uses `Go templating language`
 * `Templating directive` has a couple components to keep track of
-  - `Root element`: `.`
+  - `Root element`: `.` denoting the root element
   - `Objects`: objects passed into a template from the template engine
     * `Release`: objects concerning release information
     * `Chart`: objects referenced in `chart.yaml` file
@@ -38,7 +38,7 @@
     * `Template.Name`: namespaced file path of the current template
     * `Template.BasePath`: namespaced path of the templates directory of the current chart
   - `Values`
-    * this is a dynamic root object, its own objects are case sensitive, depending on values in `values.yaml`
+    * this is a dynamic root object, its own objects are case sensitive, depending on map within the `values.yaml` file
 * Ex: Template file
 
   ```yml
