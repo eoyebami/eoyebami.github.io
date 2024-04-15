@@ -28,10 +28,11 @@ $ helm repo list # lists all repos in your local
 # helm pull bitnami/wordpress # pulls repo in archived format
 # helm pull --untar bitnami/wordpress # pulls repo in unarchived format, you can mod values.yaml directly in here instead of passing in your own with upgrade/install
 
+# COMMANDS FOR CHART INSTALLATION AND UPGRADE
 # Helm Install Command
 # helm install [release-name] [chart-name]
 $ helm install my-wordpress bitnami/wordpress # this will install necessary objects defined in the chart as a release
-# Helm Install flags
+$ helm install my-wordpress bitnami/wordpress --dry-run # dry run install of wordpress
 $ helm install --values values.yaml my-wordpress bitnami/wordpress # installs chart and sets custom values.yaml to be passed to templates
 $ helm install --set wordpressBlogName="Helm Test",wordpressEmail="john@example.com" my-wordpress bitnami/wordpress # sets overrides for a values set in values.yaml
 $ helm install --set-file [fileName] my-wordpress bitnami/wordpress # sets override file (key=value pairs) for a values set in values.yaml
@@ -43,7 +44,7 @@ $ helm install my-wordpress ./wordpres # can specify path to charts that you cre
 $ helm upgrade my-wordpress bitnami/wordpress # updates a release in your cluster
 # Helm Upgrade Flags
 $ helm upgrade --install my-wordpress bitnami/wordpress --wait # updates a release and if it doesn't exist, it will install it, --wait flag will wait for its completion
-$ helm upgrade --install my-wordpress bitnami/wordpress --dry-run=client # dry runs install of wordpress
+$ helm upgrade --install my-wordpress bitnami/wordpress --dry-run # dry run install of wordpress
 $ helm upgrade --install my-wordpress bitnami/wordpress --dependency-update # installs charts and updates dependencies if they are missing
 $ helm upgrade --install --values values.yaml my-wordpress bitnami/wordpress # installs chart and sets custom values.yaml to be passed to templates
 $ helm upgrade --install --values values.yaml  --values.yaml override.yaml my-wordpress bitnami/wordpress # you can set multiple values.yaml, and right most file will take precendence
@@ -72,4 +73,15 @@ $ helm uninstall my-wordpress bitnami/ wordpress # uninstall a release created b
 # Helm Create Command
 # helm create [name]
 $ helm create nginx-chart # creates skeleton for your own helm chart
+
+# COMMANDS FOR VALIDATION AND TEMPLATING
+# Helm Lint Command
+# helm lint [path/to/chart]
+$ helm lint ./my-wordpress-chart # goes through charts and finds any YAML formatting issues
+
+# Helm Template Command
+# helm template [release-name] [path/to/chart]
+$ helm template my-wordpress ./my-wordpress-chart # parses values.yaml file into templates to display object manifest files
+$ helm template my-wordpress ./my-wordpress-chart --debug # parses values.yaml and debug flag will display any parsed file that errors
+# to catch all errors, running a helm upgrade --install [release-name] [chart-name] --dry-run, will catch any errors in regard to K8 syntax and will display fully formatted manifest files as well
 ```

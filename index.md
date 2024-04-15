@@ -132,6 +132,9 @@
     * [2024-04-14-helm-charts](posts/helm/2024-04-14-helm-charts.md)
     * [2024-04-14-helm-command-tricks](posts/helm/2024-04-14-helm-command-tricks.md)
     * [2024-04-15-helm-templatization](posts/helm/2024-04-15-helm-templatization.md)
+  - <h5>Helm: Templatization Techniques</h5>
+    * [2024-04-15-helm-functions](posts/helm/2024-04-15-helm-functions.md)
+    * [2024-04-15-helm-date-formats](posts/helm/2024-04-15-helm-date-formats.md)
   
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
