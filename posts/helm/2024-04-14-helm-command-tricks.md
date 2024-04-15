@@ -11,9 +11,8 @@ $ helm --help
 # helm search hub [key-word]
 $ helm search hub wordpress # queries artifacthub.io for charts matching key-word
 # helm search repo [repo]
-$ helm search repo wordpress # queries a specific repo in artifacthub.io
-# --max: limts max number of search results
-# --version: disaplays all available versions of the matched charts
+$ helm search repo wordpress # queries a local repos on your system
+# --versions: disaplays all available versions of the matched charts
 # --devel: includes charts marked as development versions 
 
 # Helm Repo Command
@@ -36,11 +35,8 @@ $ helm install my-wordpress bitnami/wordpress # this will install necessary obje
 $ helm install --values values.yaml my-wordpress bitnami/wordpress # installs chart and sets custom values.yaml to be passed to templates
 $ helm install --set wordpressBlogName="Helm Test",wordpressEmail="john@example.com" my-wordpress bitnami/wordpress # sets overrides for a values set in values.yaml
 $ helm install --set-file [fileName] my-wordpress bitnami/wordpress # sets override file (key=value pairs) for a values set in values.yaml
+$ helm install my-wordpress bitnami/wordpress --version 1.18.1  # can specify versions of charts to install
 $ helm install my-wordpress ./wordpres # can specify path to charts that you created or pulled
-
-# Helm List Command
-# helm list [FLAGS]
-$ helm ls # lists all releases in your cluster
 
 # Helm Upgrade Command
 # helm upgrade [release-name] [chart-name] [FLAGS]
@@ -50,14 +46,30 @@ $ helm upgrade --install my-wordpress bitnami/wordpress --wait # updates a relea
 $ helm upgrade --install my-wordpress bitnami/wordpress --dry-run=client # dry runs install of wordpress
 $ helm upgrade --install my-wordpress bitnami/wordpress --dependency-update # installs charts and updates dependencies if they are missing
 $ helm upgrade --install --values values.yaml my-wordpress bitnami/wordpress # installs chart and sets custom values.yaml to be passed to templates
+$ helm upgrade --install --values values.yaml  --values.yaml override.yaml my-wordpress bitnami/wordpress # you can set multiple values.yaml, and right most file will take precendence
 $ helm upgrade --install --set wordpressBlogName="Helm Test",wordpressEmail="john@example.com" my-wordpress bitnami/wordpress # sets overrides for values set in values.yaml
 $ helm upgrade --install --set-file [fileName] my-wordpress bitnami/wordpress # sets override file (key=value pairs) for a values set in values.yaml
+$ helm upgrade --install my-wordpress bitnami/wordpress --version 1.18.1  # can specify versions of charts to install
 $ helm upgrade --install my-wordpress ./wordpres # can specify path to charts that you created or pulled
 
+# Helm List Command
+# helm list [FLAGS]
+$ helm ls # lists all releases in your cluster
+
+# Helm History Command
+# helm history [release-name]
+$ helm history my-wordpress # displays history of a release as well as chart information and status
+
 # Helm Rollback Command
-$ helm rollback my-wordpress bitnami/wordpress # rollback any changes made to helm repo
+# helm rollback [release-name] [revision]
+$ helm rollback my-wordpress 1 # rollback release to revision 1, this rollback will be stored in the metadata as a new revision
+# rollbacks will not affect third-party resources or external volumes
 
 # Helm Uninstall Command
 # helm uninstall [release-name] [chart-name]
 $ helm uninstall my-wordpress bitnami/ wordpress # uninstall a release created by helm
+
+# Helm Create Command
+# helm create [name]
+$ helm create nginx-chart # creates skeleton for your own helm chart
 ```
