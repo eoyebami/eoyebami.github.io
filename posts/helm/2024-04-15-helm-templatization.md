@@ -41,7 +41,7 @@
     * this is a dynamic root object, its own objects are case sensitive, depending on values in `values.yaml`
 * Ex: Template file
 
-  ```go
+  ```bash
   apiVersion: v1
   kind: Service
   metadata:
