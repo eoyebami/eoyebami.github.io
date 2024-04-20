@@ -37,21 +37,24 @@ $ helm install --values values.yaml my-wordpress bitnami/wordpress # installs ch
 $ helm install --set wordpressBlogName="Helm Test",wordpressEmail="john@example.com" my-wordpress bitnami/wordpress # sets overrides for a values set in values.yaml
 $ helm install --set-file [fileName] my-wordpress bitnami/wordpress # sets override file (key=value pairs) for a values set in values.yaml
 $ helm install my-wordpress bitnami/wordpress --version 1.18.1  # can specify versions of charts to install
-$ helm install my-wordpress ./wordpres # can specify path to charts that you created or pulled
+$ helm install my-wordpress ./wordpress # can specify path to charts that you created or pulled
+$ helm install --create-namespace -n wordress my-wordpress ./wordpress # creates release in specified namespace and creates namespace if it doesn't exist
 
 # Helm Upgrade Command
 # helm upgrade [release-name] [chart-name] [FLAGS]
 $ helm upgrade my-wordpress bitnami/wordpress # updates a release in your cluster
 # Helm Upgrade Flags
 $ helm upgrade --install my-wordpress bitnami/wordpress --wait # updates a release and if it doesn't exist, it will install it, --wait flag will wait for its completion
-$ helm upgrade --install my-wordpress bitnami/wordpress --dry-run # dry run install of wordpress
-$ helm upgrade --install my-wordpress bitnami/wordpress --dependency-update # installs charts and updates dependencies if they are missing
-$ helm upgrade --install --values values.yaml my-wordpress bitnami/wordpress # installs chart and sets custom values.yaml to be passed to templates
-$ helm upgrade --install --values values.yaml  --values.yaml override.yaml my-wordpress bitnami/wordpress # you can set multiple values.yaml, and right most file will take precendence
-$ helm upgrade --install --set wordpressBlogName="Helm Test",wordpressEmail="john@example.com" my-wordpress bitnami/wordpress # sets overrides for values set in values.yaml
-$ helm upgrade --install --set-file [fileName] my-wordpress bitnami/wordpress # sets override file (key=value pairs) for a values set in values.yaml
-$ helm upgrade --install my-wordpress bitnami/wordpress --version 1.18.1  # can specify versions of charts to install
-$ helm upgrade --install my-wordpress ./wordpres # can specify path to charts that you created or pulled
+# helm upgrade -i eq to helm upgrade --install
+$ helm upgrade -i my-wordpress bitnami/wordpress --dry-run # dry run install of wordpress
+$ helm upgrade -i my-wordpress bitnami/wordpress --dependency-update # installs charts and updates dependencies if they are missing
+$ helm upgrade -i --values values.yaml my-wordpress bitnami/wordpress # installs chart and sets custom values.yaml to be passed to templates
+$ helm upgrade -i --values values.yaml  --values.yaml override.yaml my-wordpress bitnami/wordpress # you can set multiple values.yaml, and right most file will take precendence
+$ helm upgrade -i --set wordpressBlogName="Helm Test",wordpressEmail="john@example.com" my-wordpress bitnami/wordpress # sets overrides for values set in values.yaml
+$ helm upgrade -i --set-file [fileName] my-wordpress bitnami/wordpress # sets override file (key=value pairs) for a values set in values.yaml
+$ helm upgrade -i my-wordpress bitnami/wordpress --version 1.18.1  # can specify versions of charts to install
+$ helm upgrade -i my-wordpress ./wordpres # can specify path to charts that you created or pulled
+$ helm upgrade -i --create-namespace -n wordress my-wordpress ./wordpress # creates release in specified namespace and creates namespace if it doesn't exist
 
 # Helm List Command
 # helm list [FLAGS]
