@@ -78,6 +78,7 @@
 
 <h2>Loops and Ranges</h2>
 * We can also use loops in our templates to iterate over lists defined in our `values.yaml` file
+B
 
   ```yml
    # values.yaml
@@ -152,5 +153,6 @@
       {{ $key }}: {{ $value }}
       {{- end }}
   {{- end }}
-  {% endraw % }
+  {% endraw %}
   ```
+
