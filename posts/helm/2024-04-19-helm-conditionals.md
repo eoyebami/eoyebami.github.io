@@ -141,7 +141,7 @@
   ```
 
   ```bash
-  {% raw % }}
+  {% raw % }
   {{- with .Values.serviceAccount.create }}
   apiVersion: v1
   kind: ServiceAccount
@@ -152,5 +152,5 @@
       {{ $key }}: {{ $value }}
       {{- end }}
   {{- end }}
-  {% endraw % }}
+  {% endraw % }
   ```
