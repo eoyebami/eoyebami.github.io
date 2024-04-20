@@ -52,18 +52,18 @@
     ```
     
   - [File Functions](https://helm.sh/docs/chart_template_guide/builtin_objects/):
-  
+   
     ```bash
     {% raw %}
     Files.Get: {{ .Files.Get "config.yaml" }} # gets files by name
     Files.GetBytes: {{ .Files.GetBytes "config.yaml" }} # gets content of files as bytes
     Files.Glob: {{ .Files.Glob "config/*" }} # gets list of files that match this pattern
-    Files.Lines: {{ .Files.Lines "engines.txt }} # reads file line by line, for functions iterating over lines in a file
+    Files.Lines: {{ .Files.Lines "engines.txt" }} # reads file line by line, for functions iterating over lines in a file
     Files.AsSecrets: {{ .Files.AsSecrets "secret.txt" }} # returns file body as base64encoded string
     Files.AsConfig: {{ .Files.AsConfig "engine.json" }} # returns file body as yaml map
     {% endraw %}
     ```
-
+ 
   - [Encoding Functions](https://helm.sh/docs/chart_template_guide/function_list/#encoding-functions):
      
     ```bash
@@ -84,7 +84,8 @@
  
     ```bash
     {% raw %}
-    getHostByName: {{ getHostByName "www.bashogle.com" }} gets ip of given domain
+    getHostByName: {{ getHostByName "www.google.com" }} # gets ip of given domain
+    {% endraw %}
     ```
 
   - [Math Functions](https://helm.sh/docs/chart_template_guide/function_list/#math-functions):
@@ -100,11 +101,11 @@
  
     ```bash
     {% raw %}
-    kindOf: {{ kindOf "hello" }} returns object type, like string, slice, int64, and bool
-    kindIs: {{ kindIs "ini" 123 }} verifies type of object
-    typeOf: {{ typeOf $var }} returns type of var
-    typeIs: {{ typeIs "int" $var }} verifies type of object
-    deepEqual: {{ deepEqual (list 1 2 3) (list 1 2 3) }} returns var depending on if 2 values are deeply equal
+    kindOf: {{ kindOf "hello" }} # returns object type, like string, slice, int64, and bool
+    kindIs: {{ kindIs "ini" 123 }} # verifies type of object
+    typeOf: {{ typeOf $var }} #breturns type of var
+    typeIs: {{ typeIs "int" $var }} #bverifies type of object
+    deepEqual: {{ deepEqual (list 1 2 3) (list 1 2 3) }} # returns var depending on if 2 values are deeply equal
     {% endraw %}
     ```
 
@@ -135,19 +136,19 @@
  
     ```bash
     {% raw %}
-     int: {{ "8" | int }} convert to int at system's width
-     int64: {{ "8" int }} convert to int64
-     toDecimal: {{ "10.5" | toDecimal }} {{- $decimalValue := toDecimal "10.5"}} converts string to decimal
-     toString: {{ 8 | toString }} converts to string
-     toStrings: {{ $mystring := toStrings $mylist }} converts array to list of strings
-     toJson: {{ $myjson := toJson $mydict }} converts list, slice, array, dict, or object, to json
-     toPrettyJson: {{ $myjson := toPrettyJson $mydict }} converts list, slice, array, dict, or object, to indented json
-     toRawJson: {{ $myjson := toRawJson $mydict }} converts list, slice, array, dict, or object, to unescaped json
-     toYAML: {{ $myyaml := toYaml $mydict }} converts list, slice, array, dict, or object, to yaml
-     fromYaml: {{ $mystring := fromYaml $myyaml }} converts yaml to string, which you can call like $mystring.name
-     fromJson: {{ $mystring := fromJson $myjson }} converts json to string, which you can call like $mystring.name
-     fromJsonArray: {{ $mystring := fromJsonArray $myjsonarray }} converts json array to list, which you can call similarly to fromJson, range condition will be needed
-     fromYamlArray: {{ $mystring := fromYamlArray $myyamlarray }} converts yaml array to list, which you can call similarly to fromYaml, range condition will be needed
+     int: {{ "8" | int }} # convert to int at system's width
+     int64: {{ "8" | int }} # convert to int64
+     toDecimal: {{ "10.5" | toDecimal }} {{- $decimalValue := toDecimal "10.5" }} # converts string to decimal
+     toString: {{ 8 | toString }} # converts to string
+     toStrings: {{ $mystring := toStrings $mylist }} # converts array to list of strings
+     toJson: {{ $myjson := toJson $mydict }} # converts list, slice, array, dict, or object, to json
+     toPrettyJson: {{ $myjson := toPrettyJson $mydict }} # converts list, slice, array, dict, or object, to indented json
+     toRawJson: {{ $myjson := toRawJson $mydict }} # converts list, slice, array, dict, or object, to unescaped json
+     toYAML: {{ $myyaml := toYaml $mydict }} # converts list, slice, array, dict, or object, to yaml
+     fromYaml: {{ $mystring := fromYaml $myyaml }} # converts yaml to string, which you can call like $mystring.name
+     fromJson: {{ $mystring := fromJson $myjson }} # converts json to string, which you can call like $mystring.name
+     fromJsonArray: {{ $mystring := fromJsonArray $myjsonarray }} # converts json array to list, which you can call similarly to fromJson, range condition will be needed
+     fromYamlArray: {{ $mystring := fromYamlArray $myyamlarray }} # converts yaml array to list, which you can call similarly to fromYaml, range condition will be needed
     {% endraw %}
     ```
 
@@ -155,7 +156,7 @@
   
     ```bash
     {% raw %}
-     urlParse: {{ $url := urlParse "http://admin:secret@server.com:8080/api?list=false#anchor" }} returns dict, which values for scheme, host, path, query, opaque, fragment, and userinfo
+     urlParse: {{ $url := urlParse "http://admin:secret@server.com:8080/api?list=false#anchor" }} # returns dict, which values for scheme, host, path, query, opaque, fragment, and userinfo
     {% endraw %}
     ```
 
@@ -163,7 +164,7 @@
  
     ```bash
     {% raw %}
-     uuidv4: {{ $id := uuidv4 }} generates a UUID v4 unique ID and saves it to a var
+     uuidv4: {{ $id := uuidv4 }} # generates a UUID v4 unique ID and saves it to a var
     {% endraw %}
     ```
 
