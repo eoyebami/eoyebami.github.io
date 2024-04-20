@@ -135,9 +135,11 @@
   - <h5>Helm: Templatization Techniques</h5>
     * [2024-04-15-helm-functions](posts/helm/2024-04-15-helm-functions.md)
     * [2024-04-15-helm-date-formats](posts/helm/2024-04-15-helm-date-formats.md)
+    * [2024-04-19-helm-conditionals](posts/helm/2024-04-19-helm-conditionals.md)
   
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
+  * [2024-04-18-neat-jenkinsfile-strategies](posts/jenkins/2024-04-18-neat-jenkinsfile-strategies.md)
        
 <h2>AWS</h2>
 - <h4>IAM</h4>

@@ -1,6 +1,7 @@
 <h1>Helm Functions</h1>
 * `Templative directives` bash beyon just placing information into templates of your helm chart
   - By using functions, conditionals, vars, etc; we can further templatize and improve our templates in helm; creating a smarter more flexible package for helm to manage
+
 <h2>Functions</h2>
 * A function takes in an input, processes it, and outputs in the desired format. Its basically a data transformer
 * There are various types of functions that can be used, and I;ve included ones I feel are most commonly used:
@@ -88,10 +89,13 @@
 
   - [Math Functions](https://helm.sh/docs/chart_template_guide/function_list/#math-functions):
     * Math Functions
+
   - [Float Math Functions](https://helm.sh/docs/chart_template_guide/function_list/#math-functions):
     * Float Math Functions
+
   - [Logic and Flow Control Functions](https://helm.sh/docs/chart_template_guide/function_list/#logic-and-flow-control-functions):
     * Includes operators that can be used for conditionals
+
   - [Reflection Functions](https://helm.sh/docs/chart_template_guide/function_list/#reflection-functions):
  
     ```bash
@@ -146,6 +150,7 @@
      fromYamlArray: {{ $mystring := fromYamlArray $myyamlarray }} converts yaml array to list, which you can call similarly to fromYaml, range condition will be needed
     {% endraw %}
     ```
+
   - [URL Functions](https://helm.sh/docs/chart_template_guide/function_list/#url-functions):
   
     ```bash
@@ -153,6 +158,7 @@
      urlParse: {{ $url := urlParse "http://admin:secret@server.com:8080/api?list=false#anchor" }} returns dict, which values for scheme, host, path, query, opaque, fragment, and userinfo
     {% endraw %}
     ```
+
   - [UUID](https://helm.sh/docs/chart_template_guide/function_list/#uuid-functions):
  
     ```bash
@@ -160,5 +166,6 @@
      uuidv4: {{ $id := uuidv4 }} generates a UUID v4 unique ID and saves it to a var
     {% endraw %}
     ```
+
   - [Cryptographic & Security Functions](https://helm.sh/docs/chart_template_guide/function_list/#cryptographic-and-security-functions):
      These functions entail encryptions and keygen
