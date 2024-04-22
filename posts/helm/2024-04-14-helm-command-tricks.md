@@ -22,6 +22,7 @@ $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm repo update bitnami # no repo specified will update all repos
 # helm repo list [FLAGS]
 $ helm repo list # lists all repos in your local
+$ helm repo index <dir-containing-prov-and-tgz-files> --url https://<url-to-chart-repo> # generates index.yaml file for helm chart
 
 # Helm Pull Command
 # helm pull [chart URL | repo/chartname]
@@ -39,6 +40,7 @@ $ helm install --set-file [fileName] my-wordpress bitnami/wordpress # sets overr
 $ helm install my-wordpress bitnami/wordpress --version 1.18.1  # can specify versions of charts to install
 $ helm install my-wordpress ./wordpress # can specify path to charts that you created or pulled
 $ helm install --create-namespace -n wordress my-wordpress ./wordpress # creates release in specified namespace and creates namespace if it doesn't exist
+$ helmu install --verify jenkins/jenkins # verifies chart with pubring before installing
 
 # Helm Upgrade Command
 # helm upgrade [release-name] [chart-name] [FLAGS]
@@ -55,6 +57,7 @@ $ helm upgrade -i --set-file [fileName] my-wordpress bitnami/wordpress # sets ov
 $ helm upgrade -i my-wordpress bitnami/wordpress --version 1.18.1  # can specify versions of charts to install
 $ helm upgrade -i my-wordpress ./wordpres # can specify path to charts that you created or pulled
 $ helm upgrade -i --create-namespace -n wordress my-wordpress ./wordpress # creates release in specified namespace and creates namespace if it doesn't exist
+$ helm upgrade -i --verify jenkins/jenkins # verifies chart with pubring before upgrading/installing
 
 # Helm List Command
 # helm list [FLAGS]
@@ -87,4 +90,19 @@ $ helm lint ./my-wordpress-chart # goes through charts and finds any YAML format
 $ helm template my-wordpress ./my-wordpress-chart # parses values.yaml file into templates to display object manifest files
 $ helm template my-wordpress ./my-wordpress-chart --debug # parses values.yaml and debug flag will display any parsed file that errors
 # to catch all errors, running a helm upgrade --install [release-name] [chart-name] --dry-run, will catch any errors in regard to K8 syntax and will display fully formatted manifest files as well
+
+# COMMANDS FOR CHART PACKAGING, SIGNING, AND UPLOADING
+# Helm Package Command
+# helm package [path/to/chart]
+$ helm package ./nginx-chart # packages chart in format nginx-chart-<chart-version>.tgz 
+$ helm package -sign --key 'EZ' --keyring ~/.gnupg/secring.gpg ./nginx-chart # signs anc packages helm chart
+
+# Helm Verify Command
+# helm verify [path/to/chart]
+$ helm verify ./nginx-chart # verifies chart against pubring in ~/.gnupg/pubring.gpg
+$ helm verify --keyring <path-to-pubring> ./nginx-chart # verifies chart against specified path to pubring
+
+# Helm Push Command
+# helm push [path/to/chart] [remote] [flags]
+$ helm push <path-to-chart> <remote>
 ```
