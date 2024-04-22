@@ -19,7 +19,7 @@
    - `post-rollback` 
 
   ```bash
-  {% raw}
+  {% raw %}
   apiVersion: batch/v1
   kind: Job
   metadata:
@@ -27,7 +27,7 @@
     annotations:
      "helm.sh/hook": pre-upgrade # this pre-upgrade annotation tells helm to run this job before any helm upgrade is performed
   ...
-  {% endraw}
+  {% endraw %}
   ```
 
 <h2>Multiple Chart Hooks</h2>
@@ -36,7 +36,7 @@
 * Hooks can be set with the same weight, and helm will default to sorting by object type then object name
 
  ```bash
-  {% raw}
+  {% raw %}
   apiVersion: batch/v1
   kind: Job
   metadata:
@@ -45,7 +45,7 @@
      "helm.sh/hook": pre-upgrade # this pre-upgrade annotation tells helm to run this job before any helm upgrade is performed
      "helm.sh/hook-weight": "-1" # helm sorts in ascending order, so the lower the number the greater the priority
   ...
-  {% endraw}
+  {% endraw %}
   ```
 
 <h2>Hook Deletion</h2>
@@ -57,7 +57,7 @@
   - `before-hook-createion`: will delete hook from previously ran defined helm action before creating the new hook 
 
   ```bash
-  {% raw}
+  {% raw %}
   apiVersion: batch/v1
   kind: Job
   metadata:
@@ -67,6 +67,6 @@
      "helm.sh/hook-weight": "-1" # helm sorts in ascending order, so the lower the number the greater the priority
      "helm.sh/hook-delete-policy": hook-succeeded
   ...
-  {% endraw}
+  {% endraw %}
   ```
 
