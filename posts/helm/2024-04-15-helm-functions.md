@@ -48,6 +48,7 @@
     unset: {{ $_ := unset $mydict "name4" }} # unsets a pair to map; $_ traps output
     unset: {{ $_ := unset $mydict "name4" }} # unsets a pair to map; $_ traps output
     hasKey: {{ haskey $mydict "name1" }} # returns boolean
+    first: {{ first $myList }} # grabs first indext in a list
     {% endraw %}
     ```
     

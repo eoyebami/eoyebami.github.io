@@ -22,3 +22,6 @@
     * `kubectl get deployment metrics-server -n kube-system`
   4. Confirm metrics consumption after some time:
     * `kubectl top node`
+
+* NOTE: Installation will fail in on-prem home lab since k8 is running using self-signed certs
+  - I added this line to the args on the deployment.yaml for metrics-server: `--kubelet-insecure-tls`

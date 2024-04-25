@@ -106,6 +106,10 @@
      # --cri-socket
      # --pod-network-cidr cidr for all pods
      # --apiserver-advertise-addres <ip-of-api-server> can also be lb that will balance traffic
+     # set primary ip for kubelet
+     cat <<EOF | sudo tee /etc/default/kubelet
+     KUBELET_EXTRA_ARGS="--node-ip $(hostname -I)"
+     EOF
      sudo kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address 10.0.0.11
     
      # create config file
@@ -132,8 +136,7 @@
          --discovery-token-ca-cert-hash sha256:xxxxx
      # if token expires, which it will after 24hrs, generate a new one
      kubeadm token create --print-join-command
-     ip route add 10.96.0.0/16 dev enp0s8 proto kernel scope link src xxx.xxx.xxx.xxx
      ```
-<h2>FAW</h2>
-* The script I used for my vms can be found here
+<h2>FAQ</h2>
+* The script I used for my vms can be found [here](https://eoyebami.github.io/posts/k8s/2024-03-09-kubeadmn-k8-vagrant.html)
 

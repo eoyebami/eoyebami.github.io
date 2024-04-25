@@ -76,6 +76,7 @@
     * [2023-12-29-daemonsets](posts/k8s/2023-12-29-daemonsets.md)
     * [2024-02-18-environment-vars](posts/k8s/2024-02-18-environment-vars.md.md)
     * [2024-03-07-k8-jsonpath](posts/k8s/2024-03-07-k8-jsonpath.md)
+    * [2024-04-23-k8-jobs](posts/k8s/2024-04-23-k8-jobs.md)
   - <h5>Kubernetes: Scheduling</h5>
     * [2023-12-24-manual-scheduling](posts/k8s/2023-12-24-manual-scheduling.md)
     * [2023-12-24-taints-and-tolerations](posts/k8s/2023-12-24-taints-and-tolerations)
@@ -139,6 +140,10 @@
     * [2024-04-22-helm-named-templates](posts/helm/2024-04-22-helm-named-templates.md)
     * [2024-04-22-helm-chart-hooks](posts/helm/2024-04-22-helm-chart-hooks.md)
     * [2024-04-22-helm-packaging-signing-uploading-charts](posts/helm/2024-04-22-helm-packaging-signing-uploading-charts.md)
+- <h4>Istio</h4>
+  - <h5>Istio: Introduction</h5>
+    * [2024-04-24-intro-to-istio](posts/istio/2024-04-24-intro-to-istio.md)
+    * [2024-04-24-istio-installation](posts/istio/2024-04-24-istio-installation.md)
   
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
