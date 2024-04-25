@@ -9,6 +9,7 @@ istioctl x precheck # preforms checks on cluster to display an issues it may hav
 $ istioctl install --set profile=<profile> -y # installs istio based on the profile you defined, into your cluster
 
 # Istioctl Analyze Command
+# istio analyze [FLAGS]
 $ istioctl analyze # analyzes istio config in your cluster and provides feedback on any issues is notices
 $ istioctl analyze --namespace <namespace> # analyzes istio config in a specified namespace
 ```
