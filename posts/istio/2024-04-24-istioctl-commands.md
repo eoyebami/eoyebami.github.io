@@ -10,5 +10,5 @@ $ istioctl install --set profile=<profile> -y # installs istio based on the prof
 
 # Istioctl Analyze Command
 $ istioctl analyze # analyzes istio config in your cluster and provides feedback on any issues is notices
-$ istioctl analyze --namespace <namespace?> # analyzes istio config in a specified namespace
+$ istioctl analyze --namespace <namespace> # analyzes istio config in a specified namespace
 ```

@@ -1,5 +1,5 @@
 <h1>KubeAdm Installation Vagrant Configs</h1>
-* Admittedly, this was my first time messing around with `Vagrantfiles`, so bare with me if it's a bit rudimentary
+* Admittedly, this was my first time messing around with `Vagrantfiles`, so bear with me if it's a bit rudimentary
 
 <h2>KubeAdm Vagrantfile</h2>
 * This is the file I used for generating a 1 master, 1 worker kubeadm cluster

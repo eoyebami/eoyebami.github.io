@@ -144,6 +144,7 @@
   - <h5>Istio: Introduction</h5>
     * [2024-04-24-intro-to-istio](posts/istio/2024-04-24-intro-to-istio.md)
     * [2024-04-24-istio-installation](posts/istio/2024-04-24-istio-installation.md)
+    * [2024-04-24-istioctl-commands](posts/istio/2024-04-24-istioctl-commands.md)
   
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)

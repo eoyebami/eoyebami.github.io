@@ -39,7 +39,7 @@ spec:
     metadata:
       name: nginx
       labels:
-        app:nginx
+        app: nginx
         tier: front-end
     spec:
       tolerations:
