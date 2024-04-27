@@ -145,6 +145,10 @@
     * [2024-04-24-intro-to-istio](posts/istio/2024-04-24-intro-to-istio.md)
     * [2024-04-24-istio-installation](posts/istio/2024-04-24-istio-installation.md)
     * [2024-04-24-istioctl-commands](posts/istio/2024-04-24-istioctl-commands.md)
+  - <h5>Istio: Traffic Management</h5>
+    * [2024-04-26-istio-gateways](posts/istio/2024-04-26-istio-gateways.md)
+    * [2024-04-26-istio-virtual-services](posts/istio/2024-04-26-istio-virtual-services.md)
+    * [2024-04-26-istio-destination-rules](posts/istio/2024-04-26-istio-destination-rules.md)
   
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
