@@ -3,7 +3,7 @@
   - Traffic can now route in and out of the cluster through these gateways, but now we'll need to configure which services the traffic will be directed to
 * `Virtual Services` define a set of routing rules coming from the `ingressgateway`
 
-<h2>VS Configurations</h2>
+<h2>Virtual Services: Configurations</h2>
 * In the specifications of the `Virtual Service` there are multiple components to take note of
 * `hosts`: 
 * `gateways`: names of gateways that should apply the defined routes
