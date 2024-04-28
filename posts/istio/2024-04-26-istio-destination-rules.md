@@ -1,4 +1,6 @@
 <h1>Istio Destination Rules</h1>
+* A `DestinationRule` defines policies and configurations that are applied to traffic destined for a specific service
+  - If we have a microservice that sits behind a kubernetes service, we define `DestinationRule` for how traffic will be routed to that service through the `envoy` proxy
 * Before going over `Destination Rules` there are a couple specs that need to be defined first
 <h2>Subsets</h2>
 * `Subsets` are a way of defining groups of services to route traffic to
