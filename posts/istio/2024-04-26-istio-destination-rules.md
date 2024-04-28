@@ -17,7 +17,7 @@
     * `interval`: interval between ejection sweep analysis
     * `consecutiveGatewayErrors`: number of gw errors before host is ejected from pol
     * More info [here](https://istio.io/latest/docs/reference/config/networking/destination-rule/#OutlierDetection)
-  - `tls`: SSL/TLS related settings for upstream connections
+  - `tls`: SSL/TLS related settings for upstream connections, to proxy sidecars of the application services
     * `mode`: define settings for [mode](https://istio.io/latest/docs/reference/config/networking/destination-rule/#ClientTLSSettings-TLSmode)
     * `insecureSkipVerify`: skips verification if set to `true`
     * More info [here](https://istio.io/latest/docs/reference/config/networking/destination-rule/#ClientTLSSettings)
