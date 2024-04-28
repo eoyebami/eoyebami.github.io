@@ -93,6 +93,10 @@
         protocol: 
       hosts:
       - "dataengine.com"
-      tls: # will fill out later
+      tls: 
+        mode: SIMPLE
+        minProtocolVersion: TLSV1_2 # default minVersion
+        maxProtocolVersion: TLSV1_3
+        credentialName: cert for gateway loadbalancer
   ```
 
