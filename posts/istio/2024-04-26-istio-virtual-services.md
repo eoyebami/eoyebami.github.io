@@ -5,8 +5,10 @@
 
 <h2>Virtual Services: Configurations</h2>
 * In the specifications of the `Virtual Service` there are multiple components to take note of
-* `hosts`: 
 * `gateways`: names of gateways that should apply the defined routes
+* `hosts`: must be matching to one of the hosts define in the gateway's server specifications
+
+<h4>HTTP Routing</h4>
 * `http`: ordered lists of route rules for HTTP traffic
   - `name`: name of rule
   - `match`: 
@@ -143,8 +145,7 @@
   - [headers](https://istio.io/latest/docs/reference/config/networking/virtual-service/#Headers): add or remove header in request or response
     * The difference between manipulating headers at the http level rather than the route is, at the http level it will hit all matched uris, at the route level you can define headers for specific destinations
 
-
-  ```yml
+ ```yml
   apiVersion: networking.istio.io/v1alpha3
   kind: VirtualService
   metadata:
@@ -152,7 +153,7 @@
   spec:
     gateways: # associate this virtual service with specified gateway
     - istio-gateway
-    hosts: # defines that traffic hitting specified host will be directed to this virtual service
+    hosts: # defines hostname to which this virtual service applies
     - "dataengine.com"
     http:
     - match: # specifies uris that should be matched
@@ -177,8 +178,52 @@
             number: 80
           headers: # remove response headers from this specific destination route
             response:
-              remove: 
+              remove:
               - foo
   ```
+
+<h4>TLS Routing</h4>
+* `tls`: ordered list for HTTPS/TLS traffic, forwards unterminated TLS traffic, if tls mode in the gw is set to `PASSTHROUGH`
+  - `match`:
+    * `sniHosts`: server name indicator to match on, similar to a 
+    * `port`: port host is being addressed on
+    * More info [here](https://istio.io/latest/docs/reference/config/networking/virtual-service/#TLSMatchAttributes)
+  - `route`:
+    * More info [here](https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPRouteDestination)
+   
+  ```yml
+  # matching snihosts for tls connections
+  tls:
+  - match:
+    - port: 443
+      sniHosts:
+      - dataengine.com
+    route:
+    - destination:
+        host: dataengine.default.svc.cluster.local
+  ```
+
+<h4>TCP Routing</h4>
+* `tcp`: ordered list for TCP traffic
+  - `match` :
+    * `port`: matches port on host being addressed
+  - `route`:
+    * More info [here](https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPRouteDestination)
+
+  ```yml
+  tcp:
+  - match:
+    - port: 8888
+    route:
+    - destination:
+      host: dataengine.default.svc.cluster.local
+      port:
+        number: 8080
+  ``` 
+
+<h4>ExportTo</h4>
+* Allows you to export a virtual service to a list of namespaces to be used by sidecars and gateways in those namespaces
+  - `.`: defines present working namespace
+  - `*`: defines all namespaces
 
 * More info on `Destination Rules` can be found [here](https://eoyebami.github.io/posts/istio/2024-04-26-istio-destination-rules.html)
