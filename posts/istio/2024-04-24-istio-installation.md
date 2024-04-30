@@ -33,3 +33,6 @@
     * Run `kubectl label namespace <ns> istio-injection=enabled` to enable this
     * With this istio will be able to inject all pods with istio sidecars for proxies
     * After this has been set, reload the deployments within that namespace so they pick up the changes: `kubectl rollout restart deploy`
+
+* NOTE: for the svc generated in the `istio-system` namespace, if you are using an on-prem cluster then no external IP will be generated
+  - So the Loadbalancer service for istio will come with a NodePort available for your uses externally

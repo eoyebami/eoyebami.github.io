@@ -102,16 +102,61 @@
     * `uri`: new uri
     * More info [here](https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPRewrite)
   - `timeouts`: timeout for HTTP requests 
+     
+    ```yml
+    # configured in a virtual service
+    route:
+    - destination:
+        host: test.default.svc.cluster.local
+        port:
+          number: 8080
+     timeout: 5s # connection timeout at 5 seconds
+    ```
+
   - `retries`: retry policy for HTTP requests
     * `attempts`: number of retries
     * `perTryTimeout`: delay per retry
     * `retryOn`: what should trigger a retry, policies can be found [here](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on)
     * More info [here](https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPRetry)
-  - `fault`: used to emulate failures
+   
+    ```yml
+    # fault delay
+    http:
+    - retries
+        attempts: 3 # istio default is 2 retries
+        perTryTimeout: 2s # istio default is 25ms intervals per timeout
+      route:
+      ...
+      ```
+
+  - `fault`: FAULT INJECTION used to emulate failures
     * `delay`: delay requests forwarding
     * `abort`: apport requests
     * Note: these 2 fields work independently of one another
     * Note: timeouts and retries cannot function when faults are enabled
+ 
+    ```yml
+    # fault delay
+    http:
+    - fault:
+        delay:
+          fixedDelay: 5s
+          percentage: 
+            value: 0.1 # 10% of endusers will experience a 5s delay
+      route: 
+      ...
+
+    # fault abort
+    http:
+    - fault:
+        abort:
+          httpStatus: 400
+          percentage:
+            value: 0.1 # 10% of endusers will experience a 400 error
+      route:
+      ...
+    ```
+
   - `mirror`: mirror HTTP trafic to another destination
     * Note: more info [here](https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPMirrorPolicy)
   - `corsPolicy`: cross-origin resource sharing policy, defining what hosts, methods, and headers can be sent in a request to access this service
@@ -172,7 +217,6 @@
       route:
       - destination: # all traffic matching the uri specified in http spec will be routed to the destination defined in route
           host: dataengine.default.svc.cluster.local # service that sits in front of dataengine microservice
-          weight: 100 # what percentage of traffic should be directed to this destination, use in case of multiple destinations
           subset: v1 # subset defined in destination rule
           port:
             number: 80
@@ -180,6 +224,7 @@
             response:
               remove:
               - foo
+        weight: 100 # what percentage of traffic should be directed to this destination, use in case of multiple destinations
   ```
 
 <h4>TLS Routing</h4>

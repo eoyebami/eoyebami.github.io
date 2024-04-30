@@ -11,9 +11,26 @@
 * Types:
   - `loadBalancer`: define loadbalancing policies
     * `simple`: set loadbalancing policy like `ROUND_ROBIN, LEAST_CONN, RANDOM, PASSTHROUGH`
-  - `connectionPool`: controls volume of connections to an upstream service
+  - `connectionPool`: `Circut Breaking`; controls volume of connections to an upstream service
     * `tcp`: define settings for [tcp](https://istio.io/latest/docs/reference/config/networking/destination-rule/#ConnectionPoolSettings-TCPSettings)
     * `http`: define settings for [http](https://istio.io/latest/docs/reference/config/networking/destination-rule/#ConnectionPoolSettings-HTTPSettings)
+ 
+    ```yml    
+    spec:
+      host: test.default.svc.cluster.local
+      trafficPolicy:
+        connectionPool:
+          tcp:
+            maxConnections: 3 # limiting the amount of concurrent connections to this svc
+            connectionTimeout: 10s # timeout for each connection
+            maxConnectionDuration: 60s # max time each connection can sustain itself
+          http:
+            maxConcurrentStreams: 3 # limiting the amount of concurrent connections
+            maxRequestsPerConnection: 10 # limiting requests each connection can make
+            http1MaxPendingRequests: 5 # max number of requests can be queued for this service
+            idleTimeout: 10s # idle timeout for connections
+    ```    
+
   - `outlierDetection`: controls eviction of unhealthy hosts from load balancing pool
     * `consecutive5xxErrors`: number of 5xx errors from before host is ejection from pool
     * `interval`: interval between ejection sweep analysis
@@ -53,7 +70,7 @@
         simple: ROUND_ROBIN # setting a traffic policy of loadbalancer allows you to change this configuration
       tls:
         mode: ISTIO_MUTUAL # uses istio cert for verification
-    subsets:
+    subsets: # subsets can be used for A/B Testing (testing 2 versions of an application, one usually being available to a small sample size)
     - name: v1
       labels:
         versions: v1 # label on deployments that will be associated with this subset
