@@ -149,6 +149,9 @@
     * [2024-04-26-istio-gateways](posts/istio/2024-04-26-istio-gateways.md)
     * [2024-04-26-istio-virtual-services](posts/istio/2024-04-26-istio-virtual-services.md)
     * [2024-04-26-istio-destination-rules](posts/istio/2024-04-26-istio-destination-rules.md)
+  - <h5>Istio: Security</h5>
+    * [2024-04-30-istio-security-authentication](posts/istio/2024-04-30-istio-security-authentication.md)
+    * [2024-04-30-istio-security-authorization](posts/istio/2024-04-30-istio-security-authorization.md)
   
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
