@@ -27,7 +27,7 @@
     ```
 
   - [Date Functions](https://helm.sh/docs/chart_template_guide/function_list/#date-functions):
-    * NOTE: Go Lang Time formats that can be used are found [here](https://eoyebami.github.io/posts/helm/2024-04-15-helm-date-formats.html)
+    * NOTE: Go Lang Time formats that can be used are found [here](https://eoyebami.github.io/posts/k8s/helm/2024-04-15-helm-date-formats.html)
   
     ```bash
     {% raw %}

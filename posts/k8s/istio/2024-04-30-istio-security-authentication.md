@@ -3,7 +3,12 @@
 * Within `istiod` there is a CA that manages keys and certificates within the service mesh
   - This is where certificates are validated and csr's are approved
   - Everytime a request in made within the mesh, the envoy proxies request the certificate and key from the istio agent and is able to validate it against the `istiod` CA
-    * This is specific for the `ISTIO_MUTAL` tls mode that can be set in the service mesh
+    * The istio-agent running as a sidecar in our application pods makes sends a csr to our `istiod`
+    * `Istiod` will then sign the csr with its CA and sends the cert and the key back to `istio-agent`
+    * `Istio-agent` then passes these credentials to the envoy proxy
+    * `Istio-agent` the monitors the expiration of the cert and this entire process repeats periodically 
+    * NOTE: is a production environment, it is best practice to configure `istiod` to use your own validated CA
+    * In order to do this create the `istio-system` namespace and include a secret called cacerts that contain the relevant ca secrets and `istio` will automatically pick it up to use as its CA
   - Istio's control plane distributes authentication, authorization, secure naming polices as well as certificate and keys; to all istio proxies at all times
     * This allows for `security at depth` because every since possible route, entry, or exit in the mesh has security checks
 
@@ -59,7 +64,7 @@
     kind: RequestAuthentication
     metadata:
       name: test-req-auth
-      namespace: test # with this set, this becomes a namespace-wide policy; if this and labels are not set it becomes mesh wide
+      namespace: test # with this set, this becomes a namespace-wide policy; if this is set to istio-system it becomes mesh-wide
     spec:
       selector:
         matchLabels:

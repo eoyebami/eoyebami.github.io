@@ -128,30 +128,31 @@
     * [2024-03-09-kubeadmn-k8-vagrant](posts/k8s/2024-03-09-kubeadmn-k8-vagrant.md)
 - <h4>Helm</h4>
   - <h5>Helm: Introduction</h5>
-    * [2024-04-12-intro-to-helm](posts/helm/2024-04-12-intro-to-helm.md)
-    * [2024-04-12-helm-install-and-configuration](posts/helm/2024-04-12-helm-install-and-configuration.md)
-    * [2024-04-14-helm-charts](posts/helm/2024-04-14-helm-charts.md)
-    * [2024-04-14-helm-command-tricks](posts/helm/2024-04-14-helm-command-tricks.md)
-    * [2024-04-15-helm-templatization](posts/helm/2024-04-15-helm-templatization.md)
+    * [2024-04-12-intro-to-helm](posts/k8s/helm/2024-04-12-intro-to-helm.md)
+    * [2024-04-12-helm-install-and-configuration](posts/k8s/helm/2024-04-12-helm-install-and-configuration.md)
+    * [2024-04-14-helm-charts](posts/k8s/helm/2024-04-14-helm-charts.md)
+    * [2024-04-14-helm-command-tricks](posts/k8s/helm/2024-04-14-helm-command-tricks.md)
+    * [2024-04-15-helm-templatization](posts/k8s/helm/2024-04-15-helm-templatization.md)
   - <h5>Helm: Templatization Techniques</h5>
-    * [2024-04-15-helm-functions](posts/helm/2024-04-15-helm-functions.md)
-    * [2024-04-15-helm-date-formats](posts/helm/2024-04-15-helm-date-formats.md)
-    * [2024-04-19-helm-conditionals](posts/helm/2024-04-19-helm-conditionals.md)
-    * [2024-04-22-helm-named-templates](posts/helm/2024-04-22-helm-named-templates.md)
-    * [2024-04-22-helm-chart-hooks](posts/helm/2024-04-22-helm-chart-hooks.md)
-    * [2024-04-22-helm-packaging-signing-uploading-charts](posts/helm/2024-04-22-helm-packaging-signing-uploading-charts.md)
+    * [2024-04-15-helm-functions](posts/k8s/helm/2024-04-15-helm-functions.md)
+    * [2024-04-15-helm-date-formats](posts/k8s/helm/2024-04-15-helm-date-formats.md)
+    * [2024-04-19-helm-conditionals](posts/k8s/helm/2024-04-19-helm-conditionals.md)
+    * [2024-04-22-helm-named-templates](posts/k8s/helm/2024-04-22-helm-named-templates.md)
+    * [2024-04-22-helm-chart-hooks](posts/k8s/helm/2024-04-22-helm-chart-hooks.md)
+    * [2024-04-22-helm-packaging-signing-uploading-charts](posts/k8s/helm/2024-04-22-helm-packaging-signing-uploading-charts.md)
 - <h4>Istio</h4>
   - <h5>Istio: Introduction</h5>
-    * [2024-04-24-intro-to-istio](posts/istio/2024-04-24-intro-to-istio.md)
-    * [2024-04-24-istio-installation](posts/istio/2024-04-24-istio-installation.md)
-    * [2024-04-24-istioctl-commands](posts/istio/2024-04-24-istioctl-commands.md)
+    * [2024-04-24-intro-to-istio](posts/k8s/istio/2024-04-24-intro-to-istio.md)
+    * [2024-04-24-istio-installation](posts/k8s/istio/2024-04-24-istio-installation.md)
+    * [2024-04-24-istioctl-commands](posts/k8s/istio/2024-04-24-istioctl-commands.md)
   - <h5>Istio: Traffic Management</h5>
-    * [2024-04-26-istio-gateways](posts/istio/2024-04-26-istio-gateways.md)
-    * [2024-04-26-istio-virtual-services](posts/istio/2024-04-26-istio-virtual-services.md)
-    * [2024-04-26-istio-destination-rules](posts/istio/2024-04-26-istio-destination-rules.md)
+    * [2024-04-26-istio-gateways](posts/k8s/istio/2024-04-26-istio-gateways.md)
+    * [2024-04-26-istio-virtual-services](posts/k8s/istio/2024-04-26-istio-virtual-services.md)
+    * [2024-04-26-istio-destination-rules](posts/k8s/istio/2024-04-26-istio-destination-rules.md)
   - <h5>Istio: Security</h5>
-    * [2024-04-30-istio-security-authentication](posts/istio/2024-04-30-istio-security-authentication.md)
-    * [2024-04-30-istio-security-authorization](posts/istio/2024-04-30-istio-security-authorization.md)
+    * [2024-04-30-istio-security-authentication](posts/k8s/istio/2024-04-30-istio-security-authentication.md)
+    * [2024-04-30-istio-security-authorization](posts/k8s/istio/2024-04-30-istio-security-authorization.md)
+- <h4>Cert-Manager</h4>
   
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
