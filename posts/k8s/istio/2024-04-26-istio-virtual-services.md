@@ -110,7 +110,7 @@
         host: test.default.svc.cluster.local
         port:
           number: 8080
-     timeout: 5s # connection timeout at 5 seconds
+      timeout: 5s # connection timeout at 5 seconds
     ```
 
   - `retries`: retry policy for HTTP requests
@@ -122,7 +122,7 @@
     ```yml
     # fault delay
     http:
-    - retries
+    - retries:
         attempts: 3 # istio default is 2 retries
         perTryTimeout: 2s # istio default is 25ms intervals per timeout
       route:
