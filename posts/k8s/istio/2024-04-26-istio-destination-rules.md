@@ -2,6 +2,7 @@
 * A `DestinationRule` defines policies and configurations that are applied to traffic destined for a specific service
   - If we have a microservice that sits behind a kubernetes service, we define `DestinationRule` for how traffic will be routed to that service through the `envoy` proxy
 * Before going over `Destination Rules` there are a couple specs that need to be defined first
+
 <h2>Subsets</h2>
 * `Subsets` are a way of defining groups of services to route traffic to
   - By Using labels we can split services into these groups, which can then be weighted for balancing in [Virtual Services](https://eoyebami.github.io/posts/k8s/istio/2024-04-26-istio-virtual-services.html)
