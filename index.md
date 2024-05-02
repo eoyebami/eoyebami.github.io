@@ -89,8 +89,6 @@
     * [2023-12-31-priority-classes](posts/k8s/2023-12-31-priority-classes.md)
     * [2024-03-25-pod-affinity](posts/k8s/2024-03-25-pod-affinity.md)
     * [2024-03-25-pod-disruption-budget](posts/k8s/2024-03-25-pod-disruption-budget.md)
-  - <h5>Kubernetes: Logging & Monitoring</h5>
-    * [2024-01-01-metrics-server](posts/k8s/2024-01-01-metrics-server.md)
   - <h5>Kubernetes: Application Lifecycle Management</h5>
     * [2024-01-14-commands-and-args](posts/k8s/2024-01-14-commands-and-args.md)
     * [2024-01-14-configmaps](posts/k8s/2024-01-14-configmaps.md)
@@ -126,6 +124,10 @@
     * [2024-03-06-intro-to-cluster-diy](posts/k8s/2024-03-06-intro-to-cluster-diy.md)
     * [2024-03-07-kubeadm-k8-installation](posts/k8s/2024-03-07-kubeadm-k8-installation.md)
     * [2024-03-09-kubeadmn-k8-vagrant](posts/k8s/2024-03-09-kubeadmn-k8-vagrant.md)
+
+- <h3>Kubernetes: Cluster Add-Ons</h3>
+- <h4>Metrics</h4>
+    * [2024-01-01-metrics-server](posts/k8s/2024-01-01-metrics-server.md)
 - <h4>Helm</h4>
   - <h5>Helm: Introduction</h5>
     * [2024-04-12-intro-to-helm](posts/k8s/helm/2024-04-12-intro-to-helm.md)
@@ -153,6 +155,9 @@
     * [2024-04-30-istio-security-authentication](posts/k8s/istio/2024-04-30-istio-security-authentication.md)
     * [2024-04-30-istio-security-authorization](posts/k8s/istio/2024-04-30-istio-security-authorization.md)
 - <h4>Cert-Manager</h4>
+    * [2024-05-01-intro-to-cert-manager](posts/k8s/cert-manager/2024-05-01-intro-to-cert-manager.md)
+    * [2024-05-01-cert-manager-issuers](posts/k8s/cert-manager/2024-05-01-cert-manager-issuers.md)
+    * [2024-05-01-cert-manager-certificates](posts/k8s/cert-manager/2024-05-01-cert-manager-certificates.md)
   
 <h2>Jenkins</h2>
   * [2024-01-26-jenkins-cred-manipulation-groovys](posts/jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
