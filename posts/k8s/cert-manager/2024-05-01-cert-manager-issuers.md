@@ -63,7 +63,7 @@
     commonName: "example.com" # primary FQDN
     dnsNames: # list of alternative DNS Names
     - "example.com"
-    - "example01.com
+    - "example01.com"
     # creates the privateKey and selfSigned Issuer will sign the key
   ---
   # bootstrap CA Issuer 
@@ -77,9 +77,9 @@
   ```
 
 <h4>ACME Issuer</h4>
-* `ACME Issuer` represewnts a single account registered with the `Automatec Certificate Management Environment (ACME)` CA server
+* `ACME Issuer` represents a single account registered with the `Automated Certificate Management Environment (ACME)` CA server
   - Certificates issued by the public `ACME` servers are typically widely trusted 
-  - `Let-Encrpty` is the CA that facilitates all of this
+  - `Let-Encrypt` is the CA that facilitates all of this
 * `ACME Issuers` also require a solving challenges to verify that the client owns the domains
 * `Cert-Manager` offers two challenge validations
   - `HTTP01`: challenge that uses a computed key presented at a HTTP URL endpoint using the domain name requested
@@ -88,7 +88,7 @@
     * Akamai
     * AzureDNS
     * CloudFlare
-    * Google
+    * Google CloudDNS
     * Route53
     * DigitalOcean
     * RFC2136
