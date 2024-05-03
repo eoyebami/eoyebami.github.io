@@ -25,3 +25,6 @@
 
 * NOTE: Installation will fail in on-prem home lab since k8 is running using self-signed certs
   - I added this line to the args on the deployment.yaml for metrics-server: `--kubelet-insecure-tls`
+* UPDATE:
+  - By default the kubelet serving certificates deployed by kubeadm is self-sgined
+  - By setting `serverTLSBootstrap: true` in both the `kubelet-config` cm and the config.yaml at `/var/lib/kubelet/config.yaml` you force kubelet to obtain a cert and have it be signed by the cluster itself in the form of a csr
