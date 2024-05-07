@@ -196,3 +196,18 @@ B
   {{- end }}
   {% endraw %}
   ```
+
+<h4>Checking if a values exists or not</h4>
+* Wanted to confirm if a value exists in the `values.yaml` before creating an object 
+
+  ```bash
+  {% raw %}
+  {{- if empty (not .Values.deployment) }}
+  # place object
+  apiVersion: apps/v1
+  kind: Deployment
+  ...
+  {{- end }}
+  {% endraw %}
+  ```
+
