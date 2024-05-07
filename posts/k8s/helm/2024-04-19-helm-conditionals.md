@@ -156,3 +156,43 @@ B
   {% endraw %}
   ```
 
+<h2>Real Life Examples</h2>
+<h4>Iterating over Named Templates</h4>
+* Ran into an issue where I had to iterate over a list of values that would then call `Named Templates` that themselves also iterate over another group of lists
+
+  ```bash
+  {% raw %}
+  {{ range .Values.myFirstList }} # iterates over a list in my function
+  {{- $templateVar := printf "chart.%s" . -}} # appends objects with named template prefix
+  {{- include $templateVar $ }} # calls an include on each named template
+  # the $ in the include sets the "." as the scope for the include
+  # that way your named template is able to call ranges from that scope without issue
+  {{- end }}
+  {% endraw %}
+  ```
+
+<h4>Iterate over a Nested List</h4>
+* Ran into an issue where I needed to interate over a nested list in a `Named Template`
+
+  ```bash
+  # values.yaml
+  paths:
+  - path: /path/file1
+    permissions:
+    - ro
+    - rw
+    - none
+  ```
+
+  ```bash
+  # helm will iterate over each permission for each path
+  {% raw %}
+  {{- range $path := .Values.paths }} # saved as vars to call later without scoping issues
+  {{- range $perms := $paths.permissions }} 
+  - paths:
+      path: {{ $path }} # call path
+        permissions: {{ $perms }}
+  {{- end }}
+  {{- end }}
+  {% endraw %}
+  ```

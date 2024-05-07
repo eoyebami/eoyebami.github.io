@@ -23,6 +23,7 @@
     trimSuffix: {{ .Values.image.repository | trimSuffix "/" }} # trims specified string from suffix of value
     indent: {{ .Values.random.string | indent 4 }} # indents value by 4 spaces
     nindent: {{ .Values.randm.string | nindent 4 }} # prepends new line, then indents 4 spaes
+    splitList: {{ splitList "/" "/path/to/file" | last }} # splits the string into a list with a field separator, then grabs the last index in the list
     {% endraw %}
     ```
 
