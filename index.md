@@ -95,6 +95,7 @@
     * [2024-01-15-secrets](posts/k8s/2024-01-15-secrets.md)
     * [2024-01-16-initContainers](posts/k8s/2024-01-16-initContainers.md)
     * [2024-01-16-liveness-startup-readiness](posts/k8s/2024-01-16-liveness-startup-readiness.md)
+    * [2024-05-24-horizontal-pod-autoscaler](posts/k8s/2024-05-24-horizontal-pod-autoscaler.md)
   - <h5>Kubernetes: Security</h5>
     * [2024-01-16-kube-api-authentication](posts/k8s/2024-01-16-kube-api-authentication.md)
     * [2024-01-17-kubernetes-tls](posts/k8s/2024-01-17-kubernetes-tls.md)
@@ -147,6 +148,7 @@
     * [2024-04-24-intro-to-istio](posts/k8s/istio/2024-04-24-intro-to-istio.md)
     * [2024-04-24-istio-installation](posts/k8s/istio/2024-04-24-istio-installation.md)
     * [2024-04-24-istioctl-commands](posts/k8s/istio/2024-04-24-istioctl-commands.md)
+    * [2024-05-24-istioOperator](posts/k8s/istio/2024-05-24-istioOperator.md)
   - <h5>Istio: Traffic Management</h5>
     * [2024-04-26-istio-gateways](posts/k8s/istio/2024-04-26-istio-gateways.md)
     * [2024-04-26-istio-virtual-services](posts/k8s/istio/2024-04-26-istio-virtual-services.md)
