@@ -139,6 +139,11 @@
     * [2024-04-22-helm-named-templates](posts/k8s/helm/2024-04-22-helm-named-templates.md)
     * [2024-04-22-helm-chart-hooks](posts/k8s/helm/2024-04-22-helm-chart-hooks.md)
     * [2024-04-22-helm-packaging-signing-uploading-charts](posts/k8s/helm/2024-04-22-helm-packaging-signing-uploading-charts.md)
+- <h4>Kustomize</h4>
+  - <h5>Kustomize: Introduction</h5>
+    * [2024-05-26-intro-to-kustomize](posts/k8s/kustomize/2024-05-26-intro-to-kustomize.md)
+  - <h5>Kustomize: Customization Techniques</h5>
+    * [2024-05-26-kustomize-transformers](posts/k8s/kustomize/2024-05-26-kustomize-transformers.md)
 
 - <h3>Kubernetes: Cluster Add-Ons</h3>
 - <h4>Metrics</h4>

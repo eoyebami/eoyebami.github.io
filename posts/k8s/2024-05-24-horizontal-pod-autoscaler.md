@@ -6,7 +6,7 @@
   - `metrics.k8s.io` is an api provided by the add-on `metrics-server`
   - In short, `hpa` will not function unless `metrics-server` or an equivalent is running within your cluster
 
-```
+```yml
 # Example with Defined Metrics
 # Can also be used to define custom metrics
 apiVersion: autoscaling/v2
