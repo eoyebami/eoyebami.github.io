@@ -144,6 +144,8 @@
     * [2024-05-26-intro-to-kustomize](posts/k8s/kustomize/2024-05-26-intro-to-kustomize.md)
   - <h5>Kustomize: Customization Techniques</h5>
     * [2024-05-26-kustomize-transformers](posts/k8s/kustomize/2024-05-26-kustomize-transformers.md)
+    * [2024-05-27-kustomize-patches](posts/k8s/kustomize/2024-05-27-kustomize-patches.md)
+    * [2024-05-27-kustomize-overlays](posts/k8s/kustomize/2024-05-27-kustomize-overlays.md)
 
 - <h3>Kubernetes: Cluster Add-Ons</h3>
 - <h4>Metrics</h4>
