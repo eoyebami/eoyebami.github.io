@@ -35,7 +35,7 @@
 
 * In the `overlays/staging`, we have a `kustomization.yaml` file defined that imports the base directory and we also define a patch to modify the important base resources
 
-  ```
+  ```yml
   # overlays/stage/kustomizaion.yaml file
   apiVersion: kustomize.config.k8s.io/v1beta1
   kind: Kustomization
