@@ -390,6 +390,7 @@
     patch: |-
       - op: replace
         path: /spec/template/spec/containers/0 # references the first index as the target
+        # path: /spec/template/spec/containers/0/image will replace the image in the list
         value: # these values will replace the preexisting values at the first index
           name: haproxy 
           image: haproxy 
