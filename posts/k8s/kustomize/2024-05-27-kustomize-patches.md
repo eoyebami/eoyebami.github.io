@@ -446,3 +446,4 @@
             name: mysql
   ```
 
+* NOTE: in situations when patching a list of containers using strategic merge, make sure you at least specify the name of the container so `Kustomize` knows which one is being modified

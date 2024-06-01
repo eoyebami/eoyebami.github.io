@@ -41,11 +41,17 @@
 * CMDs for Cm manipulation 
   - `kubectl create configmap <cm-name> --from-literal=<key-name>=<value>  --from-literal=key-name-2=value-2`: provide the key/value pairs directly in the command
   - `kubectl create configmap <cm-name> --from-file=<key-name>=app-config.properties`: provide the key/value pairs from a properties file as a multi-lined string
+  - `kubectl label cm <cm-name> "key=value"`: labels specified cm
+  - `kubectl label cm <cm-name> "key1=value2" --overwrite`: overwrites specified cm with specified labels with new ones
+  - `kubectl label cm -l "key1=value1" --overwrite "key1=value2`: overwrites matching cm specified labels with new ones
 
 <h4>Secrets</h4>
 * CMDs for Secret manipulation 
   - `kubectl create secret generic <secret-name> --from-literal=<key-name>=<value>`: used to create individual key/value pairs in the object
   - `kubectl create secret generic <secret-name> --from-file=<key-name>=app-config.properties`: used to add the contents of the file in a key as a multi-lined string
+  - `kubectl label secrets <secret-name> "key=value"`: labels specified secrets
+  - `kubectl label secrets <secret-name> "key1=value2" --overwrite`: overwrites specified secret with specified labels with new ones
+  - `kubectl label secrets -l "key1=value1" --overwrite "key1=value2`: overwrites matching secrets specified labels with new ones
 
 <h4>Ingress</h4>
 * CMDs for Ingress manipulation

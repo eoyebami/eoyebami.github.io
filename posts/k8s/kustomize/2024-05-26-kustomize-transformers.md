@@ -27,3 +27,13 @@
     newName: httpd # define replacement
     newTag: "latest" # will add this tag to the image, in this case, the new image
   ```
+
+<h2>Kustomize: Replica Transformer</h2>
+
+  ```yml
+  # kustomization.yaml file
+  # define replicas transfomers
+  replicas: 
+  - count: 5
+    name: nginx-depl # deployment name
+  ```
