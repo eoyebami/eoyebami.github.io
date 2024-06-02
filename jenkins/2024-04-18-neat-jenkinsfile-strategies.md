@@ -49,7 +49,7 @@ stage('Read property file') {
 * I've also used this to create loops that iterate over anything pertaining to loops
 
 ```groovy
-# iterates over env that use separate credentials
+// iterates over env that use separate credentials
 def envs = [
     env1: [
         cred_id: 'envCredId'
@@ -63,7 +63,7 @@ def envs = [
         stage("Iterate Test") {
             steps {
                 script {
-                    # this function iterates over the keys in the defined JSON
+                    // this function iterates over the keys in the defined JSON
                     for (e in envs.keySet()) {
                         env.app_env = e
                         withCredentials([string(credentialsId: envs[app_env].cred_id, variable: 'CRED')]) {
