@@ -113,7 +113,7 @@ stages {
 
 ```groovy
 // Define Links
-def link1 = "https://streamsets.atlassian.net/wiki/spaces/DEVOPS/pages/2988343426/DevOps+Automation+List"
+def link1 = "https://google.com"
 message: "please click <${link1}|here> for context - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)",
 ```
 
