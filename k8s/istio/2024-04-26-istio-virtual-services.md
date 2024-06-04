@@ -271,4 +271,4 @@
   - `.`: defines present working namespace
   - `*`: defines all namespaces
 
-* More info on `Destination Rules` can be found [here](https://eoyebami.github.io/posts/k8s/istio/2024-04-26-istio-destination-rules.html)
+* More info on `Destination Rules` can be found [here](https://eoyebami.github.io/k8s/istio/2024-04-26-istio-destination-rules.html)

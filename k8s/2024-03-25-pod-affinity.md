@@ -1,5 +1,5 @@
 <h1>Pod Affinity</h1>
-* Similarly to `nodeAffinity` in this [section](https://eoyebami.github.io/posts/k8s/2023-12-28-node-affinity.html), pods can also have their own affinities as well
+* Similarly to `nodeAffinity` in this [section](https://eoyebami.github.io/k8s/2023-12-28-node-affinity.html), pods can also have their own affinities as well
 * Pod Affinity can be used to constrain which nodes you pods can be scheduled on based on labels of the pods already running on a node
   - Defining whether or not a pod should be scheduled on a node that has another pod that has a specific label
 

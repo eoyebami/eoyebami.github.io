@@ -48,7 +48,7 @@ kind: Pod
      - (not recommended)
 
   3. `Role Based Access Control (RBAC)`: you define a role with a set of permissions for a user/group and associate the user/group to that role
-     - most used method, steps for configuring in a cluster can be found [here](https://eoyebami.github.io/posts/eks/2024-01-27-role-based-access-control.html)
+     - most used method, steps for configuring in a cluster can be found [here](https://eoyebami.github.io/k8s/2024-01-27-role-based-access-control.html)
      - much more manageable that `ABAC`, updates can be made and reflect immediately to users
 
   4. `Webhook`: outsources authorization management to a thrid-party service

@@ -138,5 +138,5 @@
      kubeadm token create --print-join-command
      ```
 <h2>FAQ</h2>
-* The script I used for my vms can be found [here](https://eoyebami.github.io/posts/k8s/2024-03-09-kubeadmn-k8-vagrant.html)
+* The script I used for my vms can be found [here](https://eoyebami.github.io/k8s/2024-03-09-kubeadmn-k8-vagrant.html)
 

@@ -55,7 +55,7 @@ An API is an `Application Programming Interface`, which is a set of rules that a
   - Headers are used to provide information to both the client and server, it can be used for:
     * Authentication
     * Providing information about the body content
-    * More info on headers at [2023-05-01-http-requests](posts/http/2023-05-01-http-requests.html)
+    * More info on headers at [2023-05-01-http-requests](http/2023-05-01-http-requests.html)
 * <h5>Curl Command Utilizing Header Flag:</h5>
   * Headers are property-value pairs that are separated with a colon
     - "Content-Type: application/json" : which tells the server to expect JSON content

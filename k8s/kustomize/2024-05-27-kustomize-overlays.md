@@ -17,7 +17,7 @@
   ```
 
 * Now coming to the topic of overlays, in `Kustomize`, the way we get it to function for different environments, would be by defining patches that will work to reconfigure the manifest files for each specific environment
-  - More on [Patches](https://eoyebami.github.io/posts/k8s/kustomize/2024-05-27-kustomize-patches.html)
+  - More on [Patches](https://eoyebami.github.io/k8s/kustomize/2024-05-27-kustomize-patches.html)
 * In overlays, we would basically be running the `kustomize build` or the `kubectl apply -k` from with the environment defined in the overlays directory
 
 * Here in the `base/`, we have a `kustomization.yaml` file defined that imports all the base resources

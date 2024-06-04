@@ -5,7 +5,7 @@
     * `openssl req -new -key user.key -subj "/CN=USER01/O=SYSTEM:MASTER" -out user.csr`
   - Once handed to the admin, they can then login to the CA server and sign the csr with the CA.key
     * `openssl x509 -req -in user.csr -CA ca.crt -CAkey ca.key -out user.crt`
-  - For more information on this please read [here](https://eoyebami.github.io/posts/eks/2024-01-17-kubernetes-tls.html)
+  - For more information on this please read [here](https://eoyebami.github.io/k8s/2024-01-17-kubernetes-tls.html)
 * However there is a way to automate this process by generating a `CertificateSigningRequest`
   - The admin would take the csr and base64 encode it
     * `cat user.csr | base64 | tr -d "\n"` # cats csr, encodes it, and deletes all newline characters in the output 

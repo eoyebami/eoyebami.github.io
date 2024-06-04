@@ -1,5 +1,5 @@
 <h1>KubeConfig</h1>
-* This configuration file relates back to authentication via certificates; more information on this can be found [here](https://eoyebami.github.io/posts/eks/2024-01-16-kube-api-authentication.html)
+* This configuration file relates back to authentication via certificates; more information on this can be found [here](https://eoyebami.github.io/k8s/2024-01-16-kube-api-authentication.html)
   - Rudimentarily we would make calls with `kubectl` like this: `kubectl get pods --server <kube-api-server> --client-key admin.key --client-certificate admin.crt --certificate-authority ca.crt`
 
 * Ordinarilty we use `kubeconfig` files to hold the information necessary to authenticate with `kube-apiserver`

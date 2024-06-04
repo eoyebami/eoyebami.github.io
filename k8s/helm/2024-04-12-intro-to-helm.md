@@ -9,7 +9,7 @@
   - `Helm Charts`: Helm charts are a collection of files that describe a set of kubernetes objects that are needed to run a particular application
     * We have what is called a `values.yaml` file which will contain custom settings that are parsed into the charts at apply time
     * We define objects within a chart is use what is known as templating to set configurable variables that will be centralized in a `"values.yaml"` file
-    * More information on charts can be found [here](https://eoyebami.github.io/posts/k8s/helm/2024-04-14-helm-charts.html)
+    * More information on charts can be found [here](https://eoyebami.github.io/k8s/helm/2024-04-14-helm-charts.html)
   - `Helm Repositories`: repositories for finding helm packages similarly to how you find docker images on Docker Hub
     * You can find a variety of created Helm Repositories in [ArtifactHub](https://artifacthub.io/)
   - `Release`: when a chart is applied to a cluster a release is created, which is a single installation of an application

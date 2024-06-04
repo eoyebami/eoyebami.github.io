@@ -85,6 +85,6 @@
    ```
 
   * By default, each namespace in your cluster will have a default `ServiceAccount` that is restricted in its authorization
-    - This `ServiceAccount's` token will be projected mounted unto every pod created into your cluster at the path `/var/run/secrets/kubernetes.io/serviceaccount/token`; more info on projected volumes can be found [here](https://eoyebami.github.io/posts/k8s/2024-02-13-projected-volumes.html)
+    - This `ServiceAccount's` token will be projected mounted unto every pod created into your cluster at the path `/var/run/secrets/kubernetes.io/serviceaccount/token`; more info on projected volumes can be found [here](https://eoyebami.github.io/k8s/2024-02-13-projected-volumes.html)
     - This will be overwritted by whatever `ServiceAccount` you specified in the pod's manifest file
     - You can also choose not to mount any accounts at all by replace the `serviceAccountName` field with a `automountServiceAccountToken: false` field

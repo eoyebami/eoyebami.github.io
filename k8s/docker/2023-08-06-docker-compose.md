@@ -39,7 +39,7 @@ Below is an example of a Docker Compose Yaml File:
     * This makes the use of links no longer necessary
     * We can also manage these networks, by defining them in the yaml file and specifying which of the defined networks, a container will have access to
   - This version also includes a `depends_on` feature to let docker compose know which order to spin up the containers
-    * For more information on networks check out this [page](posts/vbox/2023-04-29-vbox-networking.md)
+    * For more information on networks check out this [page](vms/vbox/2023-04-29-vbox-networking.md)
 
    ```yml
    version: "2"

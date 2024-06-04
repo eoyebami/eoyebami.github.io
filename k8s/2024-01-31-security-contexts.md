@@ -23,4 +23,4 @@
           drop: [""] # here we can define privileges to remove from a container
   ```
 
-* More information on capabilities can be found [here](https://eoyebami.github.io/posts/eks/docker/2024-01-31-docker-container-capabilities.md)
+* More information on capabilities can be found [here](https://eoyebami.github.io/k8s/docker/2024-01-31-docker-container-capabilities.md)
