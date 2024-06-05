@@ -180,11 +180,12 @@
 <h2>Infrastructure as Code</h2>
 - <h4>Ansible</h4>
   - <h5>Ansible: Inventory</h5>
-    * [2024-06-02-introduction-to-ansible](IaC/ansible/2024-06-02-introduction-to-ansible.md)
-    * [2024-06-02-ansible-inventory](IaC/ansible/2024-06-02-ansible-inventory.md)
-    * [2024-06-04-ansible-inventory-techniques](IaC/ansible/2024-06-04-ansible-inventory-techniques.md)
+    * [2024-06-02-introduction-to-ansible](iac/ansible/2024-06-02-introduction-to-ansible.md)
+    * [2024-06-02-ansible-inventory](iac/ansible/2024-06-02-ansible-inventory.md)
+    * [2024-06-04-ansible-inventory-techniques](iac/ansible/2024-06-04-ansible-inventory-techniques.md)
   - <h5>Ansible: Variables</h5>
-    * [2024-06-04-ansible-variables](IaC/ansible/2024-06-04-ansible-variables.md)
+    * [2024-06-04-ansible-variables](iac/ansible/2024-06-04-ansible-variables.md)
+    * [2024-06-05-ansible-facts](iac/ansible/2024-06-05-ansible-facts.md)
        
 <h2>AWS</h2>
 - <h4>IAM</h4>
