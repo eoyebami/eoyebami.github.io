@@ -4,7 +4,7 @@
 <h2>Inventory Techniques</h2>
 * Creating groups within groups
 
-  ```ini
+  ```bash
   # calling alias that are predefined elsewhere
   [web_servers]
   web1
@@ -34,7 +34,7 @@
 
 * Define a host in multiple groups
 
-  ```ini
+  ```bash
   # calling alias that are predefined elsewhere
   [web_servers]
   web1
@@ -66,7 +66,7 @@
 
 * Adding ranges of hosts
 
-  ```ini
+  ```bash
   [web-servers]
   web[1:50].example.com # creates a range of hosts from 1 to 50
 

@@ -13,7 +13,7 @@
 
 <h2>Assigning Vars to a Singe Machine</h2> 
 
-  ```ini
+  ```bash
   [web-servers]
   web1 http_port=80
   web2 http_port=8080
@@ -30,7 +30,7 @@
 
 <h2>Assigning Vars to Multiple Machines</h2>
 
-  ```ini
+  ```bash
   [web-servers]
   web[1:2]
 
@@ -77,10 +77,12 @@
 * All in all, whether we choose to define the vars in a variable file or within the inventory file, these variables will be called within a playbook as follows:
   
   ```yml
+  {% raw %}
   port: '{{ http_port }}'
   # this is known as Jinja templating
   # standalone calls must be made within '', otherwise it is unnecessary
   # use indexing to call specific index from a list var
+  {% endraw %}
   ```
 
 <h2>Defining Vars in Playbooks</h2>
@@ -95,7 +97,7 @@
 
 * Saving command output as a var
   - Within the var, you can pull a variety of information that you can use
-    * `result.rc`: '0' is ran successfully or '1' if it failed
+    * `result.rc`: '0' if ran successfully or '1' if it failed
     * `result.start`: start time of command
     * `result.end`: end time of command
     * `result.stdout`: stdout of command

@@ -10,7 +10,7 @@
   - `INI`
   - `YAML`
   
-  ```ini
+  ```bash
   # /etc/ansible/hosts
   example.server1.com
   example.server2.com
@@ -56,7 +56,7 @@
     * `ansible_ssh_pass`: ssh password not recommended, instead use asymmetric keys
     * `ansible_connection`: defines how ansible should connect to host, can be `ssh` or `winrm` for either linux or windows
   
-  ```ini
+  ```bash
   jenkins   ansible_host=jenkins.server.com ansible_connection=ssh ansible_port=22 ansible_user=ubuntu
   db        ansible_host=db.server.com ansible_connection=ssh ansible_port=22 ansible_user=ec2-user
   localhost ansible_connection=local # ansible will treat host server as part of inventory
