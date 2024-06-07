@@ -1,6 +1,75 @@
 <h1>Ansible Modules</h1>
 * `Ansible Modules` are categorized into different groups based on their functionality
+  - A list of support modules can be found [here](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html)
+* We have different types of modules
+  - `ansible.builtin.*`: modules built into `ansible`
+  - `ansible.posix`: part of posix collection and needs to be installed using `ansible-galaxy collection install ansible.posix`
+  - `community.general`: part of the community general collection and needs to be installed using `ansible-galaxy collection install community.general`
+  - `amazon.aws`: collection of aws specific modules and needs to be installed using `ansible-galaxy collection install amazon.aws`
+
   - `System`: actions to be performed at a system level
+    * [apt](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html#ansible-collections-ansible-builtin-apt-module): manage apt packages
+  
+      ```yml
+      tasks:
+      - name:
+        ansible.builtin.apt:
+          name: http
+          state: present
+      ```
+ 
+    * [Yum](https://docs.ansible.com/ansible/2.9/modules/yum_module.html): manage yum packages
+    
+      ```yml
+      tasks:
+      - name:
+        yum:
+          name: http
+          state: present
+      ```
+ 
+    * [Add Host](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/add_host_module.html#ansible-collections-ansible-builtin-add-host-module): Add a host to the playbook in-mem inventory, can only be called later in the same play
+ 
+      ```yml
+      tasks:
+      - name: Add host to a group
+        ansible.builtin.add_hoset:
+          name: 10.0.0.1 # host
+          groups:
+          - web_servers # will also create defined group if it doesn't already exist
+          var1: value1 # define vars for host
+     
+      tasks:
+      - name: Add hosts in more detailed
+        ansible.builtin.add_host:
+          hostname: web1
+          groups:
+          - web_servers
+          ansible_host: 10.0.0.1
+          ansible_port: 22
+      ```
+ 
+    * [Debug](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html#ansible-collections-ansible-builtin-debug-module): useful for debugging vars or expressions without stopping playbook
+     
+      ```yml
+      tasks:
+      - name: DEBUG
+        ansible.builtin.debug
+          var: result # var defined by register in another play, will display
+          # msg: "debug" # to display to a custom message
+          verbosity: 2 # set verbose level for out
+         
+      ```
+ 
+    * [Fail](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/fail_module.html#ansible-collections-ansible-builtin-fail-module): module fails the progress with a custom message
+ 
+      ```yml
+      tasks:
+      - name: Fail
+        ansible.builtin.fail
+          msg: Failure
+      ```
+ 
     * [User](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html): manager user accounts 
    
       ```yml
@@ -308,30 +377,64 @@
           # insertbefore can also be used
       ``` 
  
-    * `Replace`
-    * `Stat`
-    * `Template`
+    * [Replace](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/replace_module.html): Similar to `lineinfile`, but this replaces all instances of a pattern within a file
+ 
+      ```yml
+      tasks:
+      - name: Replace pattern
+        ansible.builtin.replace: 
+          path: /etc/ssh/sshd_config # path to file
+          regex: '^#PasswordAuthentication' # replaces all occurrences of this within a file
+          replace: 'PasswordAuthentication yes'
+
+      tasks:
+      - name: Replace pattern
+        ansible.builtin.replace:
+          path: /etc/ssh/sshd_config # path to file
+          after: '^#Example Config' # start replacing after this expression  
+          before: '^# EOF' # stop replacing before this expression
+          regex: '^#PasswordAuthentication' # replaces all occurrences of this within a file
+          replace: 'PasswordAuthentication yes'
+      ```
+ 
+    * [Template](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html): takes template files and parses them using jinja templates, before copying to remote host
+ 
+      ```yml
+      tasks:
+      - name: Template a property file
+        ansible.builtin.template:
+          src: /etc/applications.properties.j2 # Jinja template file
+          dest: /home/ec2-user/app/etc/applications.properties 
+          owner: ec2-user
+          group: ec2-user
+          mode: '0644'
+          backup: true # creates backup of file 
+          force: true # if file already exists do nothing, if false then copy over
+      ```
+ 
+    * [Stat](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/stat_module.html): gets the stats of a file, all possible stats can be found [here](https://docs.ansible.com/ansible/2.9/modules/stat_module.html?highlight=stat)
+ 
+      ```yml
+      tasks:
+      - name: Get stat of a file
+        ansible.builtin.stat:
+          path: /etc/fileName
+        register: stat # save output of file to var
+      - name: Debug
+        ansible.builtin.fail:
+          msg: "Failure"
+        when: stat.stat.pw_name != 'root'
+      ```
+ 
     * [Acl](https://docs.ansible.com/ansible/latest/collections/ansible/posix/acl_module.html): set and retrieve acls information
-  - `Database`: help in working with databases
-    * `MongoDB`
-    * `Mssql`
-    * `Mysql`
-    * `Postgresql`
-    * `Proxysql`
-    * `Vertica`
   - `Cloud`: collection of modules from different cloud providers
-    * `Amazon`
-    * `Azure`
-    * `Google`
-    * `Digital Ocean`
-    * `Linode`
-    * `Docker`
-  - `Windows`: helps you use `Ansible` in a windows environment
-    * `Win_copy`
-    * `Win_command`
-    * `Win_domain`
-    * `Win_file`
-    * `Win_regedit`
-    * `Win_shell`
-    * `Win_service`
-    * `Win_user`
+    * [Amazon](https://docs.ansible.com/ansible/latest/collections/amazon/aws/index.html): focus will be on aws in particular, since its my major use case. Its possible to create, stop, and modify instances with this module. I'd like to explore using this to spin up hosts and then adding these hosts using the `add_hosts` module to then set up app configurations on.
+    * [ec2 instance info](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_instance_info_module.html#ansible-collections-amazon-aws-ec2-instance-info-module): gathers info on ec2 instances
+    * [ec2 instance](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_instance_module.html#ansible-collections-amazon-aws-ec2-instance-module): creates and manages aws ec2 instances
+    * [ec2 tag module](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_tag_module.html#ansible-collections-amazon-aws-ec2-tag-module): creates and removes tags on ec2 resources
+    * [ec2 key info](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_key_info_module.html#ansible-collections-amazon-aws-ec2-key-info-module): gathers info on preexisting aws keys, that I assume can be called later
+    * [ec2 security group info](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_security_group_info_module.html#ansible-collections-amazon-aws-ec2-security-group-info-module): gathers info on security groups, that I assume can be called later
+    * [ec2 vpc net info](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_vpc_net_info_module.html#ansible-collections-amazon-aws-ec2-vpc-net-info-module): gathers info on vpcs, that I assume can be called later
+    * [ec2 cpv subnet info](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_vpc_subnet_info_module.html#ansible-collections-amazon-aws-ec2-vpc-subnet-info-module): gathers info on subnets, that I assume can be called later 
+    * [rds cluster info](https://docs.ansible.com/ansible/latest/collections/amazon/aws/rds_cluster_info_module.html#ansible-collections-amazon-aws-rds-cluster-info-module): gathers info on rds, that I assume can be called later
+    * [rds](https://docs.ansible.com/ansible/2.10/collections/community/aws/rds_module.html): rds module that allows more freedom on what to do when manipulating aws rds
