@@ -41,6 +41,8 @@
     become: true
     tasks:
     - name: Echo "{{ item.name }}" # iterating over 'name' object within dependencies
+      command: echo "{{ item.name }}
+      # no_log: true # deactivates console output for loop
       loop:
       - name: web1
         disk: 3gb
