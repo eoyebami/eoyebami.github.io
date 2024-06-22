@@ -6,7 +6,56 @@
   - `ansible.posix`: part of posix collection and needs to be installed using `ansible-galaxy collection install ansible.posix`
   - `community.general`: part of the community general collection and needs to be installed using `ansible-galaxy collection install community.general`
   - `amazon.aws`: collection of aws specific modules and needs to be installed using `ansible-galaxy collection install amazon.aws`
+  - `Import*`: modules that import specific resources into a playbook
+    * [include tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_tasks_module.html)
+  
+      ```yml
+      tasks:
+      - name Include task in play
+        ansible.builtin.include_tasks:
+          file: install.yaml
+      ```
+    
+    * [import playbook](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/import_playbook_module.html#ansible-collections-ansible-builtin-import-playbook-module): cannot be used within a play
+ 
+      ```yml
+      tasks:
+      - name: Import playbook
+        ansible.builtin.import_playbook: mysql.yaml
+        # vars: can also be passed to imported playbooks
+      ```
+ 
+    * [import role](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/import_role_module.html#ansible-collections-ansible-builtin-import-role-module): loads role, and allows you to control when tasks run
+ 
+      ```yml
+      tasks:
+      - ansible.builtin.import_role:
+          name: myrole
 
+      - name: run tasks and pass role
+        ansible.builtin.import_role:
+          name: myrole
+          tasks_from: main.yaml
+        vars:
+          http_port: 80
+      ```
+ 
+    * [include role](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_role_module.html#ansible-collections-ansible-builtin-include-role-module): load and execute a role
+ 
+     ```yml
+      tasks:
+      # runs roles
+      - ansible.builtin.include_role:
+          name: myrole
+      # runs role while passing var
+      - name: run tasks and pass role
+        ansible.builtin.include_role:
+          name: myrole
+          tasks_from: main.yaml
+        vars:
+          http_port: 80
+      ```
+  
   - `System`: actions to be performed at a system level
     * [apt](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html#ansible-collections-ansible-builtin-apt-module): manage apt packages
   
@@ -54,7 +103,7 @@
       ```yml
       tasks:
       - name: DEBUG
-        ansible.builtin.debug
+        ansible.builtin.debug:
           var: result # var defined by register in another play, will display
           # msg: "debug" # to display to a custom message
           verbosity: 2 # set verbose level for out
@@ -66,7 +115,7 @@
       ```yml
       tasks:
       - name: Fail
-        ansible.builtin.fail
+        ansible.builtin.fail:
           msg: Failure
       ```
  

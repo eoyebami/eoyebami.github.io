@@ -191,6 +191,11 @@
     * [2024-06-06-ansible-playbook-conditionals](iac/ansible/2024-06-06-ansible-playbook-conditionals.md)
     * [2024-06-07-ansible-playbooks-loops](iac/ansible/2024-06-07-ansible-playbooks-loops.md)
     * [2024-06-07-ansible-modules](iac/ansible/2024-06-07-ansible-modules.md)
+    * [2024-06-08-ansible-plugins](iac/ansible/2024-06-08-ansible-plugins.md)
+    * [2024-06-08-ansible-handlers](iac/ansible/2024-06-08-ansible-handlers.md)
+    * [2024-06-21-handlers](iac/ansible/2024-06-21-handlers.md)
+    * [2024-06-21-ansible-blocks](iac/ansible/2024-06-21-ansible-blocks.md)
+    * [2024-06-21-ansible-roles](iac/ansible/2024-06-21-ansible-roles.md)
        
 <h2>AWS</h2>
 - <h4>IAM</h4>
