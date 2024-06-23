@@ -1,4 +1,5 @@
 <h1>Ansible Blocks</h1>
+
 * `Ansible Blocks` create a logical group of tasks, its similar  to the post stage within a Jenkinsfile
   - `block`: You can define a group of tasks that run
   - `rescue`:  You can define another set of tasks that run if the block group fails
