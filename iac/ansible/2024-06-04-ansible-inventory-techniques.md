@@ -1,7 +1,9 @@
 <h1>Ansible Inventory Techniques</h1>
+
 * There are multiple techniques you can use when defining an `Ansible` inventory file
 
 <h2>Inventory Techniques</h2>
+
 * Creating groups within groups
 
   ```bash
