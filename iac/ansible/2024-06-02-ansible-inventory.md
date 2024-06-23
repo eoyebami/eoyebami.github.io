@@ -1,10 +1,12 @@
 <h1>Ansible Inventory</h1>
+
 * `Ansible` of working with a variety of servers, in order to do so it needs to establish connectivity to those machines
   - In Linux, particularly, this is done using `SSH`
   - This allows `Ansible` to work agentless, usins a push configuration
 * In order to configure this inventory of vms ansible will be connecting to, you'll can either modify the default config file `/etc/ansible/hosts` or specify your own
 
 <h2>Creating an Inventory</h2>
+
 * The inventory file is simply just a list of the servers, by hostname, that you want `Ansible` to govern
 * There are 2 types of formats you can use when configuring an inventory file:
   - `INI`
