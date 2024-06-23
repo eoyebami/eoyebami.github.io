@@ -1,7 +1,9 @@
 <h1>Ansible Playbook Conditionals</h1>
+
 * `Ansible Playbooks` also allow you to define conditionals that can streamline the task process
 
 <h2>Conditional Operators</h2>
+
 * First we need to go over the list of operators that can be used in conditionals
   * `Comparsion Operators`: 
     - `==`: Equal to
@@ -19,6 +21,7 @@
     - `not in`: checks if a value is not present in a list, string, or map
   
 <h2>When Conditionals</h2>
+
 * We can specify that a task only run when a certain condition has been met
 
   ```yml
@@ -51,7 +54,9 @@
     - ansible_distribution_version == "16.04"
   when: ansible_os_family == "Debian" or  ansible_distribution_version == "16.04"
   ```
+
 <h4>When Conditions & Ansible Facts</h4>
+
 * You can also call `Ansible Facts` when using when conditionals in `Ansible`
   
   ```yml
@@ -66,6 +71,7 @@
   ```
 
 <h2>Changed When Conditional</h2>
+
 * `Ansible` allows you to define when a task has `changed` a remote host with the `change_when` conditional, based on the return of the output
   
   ```yml
@@ -84,6 +90,7 @@
 
 
 <h2>Registers</h2>
+
 * `Registers` allow you to save the output of a task as a var that can be called later
 
   ```yml
@@ -103,6 +110,7 @@
   ```
 
 <h2>Abort</h2>
+
 * There may be cases where you want to abort the entire play on all hosts if a task fail or a certain percentage of hosts fail
   - `abort_errors_fatal`: allows you to define this at the playbook or the play level
 
