@@ -1,8 +1,10 @@
 <h1>Introduction to Ansible</h1>
+
 * `Ansible` is a powerful automation tool used for vm provisioning and configuration management
 * Using `Infrastructure as Code` in the form of YAML, we are able to automate software provisioning, configurations, and application deployments across multiple different hosts
 
 <h2>Ansible Installation</h2>
+
 * There are various ways to install `Ansible` on your system
   - `Ansible` documentation points us to the various methods [here](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html)
   - Because I tend to work on `ubuntu/debian` machines; I will be using the following commands to install it
@@ -15,6 +17,7 @@
     ```
 
 <h2>Ansible Configuration Files</h2>
+
 * `Ansible` has a configuration file defined that controls how it will function in a system
 * By default, `Ansible's` configuration file; `ansible.cfg` can be found at `/etc/ansible/ansible.cfg`
 * These values can be overridden in multiple different ways:
