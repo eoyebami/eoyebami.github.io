@@ -1,4 +1,5 @@
 <h1>Ansible Playbook Loops</h1>
+
 * `Ansible Playbooks` also allow you to define loops to iterate of lists
 * There are 3 types of loop directives that can be called in a `playbook`:
   - `loop`
@@ -6,6 +7,7 @@
   - `until`
 
 <h2>Loop Directive</h2>
+
 * You can use loop conditions to iterate over any list you have defined
 
   ```yml
@@ -31,6 +33,7 @@
         state: present
   ```
 <h4>Loop Control</h4>
+
 * Control the how the loop functions 
 
   ```yml
@@ -54,6 +57,7 @@
   ```
 
 <h2>With_* Directive</h2>
+
 * You can consider this an older version of the `loop` directive, since it functions almost exactly the same way
 * There are multiple types of `with` directives that can be used
   - `with_items`
@@ -112,6 +116,7 @@
   ``` 
 
 <h2>Until Loop</h2>
+
 * `Until` loops can be used to retry a task until a condition is met
  
   ```yml
