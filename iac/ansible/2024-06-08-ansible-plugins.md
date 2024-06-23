@@ -1,4 +1,5 @@
 <h1>Ansible Plugins</h1>
+
 * `Ansible Plugins` all you to extend the functionality of `Ansible`, make it easier to tailor it to your specific needs
 * Types of `Ansible Plugins`:
   - `Inventory Plugins`:
