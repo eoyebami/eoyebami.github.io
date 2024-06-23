@@ -1,4 +1,5 @@
 <h1>Ansible Facts</h1>
+
 * When you run a playbook and `Ansible` connects to a machine, it first gathers information about that machine
   - Information like:
     1. System Architecture
@@ -39,6 +40,7 @@
   - `ansible_facts.os_family`: which negates the prefix `ansible` in the fact `ansible_os_family`
 
 <h2>Magic Vars</h2>
+
 * We can even use the magic var `hostvars[""]` to call facts belonging to other hosts
 
   ```yml
