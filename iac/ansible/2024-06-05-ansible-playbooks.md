@@ -1,4 +1,5 @@
 <h1>Ansible Playbooks</h1>
+
 * In `Ansible Playbooks` we define what we want `Ansible` to do to the servers that are defined in the inventory
 * All `Playbooks` are written in YAML and there are differen components to a `playbook`
   - A `playbook` is a single YAML file containing a set of plays
@@ -6,6 +7,7 @@
   - A `task` is an action to be performed on the host
 
 <h2>Playbook Format</h2>
+
 * The `Playbook` is an array of maps of each play that should be run
   
   ```yml
@@ -23,6 +25,7 @@
 * Once a `playbook` has been created you simply need to run `ansible-playbook <playbook.yml>` to execute it
 
 <h2>Verifying Playbooks</h2>
+
 * There are different modes we can use when verifying our `playbooks`
   - `Check Mode`: Running a dry-run against your `playbook` where `Ansible` doesn't actually execute anything
     * This allows you to preview the playbook changes without applying them
@@ -34,5 +37,6 @@
     * `ansible-playbook playbook.yml --syntax--check`: will display error message if any
 
 <h2>Linting Playbooks</h2>
+
 * `Ansible Lint` checks code for potential errors, bugs, stylistic errors, etc
    - `ansible-lint playbook.yml`: will display errors and warnings about potential issues within the playbook and suggests fixes for such issues
