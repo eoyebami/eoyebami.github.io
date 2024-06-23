@@ -1,4 +1,5 @@
 <h1>Ansible Variables</h1>
+
 * `Ansible` Variables are a way to save information to a key that can be called later on within the file
   - This can be used in `playbooks`, `inventory`, and even designated `variable` files 
 * There a couple ways to do it, but for now we'll use the `inventory` example
@@ -25,6 +26,7 @@
   - `Playbook`: a collections of plays
 
 <h2>Variable Types</h2>
+
 * There are different types of variables that can be defined in `Ansible`
   - `String`: hold string values
   - `Number`: hold integer and floating point values
@@ -33,6 +35,7 @@
   - `Dictionary`: holds a map of key-value pairs, use a jsonpath like strategy to call values
 
 <h2>Variable Scopes</h2>
+
 * `Variable Scopes` defines a vars accessibility
   - For example, if I have a var assigned to a specific hosts, then I try to run a play against all of my servers, then I can expect my playbook to fail with `VARIABLE IS NOT DEFINED`, because it exists outside of that scope
 * We have a different scopes:
@@ -79,6 +82,7 @@
   ```
 
 <h4>Play Scoped Vars</h4>
+
 * Within a playbook, a var can also be defined
 * Defining Vars in Playbook
 
@@ -89,10 +93,12 @@
   ```
 
 <h4>Global Scoped Vars</h4>
+
 * Defined at the root level
 * These can be defined within a variable.yaml file or by passing it in using the `--extra-vars` flag at play runtime
 
 <h2>Saving command output as a var</h2>
+
   - Within the var, you can pull a variety of information that you can use
     * `result.rc`: '0' if ran successfully or '1' if it failed
     * `result.start`: start time of command
