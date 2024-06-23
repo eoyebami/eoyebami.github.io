@@ -1,8 +1,10 @@
 <h1>Ansible Roles</h1>
+
 * `Ansible Roles` enable us to reuse and share Ansible code efficiently, in short, its basically a package manager for ansible playbooks meant to fulfil a specific tasks like installing mysql
 
 
 <h2>Roles: Directory Structure</h2>
+
 * `Roles` have a defined directory structure with 7 main standard directories
  
   ```
