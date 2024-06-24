@@ -7,6 +7,7 @@ HTTP is responsible for communication between web servers and clients, it is the
   - Data is encrypted by SSL (Secure Socket Layer) or by TLS (Transport Security Layer)
 
 <h3>HTTP Methods:</h3>
+
 When a request is made to a server it has so kind of method attached to it, the main ones are included below:
 * GET: retrieves data from the server 
   - loading a webpage
@@ -63,6 +64,7 @@ Testing:
   * Here you can viewe the `GENERAL, RESPONSE, and REQUEST` header fields
 
 <h3>Error Codes:</h3>
+
 * 1xx: Informational
   - Request received/processing
 * 2xx: Success

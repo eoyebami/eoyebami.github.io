@@ -1,9 +1,11 @@
 <h1>Using Logical Volume Manager Partitions</h1>
+ 
 LVM is used when dealing with changing storage needs. With LVM, disk partitions are added to pools of space called volume groups. Logical volumes are assigned space from those volume groups, which allows:
 * Addition of more space to a logical volume from the volume group while the volume is still in use 
 * Add more physical volumes to a volume group
 * Move data from one physical volume to another so you can remove smaller disks and replace them with larger ones while the fs is still in use
 <h3>Working with LVM</h3>
+ 
 * First you need to down the dependencies for LVM
   - `sudo yum install lvm2-2.03.16-1.amzn2023.0.4.x86_6`
 * If a partition is type lvm, then you can use the `pvdisplay` command to display information about that physical volume
@@ -101,7 +103,9 @@ LVM is used when dealing with changing storage needs. With LVM, disk partitions 
   - `df -Th` or `sudo fdisk -l`; the logical volume will appear as its own disk
 * You can then mount permanently in `/etc/fstab` directory refer to [2023-05-22-parted](2023-05-22-parted.md) for more context on this
 <h3>Modifying Disk Space to a VG</h3>
+ 
 <h5>Adding more Disk Space to a VG</h5>
+ 
 * Create another partition using fdisk
   * Ex:
 0
@@ -145,6 +149,7 @@ xvdf          202:80   0    8G  0 disk
    ```
 
 <h5>Reducing Disk Space</h5>
+ 
 * Resize the PV you created from the partition
   - First retrieve the PV name from the parition by running `pvdisplay /dev/<partition_name>`
 * Resize the fs of the PV
@@ -152,6 +157,7 @@ xvdf          202:80   0    8G  0 disk
 * Run a resize of the PV itself to reflect the changes
   - `sudo pvresize --setphysicalvolumesize <new_size> /dev/<PV_name>`
 <h3>Modifying Disk space to a LV</h3>
+ 
 When resizing a LV, umount is not necessary, you can directly increase it by extending the LV from any avaliable space in the VG
 * Run an extend on the LV
   - `lvextend -L +1G /dev/mapper/myvg0-lv1`

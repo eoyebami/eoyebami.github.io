@@ -1,6 +1,8 @@
 <h1>Swap Space</h1>
+ 
 A swap area is an area of the disk that is made avaliable to linux if the system runs our of memory (RAM). With space space, Linux can temporarily swap out data from RAM to the swapp area and then get it back when needed. Though you will take a performance hit when doing this
 <h3>Swappiness</h3>
+ 
 You can set modify when swap is used based on the ammount of memory allocation using swappiness. Which determines how aggressively the system swaps out memory pages to the swap area
 * Swappiness values ranges from 1-100
   - THe higher teh swappiness, the more likely the system is to utilize swap 
@@ -13,6 +15,7 @@ You can set modify when swap is used based on the ammount of memory allocation u
   - Add line `vm.swappiness=30`
   - This value will be applied ay next system reboot
 <h3>How to create a swap area</h3>
+ 
 * Use `free -m` to see how much avaliable memory you have, including how much avaliable swap space you have
 ```console
 $ free -h
@@ -58,7 +61,9 @@ Swap:            999           0         999
 ```
 
 <h4>Configure a Partition/Logical Volume to use swap</h4>
+ 
 <h5>Using Partiton</h5>
+ 
 * Attach a new disk
 * Use `fdisk` utility to access disk
   - `sudo fdisk /dev/<disk_name>`
@@ -78,6 +83,7 @@ Swap:            999           0         999
   - `free -h` or use `sudo swapon --show`
 * NOTE: you do not need to mount swap areas
 <h5>Using LVM</h5>
+ 
 * Attach a new disk
 * Convert disk into a PV (or you can create a partition from the disk to use as a PV)
   - `sudo pvcreate /dev/<disk_name>`
@@ -90,6 +96,7 @@ Swap:            999           0         999
   - `free -h` to confirm
 * For more information on LVM refer to [2023-05-23-lvm-logical-volumes](2023-05-23-lvm-logical-volumes.md)
 <h3>Disable swapfile or a swap area</h3>
+ 
 * Make sure that the swap space isnt in use
 * Disable Swap
   - `sudo swapoff -a` (disables all swap) or `sudo swapoff /backups/myswap`

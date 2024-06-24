@@ -1,4 +1,5 @@
 <h1>Yum Repo Configuration</h1>
+ 
 
 Appstream: used to installed the application
 BaseOS: used to install base packages for OS
@@ -27,6 +28,7 @@ Extras:
 
 
 <h3>Project:</h3> 
+ 
    1. Create your own yum repo
    2. Create a gpgkey and give your yum repo a digital signature
    3. See what happens when you try to install packages from the repo, when gpgcheck is enabled but the repo has no digital signature

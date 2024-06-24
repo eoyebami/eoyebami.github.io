@@ -1,8 +1,10 @@
 <h1>YAMLS and JSONs</h1>
+ 
 * YAML files and JSON files are similar in nature and interchangeable
 * First we need to understand the different components of these files
 
 <h2>Dictionary</h2>
+ 
 * `Dictionary`: are also known as `maps` that use key-value pairs
   - In JSON, curly brackets symbolize the start of a `map`, and commas within those curly brackets symbolize individual objects in that map
 * YAML
@@ -35,6 +37,7 @@
   ```
 
 <h2>Lists</h2>
+ 
 * `Lists`: are also known as `arrays`, are used to record a sequence of items
   - In JSON, brackets are used to symbolize the start of a list, and commas within those brackets symbolize individual objects in that list
 * YAML
@@ -72,6 +75,7 @@
   ```
 
 <h2>Combination</h2>
+ 
 * Below is an example of using both `maps` and `arrays` together
 * JSON
 

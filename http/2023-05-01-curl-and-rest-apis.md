@@ -1,6 +1,7 @@
 <h1>API calls</h1>
 
 <h3>REST Architectural Style:</h3>
+
 REST stands for `Representational state transfer`, it is a style that promotes the transfer, accessing, and manipulation of textual data representations in a stateless manner. In laymen's terms, the request (via a url) from the client to the server must contain all the information necesary for the server to understnad and complete the request. A RESTful API service is exposed through a Uniform Resource Locator (URL). [I[O
   * You make a request to the API service through its URL (its locator, a request for a resource) in order to communicate with the web server. 
 In a RESTful architecture, the web services are able to be accessed and manipulated using HTTP methods. 
@@ -11,6 +12,7 @@ In a RESTful architecture, the web services are able to be accessed and manipula
     - if it is cacheable then the client application gets the right to reuse the response data for later requests anf a specified period
 
 <h3>What is an API</h3>
+
 An API is an `Application Programming Interface`, which is a set of rules that allow programs to talk to each other. An API is a set of protocols, routines,, and tools that enable different software programs to communicate with each other
   - A weather app might use an API provided by a weahter service in order to retrieve the current temperature and forcast for a specific location.
   - You make a request through a service, the service sends request to api of another service; secondary service sends response via api back to primary service, which outputs via the UI
@@ -19,6 +21,7 @@ An API is an `Application Programming Interface`, which is a set of rules that a
   - Each URL is called a request while the data sent back to you is called a reponse. 
 
 <h3>The Anatomy of a Request:</h3>
+
 * The endpoint: or route is the url you request for 
   - the root-endpoint is the starting point of the API you are requesting (i.e. `https://api.github.com`)
   - the path determines the resource you are requesting for (i.e. https://www.smashingmagazine.com`/tag/javascript/`)
@@ -41,7 +44,9 @@ An API is an `Application Programming Interface`, which is a set of rules that a
   - PUT
   - PATCH
   - DELETE
+
 * <h5>Curl Command Utilizing HTTP Methods:</h5>
+
   * `curl -X GET https://api.github.com/users/eoyebami/repos?sort=pushed` 
     - `-X` or `--request` indicates the type of request you'd like to make
     - If you try to `curl -X POST https://api.github.com/user/repos` to create a new repo it will fail with the below error
@@ -56,7 +61,9 @@ An API is an `Application Programming Interface`, which is a set of rules that a
     * Authentication
     * Providing information about the body content
     * More info on headers at [2023-05-01-http-requests](http/2023-05-01-http-requests.html)
-* <h5>Curl Command Utilizing Header Flag:</h5>
+
+<h5>Curl Command Utilizing Header Flag:</h5>
+
   * Headers are property-value pairs that are separated with a colon
     - "Content-Type: application/json" : which tells the server to expect JSON content
   * `curl -X GET -H "Content-Type: application/json" https://api.github.com`
@@ -65,7 +72,9 @@ An API is an `Application Programming Interface`, which is a set of rules that a
 * The data(or body):
   - The data contains information you want to send to the server
   - The data option is only used in `POST`, `PUT`, `PATCH`, `DELETE` requests
-* <h5>Curl Command Utilizing Data Flag:</h5>
+
+<h5>Curl Command Utilizing Data Flag:</h5>
+
   * You used the `-d` or `--data` option to send data via curl
 
 ```console
