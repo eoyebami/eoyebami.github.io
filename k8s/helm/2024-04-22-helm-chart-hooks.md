@@ -1,4 +1,5 @@
 <h1>Helm Chart Hooks</h1>
+ 
 * Chart Hooks allow us to define pre and post action steps for helm to complete during the `install, delete, upgrade, or rollback` actions
   - Helm will wait for the steps to be completed before moving on with or completing the action
 * Context:
@@ -7,6 +8,7 @@
 * We use `Jobs` with specific annotations to let Helm know that this is a pre or post action step that must be taken
 
 <h2>Defining Jobs for Chart Hooks</h2>
+ 
 * You simply add the `Job` as another template in the chart and add annotations to define when it should be run
 * The annotation you define is `"helm.sh/hook": <helm-action>`; below are examples of hooks you can define:
    - `pre-install`
@@ -31,6 +33,7 @@
   ```
 
 <h2>Multiple Chart Hooks</h2>
+ 
 * Multiple Hooks can also be set for the same action, and weights can be assigned to each hook in order to define the order
 * Weights can be set for hooks using annotation `"helm.sh/hook-weight": <int-as-str>`
 * Hooks can be set with the same weight, and helm will default to sorting by object type then object name
@@ -49,6 +52,7 @@
   ```
 
 <h2>Hook Deletion</h2>
+ 
 * After a hook is applied, it will stay on as a resource in the cluster unless a deletion policy is set
 * Deletion policies can be set with the annotation `"helm.sh/hook-delete-policy": <hook-state>`
 * You can define the hook delete policy as follows:

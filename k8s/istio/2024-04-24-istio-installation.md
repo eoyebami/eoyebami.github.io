@@ -1,4 +1,5 @@
 <h1>Installing Istio</h1>
+ 
 * There are multiple ways to install istio on your system, all of which can be found [here](https://istio.io/latest/docs/setup/install/)
   - For my use case, I will be using `istioctl` as it enables you to `Install and customize any Istio configuration profile for in-depth evaluation or production use`
 * First you'll need to install `istioctl`
@@ -27,6 +28,7 @@
   ```
 
 <h2>Istio Configuration</h2>
+ 
 * After installation, you'll notice that your application pods container count has not changed to include any istio-proxies, though istio is up and running on your cluster
   - To debug this you can run `istioctl analyze`
   - With this you'll see that istio injection is not enabled in your namespaces

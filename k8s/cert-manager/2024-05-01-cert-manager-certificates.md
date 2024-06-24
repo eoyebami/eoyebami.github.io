@@ -1,10 +1,12 @@
 <h1>Cert Manager Certificates</h1>
+ 
 * In `cert-manager` a `Certificate` resource represents a csr
   - `cert-manager` uses the input of the `Certificate` object to generate both a private key and a csr
   - `cert-manager` will then use the key and csr to retrieve a signed `Certifcate` from an `Issuer` in the form of a `Secret` object
     * More info on `Issuers` can be found [here](https://eoyebami.github.io/k8s/cert-manager/2024-05-01-cert-manager-issuers.md.html)
 
 <h2>Certificate Components</h2>
+ 
 * There are a couple component that should be kept in mind when configuring the spec `Certificate` object
   - `secretName`: the tls secret object that will be generated containing the tls keys and certs
   - `secretTemplate`: # template that the generated secret will follow

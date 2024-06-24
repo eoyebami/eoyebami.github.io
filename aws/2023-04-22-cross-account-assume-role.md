@@ -1,4 +1,5 @@
 <h1>Assuming a role!</h1>
+ 
 
 In order to enable a user to assume a role: 
 
@@ -34,6 +35,7 @@ This will allow the role to assume the specified role in the resource block.
 This will allow this role to be assumed by that specific resource. 
 
 <h3>Creating a Cross-Account Role</h3>
+ 
 
 In order to create a cross account role:
 

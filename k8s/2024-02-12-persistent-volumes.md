@@ -1,8 +1,10 @@
 <h1>Persistent Volumes</h1>
+ 
 * Persistent Volumes are a way for users within a cluster to manage volumes more centrally
   - Rather than a user having to generate a volume in the host machine or with whichever 3rd party drive I'm using, I can just pull from a pool of storage already configured for the cluster
 * The admin would configure a pool of cluster wide storage that users could then access by using `persistentVolumeClaims`
 <h2>PV: Access Modes</h2>
+ 
 * There are four types of access modes a PV can have
   - `ReadWriteOnce (RWO)`: the volume can be mounted as rx by a singe node, multiple pods in the same node can access the volume
   - `ReadOnlyMany (ROX)`: the volume can be mounted as ro by many nodes
@@ -10,11 +12,13 @@
   - `ReadWriteOncePod (RWOP)`: the volume can be mounted as rx by a single pod
 * Specific plugins can handle specific access modes, more info [here](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
 <h2>PV: Volume Modes</h2>
+ 
 * Volume modes dictate the type of PV
   - `Filesytem`: a filesystem PV backed by a block device
   - `Block`: a raw block device
     * Pod must know how to handle the block device, more info [here](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#raw-block-volume-support)
 <h2>PV: Reclaim Policy</h2>
+ 
 * Defines what should happen to the volume when its released from a pvc
   - `Retain`: the data is preserved
   - `Delete`: volume is deleted
@@ -49,6 +53,7 @@ spec:
 ```
 
 <h2>Persistent Volume Claim</h2>
+ 
 * Persistent Volume Claims are how users claim a `PersistentVolume`, when a pvc is created kubernetes tries to find a pv that matches the requests and binds them together
   - A smaller claim can be bound to a bigger volume is there are no other better options
     * Excess space in a pv cannot be used by another pvc
@@ -71,6 +76,7 @@ spec:
 ```
 
 <h2>Manifest File</h2>
+ 
 * Once the pvc has been made, you can specify it in the `persistentVolumeClaim` portion in the volumes section
 
 ```yml

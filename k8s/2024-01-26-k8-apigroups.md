@@ -1,7 +1,9 @@
 <h1>Api Groups and Authorization Mechanisms</h1>
+ 
 * `Api Groups` contain the resources and actions that can be on a resource, in layman's terms, these are the permissions
 * Authorization Mechanisms allows us to dictate who and how any user can interact with these `api groups`
 <h2>Apigoups</h2>
+ 
 * We interact with out cluster through a series of api calls made to the `kube-api-server`, essentially `kubectl` has automated this process by allow us to make that call with a few clicks of a button
   - `kubeconfig` also plays a part in centralizing all necessary `POST` data in one singular file
 
@@ -37,6 +39,7 @@ kind: Pod
 ```
 
 <h2>Authorization Mechanisms</h2>
+ 
 * Authorization Mechanisms dictate the ways an authenticated user can access a specified resources and objects in any specified `apiGroup`
 * There are 4 mechanisms:
   1. `Node Authorizer`: grants access to permissions specifically required by `kubelet`; node specific permissions

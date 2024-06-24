@@ -1,7 +1,9 @@
 <h1>KubeAdm Installation Vagrant Configs</h1>
+ 
 * Admittedly, this was my first time messing around with `Vagrantfiles`, so bear with me if it's a bit rudimentary
 
 <h2>KubeAdm Vagrantfile</h2>
+ 
 * This is the file I used for generating a 1 master, 1 worker kubeadm cluster
 
 ```ruby
@@ -57,6 +59,7 @@ end
 * I'd also like to explore a multi-master cluster with an HAproxy in front of the `kube-api-servers`
 
 <h2>KubeAdm Provisioner Shell Script</h2>
+ 
 * This is the shell script I used for generating the cluster
 * Note: Still isn't fully automated, but I don't want to forget the steps I took
 

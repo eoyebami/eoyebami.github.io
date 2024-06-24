@@ -1,4 +1,5 @@
 <h1>Secret and ConfigMap Generator</h1>
+ 
 * One big problem we face with secrets and configmaps in kubernetes, is that a change does not trigger a rollout restart on deployments that have those objects as dependencies
   - Once possible solution I have personally explored, is using dynamic labels or annotations in the objects, that are set to the value of the currentTimestamp
   - However `Kustomize` has a solution to this problem that is alot less tedious by demand
@@ -11,6 +12,7 @@
     * `kubectl apply -k k8s/ --prune -l key=value`": will prune all secrets/configmaps with the specified labels
 
 <h2>ConfigMap Generator</h2>
+ 
 * In the `kustomization.yaml` you can set a genarator, one of two ways
   - `literals`: pass inline data objects for `kustomize` to use to generate a configmap
  
@@ -50,6 +52,7 @@
     ```
 
 <h2>Secret Generator</h2>
+ 
 * For a secret generator, the configs are almost identical to what we use for configmap generators
 
  - `literals`: pass inline data objects for `kustomize` to use to generate a configmap

@@ -1,7 +1,9 @@
 <h1>Jenkinsfile Strategies</h1>
+ 
 * Below I'll be listing some strategies that have helped me create more efficient pipelines
 
 <h2>Jenkinsfile Reload</h2>
+ 
 * This is a stage you can add to your Jenkinsfile that will reload the file without running any subsequent stages
   - For situations where you have added or removed a stage
 
@@ -26,6 +28,7 @@ stages{
 ```
 
 <h2>Iterate over secretFile to create EnvVars</h2>
+ 
 * This will iterate over a Jenkins Secret File and store each key/pair as an environment variable
 
 ```groovy
@@ -45,6 +48,7 @@ stage('Read property file') {
 ```
 
 <h2>Iterate over defined JSON</h2>
+ 
 * I found this to be a neat replacement for using property files for to loop over multiple `withCredentials`
 * I've also used this to create loops that iterate over anything pertaining to loops
 
@@ -81,6 +85,7 @@ def envs = [
 ```
 
 <h2>Global Incremental Variables</h2>
+ 
 * This is what I used to define incremental variables that can be called and manipulated from any stage
 
 ```groovy
@@ -109,6 +114,7 @@ stages {
 ```
 
 <h2>Adding HyperLinks</h2>
+ 
 * Not a tip, but something I'd like to remember
 
 ```groovy
@@ -118,6 +124,7 @@ message: "please click <${link1}|here> for context - ${env.JOB_NAME} ${env.BUILD
 ```
 
 <h2>CleanWs</h2>
+ 
 * Not necessarily a tip, but I always forget it
 
 ```groovy

@@ -1,4 +1,5 @@
 <h1>Passing IAM Roles EKS Pods</h1>
+ 
 * For clusters running on AWS that will need access to AWS resources, you can annotate `ServiceAccounts` with IAM roles to allow pods to utilize the roles through the account
 * Because of the v1.22 release of kubernetes that moonlit the `Token Request API`, which allows a fully compliant OIDC JWT token to be issued and mounted unto pods as `Projected Volumes`
 * AWS EKS comes installed with a identity mutating webhook that injects the tokens into the pod using an `IAM OIDC Identity Provider`, by listening for API calls that are specific for creating pods.
@@ -10,9 +11,11 @@
   - The mutating webhook will iso inject environment variables necessary to make the assume-role call 
 
 <h2>Create OIDC Provider</h2>
+ 
 * Create an OIDC provider for your EKS Cluster, this should automatically be created at cluster startup
   - This will act as the issuer for the JWT tokens in the cluster
 <h2>Create Role</h2>
+ 
 * Create the `IAM` Role in AWS
   - Add the necessary permissions and modify the `Trust Relationships` to include the OIDC Provider
 
@@ -38,6 +41,7 @@
    ```
 
 <h2>Create ServiceAccount</h2>
+ 
 * Create the `ServiceAccount` and annotate it with the aws role you'd like to attach
 
 ```yml
@@ -52,6 +56,7 @@ metadata:
 ```
 
 <h2>Map ServiceAccount to Pod</h2>
+ 
 * Specify the `ServiceAccount` Pod Manifest File
 
 ```yml

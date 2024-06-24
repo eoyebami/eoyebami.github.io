@@ -269,6 +269,7 @@
     * [2024-06-08-ansible-handlers](iac/ansible/2024-06-08-ansible-handlers.md)
     * [2024-06-21-ansible-blocks](iac/ansible/2024-06-21-ansible-blocks.md)
     * [2024-06-21-ansible-roles](iac/ansible/2024-06-21-ansible-roles.md)
+    * [2024-06-22-ansible-collections](iac/ansible/2024-06-22-ansible-collections.md)
        
 <h2>AWS</h2>
 

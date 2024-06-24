@@ -1,4 +1,5 @@
 <h1>Kustomize Componentes</h1>
+ 
 * Using `Kustomize Components` you are able to define resuable pieces of confid logic that can be called in multiple overlays, similar to how functions work within any given programming language
 
  ```

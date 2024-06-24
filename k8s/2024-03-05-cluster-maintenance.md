@@ -1,6 +1,8 @@
 <h1>Cluster Maintenance</h1>
+ 
 * Simply creating a cluster isn't enough, learning how to manage and maintain the components of that cluster are also equally as important
 <h2>Node Maintenance</h2>
+ 
 * It is possible to run into a situation where a node goes down or may need to be taken down to perform necessay OS upgrades
 * Be aware that if a node is down for more than 5 min, then kubernetes will terminate all pods on that node and reschedule them in other nodes (if the pod is part of a replicaset)
 * In order to safely execute a pod rescheduling on nodes you intend to bring down or have already gone down run a `kubectl drain <node-name>`
@@ -10,6 +12,7 @@
   - This will mark the node as `Scheduleable` again
 * If you would like to mark a node as `Uncheduleable` without terminating the pods on that node run `kubectl cordon <node-name>`
 <h2>Cluster Upgrade</h2>
+ 
 * Semantic versioning on the core kubernetes components (`kube-api-server`, `controller-manager`, `kube-scheduler`, `kubelet`, `kube-proxy`) are grouped and packaged together
   - Meaning when a new version of one core component is released, then so are the others
   - Differences in versions can be seen on external resources like `kubectl` and `coreDNS` `etcd` which are maintained outside of the core components
@@ -26,6 +29,7 @@
   - When it come time to upgrade the Worker nodes, use the strategy in the above section to minimize downtime, by draining nodes before running an upgrade on the control plane component binaries
     * Another option would be to spin up new nodes to take the place of the old nodes; where the new nodes would already have the upgrade control plane components installed
 <h3>Cluster Upgrade: KubeAdm</h3>
+ 
 * Use KubeAdm to upgrade your cluster
 * May need to change package repo for minor versions, more info [here](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/#changing-the-package-repository)
   1. `kubectl drain <node-name>`: drain master node

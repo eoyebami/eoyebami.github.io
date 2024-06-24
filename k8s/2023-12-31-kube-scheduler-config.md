@@ -1,5 +1,7 @@
 <h1>Kube-Scheduler Configuration</h1>
+ 
 <h2>Extension Points</h2>
+ 
 * There are multiple steps a pod must go through before being scheduled on a node:
   - `scheduling queue`: which defines the order in which the pods are scheduled (this can be affected by a `PriorityClass` object)
     * Plugins: `PrioritySort`: sorting pods by priority
@@ -18,6 +20,7 @@
 
   * NOTE: these are just the main `Extension Points`, there are many more that can be found [here](https://kubernetes.io/docs/reference/scheduling/config/#extension-points)
 <h2>Profiles</h2>
+ 
 * With Profiles, you can have one `Kube-Scheduler` behave as multiple by using the `KubeSchedulerConfiguration`
   - You can define plugins you'd like disabled/enabled for an `Extension Point` for each profile
 
@@ -55,6 +58,7 @@ spec:
 ```
 
 <h2>Multiple Kube-Schedulers</h2>
+ 
 * You can configure you own scheduler to run in a kubernetes cluster by either deploying the binary yourself into a master node, or by deploying as a pod using the `KubeAdm` method
 * Using a `KubeSchedulerConfiguration` object you can define the configuration of the scheduler, which you can either pass as a file in the `--config` configuration, or in the case of it running as a pod, you can pass it as a `ConfigMap` which you can mount into the pod
   - You can use this object to:

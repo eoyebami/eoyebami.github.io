@@ -1,4 +1,5 @@
 <h1>Liveness, StartUp, and Readiness Probe</h1>
+ 
 * These probes are methods used by kubernetes to determine if an application running on the pod is alive, healthy, and ready for use
   - If these probes fail, kubernetes can take action to resolve this (usually by restarting the container)
 
@@ -10,6 +11,7 @@
     * Rather than k8 waiting for the delay before checking the probe, it will fail until it succeeds, meaning you app can start up faster that it having to always wait for the delay
     * It'll keep running the check depending on your `failureThreshold * periodSeconds` before triggering the `livenessProbe`
 <h4>Probes: httpGet</h4>
+ 
 * `httpGet`: uses a HTTP GET request
 
 ```yml
@@ -53,6 +55,7 @@ spec:
 ```
 
 <h4>Probes: exec</h4>
+ 
 * `exec`: used to run a command to determine liveness of container
 
 ```yml
@@ -85,6 +88,7 @@ spec:
 ```      
 
 <h4>Probes: tcpSocket</h4>
+ 
 * `tcpSocket`: kubelet will try to open socket to your container at that port, established connection means it is healthy
 
 ```yml

@@ -1,4 +1,5 @@
 <h1>Kustomize Patches</h1>
+ 
 * `Kustomize` patches provide a method of modifying k8 configs, by allowing you to targe specific k8 resources 
 * To configure a patch, the following is necessary:
   - `Operation Type`: There are 3 types of operations needed to create a patch:
@@ -47,6 +48,7 @@
   ```
 
 <h2>Kustomize Patches: Add </h2>
+ 
 * Here is an example of doing an add operation against a deployment manifest file
 * `JSON 6902`:
 
@@ -143,6 +145,7 @@
   ```
 
 <h2>Kustomize Patches: Replace</h2>
+ 
 * Here is an example of doing a replace operation against a deployment manifest file
 * `JSON 6902`:
 
@@ -239,6 +242,7 @@
   ```
 
 <h2>Kustomize Patches: Remove</h2>
+ 
 * Here is an example of doing a remove operation against a deployment manifest file
 * `JSON 6902`:
 
@@ -332,10 +336,12 @@
   ```
 
 <h2>Patching Lists</h2>
+ 
 * Kubernetes YAML files can sometimes contain lists, for example, when we are listing containers
 * To create a patch for a list, you simply would need to reference its index
 
 <h3>Add</h3>
+ 
 
   ```yml
   # deployment.yaml
@@ -373,6 +379,7 @@
   ```
 
 <h3>Replace</h3>
+ 
 
   ```yml
   # deployment.yaml
@@ -411,6 +418,7 @@
   ```
 
 <h3>Remove</h3>
+ 
 
   ```yml
   # deployment.yaml

@@ -1,7 +1,9 @@
 <h1>Kustomize Transformers</h1>
+ 
 * `Kustomize` has transfomers that we can use to modify our manifest files
 
 <h2>Kustomize: Common Transfomers</h2>
+ 
  
   ```yml
   # kustomization.yaml file
@@ -18,6 +20,7 @@
   ```
 
 <h2>Kustomize: Image Transformers</h2>
+ 
 
   ```yml
   # kustomization.yaml file
@@ -29,6 +32,7 @@
   ```
 
 <h2>Kustomize: Replica Transformer</h2>
+ 
 
   ```yml
   # kustomization.yaml file

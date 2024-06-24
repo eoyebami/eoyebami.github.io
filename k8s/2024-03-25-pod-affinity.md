@@ -1,13 +1,16 @@
 <h1>Pod Affinity</h1>
+ 
 * Similarly to `nodeAffinity` in this [section](https://eoyebami.github.io/k8s/2023-12-28-node-affinity.html), pods can also have their own affinities as well
 * Pod Affinity can be used to constrain which nodes you pods can be scheduled on based on labels of the pods already running on a node
   - Defining whether or not a pod should be scheduled on a node that has another pod that has a specific label
 
 <h2>Pod AntiAffinity</h2>
+ 
 * Pod AntiAffinity can be used to discourage pods from being scheduled together 
   - This could be used to implement HA or redundancy
 
 <h2>Pod Affinity: Topology Keys</h2>
+ 
 * `Topolgy Keys` is the Key within a node label
   - This is a required field for using `pod Affinity`, because it tells the scheduler how to treat nodes with those matching keys
   - Nodes with the matching `topologyKey` will be treated as the same node
@@ -16,6 +19,7 @@
   - Which could be multiple nodes, if they have the same hostname
 
 <h2>Pod Affinity Types</h2>
+ 
 * There are 4 types of node affinity that defines how it works:
   - `requiredDuringSchedulingIgnoredDuringExecution`: 
     * `DuringScheduling`: required the pods be scheduled on nodes matching the affinity rules; pods with matching labels will be scheduled together
@@ -51,6 +55,7 @@ spec:
 ```
 
 <h2>Match and Mismatch Labels</h2>
+ 
 * This feature is not enabled by default, and can be enabled via the `MatchLabelsKeysInPodAffinity` feature gate
 * This feature allows you to define how pods with matching or mismathing labels that should be treated
   - In `podAntiAffinity`, pods with mismatching labels will be scheduled away from one another

@@ -1,4 +1,5 @@
 <h1>Introduction to Cluster DIY</h1>
+ 
 * When it comes to spinning up your own kubernetes cluster, there are a couple things you should consider
   - What is the purpose of the cluster
     * For educational purposes you can use either `minikube` or `kubeadm`, though I recommend spinning up a cluster from scratch without these tools in order to gain full understanding of how it works under the hood
@@ -19,6 +20,7 @@
   - In the case that you are using a `stacked` topology for a HA cluster, you should use a minimum of 3 Master Nodes
 
 <h2>Configure HA</h2>
+ 
 * When it comes to configuring a HA cluster there are a couple components you should pay attention to.
   - `kube-api-server`: with more than one master node, you will have multiple `api-servers` running in your cluster
     * This can run in an active active mode, as any kube-apiserver can accept requests 
@@ -33,6 +35,7 @@
   - `scheduler`: follows a similar process as the `controller-manager` with the exact same flags as well
 
 <h2>Configure HA for ETCD</h2>
+ 
 * HA on ETCD is pretty similar to how HA works on both `controller-manager` and `scheduler`
   - A leader of the group of dbs in that cluster is selected to handle on writes to the dbs and this data is then cloned to the rest of the read instances
   - Any writes coming in to a read instance, will be forwarded to and handled by the elected leader in this HA cluster

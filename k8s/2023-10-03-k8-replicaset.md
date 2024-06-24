@@ -1,8 +1,10 @@
 <h1>Kubernetes: Replicas</h1>
+ 
 A ReplicaSet is used to manage how many instances of a pod are hosted in a cluster, for example we can have 3 replicas of an nginx pod so that if one crashes, we will still have 2 replicas remaining
   - Replicas also self-heal, so if a replica goes down, the ReplicaSet will spin up a new one
 
 <h3>Replication Controller</h3>
+ 
 * This is the legacy version of a `ReplicaSet`, below is an example of one:
 - `spec`: specifications of the rs
   * `replicas`: amount of replica pods
@@ -156,6 +158,7 @@ spec:
 * All pods deployed by this replication controller will have the name of the `ReplicationController` as their pod name
 
 <h3>ReplicaSet</h3>
+ 
 * This is the latest version of a replica controller in kubernetes, below is an example of one:
 * It is a process that monitors the pods that it governs
   - We use labels to allow the `ReplicaSet` to filter for pods that only match a specific label

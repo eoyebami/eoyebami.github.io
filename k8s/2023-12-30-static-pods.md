@@ -1,4 +1,5 @@
 <h1>Static Pods</h1>
+ 
 * Static pods run on isolated worker nodes (nodes with no other kubernetes components besides the `kubelet` and `CRT` running on the node)
   - With no `apiserver` or other kubernetes components, the `kubelet` can only manage pods
   - `kubelet` recieves these instructions by looking in a `pod-manifest-path` set during the `kubelet` configuration

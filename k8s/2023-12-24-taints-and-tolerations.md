@@ -1,7 +1,9 @@
 <h1>Taints and Tolerations</h1>
+ 
 * These are ways we can manage how pods are scheduled on nodes
   - NOTE: this does NOT define where the pod WILL be scheduled, rather which node CAN be scheduled
 <h2>Taints</h2>
+ 
 * Are set to restrict scheduling on a node 
   - Are defined on nodes
   - By default, no pod can tolerate any taint
@@ -14,6 +16,7 @@
     * `PreferNoSchedule`: pods can be scheduled on this node if there are no other options
     * `NoExecute`: new pods will not be scheduled and existing pods will be evicted (if they can't tolerate the taint)
 <h2>Tolerations</h2>
+ 
 * Are set to allow pods to tolerate a taint that is update a node
   - Are defined on pods
   - Pods CAN be scheduled on nodes whose taints they can tolerate
@@ -85,5 +88,6 @@ spec:
 ``` 
 
 <h2>Removing Taints</h2>
+ 
 * To remove a taint from a node, simply modify the node with a `kubectl edit`
   - `kubectl edit node <node-name>`

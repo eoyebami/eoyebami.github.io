@@ -1,4 +1,5 @@
 <h1>KubeConfig</h1>
+ 
 * This configuration file relates back to authentication via certificates; more information on this can be found [here](https://eoyebami.github.io/k8s/2024-01-16-kube-api-authentication.html)
   - Rudimentarily we would make calls with `kubectl` like this: `kubectl get pods --server <kube-api-server> --client-key admin.key --client-certificate admin.crt --certificate-authority ca.crt`
 
@@ -13,6 +14,7 @@
     - default path is `$HOME/.kube/config`, in which case the `--kubeconfig` won't need to be specified
 
 <h2>KubeConfig: Format</h2>
+ 
 * The config file has 3 sections:
   1. `Clusters`: various kubernetes clusters you have access to
     - Will hold the api-server address and the CA cert: `--server <kube-api-server> --certificate-authority ca.crt # not in this format`

@@ -1,7 +1,9 @@
 <h1>Resource Allocation</h1>
+ 
 * You can determine how much resources to allocate to a container using placing a `request` an `limit` value for each resource
 
 <h2>Requests</h2>
+ 
 * Defines the minimum amount of cpu or memory requested by a container
   - Ideally you want to define `requests` for each container without `limits`, so they are guaranteed what they need and can consume more without disrupting the minimum required for the other pods in the system (though this may vary depending on the env)
   - The `kube-scheduler` will look at this value to determine which node to place the pod which hosts this container, that will satisfy its requirements
@@ -12,6 +14,7 @@
     * `memory`: expresses minimum allocation  as either `G, M, K, Gi, Mi, Ki` (the `i` suffixes denoting a slighty higher size than their counterparts)
 
 <h2>Limits</h2>
+ 
 * Defines the maximum amount of cpu and memory a container can use
   - if a container tries to exceed the limits set on the cpu, `cpu throttling` will occur to ensure that the container cannot
   - if a container tries to exceed the limits set on the mem, `OOM (out-of-memory)` will occur and terminate the pod
@@ -45,6 +48,7 @@ spec:
 ```
 
 <h2>Limit Ranges</h2>
+ 
 * By default k8 does not have limits set for pods in the cluster, so we can define a `LimitRange` to solve this issue
   - `LimitRange` set default `limits` for pods in a namespace
   - `LimitRange` can be overrided by setting `limits` to a pods configuration manually, otherwise it will error

@@ -1,8 +1,10 @@
 <h1>Monitor Cluster Components</h1>
+ 
 * In a kubernetes cluster, we'll need a way to monitor resource metrics such as cpu and memory usage for pods and nodes in order to understand the health and performance of the cluster
   - A simple solution to this would be using the `metric-server` service in your cluster
 
 <h2>Metrics-Server</h2>
+ 
 * `Metric-Server` is a kubernetes cluster add-on that is used to collect resource utilization metrics from nodes and pods
   - It exposes these metrics to the `kube-apiserver` for autoscaling uses (that cannot function without these metrics):
     * `horizontal-pod-autoscaler`: scaling pods in and out (increases/decrease resource allocation to pods)
@@ -13,6 +15,7 @@
     * `kubectl top pods`: metrics for pods
 
 <h4>Installing Metrics-Server</h4>
+ 
 * Currently `metrics-server` is held in a helm chart that can be deployed into your cluster
   1. Add the repo:
     * `helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/`

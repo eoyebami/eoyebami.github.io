@@ -1,7 +1,9 @@
 <h1>Istio Traffic Management</h1>
+ 
 * Now that we have all of our istio components installed, we'll go over how we can route our end users through our service mesh to access our services
 
 <h2>Istio Gateways</h2>
+ 
 * `Istio Gateways` are loadbalancers that sit at the each of the mesh, that manage both inbound and outbound traffic to your services
  - They function pretty similarly to how ingress works in kubernetes
  - You can route traffic to specific services based on rules defined in ingress
@@ -15,10 +17,12 @@
   - A gateway would need to be defined for both egress and ingress traffic
 
 <h2>Istio Gateways: Configurations</h2>
+ 
 * In the specifications of an `Istio Gateway` there are a few components to take note of
 * `selector`: labels that indicate a set of pod to which this gateway will be applied
 
 <h4>Server Specifications</h4>
+ 
 * `server`: a list of server specifications
   - `name`: name of server being defined
   - `port` port where proxy should listen to incoming connections

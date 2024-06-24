@@ -1,6 +1,8 @@
 <h1>Docker Compose</h1>
+ 
 Using `Docker Compose` we can build a multi-container infrastructure with just a yaml file. We can build images, link containers, and launch applications with a simple `docker-compose up`
 <h3>Docker Compose Yaml file</h3>
+ 
 There are different versions of docker-compose that have additional support to help when building your dockerized infrastructure, for more information on this visit this [page](https://docs.docker.com/compose/compose-file/compose-versioning/).
   - This will have info on the changes and the updates of each version
 Below is an example of a Docker Compose Yaml File:

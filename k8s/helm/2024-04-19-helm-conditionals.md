@@ -1,7 +1,9 @@
 <h1>Helm Conditionals, With Blocks, Ranges</h1>
+ 
 * Here are a couple blocks you can use to create more dynamic templates in your helm charts
 
 <h2>If Conditionals</h2>
+ 
 * It is possible to also use conditionals for optional aspects of your templates
   - These sections will only be parsed if the condition is met
 
@@ -41,6 +43,7 @@
 * To avoid the `-` in you can write the if conditional in one line if possible
 
 <h2>With Blocks</h2>
+ 
 * Scopes can be set using with blocks so the entire element does not have to referenced
 
   ```bash
@@ -77,6 +80,7 @@
   ```
 
 <h2>Loops and Ranges</h2>
+ 
 * We can also use loops in our templates to iterate over lists defined in our `values.yaml` file
 B
 
@@ -157,7 +161,9 @@ B
   ```
 
 <h2>Real Life Examples</h2>
+ 
 <h4>Iterating over Named Templates</h4>
+ 
 * Ran into an issue where I had to iterate over a list of values that would then call `Named Templates` that themselves also iterate over another group of lists
 
   ```bash
@@ -172,6 +178,7 @@ B
   ```
 
 <h4>Iterate over a Nested List</h4>
+ 
 * Ran into an issue where I needed to interate over a nested list in a `Named Template`
 
   ```bash
@@ -198,6 +205,7 @@ B
   ```
 
 <h4>Checking if a values exists or not</h4>
+ 
 * Wanted to confirm if a value exists in the `values.yaml` before creating an object 
 
   ```bash

@@ -1,4 +1,5 @@
 <h1>Virtual Box Configuration</h1>
+ 
 
 1. First download the virtual box program
 2. Select new to create a new virtual machine, give it a name and select the type and a version of the OS (make sure virtualization is enabled on your computer.

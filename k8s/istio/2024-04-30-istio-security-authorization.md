@@ -1,10 +1,12 @@
 <h1>Istio Security Authorization</h1>
+ 
 * With `Authorization Policies` we can define who and how a service can be accessed:
   - who: who can make requests to that service
   - how: what requests can be made to that service 
 * When a request hits an envoy, its authorization engine evaluates the request against the current `Authorization Policy` to determine whether it should approve or deny the request
 
 <h2>Authorization Policy</h2>
+ 
 * `Authorization Policy` works as an a sort of acl or security group around services within a mesh
 - Below are a couple components to take note of when configuring a policy:
 * `selector`: use `WorkloadSelector` to `matchLabels` for proxy this policy should match

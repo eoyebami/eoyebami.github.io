@@ -1,4 +1,5 @@
 <h1>Taints, Tolerations, and Node affinity</h1>
+ 
 * There may be cases in which you will need to use a combination of these 3 scheduling methods:
   - You have pods that need to be scheduled on specific nodes, while you also have pods that you don't want scheduled on those same nodes
 

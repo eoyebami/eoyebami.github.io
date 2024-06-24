@@ -1,4 +1,5 @@
 <h1>Kube     sudo sysctl --systemAdm: Kubernetes Cluster</h1>
+ 
 * Installing a Kubernetes Cluster using KubeAdm
 * There are a couple of prerequisites that need to be completed before we can begin
   1. Install a `Container Runtime` prereqs
@@ -138,5 +139,6 @@
      kubeadm token create --print-join-command
      ```
 <h2>FAQ</h2>
+ 
 * The script I used for my vms can be found [here](https://eoyebami.github.io/k8s/2024-03-09-kubeadmn-k8-vagrant.html)
 

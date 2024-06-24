@@ -1,8 +1,10 @@
 <h1>Helm Installation and Configuration</h1>
+ 
 * In order to install and use `Helm` on an OS, you will first need a fully function kubernetes environment
   - Once thats covered, you can continue on with the helm installation
     * You can find all the various installation methods [here](https://helm.sh/docs/intro/install/#from-script)
 <h2>Helm 2 vs Helm 3</h2>
+ 
 * `Helm 2` existed prior to RBAC and custome resource definitoins were introduced to kubernetes
   - `Tiller`: In order to Helm 2 to interact with Kubernetes, it needed to interact with `Tiller`
     * `Tiller` was installed in the kubernetes cluster, and acted as the middle man for interactions between `helm` and the `api-server`

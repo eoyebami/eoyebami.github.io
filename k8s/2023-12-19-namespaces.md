@@ -1,4 +1,5 @@
 <h1>Namespaces: Kubernetes</h1>
+ 
 * Namespaces allow you to abstract resources from one another by isolating them in their own virtual environments
 * Ex:
   - Kubectl:
@@ -38,6 +39,7 @@ metadata:
    ```
 
 <h2>Namespace in other Objects</h2>
+ 
 * The Namespace can be defined for an object in the metadata section of the yaml file
 ```yml
 metadata:
@@ -46,10 +48,12 @@ metadata:
 ```
 
 <h2>Switching between Namespaces</h2>
+ 
 * You can switch between namespaces as follows:
   - `kubectl config set-context $(kubectl config current-context) --namespace=dev`: switches from the current context to the dev one
   - `kubectl get pods --all-namespaces`: will get objects from all namespaces
 <h2>Namespaces: ResourceQuota</h2>
+ 
 * Resource limits can be set to a namespace using the `ResourceQuota` object, very similar to how limits are set in `Deployments`
   - limits can be set on the amount of each object that exist in that namespace
     * `count/<resource>.<group>`: for 

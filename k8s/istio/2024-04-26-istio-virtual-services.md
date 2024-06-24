@@ -1,14 +1,17 @@
 <h1>Istio Virtual Services</h1>
+ 
 * The `Istio Gateways` and the `Istio Gateway Controllers (ingress & egress)` have now been set up
   - Traffic can now route in and out of the cluster through these gateways, but now we'll need to configure which services the traffic will be directed to
 * `Virtual Services` define a set of routing rules coming from the `ingressgateway`
 
 <h2>Virtual Services: Configurations</h2>
+ 
 * In the specifications of the `Virtual Service` there are multiple components to take note of
 * `gateways`: names of gateways that should apply the defined routes
 * `hosts`: must be matching to one of the hosts define in the gateway's server specifications
 
 <h4>HTTP Routing</h4>
+ 
 * `http`: ordered lists of route rules for HTTP traffic
   - `name`: name of rule
   - `match`: 
@@ -228,6 +231,7 @@
   ```
 
 <h4>TLS Routing</h4>
+ 
 * `tls`: ordered list for HTTPS/TLS traffic, forwards unterminated TLS traffic, if tls mode in the gw is set to `PASSTHROUGH`
   - `match`:
     * `sniHosts`: server name indicator to match on, similar to a 
@@ -249,6 +253,7 @@
   ```
 
 <h4>TCP Routing</h4>
+ 
 * `tcp`: ordered list for TCP traffic
   - `match` :
     * `port`: matches port on host being addressed
@@ -267,6 +272,7 @@
   ``` 
 
 <h4>ExportTo</h4>
+ 
 * Allows you to export a virtual service to a list of namespaces to be used by sidecars and gateways in those namespaces
   - `.`: defines present working namespace
   - `*`: defines all namespaces

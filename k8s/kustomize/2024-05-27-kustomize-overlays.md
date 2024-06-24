@@ -1,4 +1,5 @@
 <h1>Kustomize Overlays</h1>
+ 
 * As we learned earlier, `Kustomize` follows a specific directory structure
 
   ```

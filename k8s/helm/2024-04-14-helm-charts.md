@@ -1,7 +1,9 @@
 <h1>Helm Charts</h1>
+ 
 * `Helm charts` are an instruction manual for working with `Helm`
   - Think of it like yaml files we use fro creating objects within kubernetes
 <h2>Helm Chart Structure</h2>
+ 
 * Each Chart will have the following structure
 
   ```console
@@ -12,10 +14,12 @@
   ```
 
 <h2>Helm Charts: Values.yaml</h2>
+ 
 * In `Helm charts` we have what are known as `templates` which itself are the objects that helm will apply
   - Within these templates we can define configurable custom "variables" which are referenced from and defined in what is known as a `values.yaml` file
 
 <h2>Helm Charts: Chart.yaml</h2>
+ 
 * Within a `Helm Chart` we also have what is known as a `chart.yaml`
   - A `chart.yaml` file is a metadata file used in charts that provides information about the chart
  

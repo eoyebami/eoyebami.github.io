@@ -1,7 +1,9 @@
 <h1>Packaging, Signing, and Uploading Helm Charts</h1>
+ 
 * Once you chart is created and ready to be uploaded to a public repository, you'll need to first package and sign the chart
 
 <h2>Packing and Signing Helm Chart</h2>
+ 
 * Next we'll want to cryptographically sign our helm charts, so when people pull the chart they can verify that the chart is ours through our public key
 * First, generate the key you'd like to sign with
   - `gpg --quick-generate-key "EZ"`: generates a key for signing 
@@ -23,6 +25,7 @@
   - NOTE: in a real env a user would first retrieve the key by running `gpg --recv-keys --keyserver <server-hostname> <UID>`
 
 <h2>Uploading Chart to Hub</h2>
+ 
 * Once you've packaged and signed you're chart, you are now reading to upload it to the Artifact Hub
 * First, you'll need to generate an `index.yaml` file that will also be published to the Artifact Hub
   - Create a new directory and copy the helm chart `.tgz` and `.tgz.prov` into that directory

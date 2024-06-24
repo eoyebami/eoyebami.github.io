@@ -1,4 +1,5 @@
 <h1>Horizontal Pod Autoscaler</h1>
+ 
 * A `hpa` automatically updates a workload resource such to match demand on that resource
 * `Kubernetes` implemnets `hpas` as a loop that runs by default every 15s, as per the `kube-controller-manager`
   - Each period, the `kube-controller-manager` queries the resource utilization against the metrics defined in the `hpa`

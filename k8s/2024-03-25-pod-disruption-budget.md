@@ -1,4 +1,5 @@
 <h1>Pod Disruption Budget</h1>
+ 
 * Pod Disruption Budgets are a tool you can used to limit the number of concurrent disruptions that can occur to your application in a cluster
 * Two fields can be specified when defining your `Pod Disruption Budget`
   - `minAvailable`: minimum amount of pods that most be available for selected pods; can be expressed as either an integer or percent

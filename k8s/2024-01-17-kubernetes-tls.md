@@ -1,4 +1,5 @@
 <h1>TLS in Kubernetes</h1>
+ 
 * Similarily to how server's and clients use tls to authenticate with one another, each individual component within the kubernetes infrastructure will also use tls to authenticate with one another
   - Clients: that will require their own keys and certificates to validate itself to servers
     * `endusers` # those making calls to the api-server
@@ -56,6 +57,7 @@
     - `"/CN=SYSTEM:NODE:NODE01/O=SYSTEM:NODES"`
 - NOTE: since `etcd` is only accessed by `api-server`, you can give it its own CA to manage its certs
 <h2>Troubleshooting</h2>
+ 
 * If you need to troubleshoot certificate errors in a cluster, first take note of all the certificates in the cluster
   - `openssl x509 -in <component>.crt -text -noout`: checks information concerning cert
     * check if the cert is expired

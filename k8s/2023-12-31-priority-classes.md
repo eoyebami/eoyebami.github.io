@@ -1,4 +1,5 @@
 <h1>Priority Classes</h1>
+ 
 * Pods can have priority, to indicate how important it is in respect to other pods
   - If there is no space on the cluster, the `kube-scheduler` will preempt (evict) pods with lower priority to make room for a pod with higher priority
 

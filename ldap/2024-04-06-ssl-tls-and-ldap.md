@@ -1,11 +1,13 @@
 
 <h1>Configure SSL/TLS for LDAP</h1>
+ 
 * Enabling SSL for LDAP server will will allow you to use the LDAPs protocol, similarly to how HTTPS works with HTTP
   - By default LDAP listens on 389
   - LDAPs listens on port 636
 * In my case, since this is a purely internal LDAP server, I will be using a self-signed key to enable SSL on my ldap server
 
 <h2>Creating Cert for LDAP</h2>
+ 
 * Generate the root CA key
   ```console
   # mkdir for certs and generated using rsa algorithm

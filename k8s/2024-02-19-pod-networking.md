@@ -1,4 +1,5 @@
 <h1>Pod Networking</h1>
+ 
 * Once you have an entire cluster up and ready to go, from control plane and data plane components to the architecture and node networking, k8 expects you to also have pod networking configured with certain standards
   - Every pod should have an IP address
   - Every pod should be able to communicate with every other pod in the same node

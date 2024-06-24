@@ -1,6 +1,8 @@
 <h1>Dockerfile: CMD vs Entrypoint</h1>
+ 
 These both set instructions set within a Dockerfile, but exactly are the difference between the two?
 <h3>CMD</h3>
+ 
 Values set within the `CMD` instructions, are commands that should be run with the container starts
 
 ```
@@ -19,6 +21,7 @@ CMD ["sleep", "5"]
   * The format of using `CMD` instruction is `CMD ["command", "param1" ]` 
     - We can override this instruction on container start up: `docker run <image> sleep 10`, however this is not industry standard and a better alternative to this is to use `ENTRYPOINT` instruction
 <h3>ENTRYPOINT</h3>
+ 
 Values set within `ENTRYPOINT` instruction will also run when container starts
 
 ```
@@ -40,6 +43,7 @@ ENTRYPOINT ["sleep"]
     - The command could fail to run if it relies on a parameter
     - This is where both `ENTRYPOINT` and `CMD` will be used together to avoid this issue
 <h3>CMD & ENTRYPOINT</h3>
+ 
 Using `CMD` and `ENTRYPOINT` together will allow you to hardcode default parameters for the command
 
 ```

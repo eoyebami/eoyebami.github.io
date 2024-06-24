@@ -1,4 +1,5 @@
 <h1>Authentication</h1>
+ 
 * In other to interact with the cluster in anyway, you first need to authenticate through the `kube-apiserver`
 * Now there are various ways to do this
   - static password file
@@ -12,6 +13,7 @@
    * Authorization: permissions necessary to make calls to cluster resources
 
 <h2>Authentication: Static Password File</h2>
+ 
 * You'll need to created a user-details.csv file containing all relevant information concerning a user and map that to the `kube-apiserver` configuration
   - `--basic-auth-file=user-details.csv`
 
@@ -26,6 +28,7 @@ password123,user1,u0002,group2
   - `curl -v -k https//host-ip:6443/api/v1/pods -u "user1:password123"`
 
 <h2>Authentication: Static Token File</h2>
+ 
 * Similar to the static password file, you can generate a static token file, that will include a token as a column
   - `--token-auth-file=user-token-details.csv`
 
@@ -40,6 +43,7 @@ xxxx,user2,u0002,group2
   - `curl -v -k https://host-ip:6443/api/v1/pods --header "Authorization: Bearer: <token>"`
 
 <h2>Authentication: Certificates</h2>
+ 
 * For certificate authentication, you'll first need to generate asymmetric keys and have them signed by an Admin, using the CA cert generated in the master node
   - For more information on tls read [here](https://eoyebami.github.io/2024-01-16-tls.html)
   - For more information on kubernetes tls read [here](https://eoyebami.github.io/k8s/2024-01-17-kubernetes-tls.html)
@@ -55,6 +59,7 @@ xxxx,user2,u0002,group2
   - More information on this [here](https://eoyebami.github.io/k8s/2024-01-22-kubeconfig.html)
 
 <h2>Identity Services</h2>
+ 
 * Identity services use `serviceaccounts` to authenticate to the `api-server`
   - More information on `serviceaccounts` can be found [here](https://eoyebami.github.io/k8s/2024-01-29-service-accounts.html)
 

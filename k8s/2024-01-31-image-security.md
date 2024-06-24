@@ -1,4 +1,5 @@
 <h1>Image Security</h1>
+ 
 * Image names follow a specific format: `<docker-registry>/<account>/<repository>`
   - `docker.io/library/nginx`: would be the full image name for nginx
     * `docker.io/`: Docker Hub, default docker registry
@@ -7,6 +8,7 @@
   - `docker.io/eoyebami/webapp:latest`: example using my own public repository
 * This is different depending on CSP or if you are using a private repository to host your images
 <h2>Private Repository</h2>
+ 
 * To pull images from a private repository, you must first authenticate through the CRT: `docker login <registry> -u <user> -p`
 
 - In order to mimic this action to allow kubernetes to pull images from a private repository, you'll need to create a `Secret` to host your credentials

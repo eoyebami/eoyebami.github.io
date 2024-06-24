@@ -1,4 +1,5 @@
 <h1>Templatizing Helm Charts</h1>
+ 
 * When it comes to creating helm charts, one thing we must understand is templatizing, which allows us to remove static values from our templates in the charts
   - Replace them with dynamic values that are referenced elsewhere, in something like a `values.yaml` file
 * In helm, we have what is known as a `template directive` which uses `Go templating language`
@@ -11,6 +12,7 @@
     * `Values`: objects referenced in the `values.yaml` file
 
 <h2>Objects</h2>
+ 
 * There a various objects that can be called in a helm template, but helm has done the due diligence of including some built in objects
   - `Release`
     * `Release.Name`: references release name 

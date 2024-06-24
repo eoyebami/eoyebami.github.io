@@ -1,4 +1,5 @@
 <h1>Kustomize Imperative Commands</h1>
+ 
 * `Kustomize` has a bunch of imperative commands that can make it easy to integrate with a CI/CD pipeline
 * This can also come in handy when building `kustomization.yaml` files
 

@@ -1,9 +1,11 @@
 <h1>Intro to Vagrant</h1>
+ 
 * `Vagrant` is a tool for building and managing virtual machine environments in a single workflow
   - Basically its a tool for managing and install vms which in my case is going to be on top of a hypervisor
 * Before, getting started, make sure you have a directory where you will manage all of your vms
   - `mkdir vagrant-envs`
 <h2>Initializing a Vagrant Environment</h2>
+ 
 * To start up with using `vagrant`, similarly to any `hashicorp` software, you will first need to initialize it
   - `vagrant init`: initalizes a directory, and inputs a `Vagrantfile` within the folder
   - `vagrant init <vagrant-box>`: will initalize a folder with a `Vagrantfile` for that exact virtual box

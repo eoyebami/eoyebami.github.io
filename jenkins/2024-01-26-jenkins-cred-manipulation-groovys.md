@@ -1,4 +1,5 @@
 <h1>Jenkins Credential Manipulation Groovy Scripts</h1>
+ 
 * Here are recorded groovy scripts created to manipulate Jenkins Credentials without having to go through their complicated api
  - Use cases include the following:
    * Implementation in Jenkins jobs
@@ -6,6 +7,7 @@
    * Migration of secrets from one Jenkins server to another
    * Helm implementation
 <h2>Decrypt Keys for Jenkins Credentials</h2>
+ 
 * This script will decrypt secrets stored in Jenkins xml
 
 ```groovy
@@ -14,6 +16,7 @@ println Secret.decrypt("xxxx"); //Find value in plugin xml in jenkins server
 ```
 
 <h2>Decrypt Keys for StringCredentials</h2>
+ 
 * This script will decrypt `StringCredentials` stored in Jenkins Credential Store
 
 ```groovy
@@ -38,6 +41,7 @@ getSecret("${credential_id}")
 ```
 
 <h2>Decrypt Keys for AWSCredentials</h2>
+ 
 * This script will decrypt `AWSCredentials` stored in Jenkins Credential Store
 
 ```groovy
@@ -64,6 +68,7 @@ getKeys('${credential_id}')
 ```
 
 <h2>Updating Keys for AWSCredentials</h2>
+ 
 * This script updates `AWSCredentials` stored in Jenkins Credentials Store
 
 ```groovy
@@ -98,6 +103,7 @@ updateKeys('${credentialId}', '${accessKey}', '${secreKey}')
 ```
 
 <h2>Decrypt all BasicSSHUserPrivateKey Credentials</h2>
+ 
 * This script will decrypt all `BasicSSHUserPrivateKey Credentials` stored in Jenkins Credential Store
 
 ```groovy
@@ -118,6 +124,7 @@ for(c in creds) {
 }
 ```
 <h2>Decrypt UsernamePassword Credentials</h2>
+ 
 * This script will decrypt a `UsernamePassword Credential` stored in the Jenkins Credential Store
 
 ```groovy
@@ -142,6 +149,7 @@ getPassword('${credential_id}')
 ```
 
 <h2>Updating Password for UsernamePassword Credentials</h2>
+ 
 * This script will update the Password of a `UsernamePasswordCredentials` stored in the Jenkins Credential Store
 
 ```groovy
@@ -181,6 +189,7 @@ changePassword('${credID}', '${RANDOM_STRING}')
 ```
 
 <h2>Getting Content of FileCredentials</h2>
+ 
 * This script will decrypt the contents of a `FileCredentials` stored in the Jenkins Credential Store
 
 ```groovy
@@ -204,6 +213,7 @@ SystemCredentialsProvider.getInstance().getCredentials().stream().
 ```
 
 <h2>Updating Content of FileCredentials</h2>
+ 
 * This script will update the content of a `FileCredentials` stored in the Jenkins Credential Store
 
 ```groovy
@@ -242,6 +252,7 @@ updateSecretContent('${credId}', '${fileName}')
 ```
 
 <h2>Updating Description of FileCredentials</h2>
+ 
 * This script will update the description of a `FileCredentials` stored in the Jenkins Credential Store
 
 ```groovy

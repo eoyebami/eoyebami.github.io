@@ -1,4 +1,5 @@
 <h1>Storage Class</h1>
+ 
 * When working with PVs, you will need manually create the PV before users can claim them in the cluster
   - This is known as dynamic provisioning
 

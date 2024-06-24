@@ -1,4 +1,5 @@
 <h1>Service Networking</h1>
+ 
 * We've went over pod networking through the cni (more information [here](https://eoyebami.github.io/k8s/2024-02-19-pod-networking.html))
 * But how does service networking for this pods occur
   - Its is understood that when a service is created, the endpoints of its governed pods become access to all components in that cluster across all nodes

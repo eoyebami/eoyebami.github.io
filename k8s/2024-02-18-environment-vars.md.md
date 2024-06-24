@@ -1,4 +1,5 @@
 <h1>Environment Variables</h1>
+ 
 * There are multiple types of variables that can be passed to a pod
   - `Direct Referencing`
   - `Downward API`
@@ -6,6 +7,7 @@
   - `Secrets`
 
 <h2>Direct Referencing</h2>
+ 
 * Defining a variable and its value directly in the manifest file
 
 ```yml
@@ -21,6 +23,7 @@ spec:
 ```
 
 <h2>Downward API</h2>
+ 
 * Exposes Pod Information to Containers as vars or volumes
 * Supported Values 
 
@@ -105,6 +108,7 @@ spec:
 ```
 
 <h2>ConfigMaps</h2>
+ 
 * Map `ConfigMap` data as environment variables
 
 ```yml
@@ -128,6 +132,7 @@ spec:
 ```
 
 <h2>Secrets</h2>
+ 
 * Map `Secret` data as environment variables
 
 ```yml

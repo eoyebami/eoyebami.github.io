@@ -1,4 +1,5 @@
 <h1>Introduction to Istio Service Mesh</h1>
+ 
 * What is a service mesh?
   - A service mesh is a dedicated infrastructure layer designed to manage, observe, and control communication between microservices within a cluster
   - Using works by installing proxies as sidecars along side the microservices
@@ -11,6 +12,7 @@
 * `Service Discovery`: is also another aspect of a service mesh, not only does it discover what service is running at which port, but it also routes traffic via health checks, to services that are up (making sure end users don't get routed to services with failed checks).
 
 <h2>What is Istio</h2>
+ 
 * `Istio` is an open source service mesh that provides a way to secure, connect, and monitor microservices 
 * Istio Components:
   - `Control Plane`: `Istios` control plane consists of 3 services that were later combined to form the service known as `istiod`:

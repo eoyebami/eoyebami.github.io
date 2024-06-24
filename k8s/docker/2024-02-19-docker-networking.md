@@ -1,12 +1,16 @@
 <h1>Docker Networking</h1>
+ 
 * There are multiple ways to run a docker container when it comes to networking on a host machine
 <h2>Network: none</h2>
+ 
 * Connects the docker container to no network
   - `docker run --network none nginx`: nothing can reach this container and this container can reach out to nothing as well
 <h2>Network: host</h2>
+ 
 * Conneccts the docker container to the hosts network
   - `docker run --network host nginx`: the container is accessible via the host on whatever port the container is running on
 <h2>Network: bridge</h2>
+ 
 * Connects the docker container to an internal private network which the hosts and the containers connect to
   - `docker run nginx`: default mode of docker
 * When docker is installed on a machine, a bridge network is created called bridge
@@ -23,6 +27,7 @@
 * Docker also creates and attaches an ip to the netns
   - `ip -n <netns> addr`: displays ip of the netns
 <h2>Docker Port Forwarding</h2>
+ 
 * Since containers are running on internal private networks, docker forwards traffic from the host machine to the containers by using a NAT
   * Docker adds a rule to the iptable to forward all traffic hitting the host at a specified port to a port the container's listening to on that netns
      ```console

@@ -1,4 +1,5 @@
 <h1>Istio Security Architecture</h1>
+ 
 * We'll be diving a bit deeper into Istio's architecture to gain better knowledge on Istio's security framework
 * Within `istiod` there is a CA that manages keys and certificates within the service mesh
   - This is where certificates are validated and csr's are approved
@@ -13,6 +14,7 @@
     * This allows for `security at depth` because every since possible route, entry, or exit in the mesh has security checks
 
 <h2>Authentication in Istio</h2>
+ 
 * Authentication in Istio must be configured in a very secure way
   - Every time there is a communication between 2 services, there must be a way that both server and client are able to validate who they are to one another
 * This can be done using either: 
@@ -20,6 +22,7 @@
   - `Peer Authentication`
 
 <h4>Request Authentication</h4>
+ 
 * `Request Authentication` defines what request authentication methods are supported by a workload
   - `JWT Tokens`: `Request Authentication` using tokens to validate identity (JWT, Firebase, Google)
     * You can specify jwt rules that must be followed in order to authenticate
@@ -43,6 +46,7 @@
     ```
 
 <h4>Peer Authentication</h4>
+ 
 * `Peer Authentication` defines how traffic will be routes to the envoy proxy sidecar
   - With `Peer Authentication` you can mandate that `mTLS` be mandatory for a specific workload, namespace, or the entire service mesh
   - Usually defined for internal traffic, between mesh resources

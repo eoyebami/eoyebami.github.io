@@ -1,4 +1,5 @@
 <h1>Vagrantfile Configuration</h1>
+ 
 * `Vagrantfiles` are configuration scripts for managing you vms, however there are numerous configs to keep track of
 * Configs:
   - `Vagrant.configure("2") do |config|`: start of the vagrant code block, `2` defines the version of vagrant we are using
@@ -42,6 +43,7 @@
 * NOTE: for any advanced configurations go [here](https://developer.hashicorp.com/vagrant/docs/vagrantfile/machine_settings)
 
 <h2>For loops in Vagrant</h2>
+ 
 * A more efficient way to generate your `Vagrantfile` is to use for loops, which are especially beneficial when creating more than one vm
 - Use a range:
 
@@ -54,6 +56,7 @@
   ```
 
 <h2>Block Variables in Vagrant</h2>
+ 
 * Defining block vars help when trying to shorten the amount of characters needed to write a line of code
 - Define vm allocations under the block var vm
 
@@ -92,6 +95,7 @@
   ```
 
 <h2>Multi-VM Environment</h2>
+ 
 * In a multi-vm environemnt, you'll use a new config for separating vms 
   - `config.vm.define "vm-def" do |controlplane|`
 * Ex:

@@ -1,4 +1,5 @@
 <h1>Introudction to Kustomize</h1>
+ 
 * Similar to `Helm`, `Kustomize` provides a way to customize kubernetes deployment files across multiple envs, leaving only one central base config and different overlays of values to overwrite the base config
 * `Kustomize` follows a specifc folder structure
 
@@ -21,12 +22,14 @@
   - Unlike `Helm`, `Kustomize` does not use a templating format like `Helm`, it strictly works with YAML files
 
 <h2>Installation of Kustomize</h2>
+ 
 * `Kustomize` provides a quick an easy way to install the binary on your system
   - `curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash -s -- ${version}`
 * Verify its installation
   - `kustomize --version`
 
 <h2>Kustomization.yaml File</h2>
+ 
 * Within either our base or our overlays directories, there must always be a `kustomization.yaml` file 
   - This file is necessary, because it tells `Kustomize` what YAML files it is going to manage in each directory
 * Define witin the `kustomization.yaml` file you will define these resources
@@ -64,6 +67,7 @@
     * `kubectl delete -f .`
 
 <h2>Managing SubDirectories</h2>
+ 
 * In the case that you have multiple subdirectories for different apps, services, etc. You can use `Kustomize` to manage the resources in each directory
 
   ```

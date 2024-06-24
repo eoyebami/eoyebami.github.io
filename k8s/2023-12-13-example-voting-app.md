@@ -1,4 +1,5 @@
 <h1>Example Voting App</h1>
+ 
 - Steps:
   1. Deployments for Pods
     - voting-app
@@ -12,6 +13,7 @@
     - backend: redis
     - backend: postgresql
 <h2>Voting App Deployment & Service:</h2>
+ 
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -64,6 +66,7 @@ spec:
 ```
 
 <h2>Result App Deployment & Service:</h2>
+ 
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -116,6 +119,7 @@ spec:
 ```
 
 <h2>Redis App Deployment & Service:</h2>
+ 
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -171,6 +175,7 @@ spec:
 ```
 
 <h2>PostgreSql App Deployment & Service:</h2>
+ 
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -228,6 +233,7 @@ spec:
 ```
 
 <h2>Worker App Deployment & Service</h2>
+ 
 * To note, in order to match a Deployment to 2 separate Services, give it a label that both Services will have
 ```yml
 apiVersion: apps/v1

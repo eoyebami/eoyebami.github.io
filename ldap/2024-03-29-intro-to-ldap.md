@@ -1,4 +1,5 @@
 <h1>Introduction to LDAP</h1>
+ 
 * Before diving into `LDAP` there are a couple key words we must learn
   - `Active Directory`: used to provide authentication, user and group management
     * A directory service db
@@ -7,6 +8,7 @@
 * Any system configured to use an LDAP server will follow a client-server model
   - In which a client will enter authentication information and the LDAP server will compare user creds to its LDAP databases to verify
 <h2>LDAP</h2>
+ 
 * LDAP is a protocol used to access information directories and lets users access centrally stored information over a network
 * LDAP directory server stores information in a directory-based db that is optimized for searching and browsing
   - The db entries are arranged in a hierarchical tree-like structure, where each directory stores information such as names, address, telephone numbers, network information, etc. 
@@ -20,6 +22,7 @@
     * `dn`: distinguished name; used to identify an entry in LDAP
 * LDAP data is stored in binary, `LDAP Data Interchange Format (LDIF)` is a plain-text representation of a LDAP entry, that you can used to import/export/modify LDAP data
 <h2>LDAP Structure</h2>
+ 
 * `o`: is the organization, otherwise known as the root of a LDAP directory
 * `ou`: sub domain within a LDAP organization
   - `Distribution Groups`

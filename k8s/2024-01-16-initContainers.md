@@ -1,4 +1,5 @@
 <h1>InitContainers</h1>
+ 
 * Init containers are containers meant to run a process to completion, unlike regular containers. They run that process then exit
   - Example use cases include:
     * waiting for an external service to spin up

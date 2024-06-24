@@ -1,4 +1,5 @@
 <h1>Capabilities</h1>
+ 
 * Containers in a Host machine are split across "namespaces" that grant the container is own set of resources and though we have this separation, there isn't complete isolation between the containers and the host machine
   - Unlike a vm, which exists in complete isolation and cannot influence one another
 * In order to safe guard itself and other containers, the host machine restricts the containers privileges to itself.

@@ -1,4 +1,5 @@
 <h1>Network Policies</h1>
+ 
 * Quick review on how networking happens in a cluster
   - When a pod comes online in a cluster, it gets added into an internal virtual network where they can all see one another
   - In order to allow applications to flow seemlessly, we use `services` to ensure a dns is attached to a virtual lb that distributes traffic to specified endpoints

@@ -1,7 +1,9 @@
 <h1>IstioOperator</h1>
+ 
 `IstioOperator` allows users to create configuration for istio control plane installation. Unlike the other installation methods, we can define a YAML file that defines the desired state of each Istio release
 
 <h2>IstioOperator: Specifications</h2>
+ 
 * Before going into the specifications, istio currently recognizes the apiVersion as `install.istio.io/v1apha1`
 * `spec`:
 - `profile`: which profile do you want to set, if not set `default` profile will be used

@@ -1,4 +1,5 @@
 <h1>DaemonSet</h1>
+ 
 * `DaemonSets` are similar to `replicasets`, the only difference is they work to deploy one pod on each node within the cluster
   - They are used mainly for logging and monitoring
     * Like with `Datadog`, you'd like to have one agent running in each node to collect metrics, sort of like a `daemon` service running in the `bg` in a node, these pods will act as such

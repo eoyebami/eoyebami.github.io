@@ -1,7 +1,9 @@
 <h1>Configuring LDAP</h1>
+ 
 * There are a variety of steps that need to first be taken when configuring an ldap server
 
 <h2>Installing LDAP</h2>
+ 
 * I'm under the pretense that a debian/ubuntu linux machine will be used
 
 ```console
@@ -61,6 +63,7 @@ olcAccess: to *
   - `ldapadd -Y EXTERNAL -H ldapi:/// -f init.ldif`
 
 <h2>Setting Base OU</h2>
+ 
 * You'll need to set the `Peoples` and `Groups` ou before you can start creating groups and users
 
 ```console
@@ -77,6 +80,7 @@ ou: Group
   - `ldapadd -x -D cn=admin,dc=mydom,dc=com -W -f ou-init.ldif`
 
 <h2>Add a Group to LDAP</h2>
+ 
 * Lets add a group to our OU
 
 ```console
@@ -94,6 +98,7 @@ objectclass: posixGroup
   - `ldapsearch -x -LLL -H ldap:/// -b dc=mydom,dc=com`
 
 <h2>Add User to LDAP</h2>
+ 
 * Lets create a user in our `People` OU
 
 ```console
@@ -116,6 +121,7 @@ cn: ez
   - `ldapsearch -x -LLL -H ldap:/// -b dc=mydom,dc=com`
 
 <h2>Add User to Group in LDAP</h2>
+ 
 * Lets add our user to our group
 
 ```console

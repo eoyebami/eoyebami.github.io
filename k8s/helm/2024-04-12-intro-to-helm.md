@@ -1,9 +1,11 @@
 <h1>Introduction to Helm</h1>
+ 
 * `Helm` is a package manager for kubernetes
   - `Helm` simplifies the deployment, management, and scaling of applications on a cluster by providing a convenient and centralized way of packing, sharing, and installating applications and their dependencies
   - It differs from kubernetes, which treats objects and individuals, by treating each object (defined in what is known as a chart) as parts of a whole
 
 <h2>Helm Components</h2>
+ 
 * In Helm we have a series of components that create its framework:
   - `Helm cli`: what allows us to interact with our kubernetes cluster using `helm`
   - `Helm Charts`: Helm charts are a collection of files that describe a set of kubernetes objects that are needed to run a particular application

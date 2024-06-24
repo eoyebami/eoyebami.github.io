@@ -1,9 +1,11 @@
 <h1>Helm Named Templates</h1>
+ 
 * In helm we have what are called named templates, where you can define custom reusable components, snippets, or helper functions/templates for that project
   - In helm we can store these in files known under the name `_helpers.tpl`
     * The underscore tells helm not to consider the file to be a template file
 
 <h2>Defining a Template</h2>
+ 
 * Defining a template within `_helpers.tpl`
 
 ```bash

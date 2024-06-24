@@ -1,8 +1,10 @@
 <h1>Helm Functions</h1>
+ 
 * `Templative directives` bash beyon just placing information into templates of your helm chart
   - By using functions, conditionals, vars, etc; we can further templatize and improve our templates in helm; creating a smarter more flexible package for helm to manage
 
 <h2>Functions</h2>
+ 
 * A function takes in an input, processes it, and outputs in the desired format. Its basically a data transformer
 * There are various types of functions that can be used, and I;ve included ones I feel are most commonly used:
   - [String Functions](https://helm.sh/docs/chart_template_guide/function_list/#string-functions):

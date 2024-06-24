@@ -1,4 +1,5 @@
 <h1>Manual Scheduling</h1>
+ 
 * In the case, that your cluster does not have a scheduler or you do not want to use the default scheduler, you can manually schedule pods yourself.
 * A block is set by kubernetes when a pod is created called `nodeName`: dictates which node the pod will be scheduled on
   - You can manually set this value yourself, and the pod will be assigned this node on creation time
