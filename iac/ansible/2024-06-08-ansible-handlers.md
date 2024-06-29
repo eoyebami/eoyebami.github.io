@@ -23,6 +23,7 @@
   ```
 
 <h2>Force Handler Run</h2>
+
 * By default `Handlers` run when all tasks in the play have completed, this is so when multiple tasks notify a `handler` then that handler only needs to run once
 * If you need `handlers` to run earlier you need to include a task to flush handlers
 
@@ -35,6 +36,7 @@
 * Once the handlers are run, they can be notified and run again in later sections of the play
 
 <h2>Change_When and Handlers</h2>
+
 * You can use the `changed_when` conditional to control whether or not a task is reported as changed and will notify a handler
 
   ```yml
