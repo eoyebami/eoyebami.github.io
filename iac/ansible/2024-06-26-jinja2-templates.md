@@ -8,7 +8,7 @@
 * Vars can be modified by using `filters` which are separated from the key by using a `|`
 * `String Filters`
 - `Capitalize`: capitalizes first character
-  * `{{ foo.bar | capitalize }}`
+  * `{% raw %}{{ foo.bar | capitalize }}{% endraw %}`
 - `Center`: centers text with specified width
   * `{{ foo.bar | center(30) }}`
 - `Default`: base default value
