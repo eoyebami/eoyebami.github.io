@@ -6,6 +6,7 @@
 <h2>Functions</h2>
  
 * A function takes in an input, processes it, and outputs in the desired format. Its basically a data transformer
+  - Functions can also be called within functions, using `()`
 * There are various types of functions that can be used, and I;ve included ones I feel are most commonly used:
   - [String Functions](https://helm.sh/docs/chart_template_guide/function_list/#string-functions):
  
@@ -20,6 +21,9 @@
     trim: {{ .Values.image.tag | trim }} # trims empty spaces from value
     required: {{ .Values.image.repository | required "Please provide image repo" }} # requires this value be set, displays string if condition not met
     default: {{ .Values.image.repository | default "nginx" }} # sets default value if not is set in values.yaml
+      # nil pointer error may error if you are calling a null object within another null object, using () to set that object as optional (i.e. if looking for .Values.image.repo then set (.Values.image).repo)
+      # call values in default function by using print function (i.e default (print "%s-env-%" .Values.service .Values.environment)
+    tpl: {{ tpl .Values.gw.name }} # treats value as a template and parses it, in this way you can call vars within vars in a values.yaml
     trimAll: {{ .Values.image.repository | trimAll "/" }} # trims the specified string from anywhere in the value
     trimPrefix: {{ .Values.image.repository | trimPrefix "/" }} # trims specified string from prefix of value
     trimSuffix: {{ .Values.image.repository | trimSuffix "/" }} # trims specified string from suffix of value

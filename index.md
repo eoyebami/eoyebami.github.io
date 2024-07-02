@@ -97,7 +97,7 @@
 - <h4>Kubernetes</h4>
 
   - <h5>Kubernetes: Introduction</h5>
-
+ 
     * [2023-10-03-k8-pods](k8s/2023-10-03-k8-pods.md)
     * [2023-10-03-k8-replicaset](k8s/2023-10-03-k8-replicaset.md)
     * [2023-10-03-k8-deployments](k8s/2023-10-03-k8-deployments.md)
@@ -112,7 +112,7 @@
     * [2024-04-23-k8-jobs](k8s/2024-04-23-k8-jobs.md)
  
   - <h5>Kubernetes: Scheduling</h5>
-
+ 
     * [2023-12-24-manual-scheduling](k8s/2023-12-24-manual-scheduling.md)
     * [2023-12-24-taints-and-tolerations](k8s/2023-12-24-taints-and-tolerations)
     * [2023-12-28-node-selectors](k8s/2023-12-28-node-selectors.md)
@@ -135,7 +135,7 @@
     * [2024-05-24-horizontal-pod-autoscaler](k8s/2024-05-24-horizontal-pod-autoscaler.md)
 
   - <h5>Kubernetes: Security</h5>
-
+ 
     * [2024-01-16-kube-api-authentication](k8s/2024-01-16-kube-api-authentication.md)
     * [2024-01-17-kubernetes-tls](k8s/2024-01-17-kubernetes-tls.md)
     * [2024-01-22-certificate-signing-request](k8s/2024-01-22-certificate-signing-request.md)
@@ -148,14 +148,14 @@
     * [2024-02-05-network-policies](k8s/2024-02-05-network-policies.md)
 
   - <h5>Kubernetes: Storage</h5>
-
+ 
     * [2024-02-12-volumes](k8s/2024-02-12-volumes.md)
     * [2024-02-12-persistent-volumes](k8s/2024-02-12-persistent-volumes.md)
     * [2024-02-13-storageclass](k8s/2024-02-13-storageclass.md)
     * [2024-02-13-projected-volumes](k8s/2024-02-13-projected-volumes.md)
 
   - <h5>Kubernetes: Networking</h5>
-
+ 
     * [2024-02-19-coredns](k8s/2024-02-19-coredns.md)
     * [2024-02-19-cni](k8s/2024-02-19-cni.md)
     * [2024-02-19-pod-networking](k8s/2024-02-19-pod-networking.md)
@@ -163,12 +163,12 @@
     * [2024-03-04-ingress](k8s/2024-03-04-ingress.md)
 
   - <h5>Kubernetes: Cluster Maintenance</h5>
-
+ 
     * [2024-03-05-cluster-maintenance](k8s/2024-03-05-cluster-maintenance.md)
     * [2024-03-06-backup-and-restore](k8s/2024-03-06-backup-and-restore.md)
 
   - <h5>Kubernetes: KubeAdm</h5>
-
+ 
     * [2024-03-06-intro-to-cluster-diy](k8s/2024-03-06-intro-to-cluster-diy.md)
     * [2024-03-07-kubeadm-k8-installation](k8s/2024-03-07-kubeadm-k8-installation.md)
     * [2024-03-09-kubeadmn-k8-vagrant](k8s/2024-03-09-kubeadmn-k8-vagrant.md)
@@ -176,7 +176,7 @@
 - <h4>Helm</h4>
 
   - <h5>Helm: Introduction</h5>
-
+ 
     * [2024-04-12-intro-to-helm](k8s/helm/2024-04-12-intro-to-helm.md)
     * [2024-04-12-helm-install-and-configuration](k8s/helm/2024-04-12-helm-install-and-configuration.md)
     * [2024-04-14-helm-charts](k8s/helm/2024-04-14-helm-charts.md)
@@ -184,7 +184,7 @@
     * [2024-04-15-helm-templatization](k8s/helm/2024-04-15-helm-templatization.md)
 
   - <h5>Helm: Templatization Techniques</h5>
-
+ 
     * [2024-04-15-helm-functions](k8s/helm/2024-04-15-helm-functions.md)
     * [2024-04-15-helm-date-formats](k8s/helm/2024-04-15-helm-date-formats.md)
     * [2024-04-19-helm-conditionals](k8s/helm/2024-04-19-helm-conditionals.md)
@@ -195,11 +195,11 @@
 - <h4>Kustomize</h4>
 
   - <h5>Kustomize: Introduction</h5>
-
+ 
     * [2024-05-26-intro-to-kustomize](k8s/kustomize/2024-05-26-intro-to-kustomize.md)
 
   - <h5>Kustomize: Customization Techniques</h5>
-
+ 
     * [2024-05-26-kustomize-transformers](k8s/kustomize/2024-05-26-kustomize-transformers.md)
     * [2024-05-27-kustomize-patches](k8s/kustomize/2024-05-27-kustomize-patches.md)
     * [2024-05-27-kustomize-overlays](k8s/kustomize/2024-05-27-kustomize-overlays.md)
@@ -210,31 +210,31 @@
 - <h3>Kubernetes: Cluster Add-Ons</h3>
 
 - <h4>Metrics</h4>
-
+ 
     * [2024-01-01-metrics-server](k8s/2024-01-01-metrics-server.md)
 
 - <h4>Istio</h4>
-
+ 
   - <h5>Istio: Introduction</h5>
-
+ 
     * [2024-04-24-intro-to-istio](k8s/istio/2024-04-24-intro-to-istio.md)
     * [2024-04-24-istio-installation](k8s/istio/2024-04-24-istio-installation.md)
     * [2024-04-24-istioctl-commands](k8s/istio/2024-04-24-istioctl-commands.md)
     * [2024-05-24-istioOperator](k8s/istio/2024-05-24-istioOperator.md)
 
   - <h5>Istio: Traffic Management</h5>
-
+ 
     * [2024-04-26-istio-gateways](k8s/istio/2024-04-26-istio-gateways.md)
     * [2024-04-26-istio-virtual-services](k8s/istio/2024-04-26-istio-virtual-services.md)
     * [2024-04-26-istio-destination-rules](k8s/istio/2024-04-26-istio-destination-rules.md)
-
+ 
   - <h5>Istio: Security</h5>
-
+ 
     * [2024-04-30-istio-security-authentication](k8s/istio/2024-04-30-istio-security-authentication.md)
     * [2024-04-30-istio-security-authorization](k8s/istio/2024-04-30-istio-security-authorization.md)
 
 - <h4>Cert-Manager</h4>
-
+ 
     * [2024-05-01-intro-to-cert-manager](k8s/cert-manager/2024-05-01-intro-to-cert-manager.md)
     * [2024-05-01-cert-manager-issuers](k8s/cert-manager/2024-05-01-cert-manager-issuers.md)
     * [2024-05-01-cert-manager-certificates](k8s/cert-manager/2024-05-01-cert-manager-certificates.md)
@@ -249,18 +249,18 @@
 - <h4>Ansible</h4>
 
   - <h5>Ansible: Inventory</h5>
-
+ 
     * [2024-06-02-introduction-to-ansible](iac/ansible/2024-06-02-introduction-to-ansible.md)
     * [2024-06-02-ansible-inventory](iac/ansible/2024-06-02-ansible-inventory.md)
     * [2024-06-04-ansible-inventory-techniques](iac/ansible/2024-06-04-ansible-inventory-techniques.md)
 
   - <h5>Ansible: Variables</h5>
-
+ 
     * [2024-06-04-ansible-variables](iac/ansible/2024-06-04-ansible-variables.md)
     * [2024-06-05-ansible-facts](iac/ansible/2024-06-05-ansible-facts.md)
 
   - <h5>Ansible: Ansible Playbooks</h5>
-
+ 
     * [2024-06-05-ansible-playbooks](iac/ansible/2024-06-05-ansible-playbooks.md)
     * [2024-06-06-ansible-playbook-conditionals](iac/ansible/2024-06-06-ansible-playbook-conditionals.md)
     * [2024-06-07-ansible-playbooks-loops](iac/ansible/2024-06-07-ansible-playbooks-loops.md)
@@ -270,6 +270,8 @@
     * [2024-06-21-ansible-blocks](iac/ansible/2024-06-21-ansible-blocks.md)
     * [2024-06-21-ansible-roles](iac/ansible/2024-06-21-ansible-roles.md)
     * [2024-06-22-ansible-collections](iac/ansible/2024-06-22-ansible-collections.md)
+    * [2024-06-26-jinja2-templates](iac/ansible/2024-06-26-jinja2-templates.md)
+    * [2024-06-26-ansible-builtin-jinja2-templating](iac/ansible/2024-06-26-ansible-builtin-jinja2-templating.md)
        
 <h2>AWS</h2>
 

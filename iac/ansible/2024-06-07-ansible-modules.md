@@ -2,11 +2,9 @@
 
 * `Ansible Modules` are categorized into different groups based on their functionality
   - A list of support modules can be found [here](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html)
-* We have different types of modules
-  - `ansible.builtin.*`: modules built into `ansible`
-  - `ansible.posix`: part of posix collection and needs to be installed using `ansible-galaxy collection install ansible.posix`
-  - `community.general`: part of the community general collection and needs to be installed using `ansible-galaxy collection install community.general`
-  - `amazon.aws`: collection of aws specific modules and needs to be installed using `ansible-galaxy collection install amazon.aws`
+
+<h2>Modules</h2>
+
   - `Import*`: modules that import specific resources into a playbook
     * [include tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_tasks_module.html)
   
@@ -62,7 +60,7 @@
   
       ```yml
       tasks:
-      - name:
+      - name: apt pkg
         ansible.builtin.apt:
           name: http
           state: present
@@ -72,10 +70,35 @@
     
       ```yml
       tasks:
-      - name:
+      - name: yum pkg
         yum:
           name: http
           state: present
+      ```
+ 
+    * [meta](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/meta_module.html#ansible-collections-ansible-builtin-meta-module): special task can influence ansible internal execution
+  
+      ```yml
+      tasks:
+      - name: flush handlers
+        ansible.builtin.meta: flush_handlers # runs all notified handlers
+ 
+      - name: refresh inventory to include new instances exist
+        ansible.builtin.meta: refresh_inventory
+
+      - name: clear gathered facts from all targeted hosts
+        ansible.builtin.meta: clear_facts
+
+      - name: bring back host to play after failure
+        ansible.builtin.meta: clear_host_erros
+
+      - name: reset ssh connection
+        ansible.builtin.meta: reset_connection
+
+      - name: end play on a host
+        ansible.builtin.meta: end_host
+ 
+      # conditionals can be used on these
       ```
  
     * [Add Host](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/add_host_module.html#ansible-collections-ansible-builtin-add-host-module): Add a host to the playbook in-mem inventory, can only be called later in the same play
