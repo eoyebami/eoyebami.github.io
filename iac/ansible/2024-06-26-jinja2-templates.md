@@ -10,47 +10,47 @@
 - `Capitalize`: capitalizes first character
   * `{% raw %}{{ foo.bar | capitalize }}{% endraw %}`
 - `Center`: centers text with specified width
-  * `{{ foo.bar | center(30) }}`
+   * `{% raw %}{{ foo.bar | center(30) }}{% endraw %}`
 - `Default`: base default value
-  * `{{ foo.bar | default('Hello World') }}`
+   * `{% raw %}{{ foo.bar | default('Hello World') }}{% endraw %}`
 - `DictSort`: sorts dictionary
-  * `{{ for key, value in mydict | dictsort }}` sorts by key
-  * `{{ for key, value in mydict | dictsort(reverse=true) }}` sorts in reverse order
-  * `{{ for key, value in mydict | dictsort(true) }}` case sensitive
-  * `{{ for key, value in mydict | dictsort(false, 'value') }}` sort dict by value
+   * `{% raw %}{{ for key, value in mydict | dictsort }}` sorts by key
+   * `{% raw %}{{ for key, value in mydict | dictsort(reverse=true) }}` sorts in reverse order
+   * `{% raw %}{{ for key, value in mydict | dictsort(true) }}` case sensitive
+   * `{% raw %}{{ for key, value in mydict | dictsort(false, 'value') }}` sort dict by value
 - `Escape`: use to replace `&, <, >, ', "` with HTML safe sequences
-  * `{{ foo.bar | escape }}`
+   * `{% raw %}{{ foo.bar | escape }}{% endraw %}`
 - `First`: returns first item in a sequence
-  * `{{ myList | first }}`
+   * `{% raw %}{{ myList | first }}{% endraw %}`
 - `Float`: converts value into a floating point number, will return 0.0 if it fails
-  * `{{ foo.bar | float }}`
+   * `{% raw %}{{ foo.bar | float }}{% endraw %}`
 - `Indent`: indentation
-  * `{{ foo.bar | indent(4, False, False) }}` how many lines to indent, should skip indenting first and empty lines
+   * `{% raw %}{{ foo.bar | indent(4, False, False) }}` how many lines to indent, should skip indenting first and empty lines
 - `Int`: converts value to int
-  * `{{ foo.bar | int }}` 
+   * `{% raw %}{{ foo.bar | int }}` 
 - `Join`: concats multiple str into one
-  * `{{ [1, 2, 3] | join }}` can join with Field separators by defining join('-')
+   * `{% raw %}{{ [1, 2, 3] | join }}` can join with Field separators by defining join('-')
 - `Last`: returns last item item in sequence
-  * `{{ foo.bar | last }}`
+   * `{% raw %}{{ foo.bar | last }}{% endraw %}`
 - `Length`: returns length of items in sequence
-  * `{{ foo.bar | length }}`
+   * `{% raw %}{{ foo.bar | length }}{% endraw %}`
 - `Lower`: coverts to lower case
-  * `{{ foo.bar| lower }}`
+   * `{% raw %}{{ foo.bar| lower }}{% endraw %}`
 - `Upper`: converts to upper
-  * `{{ foo.bar | upper }}`
+   * `{% raw %}{{ foo.bar | upper }}{% endraw %}`
 - `List`: converts to list, if string, will return list of individual characters
-  * `{{ foo.bar | list }}`
+   * `{% raw %}{{ foo.bar | list }}{% endraw %}`
 - `Replace`: Replace values
-  * `{{ foo.bar | replace ("hello", "goodbye", 1) }}` what should be replace and by what and how many occurrences should be replaced
+   * `{% raw %}{{ foo.bar | replace ("hello", "goodbye", 1) }}` what should be replace and by what and how many occurrences should be replaced
 - `String`: convert to String
-  * `{{ foo.bar | string }}`
+   * `{% raw %}{{ foo.bar | string }}{% endraw %}`
 - `Trim`: trim whitespaces 
-  * `{{ foo.bar | trim }}`
+   * `{% raw %}{{ foo.bar | trim }}{% endraw %}`
 - `Unique`: returns unique items from list
-  * `{{ ['foo', 'bar', 'foo'] | unique | list }}`
+   * `{% raw %}{{ ['foo', 'bar', 'foo'] | unique | list }}{% endraw %}`
 - `Min & Max`: get min and max number in array
-  * `{{ [1, 2] | min }}`
-  * `{{ [1, 2] | max }}`
+   * `{% raw %}{{ [1, 2] | min }}{% endraw %}`
+   * `{% raw %}{{ [1, 2] | max }}{% endraw %}`
 
 * All other filters can be found [here](https://tedboy.github.io/jinja2/templ14.html)
 
