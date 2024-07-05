@@ -18,7 +18,7 @@
    
     ```yml
     {% raw %}
-    ---
+    #--- 
     plugin: amazon.aws.aws_ec2 # plugin in use
     regions: # regions to select hosts
     - us-west-2
