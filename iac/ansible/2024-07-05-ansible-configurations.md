@@ -2,7 +2,8 @@
 
 * Here I will list `Ansible Configurations` created via `ansible-config init --type all`
 
-```
+```bash
+{% raw %}
 [defaults]
 # (boolean) By default Ansible will issue a warning when received from a task action (module or action plugin)
 action_warnings=True
@@ -1029,4 +1030,5 @@ use_netrc=True
 # Setting this option to C(inventory) will only run the vars plugin after parsing inventory.
 # If this option is omitted, the global I(RUN_VARS_PLUGINS) configuration is used to determine when to execute the vars plugin.
 stage=
+{% endraw %}
 ```
