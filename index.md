@@ -253,6 +253,7 @@
     * [2024-06-02-introduction-to-ansible](iac/ansible/2024-06-02-introduction-to-ansible.md)
     * [2024-06-02-ansible-inventory](iac/ansible/2024-06-02-ansible-inventory.md)
     * [2024-06-04-ansible-inventory-techniques](iac/ansible/2024-06-04-ansible-inventory-techniques.md)
+    * [2024-07-05-ansible-commands](iac/ansible/2024-07-05-ansible-commands.md)
 
   - <h5>Ansible: Variables</h5>
  
@@ -272,6 +273,7 @@
     * [2024-06-22-ansible-collections](iac/ansible/2024-06-25-ansible-collections.md)
     * [2024-06-26-jinja2-templates](iac/ansible/2024-06-26-jinja2-templates.md)
     * [2024-06-26-ansible-builtin-jinja2-templating](iac/ansible/2024-06-26-ansible-builtin-jinja2-templating.md)
+    * [2024-07-05-ansible-configurations](iac/ansible/2024-07-05-ansible-configurations.md)
        
 <h2>AWS</h2>
 

@@ -2,6 +2,7 @@
 
 * `Ansible Modules` are categorized into different groups based on their functionality
   - A list of support modules can be found [here](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html)
+  - Modules are a type of plugin that excutes a task
 
 <h2>Modules</h2>
 
@@ -10,7 +11,7 @@
   
       ```yml
       tasks:
-      - name Include task in play
+      - name: Include task in play
         ansible.builtin.include_tasks:
           file: install.yaml
       ```
