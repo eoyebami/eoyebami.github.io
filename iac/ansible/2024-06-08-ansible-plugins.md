@@ -15,7 +15,9 @@
   - [amazon.aws.aws_ec2](https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html#ansible-collections-amazon-aws-aws-ec2-inventory): allows you to retrieve inventory hosts from AWS EC2
     * Inventory file is YAML and must end with `*.aws_ec2.{yml|yaml}$`
     * [Guide](https://docs.ansible.com/ansible/latest/collections/amazon/aws/docsite/aws_ec2_guide.html)
+    
     ```yml
+    {% raw %}
     ---
     plugin: amazon.aws.aws_ec2 # plugin in use
     regions: # regions to select hosts
@@ -32,7 +34,7 @@
     hostnames: # define an order for precedence for host name vars, sets 'inventory_hostname
     - name: 'tag:Name' #  uses name tag as hostname
       separator: '-' # field separator
-      prefeix: 'private-ip-address' # prefixes hostname with private ip
+      prefix: 'private-ip-address' # prefixes hostname with private ip
     # you can also specify a list of order of precedence
     - tag:Name
     - dns-name
@@ -46,4 +48,5 @@
       # use Jinja2 syntax to define
       first: "'legacy' in tags.Name"  
       latest: "'latest' in tags.Name"
+    {% endraw %}
     ```
