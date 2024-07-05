@@ -15,7 +15,7 @@
   - [amazon.aws.aws_ec2](https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html#ansible-collections-amazon-aws-aws-ec2-inventory): allows you to retrieve inventory hosts from AWS EC2
     * Inventory file is YAML and must end with `*.aws_ec2.{yml|yaml}$`
     * [Guide](https://docs.ansible.com/ansible/latest/collections/amazon/aws/docsite/aws_ec2_guide.html)
-    
+   
     ```yml
     {% raw %}
     ---
@@ -50,3 +50,4 @@
       latest: "'latest' in tags.Name"
     {% endraw %}
     ```
+  
