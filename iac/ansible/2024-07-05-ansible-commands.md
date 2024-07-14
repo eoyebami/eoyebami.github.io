@@ -1,6 +1,15 @@
 <h1>Ansible Commands to Remember</h1>
 
 ```yml
+ANSIBLE
+# allows you to run adhoc commands 
+ansible -m ping all # runs module ping against all hosts
+ansible -a 'cat /etc/hosts' all  # runs command against all hosts
+ansible -a 'yum install nginx' all --become --become-user ec2-user # runs yum installation as ec2-user
+ansible -a 'yum install nginx' all --user ec2-user # runs command and specifies user to connect as 
+# adhoc commands are useful in scripts where you can pass vars to modify how ansible is configured before running the adhoc command
+# keeps your local clean while being able to test in a script which will have its own terminal at runtime
+
 ANSIBLE-PLAYBOOK
 ansible-playbook -i inventory playbook.yaml # installs playbook with '-i' flag specifyinh inventory file
 ansible-playbook -i inventory playbook.yaml --check # runs ansible playbook in dry-run mode

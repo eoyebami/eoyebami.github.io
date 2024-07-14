@@ -3,6 +3,8 @@
 * `Ansible Modules` are categorized into different groups based on their functionality
   - A list of support modules can be found [here](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html)
   - Modules are a type of plugin that excutes a task
+    * Indexes of all modules and plugins can be found [here](https://docs.ansible.com/ansible/latest/collections/all_plugins.html)
+    * Short read on plugins and some useful examples can be found [here](https://eoyebami.github.io/iac/ansible/2024-06-08-ansible-plugins.html)
 
 <h2>Modules</h2>
 
@@ -73,6 +75,15 @@
       tasks:
       - name: yum pkg
         yum:
+          name: http
+          state: present
+      ```
+    * [package](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html): manages packages on target without specifying package manager 
+    
+      ```yml
+      tasks:
+      - name: yum pkg
+        package:
           name: http
           state: present
       ```
@@ -253,7 +264,7 @@
       tasks:
       - name: Generate key pair
         become: true # set to true to activate privilege escalation, essentially like using sudo
-        become_user: ec2-user # using sudo to switch to this user
+        become_user: ec2-user # using sudo to switch to this user, used for configuration of a file that belongs to a user
         ansible.builtin.expect:
           command: ssh-keygen -t ed25519 -f .ssh/id_ed25519
           responses:

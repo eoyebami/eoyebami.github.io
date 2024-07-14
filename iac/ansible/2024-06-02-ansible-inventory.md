@@ -57,6 +57,10 @@
     * `ansible_ssh_user`: ssh user for remote host # new version, by default root user is used
     * `ansible_ssh_pass`: ssh password not recommended, instead use asymmetric keys
     * `ansible_connection`: defines how ansible should connect to host, can be `ssh` or `winrm` for either linux or windows
+    * `ansible_ssh_private_key_file`: path to private key needed to access this host
+    * `ansible_become`: escalates privileges # sudo in most cases
+    * `ansible_become_user`: selects user ansible will become
+  - Information on scoping these vars can be found [here](https://eoyebami.github.io/iac/ansible/2024-06-04-ansible-variables.html)
   
   ```bash
   jenkins   ansible_host=jenkins.server.com ansible_connection=ssh ansible_port=22 ansible_user=ubuntu
