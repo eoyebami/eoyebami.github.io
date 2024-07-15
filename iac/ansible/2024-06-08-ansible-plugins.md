@@ -16,11 +16,7 @@
   - [amazon.aws.aws_ec2](https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html#ansible-collections-amazon-aws-aws-ec2-inventory): allows you to retrieve inventory hosts from AWS EC2
     * Inventory file is YAML and must end with `*.aws_ec2.{yml|yaml}$`
     * [Guide](https://docs.ansible.com/ansible/latest/collections/amazon/aws/docsite/aws_ec2_guide.html)
-<<<<<<< Updated upstream
-   
-=======
-  
->>>>>>> Stashed changes
+ 
     ```yml
     {% raw %}
     #--- 
@@ -62,11 +58,6 @@
       # use Jinja2 syntax to define
       first: "'legacy' in tags.Name"  
       latest: "'latest' in tags.Name"
-<<<<<<< Updated upstream
-    {% endraw %}
-    ```
-  
-=======
 
     # create vars using jinja2 expressions
     compose:
@@ -80,6 +71,7 @@
       # set user and private key for ssh
       ansible_user: ec2-user
       ansible_ssh_private_key_file: /home/ec2-user/.ssh/id_ed25519
+    {% endraw %}
     ```
 
 <h2>Test Plugins & Modules</h2>
@@ -108,4 +100,4 @@
 
 * There are many different types of plugins, some of which I've listed [here](https://eoyebami.github.io/iac/ansible/2024-06-07-ansible-modules.html)
 * Here I've documented examples of test and inventory plugins since to me, they are the most different from the others
->>>>>>> Stashed changes
+
