@@ -2,6 +2,65 @@
  
 * Below I'll be listing some strategies that have helped me create more efficient pipelines
 
+<h2>Dynamic Stages that Run in Parallel</h2>
+
+* This will allow you to run dynamic stages (that iterate over a list) in parallel
+
+```groovy
+// runs selectedd services in parallel
+def getServicesToDeploy() {
+  return targetServices.split(',')
+}
+
+def getDeployStages() {
+    return getServicesToDeploy().collectEntries { service ->
+        [
+            (service): {
+                stage("Deploy ${service}") {
+                    echo "Test"
+                    }
+                }
+            }
+        ]
+    }
+}
+
+# stage in declarative pipeline
+stage('Deploy Services') {
+    steps {
+        script {
+            if (targetServices == "") {
+                 echo "No services to deploy"
+            } else {
+                //calls function to deploy selected services in parallel
+                parallel getDeployStages()
+            }
+        }
+    }
+}
+```
+
+<h2>Dynamic Stages that have different Agents</h2>
+
+* This will allow you to run dynamic stages with differing agents
+
+```groovy
+stages {
+    stage ('Test Run') {
+        steps {
+            for (region in test.keySet()) {
+                env.jenkinsAgent = (region == "us-west-2") ? "jenkins-agent-1" : "jenkins-agent-2"
+                node(jenkinsAgent) {
+                    script {
+                        echo "${region}"
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
 <h2>Jenkinsfile Reload</h2>
  
 * This is a stage you can add to your Jenkinsfile that will reload the file without running any subsequent stages

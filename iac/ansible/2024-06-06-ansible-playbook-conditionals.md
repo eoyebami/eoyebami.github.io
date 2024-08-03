@@ -118,5 +118,6 @@
   ---
   - hosts: all
     any_errors_fatal: true # if this tasks returns an error, ansible finishes the fatal task and stops all subsequent tasks
+    # ansible stops execution on all servers as soon as one fails
     # max_fail_percentage: # allows you to define the max percent of hosts in a patch that can fail before being aborted, you can set to 0 for no failures
   ```

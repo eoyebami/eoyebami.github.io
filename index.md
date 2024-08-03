@@ -274,6 +274,8 @@
     * [2024-06-26-jinja2-templates](iac/ansible/2024-06-26-jinja2-templates.md)
     * [2024-06-26-ansible-builtin-jinja2-templating](iac/ansible/2024-06-26-ansible-builtin-jinja2-templating.md)
     * [2024-07-05-ansible-configurations](iac/ansible/2024-07-05-ansible-configurations.md)
+    * [2024-07-27-top-level-ansible-fields](iac/ansible/2024-07-27-top-level-ansible-fields.md)
+    * [2024-07-27-ansible-file-separation](iac/ansible/2024-07-27-ansible-file-separation.md)
        
 <h2>AWS</h2>
 
