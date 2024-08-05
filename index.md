@@ -276,6 +276,7 @@
     * [2024-07-05-ansible-configurations](iac/ansible/2024-07-05-ansible-configurations.md)
     * [2024-07-27-top-level-ansible-fields](iac/ansible/2024-07-27-top-level-ansible-fields.md)
     * [2024-07-27-ansible-file-separation](iac/ansible/2024-07-27-ansible-file-separation.md)
+    * [2024-08-05-ansible-vault](iac/ansible/2024-08-05-ansible-vault.md)
        
 <h2>AWS</h2>
 

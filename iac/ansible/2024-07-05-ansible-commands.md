@@ -24,6 +24,14 @@ ansible-playbook playbook.yaml --timeout 3600 # timeout in seconds
 ansible-playbook playbook.yaml --extra-vars "key=value" # pass extra vars, YAML and JSON also accepted, pass files using '@'
 ansible-playbook playbook.yaml --user ec2-user # connect as user
 ansible-playbook playbook.yaml --verbose # runs in verbose mode, can denote -v
+ansible-playbook playbook.yaml -i inventory --ask-vault-pass # inv file is encrypted, this prompts user to pass vault password
+ansible-playbook playbook.yaml -i inventory --vault-password-file ~./vault_pass.txt(py) # passes password as file or script that retrieves the password
+ansible-playbook playbook.yaml -i inventory --vault-id <abc123> --vault-password-file ~./vault_pass.txt # pass vault id to use
+
+ANSIBLE-VAULT
+ansible-vault create inv # creates an encrypted file
+ansible-vault view inv # views an encrypted file
+ansible-vault encrypt inv # encrypted a file
 
 ANSIBLE-CONFIG
 ansible-config list # lists available configs

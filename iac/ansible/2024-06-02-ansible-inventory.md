@@ -94,3 +94,4 @@
   ```
 
 * More information about configuring inventory files can be found [here](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html)
+* NOTE: you can also you an inventory python script that will dynamically generate the inventory file, it must follow certain standards for it to work
