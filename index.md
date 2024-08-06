@@ -13,6 +13,7 @@
   * [2023-04-15-manual](linux/2023-04-15-manual.md)
   * [2023-04-27-systemd](linux/2023-04-27-systemd.md)
   * [2023-05-10-misc-cmd](linux/2023-05-10-misc-cmd.md)
+  * [2024-08-06-regex](linux/2024-08-06-regex.md)
 
 - <h4>Linux: Networking</h4>
 
