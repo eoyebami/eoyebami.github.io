@@ -1,3 +1,10 @@
+<h2>Languages</h2>
+
+- <h4>Python</h4>
+
+  - <h5>Python: Basics</h5>
+    * [2024-08-07-python-hello-world](languages/python/2024-08-07-python-hello-world.md)
+
 <h2>Linux</h2>
 
 - <h4>Linux: General Knowledge</h4>
