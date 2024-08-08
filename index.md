@@ -4,6 +4,8 @@
 
   - <h5>Python: Basics</h5>
     * [2024-08-07-python-vars-prints-and-inputs](languages/python/2024-08-07-python-vars-prints-and-inputs.md)
+    * [2024-08-08-python-basic-data-types](languages/python/2024-08-08-python-basic-data-types.md)
+    * [2024-08-08-python-mathematics](languages/python/2024-08-08-python-mathematics.md)
 
 <h2>Linux</h2>
 
