@@ -15,6 +15,17 @@
   # First line is the location where the file was run
   # Second line is the ouput of the script
   # Thrid line is the exit code of said script
+  
+  print('''
+  Hello
+  World
+  ''')
+  # ''' allows you to print multi-lined strings
+
+  # in cases where the string you're typing may be too long, you can break it up
+  print("Hello"
+        "World")
+  # Hitting 'Enter' in your IDE will automatically do this for you
   ```
 
 * NOTE: Best practice when writing python code, is to leave a newline at the end of the file

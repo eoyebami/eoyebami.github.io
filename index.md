@@ -6,6 +6,8 @@
     * [2024-08-07-python-vars-prints-and-inputs](languages/python/2024-08-07-python-vars-prints-and-inputs.md)
     * [2024-08-08-python-basic-data-types](languages/python/2024-08-08-python-basic-data-types.md)
     * [2024-08-08-python-mathematics](languages/python/2024-08-08-python-mathematics.md)
+    * [2024-08-08-python-if-statements](languages/python/2024-08-08-python-if-statements.md)
+    * [2024-08-09-python-randomization](languages/python/2024-08-09-python-randomization.md)
 
 <h2>Linux</h2>
 

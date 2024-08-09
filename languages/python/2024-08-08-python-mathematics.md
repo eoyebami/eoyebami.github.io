@@ -13,6 +13,8 @@
   - To avoid this you can run divisions using `print(6 // 2)` which will produce an `int`
     * It does this by just removing whatever decimal is being produced
 * `Exponents`: `print(2 ** 2)`
+* `Modulo`: `print(10 % 5)`
+  - outputs the remainder produced from the division of the two numbers
 
 - NOTE: python mathematics follows `PEMDAS`
  
@@ -61,3 +63,4 @@ calculation = round((total_bill * (tip_percentage / 100 + 1)/split), 2)
 print(f"Each person should pay ${calculation}")
 
 ```
+
