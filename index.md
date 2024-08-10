@@ -10,6 +10,7 @@
     * [2024-08-08-python-if-statements](languages/python/2024-08-08-python-if-statements.md)
     * [2024-08-09-python-randomization](languages/python/2024-08-09-python-randomization.md)
     * [2024-08-10-python-lists](languages/python/2024-08-10-python-lists.md)
+    * [2024-08-10-python-try-and-except-statements](languages/python/2024-08-10-python-try-and-except-statements.md)
 
 <h2>Linux</h2>
 
