@@ -4,7 +4,8 @@
   - it follows the below logic:
  
     ```python
-    # statments which have headers that end with a colon, are compound statements
+    # a statement which consists of a header and a body and is usually identified by a colon at the end of the header
+    # this is a compound statement
     if condition:
         # a sequence of statements within a compound statement are known as the body
         # do this
