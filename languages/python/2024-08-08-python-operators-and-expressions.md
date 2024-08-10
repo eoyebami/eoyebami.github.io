@@ -1,12 +1,14 @@
-<h1>Python Mathematics</h1>
+<h1>Python Operators and Expressions</h1>
 
-* Python is filled with different mathematical operators and is not limited to just additions and subtractions
+<h2>Python Operators</h2>
 
-<h2>Python Mathematically Operators</h2>
+* Python is filled with different `operators` and the values to which they are applied to are called `operands`
 
 * `Addition`: `print(1 + 1)`
+  - Not only works with `int` and `floats` but `str` for concatenation
 * `Subtraction`: `print(1 - 1)`
 * `Multiplication`: `print(1 * 1)`
+  - Not only works with `int` and `floats` but `str` for concating string against `int` provided
 * `Division`: `print(6 / 2)`
   - divisions produce a `float`
   - Python converts operation into a `float` before executing, this is called `implicit type casting`
@@ -50,6 +52,11 @@
   print(score)
   # this will output 2
   ```
+
+<h2>Expressions</h2>
+
+* `Expressions` are a combination of values, vars, and operators
+
 
 <h2>Tip Calculator Example</h2>
 

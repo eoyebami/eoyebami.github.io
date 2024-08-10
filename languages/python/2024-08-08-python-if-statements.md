@@ -4,7 +4,9 @@
   - it follows the below logic:
  
     ```python
+    # statments which have headers that end with a colon, are compound statements
     if condition:
+        # a sequence of statements within a compound statement are known as the body
         # do this
     else:
         # do this
@@ -38,8 +40,9 @@
     - `<=`: less than or equal to
     - `==`: equal to
     - `!=`: not equal to
+    - `is`: similar to `==`
   * `Logical Operators`:
-    - `and`
+    - `and`: if one of the conditions is false, `python` will stop evaluation of the rest of the logical exp (short-circuiting evaluation). However this may case issues, should the first condition succeed and the second condition result in a logical error
     - `or`
     - `not`
 
@@ -60,6 +63,7 @@
     ```
 
 * This allows us to define conditions within conditions
+* NOTE: the logic on these are difficult to parse, so its suggested to avoid these when possible
 
 <h2>Elif Within If/Else Statements</h2>
 
@@ -83,6 +87,8 @@
     ```python
     # in cases like this, I like to wrap the conditions in parentheses
     if (condition and condition):
+        # uses guardian pattern to avoid logical errors with possible short-circuit evaluation
+        # guard patterns take advantage of short-cir evals, by validating succeeding condition
         # do this
     elif (condition or condition):
         # do this

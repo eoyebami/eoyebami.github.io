@@ -3,11 +3,13 @@
 - <h4>Python</h4>
 
   - <h5>Python: Basics</h5>
-    * [2024-08-07-python-vars-prints-and-inputs](languages/python/2024-08-07-python-vars-prints-and-inputs.md)
+    * [2024-08-07-python](languages/python/2024-08-07-python.md)
+    * [2024-08-07-python-prints-and-inputs](languages/python/2024-08-07-python-prints-and-inputs.md)
     * [2024-08-08-python-basic-data-types](languages/python/2024-08-08-python-basic-data-types.md)
-    * [2024-08-08-python-mathematics](languages/python/2024-08-08-python-mathematics.md)
+    * [2024-08-08-python-operators-and-expressions](languages/python/2024-08-08-python-operators-and-expressions.md)
     * [2024-08-08-python-if-statements](languages/python/2024-08-08-python-if-statements.md)
     * [2024-08-09-python-randomization](languages/python/2024-08-09-python-randomization.md)
+    * [2024-08-10-python-lists](languages/python/2024-08-10-python-lists.md)
 
 <h2>Linux</h2>
 

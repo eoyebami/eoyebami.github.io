@@ -81,18 +81,6 @@
   print(len(input("What is your name: ")))
   ```
 
-<h2>Python Variables</h2>
+<h2>Quit()</h2>
 
-* Python `variables` are a way for us to store values for use later, by associating that value with a variable with a name
-
-  ```python
-  name = input("What is your name: ")
-  print(name) # calling var 'name'
-  ```
-
-* When creating variables, its important to remember that the var must remain one unit, denote an `_` to separate words so that it will still remain one unit
-  - You also cannot have integers be the first character in a variable
-  
-  ```python
-  user_name = input("What is your username: ")
-  ```
+* Extra not, the `quit()` is used to exit out of the python terminal
