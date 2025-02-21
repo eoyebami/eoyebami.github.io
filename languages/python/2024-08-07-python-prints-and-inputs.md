@@ -28,8 +28,57 @@
   # Hitting 'Enter' in your IDE will automatically do this for you
   ```
 
+* The `print()` will always add a newline at the end of each output, this can be manipulated
+
+  ```python
+  print("Hello", end="")
+  print("World!")
+  # end argument, allows you replace the newline character with whatever you specify
+  # in this case, we replace it with an empty value
+  ```
+
+* The `print()` also allows you concat and manipulate field separators in concatenations
+
+  ```python
+  print("Hello", "World!")
+  # concats these two string and use " " as the default field separator
+  # mathematically expressions, vars, and functions can also be called into the print
+  print(12, type(12))
+  print("1 + 1 =", 1+1)
+  print("Hello", "World", sep="! ")
+  # outputs: "Hello! World! "
+  ```
+
+* `print()` also auto concats multiple strings, defined without `,`
+
+  ```python
+  print("Hello"
+        "World")
+  # outputs: "HelloWorld"
+  # multilined strings can be defined 2 ways
+  var = ("Hello "
+        "World!")
+
+  var = "Hello " \
+        "World!"
+  ```
+
 * NOTE: Best practice when writing python code, is to leave a newline at the end of the file
   - PyCharm will notify you of this by denoting a yellow line under your last character
+
+<h2>DocStrings</h2>
+
+* `Docstrings` are meant fot those who want to undestand what the program is doing without actually reading the source code
+* Usually denoted with `"""`
+
+  ```python
+  def hello(name):
+    """
+    Return a greeting
+    To the name passed to the function.
+    """
+    return "Hello" + name
+  ```
 
 <h2>String Manipulation</h2>
 
