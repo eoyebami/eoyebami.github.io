@@ -14,6 +14,7 @@
   - Python converts operation into a `float` before executing, this is called `implicit type casting`
   - To avoid this you can run divisions using `print(6 // 2)` which will produce an `int`
     * It does this by just removing whatever decimal is being produced
+    * This will also round down to the less integer number
 * `Exponents`: `print(2 ** 2)`
 * `Modulo`: `print(10 % 5)`
   - outputs the remainder produced from the division of the two numbers
@@ -45,6 +46,9 @@
   - `-=`: substracts value
   - `*=`: multiples value
   - `/=`: divides value
+  - `**=`: exponential value
+  - `//=`: division rounding
+  - `%=`: modulo value
 
   ```python
   score = 1

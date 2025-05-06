@@ -35,6 +35,7 @@
   print("World!")
   # end argument, allows you replace the newline character with whatever you specify
   # in this case, we replace it with an empty value
+  # the default is a \n
   ```
 
 * The `print()` also allows you concat and manipulate field separators in concatenations
