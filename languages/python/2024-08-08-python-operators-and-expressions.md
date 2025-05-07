@@ -75,3 +75,64 @@ print(f"Each person should pay ${calculation}")
 
 ```
 
+<h2>Bitwise Operators</h2>
+
+* `Bitwise` operatoes allow you to manipulate single bits of data
+  - `&`: conjunction(AND)
+    
+    ```python
+    # bin() converts an int to a binary in string format
+    # bits are calculated in base-2, so divide by 2 and aggregate remainders in reverse order
+    print(bin(15)) # 0b1111 or 00001111
+    print(bin(22)) # 0b10110 or 00010110
+    
+    # returns 1 if both bits are 1, otherwise it will return 0
+    print(15 & 22) # returns 6, which in binary is 0b110 or 00000110
+    ```
+
+  - `|`: disjunction(OR)
+
+    ```python
+    # similar concept to a conjunction
+    # returns a 1 of either both or one of the bits are 1
+    print(15 & 22) # 0b1111 & 0b10110 returns 0b11111 or 00011111 which is equal to 31
+    # to calculate reversion back to decimal exponent 2 by the position of each bit then multiply by number and add it all together
+    # ignore all 0s, since their product will always be 0
+    ```
+
+  - `~`: negation(NOT)
+
+    ```python
+    # this only takes one argument and returns the inverse of each bit
+    print(~22) # 0b10110 returns -0b10111 11101001 which is -23
+    # will return negative value of number - 1
+    ```
+
+  - `^`: exclusive(XOR)
+
+    ```python
+    # this operator returns 1 if only one of the bits are 1
+    print(15 ^ 22) # # 0b1111 & 0b10110 returns 0b11001 or 00011001 which is equal to 25
+    ```
+
+* Assignment operators also apply
+  - `&=`
+  - `|=`
+  - `^=`
+
+* `Bitshifting` can also be done
+  * NOTE: take precendence over bitwise operators
+  - `>>`: shift bits to the right
+  - `<<`: shift bits to the left
+
+  ```python
+  print(22 >> 1) # shift bits to the right by 1 from 0b10110 to 0b1011
+  # a binary right shift is the same as an integer division (//, round down) orders of magnitude of 2 (2 ** x)
+  # print(22 // 2) or print(22 // 4) if shifted twice, or print(22 // 8) if shifted three times
+  print(22 << 1) # shift bits to the left by 1 from 0b10110 to 0b101100
+  # a binary left shift is the same as an multiplication (*) orders of magnitude of 2 (2 ** x)
+  # print(22 * 2) or print(22 * 4) if shifted twice, or print(22 * 8) if shifted three times
+  ```
+
+* NOTE: cannot be used with floating point numbers
+

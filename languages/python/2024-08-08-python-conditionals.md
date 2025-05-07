@@ -27,7 +27,10 @@
     # be careful with the indentation or this may result in an IndentationError
     # could have used modulo operator within the conditional itself
     # if num % 2 == 0:
-
+    # SHORT HAND
+    if remainder == 0: print("This number is even")
+    # SHORT HAND if/else
+    print("This number is even") if remainder == 0 else print("This number is odd")
     ```
 
 <h2>Conditional Operators</h2>
@@ -139,3 +142,56 @@ NOTE: Simplify your python logic
   if 25 >= age <= 15: 
   # this may be harder to understand 
   ```
+
+<h2>While Conditions</h2>
+
+* `While` conditions will allow you to execute code while a condition is true
+
+```python
+secret_number = 3
+while guess != secret_number:
+  guess = int(input("Guess a number from 1 to 5: "))
+```
+
+* `Else` blocks can also be used in a `while` conditional 
+
+```python
+secret_number = 3
+while guess != secret_number:
+  guess = int(input("Guess a number from 1 to 5: "))
+else:
+  print("Congrats, you guessed correctly!")
+```
+
+<h2>For loops</h2>
+
+* `For` loops allow you to repeat code based on a certain amout of values 
+
+```python
+for i in range(10):
+  print("i is: ", i)
+
+list = [1, 2, 3]
+for x in list:
+  print("x is: ", x)
+```
+
+* You may want to break of out of the loop if a condition is satisfied
+
+```python
+list = [1, 2, 3]
+for x in list:
+  if(x == 2):
+    break
+  print("x is: ", x)
+```
+
+* You may want to skip an iteration in the loop rather than breaking the loop
+
+```python
+list = [1, 2, 3]
+for x in list:
+  if(x == 2):
+    continue
+  print("x is: ", x)
+```

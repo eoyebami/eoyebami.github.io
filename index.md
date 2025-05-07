@@ -7,7 +7,7 @@
     * [2024-08-07-python-prints-and-inputs](languages/python/2024-08-07-python-prints-and-inputs.md)
     * [2024-08-08-python-basic-data-types](languages/python/2024-08-08-python-basic-data-types.md)
     * [2024-08-08-python-operators-and-expressions](languages/python/2024-08-08-python-operators-and-expressions.md)
-    * [2024-08-08-python-if-statements](languages/python/2024-08-08-python-if-statements.md)
+    * [2024-08-08-python-conditionals](languages/python/2024-08-08-python-conditionals.md)
     * [2024-08-09-python-randomization](languages/python/2024-08-09-python-randomization.md)
     * [2024-08-10-python-lists](languages/python/2024-08-10-python-lists.md)
     * [2024-08-10-python-try-and-except-statements](languages/python/2024-08-10-python-try-and-except-statements.md)
