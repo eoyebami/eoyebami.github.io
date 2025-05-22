@@ -163,8 +163,123 @@ print(f"Pay: {computepay()}")
 
 ```
 
-<h2>Reasons to Use Functions</h2>
+<h2>Arguments</h2>
 
-* Gives you the opportunity to name a group of statements
-* Eliminate repetitive code
-* Easier to debug long programs by breaking it into functions
+* Arguments can be passed to functions
+
+```python
+def input_number(num):
+    return int(input("Enter a number: ")) * num
+
+input_number(10)
+# passing in the 10, will set the num var in the function to what you passed that arg
+# in the case that a function asks for multiple args, you can either pass them in the order specified or call it explicitly
+
+def multiple(num1, num2):
+    return num1 * num2
+
+multiple(num1 = 4, num2 = 15):
+
+# default values for args can also be set
+def multiple(num1 = 4, num2 = 15):
+    return num1 * nume2
+
+# that way you can call the function without passing any args
+multiple()
+```
+
+* You can also set default value types for arguments in a function
+
+```python
+def multiple(num1: int, num2: int):
+    return num1 * num2
+
+# you can even set default values while setting default value types
+def multiple(num1: int = 4, num2: int = 15):
+    return num1 * num2
+```
+
+* NOTE: This won't raise an error, to do so do this
+
+```python
+def multiple(num1: int = 4, num2: int = 15):
+    if not isinstance(num1, int)
+        raise TypeError("num1 must be an int")
+    return num1 * num2
+
+def multiple(num1: int = 4, num2: int = 15):
+    if not all(isinstance(i, int) for i in(num1, num2)):
+        raise TypeError("num1 and num2 must be an int")
+    return num1 * num2
+
+```
+
+* NOTE: when you pass a var to a function and that function modifies the value, it will only be changed within that function as seen below:
+
+```python
+number = 1000
+def multiple(num):
+    num *= 200
+    return num
+
+print(multiple(number))
+print(number)
+# python creates another var called num and duplicates its value to that new var num in this function
+# changes made only modify that new var called num
+```
+
+* NOTE: for lists, this is different, since the point to the memory address where this value is stored rather than the value itself
+  - Making changes in the function will also change the original value, unless you slice the list
+
+<h2>Return</h2>
+
+* `Return` statements in functions stop the function
+  - Returns also allow you to save the stdout of a function into a new var outside of the function
+
+```python
+def print_product(num1, num2):
+    product = num1 * num2
+    if (product == 0):
+        return # if product equals 0, the functions returns and outputs nothing
+    return product # if product does not equal 0, the function returns that value
+``` 
+
+* If no `return` is specified in the function, then the function will always return `None`
+  - If `return` is called with no args, this too will return `None`
+
+* You can return more than one value as well (returning a tuple)
+
+```python
+def print_product(num1, num2):
+    product = num1 * num2
+    if (product == 0):
+        return None, False# if product equals 0, the functions returns and outputs nothing
+    return product, True # if product does not equal 0, the function returns that value
+    # you can also return like `return (product, True)`
+
+product, result = print_product()
+print(product) # Either None of the value
+print(result) # Boolean
+```
+
+<h2>Scopes</h2>
+
+* In functions, vars defined within a function can only be called within that functions scope
+
+```python
+def print_num():
+    num = 5000
+    print(num)
+# calling num outside of this function will throw an error
+```
+
+* In order to make a scoped var global, you need to call the `global` statement
+
+```python
+def print_sum():
+    global num = 5000
+    print(num)
+
+print(num)
+```
+
