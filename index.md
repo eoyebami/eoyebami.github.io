@@ -12,7 +12,7 @@
     * [2024-08-10-python-lists](languages/python/2024-08-10-python-lists.md)
     * [2024-08-10-python-try-and-except-statements](languages/python/2024-08-10-python-try-and-except-statements.md)
     * [2024-08-10-python-functions](languages/python/2024-08-10-python-functions.md)
-    * [2024-08-11-python-iteration](languages/python/2024-08-11-python-iteration.md)
+    * [2025-05-22-python-tuples](languages/python/2025-05-22-python-tuples.md)
 
 <h2>Linux</h2>
 
