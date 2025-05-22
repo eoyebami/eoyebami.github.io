@@ -95,3 +95,83 @@ list.remove(2) # removes the first occurrence of the element with the specified 
   - This means if you create another var to equal the var of that list, should you change the original list, the new vars value will also changes
   - To avoid this, we must slice the list or run a list.copy() when assigning the list value to a new var
 
+* We slice a list by using brackets to specify where we want to start and where we want to end (the end index not being included in the slice)
+
+```python
+list[start:end]
+
+list2 = list1[0:3]
+# creates a new list with the first 3 elements
+
+list2 = list1[1:] 
+# creates a new list with every element after the first element
+
+list2 = list[:1]
+# creates a new list with every element up until the second element
+
+# negative indexes can also be used
+list2 = list[0:-1] 
+# creates a new list from the first element up until right before the list element
+
+list2 = list[:]
+# creates a copy of the list, different from just `list=list` we avoid the issue we talked about earlier
+# creates a whole new list in memory
+
+# using the del statement when slicing lists will also modify the original list as well
+del letters[:]
+```
+
+<h2>Finding in Lists</h2>
+
+* python also allows us to see whether or not something is in a list
+
+```python
+letters = ["A", "B", "C"]
+print("B" in letters) # this will return true
+
+if "B" in letters:
+  print("The letter B is in the list called letters")
+
+if "D" not in letters:
+  print("The letter D is not in the list called letters")
+```
+
+<h2>Nested Lists 2D(Matrix)</h2>
+
+* A list within a list is known as a `matrix`
+
+```python
+classroom = [
+    ["sammy", "mike"],
+    ["matt","mark"],
+]
+
+# to retrieve a value, you must traverse the indexes
+print(class[1][0]) # this will return "matt"
+
+# you can even retrieve an entire row
+classroom[0]
+
+for student in classroom[0]:
+    print(student)
+```
+
+<h2>Nested Lists 3D</h2>
+
+* 3D arrays are also possible, arrays within arrays within arrays
+
+```python
+school = [
+    [
+        ["sammy", "mike"],
+        ["matt", "mark"],
+    ],
+    [
+        ["luke", "steve"],
+        ["saul", "paul"],
+    ],
+]
+
+school[0][0][1]
+```
+
