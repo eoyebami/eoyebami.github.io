@@ -92,7 +92,7 @@
 
   * [2023-05-29-logstash.yml-config](elk/2023-05-29-logstash.yml-config.md)
   * [2023-05-29-logstash-pipeline-input](elk/2023-05-29-logstash-pipeline-input.md)
-  * [023-05-29-logstash-pipeline-filter](elk/2023-05-29-logstash-pipeline-filter.md)
+  * [2023-05-29-logstash-pipeline-filter](elk/2023-05-29-logstash-pipeline-filter.md)
 
 - <h4>ELK Stack: Kibana</h4>
 
