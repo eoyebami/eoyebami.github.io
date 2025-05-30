@@ -74,3 +74,42 @@ students_classes.values() # returns a list of all values in a dict
 ```
 
 <h2>Multidimensional Dicts</h2>
+
+* Multidimensional Dicts can also be created just like multidimensional lists 
+
+```python
+my_2d_dict = {
+    'row1': {'col1': 1, 'col2': 2},
+    'row2': {'col1': 3, 'col2': 4}
+}
+
+# calling object in dict
+my_2d_dict["row1"]["col1"] # will return 1
+
+# iterating over 2d dict
+for row_key, row_dict in my_2d_dict.items():
+    print(f"Row: {row_key}") # prints "row1" and "row2"
+    for col_key, value in row_dict.items():
+        print(f"  Column: {col_key}, Value: {value}")
+
+# create multidimensional dict dynamically
+keys = ["a", "b", "c"]
+value = 1
+print({key: {"test": value} for key in keys})
+
+# option 2
+keys = ["a", "b", "c"]
+values = [1, 2, 3]
+
+dict = {}
+for i in range(len(keys)):
+    dict[[keys[i]] = values[i]
+print(dict) # returns {'a': 1, 'b': 2, 'c': 3}
+
+# option 3
+keys = ["a", "b", "c"]
+values = [1, 2, 3]
+
+dict = {keys[i]: values[i] for i in range(len(keys))}
+```
+
