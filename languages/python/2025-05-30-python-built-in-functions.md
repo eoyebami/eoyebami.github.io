@@ -89,15 +89,154 @@ for i, name in enumerate(a):
     print(f"Index {i}: {name}") # will produce "Index 0: Geeks"
 ```
 
+<h2>filter()</h2>
+
+* filters a given sequence with help of a function that tests each element in the sequence to be true or not
+
+```python
+def is_even(n):
+    return n % 2 == 0
+
+nums = [1, 2, 3, 4, 5, 6]
+result = filter(is_even, nums) # runs iterable through a function that returns True/False, and filters for all True iterations
+
+print(list(result))
+```
+
+<h2>format()</h2>
+
+* method formats specified value(s) and inserts them with string placeholders
+
+```python
+txt1 = "My name is {fname}, I'm {age}".format(fname = "John", age = 36)
+txt2 = "My name is {0}, I'm {1}".format("John",36) # indexes can be used to set when called
+txt3 = "My name is {}, I'm {}".format("John",36)
+# you can format how strings get places or format numbers and even perform conversions
+```
+
+<h2>frozenset()</h2>
+
+* returns an unchangeable frozenset object
+
+```python
+mylist = ['apple', 'banana', 'cherry']
+x = frozenset(mylist)
+```
+
+<h2>globals()</h2>
+
+* Returns a dict representing all the global variables in the current module or script
+
+```python
+globals() # as with all dicts, methods apply here
+```
+
+<h2>locals()</h2>
+
+* Returns a dict representing the local variables and methods in the current module or script
+
+```python
+locals() # as with all dicts, methods apply here
+```
+
+<h2>map()</h2>
+
+* Applies an iterable against a function to return a map object which is also an iterable
+
+```python
+def square(x):
+    return x * x
+
+numbers = [1, 2, 3, 4]
+squared_numbers = map(square, numbers) 
+print(list(squared_numbers))  # Output: [1, 4, 9, 16]
+# NOTE: iterables do no reset or rewind, so once u run the map if you try to print it again it will return an empty list
+# to avoid to this convert to list before assigning to a var
+squared_numbers = list(map(square, numbers))
+```
+
+<h2>next()</h2>
+
+* Iterates through iterators one by one
+
+```python
+mylist = iter(["apple", "banana", "cherry"])
+x = next(mylist)
+print(x)
+x = next(mylist, "finished")
+```
+
+<h2>isinstance()</h2>
+
+* Returns `True` if the specified object is the specified type
+
+```python
+isinstance("hello", str)
+isinstance("hello", (str, int, float, bool, list, dict, tuple)) # u can also provide a tuple of types to verify against
+```
+
+<h2>issubclass()</h2>
+
+* returns `True` if the specified object is a subclass of a specified object
+
+```python
+class Animal:
+    pass
+
+class Dog(Animal):
+    pass
+
+print(issubclass(Dog, Animal))  # True
+print(issubclass(Animal, Dog))  # False
+print(issubclass(Dog, (Animal, object)))  # True, works like the tuple in `isinstance`
+```
+
+<h2>iter()</h2>
+
+* Creates an iterator object
+
+```python
+x = iter(["apple", "banana", "cherry"])
+print(next(x)) # use next object to call iterator
+print(next(x))
+print(next(x))
+# will print subsequent item in list each time iterator is called 
+
+# u can specify when iteration should stop, if the first arg is a callable
+def get_input():
+    return input("Enter something (type 'exit' to stop): ")
+
+for user_input in iter(get_input, 'exit'):
+    print(f"You entered: {user_input}")
+```
+
+<h2>len()</h2>
+
+* Determines the len of items within an object
+
+```python
+mylist = ["apple", "banana", "cherry"]
+print(len(mylist)) # returns 3
+
+s = "GeeksforGeeks"
+print(len(s)) # returns 13
+```
+
 <h2>eval()</h2>
 
 * Evaluates the specified expression, if it is a legal python statement, it will execute it
+  - You can specify a dicts for managing global and local methods and variables
+    * `globals`: dict to specify available global methods and vars
+    * `locals`: dict to specify available local methods and vars
+    * e.g [example](https://www.geeksforgeeks.org/eval-in-python/)
 
 ```python
 eval('print(55)') # returns 55
-
-# protect against malicious code 
 ```
+
+<h2>exec()</h2>
+
+* Works exactly like `eval()` except it accepts code block and returns None rather than the expressions output
 
 <h2>callable()</h2>
 
