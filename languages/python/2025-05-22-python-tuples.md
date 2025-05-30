@@ -3,6 +3,7 @@
 * `Tuples` are immutable (cannot be changed) data that can be written with parenthese or as a set of values separated by commas
   - we saw this when we returned multiple values in a python function
   - multiple datatypes can be added to a tuple
+  - since they are immutable, tuples cannot be modified or updated
 
   ```python
   return val1, val2

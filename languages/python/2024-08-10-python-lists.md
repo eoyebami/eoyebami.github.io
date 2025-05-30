@@ -119,6 +119,9 @@ list2 = list[:]
 
 # using the del statement when slicing lists will also modify the original list as well
 del letters[:]
+
+# dynamically create a list
+list2 = [ value for value in chosen_object ]
 ```
 
 <h2>Finding in Lists</h2>
