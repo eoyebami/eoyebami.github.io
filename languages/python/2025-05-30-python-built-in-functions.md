@@ -87,6 +87,52 @@ a = ["Geeks", "for", "Geeks"]
 # Iterating list using enumerate to get both index and element
 for i, name in enumerate(a):
     print(f"Index {i}: {name}") # will produce "Index 0: Geeks"
+
+# can be used to replace range(len())
+for i, in enumerate(a):
+    value = a[i]
+    print(f"Index {i}: {value}")
+```
+
+<h2>set()</h2>
+
+* Used to create a sec object (which are unordered collections of unique elements)
+  - Automatically delete duplicates
+  - Unordered, cannot be referred by index or key
+  - `True` and `1` are considered the same value in a set, same with `False` and `0`
+  - [Methods for sets](https://www.w3schools.com/Python/python_ref_set.asp)
+
+```python
+empty_set = set() # creates an empty set
+my_list = [1, 2, 2, 3]
+my_set = set(my_list) # set value will be [1, 2, 3]
+
+# can be initialized with {}
+my_set = {1, 2, 3}
+```
+
+<h2>slice()</h2>
+
+* Returns the sliced object containing elements in the given range
+  - same args as the range()
+
+```python
+string = "hello world"
+sliced_obj = slice(5, 11)
+print(sliced_obj) # returns "world"
+
+listing = [1, 2, 3]
+sliced_list = slice(2)
+print(sliced_list) # returns [1, 2]
+```
+
+<h2>reversed()</h2>
+
+* reverses the sequence of a list, and returns as iterator object without modifying original sequence
+
+```python
+a = [1, 2, 3, 4, 5]
+rev_a = reversed(a) # returns [5, 4, 3, 2, 1]
 ```
 
 <h2>filter()</h2>
@@ -154,6 +200,57 @@ print(list(squared_numbers))  # Output: [1, 4, 9, 16]
 # to avoid to this convert to list before assigning to a var
 squared_numbers = list(map(square, numbers))
 ```
+
+<h2>open()</h2>
+
+* Opens a file and returns it as a file object
+  * There are different modes to open a file in:
+    1. `r`: read (default)
+    2. `w`: write, truncates file first
+    3. `x`: open for exclusive creation, fails if file already exists
+    4. `a`: open for writing, appending to the end of file if it exists
+    5. `b`: binary mode (e.g. images)
+    6. `t`: text mode
+    7. `+`: open for updating (reading and writing)
+  * default encoding is ASCII, you can change it to something like `utf-8`
+
+```python
+f = open(file='images.txt', mode='r')
+print(f.read())
+
+# recommend to use this with the "with" statement so it automatically closes the file once done
+
+with open("images.txt", "r") as file:
+    contents = file.read()
+    print(contents)
+
+with open("images.txt", "a", encoding="utf-8") as file:
+    file.write("First Image")
+
+# iterate with for loop
+for i, image in enumerate(images):
+    with open("images.txt", "a", encoding="utf-8") as file"
+        file.write(f"{i}: {image}")
+```
+
+<h2>range()</h2>
+
+* Generates a sequence of numbers 
+  - `start`: where to begin the index (default: 0)
+  - `stop`: where to stop the index, no included
+  - `step`: how to increment
+
+```python
+range(0, 10, 1) # returns from 0 to 9
+range(10) # returns from 0 to 9
+range(1, 10, 2) # returns 1, 3, 5, 7, 9
+
+# commonly used to iterate over lists
+list1 = [1, 2]
+for i in range(len(list1)):
+    print(i)
+```
+
 
 <h2>next()</h2>
 
