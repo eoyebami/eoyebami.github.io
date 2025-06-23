@@ -1,8 +1,21 @@
-<h2>Languages</h2>
+## Table of Contents
+- [Languages](#languages)
+- [Linux](#linux)
+- [VMs](#virtual-machines)
+- [LDPA](#ldap)
+- [Logging & Monitoring(#logging-and-monitoring)
+- [Container Orchestration](#container-orchestration)
+- [Jenkins](#jenkins)
+- [IaC](#infrastructure-as-code)
+- [AWS](#aws)
+- [GCP](#gcp)
+
+## Languages
 
 - <h4>Python</h4>
 
   - <h5>Python: Basics</h5>
+
     * [2024-08-07-python](languages/python/2024-08-07-python.md)
     * [2024-08-07-python-prints-and-inputs](languages/python/2024-08-07-python-prints-and-inputs.md)
     * [2024-08-08-python-basic-data-types](languages/python/2024-08-08-python-basic-data-types.md)
@@ -17,7 +30,9 @@
     * [2025-05-30-python-built-in-functions](languages/python/2025-05-30-python-built-in-functions.md)
     * [2025-06-22-python-classes-and-objects](languages/python/2025-06-22-python-classes-and-objects.md)
 
-<h2>Linux</h2>
+  - <h5>Python: Api Development</h5>
+
+## Linux
 
 - <h4>Linux: General Knowledge</h4>
 
@@ -62,7 +77,7 @@
   * [2023-05-23-lvm-logical-volumes](linux/2023-05-23-lvm-logical-volumes.md)
   * [2023-05-26-swap-space](linux/2023-05-26-swap-space.md)
 
-<h2>Virtual Machines</h2>
+## Virtual Machines
 
 - <h4>Virtual Box</h4>
 
@@ -75,7 +90,7 @@
   * [2024-03-07-vagrantfile-config](vms/vagrant/2024-03-07-vagrantfile-config.md)
   * [2024-03-07-vm-backups-and-restore](vms/vagrant/2024-03-07-vm-backups-and-restore.md)
 
-<h2>LDAP</h2>
+## LDAP
 
 - <h4>LDAP: General Knowledge</h4>
 
@@ -102,7 +117,7 @@
   * [2023-05-28-kibana.yml-config](elk/2023-05-28-kibana.yml-config.md) 
   * [2023-06-04-kibana-index-patterns](elk/2023-06-04-kibana-index-patterns.md)
 
-<h2>Container Orchestration</h2>
+## Container Orchestration
 
 - <h4>Docker</h4>
 
@@ -259,12 +274,12 @@
     * [2024-05-01-cert-manager-issuers](k8s/cert-manager/2024-05-01-cert-manager-issuers.md)
     * [2024-05-01-cert-manager-certificates](k8s/cert-manager/2024-05-01-cert-manager-certificates.md)
   
-<h2>Jenkins</h2>
+## Jenkins
 
   * [2024-01-26-jenkins-cred-manipulation-groovys](jenkins/2024-01-26-jenkins-cred-manipulation-groovys.md)
   * [2024-04-18-neat-jenkinsfile-strategies](jenkins/2024-04-18-neat-jenkinsfile-strategies.md)
 
-<h2>Infrastructure as Code</h2>
+## Infrastructure as Code
 
 - <h4>Ansible</h4>
 
@@ -298,7 +313,7 @@
     * [2024-07-27-ansible-file-separation](iac/ansible/2024-07-27-ansible-file-separation.md)
     * [2024-08-05-ansible-vault](iac/ansible/2024-08-05-ansible-vault.md)
        
-<h2>AWS</h2>
+## AWS
 
 - <h4>IAM</h4>
 
@@ -310,7 +325,7 @@
   * [2024-01-29-iam-roles-and-serviceaccounts](aws/2024-01-29-iam-roles-and-serviceaccounts.md)
   * [2024-01-31-aws-image-security](aws/2024-01-31-aws-image-security.md)
 
-<h2>GCP</h2>
+## GCP
 
 - <h4>VPC Networks</h4>
 
