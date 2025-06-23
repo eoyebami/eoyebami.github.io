@@ -15,6 +15,7 @@
     * [2025-05-22-python-tuples](languages/python/2025-05-22-python-tuples.md)
     * [2025-05-29-python-dictionaries](languages/python/2025-05-29-python-dictionaries.md)
     * [2025-05-30-python-built-in-functions](languages/python/2025-05-30-python-built-in-functions.md)
+    * [2025-06-22-python-classs-and-objects](languages/python/2025-06-22-python-classs-and-objects.md)
 
 <h2>Linux</h2>
 
