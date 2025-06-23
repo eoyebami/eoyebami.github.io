@@ -13,7 +13,7 @@
 
 ## Languages
 
-### Python
+- ### Python
 
   - <h5>Python: Basics</h5>
 
