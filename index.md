@@ -1,9 +1,10 @@
 ## Table of Contents
 - [Languages](#languages)
+  - [Python](#python)
 - [Linux](#linux)
-- [VMs](#virtual-machines)
-- [LDPA](#ldap)
-- [Logging & Monitoring(#logging-and-monitoring)
+- [Virtual Machines](#virtual-machines)
+- [Lightweight Directory Access Protocol](#ldap)
+- [Logging & Monitoring](#logging-and-monitoring)
 - [Container Orchestration](#container-orchestration)
 - [Jenkins](#jenkins)
 - [IaC](#infrastructure-as-code)
@@ -12,7 +13,7 @@
 
 ## Languages
 
-- <h4>Python</h4>
+### Python
 
   - <h5>Python: Basics</h5>
 
