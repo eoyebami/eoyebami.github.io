@@ -3,16 +3,17 @@
 ---
 
 ## Table of Contents
-- [Self](#self)
+- [Overview](#overview)
+- [Self Parameter](#self-parameter)
 - [Init Function](#init-function)
 - [Str Function](#str-function)
 - [Object Methods](#object-methods)
 
+## Overview
 * Python is an object oriented programming language
   - Almost everything in python is an object with its own properites and methods
 * A `Class` is like an object constructor for creating objects
   - Should be used if you have attributes and functions that naturally belong together that operate on that data(attributes)
-
 
 ```python
 class Beginning:
@@ -21,8 +22,7 @@ class Beginning:
 print(Beginning.x) # this will return 5
 ```
 
-## Self
-
+## Self Parameter
 * The `self` parameter is a reference to the currenct instance of a class and is used to access vars that belong to said class
   - It doesn't even have to be called `self` but it must be the first parameter of any function in that class
 
@@ -37,7 +37,6 @@ print(Beginning.x) # this will return 5
   ```
 
 ## Init Function
-
 * All classes have a function called `__init__()`, which always runs when the class is initiated
   - It should be defined in your class to assign values to object properties or basically anything that is necessary for the class to function for whatever purpose it was created for
 
@@ -51,7 +50,6 @@ print(Beginning.x) # this will return 5
   ```
 
 ## Str Function
-
 * The `__str__()` defines what should be returned when the class is represented as a string
 
   ```python
