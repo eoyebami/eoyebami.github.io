@@ -6,7 +6,7 @@
 - [Languages](#languages)
   - [Python](#python)
     - [Python: Basics](#python-basics)
-    - [Python: Api Development](#python-api-development)
+    - [Python: Fast](#python-fast-api)
 - [Linux](#linux)
   - [Linux: General Knowledge](#linux-general-knowledge)
   - [Linux: Command Operations](#linux-command-operations)
@@ -81,7 +81,9 @@
     * [2025-06-22-python-classes-and-objects](languages/python/2025-06-22-python-classes-and-objects.md)
     * [2025-06-23-python-virtual-environments](languages/python/2025-06-23-python-virtual-environments.md)
 
-  - #### Python: Api Development
+  - #### Python: Fast Api
+
+    * [2025-06-23-python-fast-api-introduction](languages/python/2025-06-23-python-fast-api-introduction.md)
 
 ## Linux
 
