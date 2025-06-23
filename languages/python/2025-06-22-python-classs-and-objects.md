@@ -3,8 +3,10 @@
 ---
 
 ## Table of Contents
-- [Init Function](#init-function)
 - [Self](#self)
+- [Init Function](#init-function)
+- [Str Function](#str-function)
+- [Object Methods](#object-methods)
 
 * Python is an object oriented programming language
   - Almost everything in python is an object with its own properites and methods
@@ -18,20 +20,6 @@ class Beginning:
 
 print(Beginning.x) # this will return 5
 ```
-
-## Init Function
-
-* All classes have a function called `__init__()`, which always runs when the class is initiated
-  - It should be defined in your class to assign values to object properties or basically anything that is necessary for the class to function for whatever purpose it was created for
-
-  ```python 
-  class Beginning:
-      def __init__(self, name, age):
-          self.name = name
-          self.age = age
-  
-  print(Beginning.name)
-  ```
 
 ## Self
 
@@ -47,3 +35,36 @@ print(Beginning.x) # this will return 5
       def myfunc(not_silly): # not_silly is the first parameter in this function, therefore it is now the self param
           print(f"My name is {not_silly.name} and I am {not_silly.age}")
   ```
+
+## Init Function
+
+* All classes have a function called `__init__()`, which always runs when the class is initiated
+  - It should be defined in your class to assign values to object properties or basically anything that is necessary for the class to function for whatever purpose it was created for
+
+  ```python 
+  class Beginning:
+      def __init__(self, name, age):
+          self.name = name
+          self.age = age
+  
+  print(Beginning.name)
+  ```
+
+## Str Function
+
+* The `__str__()` defines what should be returned when the class is represented as a string
+
+  ```python
+  class Person:
+      def __init__(self, name, age):
+          self.name = name
+          self.age = age
+
+      def __str__(self):
+          return f"{self.name}({self.age})"
+
+  p1 = Person("John", 36)
+  print(p1) # returns "John(36)"
+  ```
+
+## Object Methods
