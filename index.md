@@ -1,5 +1,5 @@
 ---
-# EZ DevSecOps Notes
+# EZ DevSecOps Blog
 ---
 
 ## Table of Contents
