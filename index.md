@@ -49,15 +49,15 @@
       - [Istio: Security](#istio-security)
     - [Cert-Manager](#cert-manager)
 - [Jenkins](#jenkins)
-- [IaC](#infrastructure-as-code)
+- [Infrastructure as Code](#infrastructure-as-code)
   - [Ansible](#ansible)
     - [Ansible: Inventory](#ansible-inventory)
     - [Ansible: Variables](#ansible-variables)
     - [Ansible: Playbooks](#ansible-playbooks)
-- [AWS](#aws)
-  - [IAM](#iam)
+- [Amazon Web Services](#amazon-web-services)
+  - [IAM](#identity-and-access-management)
   - [EKS](#eks)
-- [GCP](#gcp)
+- [Google Cloud Platform](#google-cloud-platform)
   - [VPC Networks](#vpc-networks)
 
 ## Languages
@@ -364,9 +364,9 @@
     * [2024-07-27-ansible-file-separation](iac/ansible/2024-07-27-ansible-file-separation.md)
     * [2024-08-05-ansible-vault](iac/ansible/2024-08-05-ansible-vault.md)
        
-## AWS
+## Amazon Web Services
 
-- ### IAM
+- ### Identity and Access Management
 
   * [2023-04-22-cross-account-assume-role](aws/2023-04-22-cross-account-assume-role.md)
 
@@ -376,7 +376,7 @@
   * [2024-01-29-iam-roles-and-serviceaccounts](aws/2024-01-29-iam-roles-and-serviceaccounts.md)
   * [2024-01-31-aws-image-security](aws/2024-01-31-aws-image-security.md)
 
-## GCP
+## Google Cloud Platform
 
 - ### VPC Networks
 
