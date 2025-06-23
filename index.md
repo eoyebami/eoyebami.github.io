@@ -1,13 +1,30 @@
 ## Table of Contents
 - [Languages](#languages)
   - [Python](#python)
+    - [Python: Basics](#python-basics)
+    - [Python: Api Development](#python-api-development)
 - [Linux](#linux)
+  - [Linux: General Knowledge](#linux-general-knowledge)
+  - [Linux: Command Operations](#linux-command-operations)
+  - [Linux: Networking](#linux-networking)
+  - [Linux: Apis and HTTP Methods](#linux-apis-and-http-methods)
+  - [Linux: Yamls and Json Parsing](#linux-yamls-and-json-parsing)
+  - [Linux: TLS](#linux-tls)
+  - [Linux: Partitions, File Systems, and LVMs](#linux-partitions-file-systems-and-lvms)
 - [Virtual Machines](#virtual-machines)
+  - [Virtual Box](#virtual-box)
+  - [Vagrant](#vagrant)
 - [Lightweight Directory Access Protocol](#ldap)
 - [Logging & Monitoring](#logging-and-monitoring)
 - [Container Orchestration](#container-orchestration)
+  - [Docker](#docker)
+  - [Kubernetes](#kubernetes)
+  - [Helm](#helm)
+  - [Kustomize](#kustomize)
+  - [Kubernetes: Cluster Add-Ons](#kubernetes-cluster-add-ons)
 - [Jenkins](#jenkins)
 - [IaC](#infrastructure-as-code)
+  - [Ansible](#ansible)
 - [AWS](#aws)
 - [GCP](#gcp)
 
@@ -15,7 +32,7 @@
 
 - ### Python
 
-  - <h5>Python: Basics</h5>
+  - #### Python: Basics
 
     * [2024-08-07-python](languages/python/2024-08-07-python.md)
     * [2024-08-07-python-prints-and-inputs](languages/python/2024-08-07-python-prints-and-inputs.md)
@@ -31,17 +48,17 @@
     * [2025-05-30-python-built-in-functions](languages/python/2025-05-30-python-built-in-functions.md)
     * [2025-06-22-python-classes-and-objects](languages/python/2025-06-22-python-classes-and-objects.md)
 
-  - <h5>Python: Api Development</h5>
+  - #### Python: Api Development
 
 ## Linux
 
-- <h4>Linux: General Knowledge</h4>
+- ### Linux: General Knowledge
 
   * [2023-04-15-ssh-client-and-server](linux/2023-04-15-ssh-client-and-server.md)
   * [2023-04-15-yum-repo-configuration](linux/2023-04-15-yum-repo-configuration.md)
   * [2023-04-20-ntp-client-and-server](linux/2023-04-20-ntp-client-and-server.md) 
 
-- <h4>Linux: Command Operations</h4>
+- ### Linux: Command Operations
 
   * [2023-04-15-compression](linux/2023-04-15-compression.md)
   * [2023-04-15-filtration](linux/2023-04-15-filtration.md)
@@ -50,28 +67,28 @@
   * [2023-05-10-misc-cmd](linux/2023-05-10-misc-cmd.md)
   * [2024-08-06-regex](linux/2024-08-06-regex.md)
 
-- <h4>Linux: Networking</h4>
+- ### Linux: Networking
 
   * [2024-02-19-networking-in-linux](linux/2024-02-19-networking-in-linux.md)
   * [2024-02-19-dns](linux/2024-02-19-dns.md)
   * [2024-02-19-network-namespaces](linux/2024-02-19-network-namespaces.md)
 
-- <h4>Linux: APIs and HTTPs Methods</h4>
+- ### Linux: APIs and HTTPs Methods
 
   * [2023-05-01-curl-and-rest-apis](http/2023-05-01-curl-and-rest-apis.md)
   * [2023-05-01-http-requests](http/2023-05-01-http-requests.md)
 
-- <h4>Linux: YAMLS and JSON parsing</h4>
+- ### Linux: YAMLS and JSON parsing
 
   * [2023-05-06-jq-json](linux/2023-05-06-jq-json.md)
   * [2024-03-07-yamls-and-jsons](linux/2024-03-07-yamls-and-jsons.md)
   * [2024-03-07-jsonpath](linux/2024-03-07-jsonpath.md)
 
-- <h4>Linux: TLS</h4>
+- ### Linux: TLS
 
   * [2024-01-16-tls](linux/2024-01-16-tls.md)
 
-- <h4>Linux: Partitions, File Systems, and LVMs</h4>
+- ### Linux: Partitions, File Systems, and LVMs
 
   * [2023-05-17-fdisk](linux/2023-05-17-fdisk.md)
   * [2023-05-22-parted](linux/2023-05-22-parted.md)
@@ -80,12 +97,12 @@
 
 ## Virtual Machines
 
-- <h4>Virtual Box</h4>
+- ### Virtual Box
 
   * [2023-04-29-vbox-configuration](vms/vbox/2023-04-29-vbox-configuration.md)
   * [2023-04-29-vbox-networking](vms/vbox/2023-04-29-vbox-networking.md)
 
-- <h4>Vagrant</h4>
+- ### Vagrant
 
   * [2024-03-07-intro-to-vagrant](vms/vagrant/2024-03-07-intro-to-vagrant.md)
   * [2024-03-07-vagrantfile-config](vms/vagrant/2024-03-07-vagrantfile-config.md)
@@ -120,7 +137,7 @@
 
 ## Container Orchestration
 
-- <h4>Docker</h4>
+- ### Docker
 
   * [2023-07-31-docker-run-complexities](k8s/docker/2023-07-31-docker-run-complexities.md)
   * [2023-08-05-dockerfile-cmd-and-entrypoint](k8s/docker/2023-08-05-dockerfile-cmd-and-entrypoint.md)
@@ -130,7 +147,7 @@
   * [2024-01-31-docker-container-capabilities](k8s/docker/2024-01-31-docker-container-capabilities.md)
   * [2024-02-19-docker-networking](k8s/docker/2024-02-19-docker-networking.md)
 
-- <h4>Kubernetes</h4>
+- ### Kubernetes
 
   - <h5>Kubernetes: Introduction</h5>
  
@@ -209,7 +226,7 @@
     * [2024-03-07-kubeadm-k8-installation](k8s/2024-03-07-kubeadm-k8-installation.md)
     * [2024-03-09-kubeadmn-k8-vagrant](k8s/2024-03-09-kubeadmn-k8-vagrant.md)
 
-- <h4>Helm</h4>
+- ### Helm<
 
   - <h5>Helm: Introduction</h5>
  
@@ -228,7 +245,7 @@
     * [2024-04-22-helm-chart-hooks](k8s/helm/2024-04-22-helm-chart-hooks.md)
     * [2024-04-22-helm-packaging-signing-uploading-charts](k8s/helm/2024-04-22-helm-packaging-signing-uploading-charts.md)
 
-- <h4>Kustomize</h4>
+- ### Kustomize
 
   - <h5>Kustomize: Introduction</h5>
  
@@ -243,7 +260,7 @@
     * [2024-05-31-secret-configmap-generator](k8s/kustomize/2024-05-31-secret-configmap-generator.md)
     * [2024-06-01-kustomize-imperative-commands](k8s/kustomize/2024-06-01-kustomize-imperative-commands.md)
 
-- <h3>Kubernetes: Cluster Add-Ons</h3>
+- ### Kubernetes: Cluster Add-Ons
 
 - <h4>Metrics</h4>
  
@@ -269,7 +286,7 @@
     * [2024-04-30-istio-security-authentication](k8s/istio/2024-04-30-istio-security-authentication.md)
     * [2024-04-30-istio-security-authorization](k8s/istio/2024-04-30-istio-security-authorization.md)
 
-- <h4>Cert-Manager</h4>
+- ### Cert-Manager
  
     * [2024-05-01-intro-to-cert-manager](k8s/cert-manager/2024-05-01-intro-to-cert-manager.md)
     * [2024-05-01-cert-manager-issuers](k8s/cert-manager/2024-05-01-cert-manager-issuers.md)
@@ -282,7 +299,7 @@
 
 ## Infrastructure as Code
 
-- <h4>Ansible</h4>
+- ### Ansible
 
   - <h5>Ansible: Inventory</h5>
  
