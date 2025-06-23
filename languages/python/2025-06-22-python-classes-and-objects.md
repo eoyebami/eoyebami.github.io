@@ -38,7 +38,7 @@ print(Beginning.x) # this will return 5
   ```
 
 * NOTE: `classes` cannot be empty, but if you must create an empty class, use the `pass` statement
-  - Usually a class must contain at least 2 methods
+  - A class SHOULD contain at least 2 methods
 
   ```python
   class Person:
