@@ -1,8 +1,4 @@
----
-# Classes and Objects<h1>
----
-
-## Table of Contents
+## Classes and Objects
 - [Overview](#overview)
 - [Self Parameter](#self-parameter)
 - [Variables](#variables)
