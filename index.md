@@ -55,7 +55,7 @@
     - [Ansible: Variables](#ansible-variables)
     - [Ansible: Playbooks](#ansible-playbooks)
 - [Amazon Web Services](#amazon-web-services)
-  - [IAM](#identity-and-access-management)
+  - [Identity and Access Management](#identity-and-access-management)
   - [EKS](#eks)
 - [Google Cloud Platform](#google-cloud-platform)
   - [VPC Networks](#vpc-networks)
