@@ -29,7 +29,7 @@
     - [Kubernetes: Security](#kubernetes-security)
     - [Kubernetes: Storage](#kubernetes-storage)
     - [Kubernetes: Networking](#kubernetes-networking)
-    - [Kubernetes: Cluster Maintenance](#kubernetes-maintenance)
+    - [Kubernetes: Cluster Maintenance](#kubernetes-cluster-maintenance)
     - [Kubernetes: KubeAdm](#kubernetes-kubeadm)
   - [Helm](#helm)
     - [Helm: Introduction](#helm-introduction)
