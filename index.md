@@ -15,18 +15,46 @@
   - [Virtual Box](#virtual-box)
   - [Vagrant](#vagrant)
 - [Lightweight Directory Access Protocol](#ldap)
+  - [LDAP: General Knowledge](#ldap-general-knowledge)
 - [Logging & Monitoring](#logging-and-monitoring)
+  - [ELK Stack ElasticSearch](#elk-stack-elasticsearch)
+  - [ELK Stack: Logstash](#elk-stack-logstash)
+  - [ELK Stack: Kibana](#elk-stack-kibana)
 - [Container Orchestration](#container-orchestration)
   - [Docker](#docker)
   - [Kubernetes](#kubernetes)
+    - [Kubernetes: Introduction](#kubernetes-introduction)
+    - [Kubernetes: Scheduling](#kubernetes-scheduling)
+    - [Kubernetes: Application Lifecycle Management](#kubernetes-application-lifecycle-management)
+    - [Kubernetes: Security](#kubernetes-security)
+    - [Kubernetes: Storage](#kubernetes-storage)
+    - [Kubernetes: Networking](#kubernetes-networking)
+    - [Kubernetes: Cluster Maintenance](#kubernetes-maintenance)
+    - [Kubernetes: KubeAdm](#kubernetes-kubeadm)
   - [Helm](#helm)
+    - [Helm: Introduction](#helm-introduction)
+    - [Helm: Templatization Techniques](#helm-templatization-techniques)
   - [Kustomize](#kustomize)
+    - [Kustomize: Introduction](#kustomize-introduction)
+    - [Kustomize: Customization Techniques](#kustomize-customization-techniques)
   - [Kubernetes: Cluster Add-Ons](#kubernetes-cluster-add-ons)
+    - [Metrics](#metrics)
+    - [Istio](#istio)
+      - [Istio: Introduction](#istio-introduction)
+      - [Istio: Traffic Management](#istio-traffic-management)
+      - [Istio: Security](#istio-security)
+    - [Cert-Manager](#cert-manager)
 - [Jenkins](#jenkins)
 - [IaC](#infrastructure-as-code)
   - [Ansible](#ansible)
+    - [Ansible: Inventory](#ansible-inventory)
+    - [Ansible: Variables](#ansible-variables)
+    - [Ansible: Playbooks](#ansible-playbooks)
 - [AWS](#aws)
+  - [IAM](#iam)
+  - [EKS](#eks)
 - [GCP](#gcp)
+  - [VPC Networks](#vpc-networks)
 
 ## Languages
 
@@ -110,27 +138,27 @@
 
 ## LDAP
 
-- <h4>LDAP: General Knowledge</h4>
+- ### LDAP: General Knowledge
 
   * [2024-03-29-intro-to-ldap](ldap/2024-03-29-intro-to-ldap.md)
   * [2024-03-31-configure-ldap](ldap/2024-03-31-configure-ldap.md)
   * [2024-03-31-ldap-account-manager](ldap/2024-03-31-ldap-account-manager.md)
   * [2024-04-06-ssl-tls-and-ldap](ldap/2024-04-06-ssl-tls-and-ldap.md)
 
-<h2>Logging and Monitoring</h2>
+## Logging and Monitoring
 
-- <h4>ELK Stack: ElasticSearch</h4>
+- ### ELK Stack: ElasticSearch
 
   * [2023-05-27-intro-to-elk](elk/2023-05-27-intro-to-elk.md)
   * [2023-05-28-elasticsearch.yml-config](elk/2023-05-28-elasticsearch.yml-config.md)
 
-- <h4>ELK Stack: Logstash</h4>
+- ### ELK Stack: Logstash
 
   * [2023-05-29-logstash.yml-config](elk/2023-05-29-logstash.yml-config.md)
   * [2023-05-29-logstash-pipeline-input](elk/2023-05-29-logstash-pipeline-input.md)
   * [2023-05-29-logstash-pipeline-filter](elk/2023-05-29-logstash-pipeline-filter.md)
 
-- <h4>ELK Stack: Kibana</h4>
+- ### ELK Stack: Kibana
 
   * [2023-05-28-kibana.yml-config](elk/2023-05-28-kibana.yml-config.md) 
   * [2023-06-04-kibana-index-patterns](elk/2023-06-04-kibana-index-patterns.md)
@@ -149,7 +177,7 @@
 
 - ### Kubernetes
 
-  - <h5>Kubernetes: Introduction</h5>
+  - #### Kubernetes: Introduction
  
     * [2023-10-03-k8-pods](k8s/2023-10-03-k8-pods.md)
     * [2023-10-03-k8-replicaset](k8s/2023-10-03-k8-replicaset.md)
@@ -164,7 +192,7 @@
     * [2024-03-07-k8-jsonpath](k8s/2024-03-07-k8-jsonpath.md)
     * [2024-04-23-k8-jobs](k8s/2024-04-23-k8-jobs.md)
  
-  - <h5>Kubernetes: Scheduling</h5>
+  - #### Kubernetes: Scheduling
  
     * [2023-12-24-manual-scheduling](k8s/2023-12-24-manual-scheduling.md)
     * [2023-12-24-taints-and-tolerations](k8s/2023-12-24-taints-and-tolerations)
@@ -178,7 +206,7 @@
     * [2024-03-25-pod-affinity](k8s/2024-03-25-pod-affinity.md)
     * [2024-03-25-pod-disruption-budget](k8s/2024-03-25-pod-disruption-budget.md)
   
-  - <h5>Kubernetes: Application Lifecycle Management</h5>
+  - #### Kubernetes: Application Lifecycle Management
     
     * [2024-01-14-commands-and-args](k8s/2024-01-14-commands-and-args.md)
     * [2024-01-14-configmaps](k8s/2024-01-14-configmaps.md)
@@ -187,7 +215,7 @@
     * [2024-01-16-liveness-startup-readiness](k8s/2024-01-16-liveness-startup-readiness.md)
     * [2024-05-24-horizontal-pod-autoscaler](k8s/2024-05-24-horizontal-pod-autoscaler.md)
 
-  - <h5>Kubernetes: Security</h5>
+  - #### Kubernetes: Security
  
     * [2024-01-16-kube-api-authentication](k8s/2024-01-16-kube-api-authentication.md)
     * [2024-01-17-kubernetes-tls](k8s/2024-01-17-kubernetes-tls.md)
@@ -200,14 +228,14 @@
     * [2024-01-31-security-contexts](k8s/2024-01-31-security-contexts.md)
     * [2024-02-05-network-policies](k8s/2024-02-05-network-policies.md)
 
-  - <h5>Kubernetes: Storage</h5>
+  - #### Kubernetes: Storage
  
     * [2024-02-12-volumes](k8s/2024-02-12-volumes.md)
     * [2024-02-12-persistent-volumes](k8s/2024-02-12-persistent-volumes.md)
     * [2024-02-13-storageclass](k8s/2024-02-13-storageclass.md)
     * [2024-02-13-projected-volumes](k8s/2024-02-13-projected-volumes.md)
 
-  - <h5>Kubernetes: Networking</h5>
+  - #### Kubernetes: Networking
  
     * [2024-02-19-coredns](k8s/2024-02-19-coredns.md)
     * [2024-02-19-cni](k8s/2024-02-19-cni.md)
@@ -215,20 +243,20 @@
     * [2024-03-04-service-networking](k8s/2024-03-04-service-networking.md)
     * [2024-03-04-ingress](k8s/2024-03-04-ingress.md)
 
-  - <h5>Kubernetes: Cluster Maintenance</h5>
+  - #### Kubernetes: Cluster Maintenance
  
     * [2024-03-05-cluster-maintenance](k8s/2024-03-05-cluster-maintenance.md)
     * [2024-03-06-backup-and-restore](k8s/2024-03-06-backup-and-restore.md)
 
-  - <h5>Kubernetes: KubeAdm</h5>
+  - #### Kubernetes: KubeAdm
  
     * [2024-03-06-intro-to-cluster-diy](k8s/2024-03-06-intro-to-cluster-diy.md)
     * [2024-03-07-kubeadm-k8-installation](k8s/2024-03-07-kubeadm-k8-installation.md)
     * [2024-03-09-kubeadmn-k8-vagrant](k8s/2024-03-09-kubeadmn-k8-vagrant.md)
 
-- ### Helm<
+- ### Helm
 
-  - <h5>Helm: Introduction</h5>
+  - #### Helm: Introduction
  
     * [2024-04-12-intro-to-helm](k8s/helm/2024-04-12-intro-to-helm.md)
     * [2024-04-12-helm-install-and-configuration](k8s/helm/2024-04-12-helm-install-and-configuration.md)
@@ -236,7 +264,7 @@
     * [2024-04-14-helm-command-tricks](k8s/helm/2024-04-14-helm-command-tricks.md)
     * [2024-04-15-helm-templatization](k8s/helm/2024-04-15-helm-templatization.md)
 
-  - <h5>Helm: Templatization Techniques</h5>
+  - #### Helm: Templatization Techniques
  
     * [2024-04-15-helm-functions](k8s/helm/2024-04-15-helm-functions.md)
     * [2024-04-15-helm-date-formats](k8s/helm/2024-04-15-helm-date-formats.md)
@@ -247,11 +275,11 @@
 
 - ### Kustomize
 
-  - <h5>Kustomize: Introduction</h5>
+  - #### Kustomize: Introduction
  
     * [2024-05-26-intro-to-kustomize](k8s/kustomize/2024-05-26-intro-to-kustomize.md)
 
-  - <h5>Kustomize: Customization Techniques</h5>
+  - #### Kustomize: Customization Techniques
  
     * [2024-05-26-kustomize-transformers](k8s/kustomize/2024-05-26-kustomize-transformers.md)
     * [2024-05-27-kustomize-patches](k8s/kustomize/2024-05-27-kustomize-patches.md)
@@ -262,26 +290,26 @@
 
 - ### Kubernetes: Cluster Add-Ons
 
-- <h4>Metrics</h4>
+- #### Metrics
  
     * [2024-01-01-metrics-server](k8s/2024-01-01-metrics-server.md)
 
-- <h4>Istio</h4>
+- #### Istio
  
-  - <h5>Istio: Introduction</h5>
+  - ##### Istio: Introduction
  
     * [2024-04-24-intro-to-istio](k8s/istio/2024-04-24-intro-to-istio.md)
     * [2024-04-24-istio-installation](k8s/istio/2024-04-24-istio-installation.md)
     * [2024-04-24-istioctl-commands](k8s/istio/2024-04-24-istioctl-commands.md)
     * [2024-05-24-istioOperator](k8s/istio/2024-05-24-istioOperator.md)
 
-  - <h5>Istio: Traffic Management</h5>
+  - ##### Istio: Traffic Management
  
     * [2024-04-26-istio-gateways](k8s/istio/2024-04-26-istio-gateways.md)
     * [2024-04-26-istio-virtual-services](k8s/istio/2024-04-26-istio-virtual-services.md)
     * [2024-04-26-istio-destination-rules](k8s/istio/2024-04-26-istio-destination-rules.md)
  
-  - <h5>Istio: Security</h5>
+  - ##### Istio: Security
  
     * [2024-04-30-istio-security-authentication](k8s/istio/2024-04-30-istio-security-authentication.md)
     * [2024-04-30-istio-security-authorization](k8s/istio/2024-04-30-istio-security-authorization.md)
@@ -301,19 +329,19 @@
 
 - ### Ansible
 
-  - <h5>Ansible: Inventory</h5>
+  - #### Ansible: Inventory
  
     * [2024-06-02-introduction-to-ansible](iac/ansible/2024-06-02-introduction-to-ansible.md)
     * [2024-06-02-ansible-inventory](iac/ansible/2024-06-02-ansible-inventory.md)
     * [2024-06-04-ansible-inventory-techniques](iac/ansible/2024-06-04-ansible-inventory-techniques.md)
     * [2024-07-05-ansible-commands](iac/ansible/2024-07-05-ansible-commands.md)
 
-  - <h5>Ansible: Variables</h5>
+  - #### Ansible: Variables
  
     * [2024-06-04-ansible-variables](iac/ansible/2024-06-04-ansible-variables.md)
     * [2024-06-05-ansible-facts](iac/ansible/2024-06-05-ansible-facts.md)
 
-  - <h5>Ansible: Ansible Playbooks</h5>
+  - #### Ansible: Playbooks
  
     * [2024-06-05-ansible-playbooks](iac/ansible/2024-06-05-ansible-playbooks.md)
     * [2024-06-06-ansible-playbook-conditionals](iac/ansible/2024-06-06-ansible-playbook-conditionals.md)
@@ -333,11 +361,11 @@
        
 ## AWS
 
-- <h4>IAM</h4>
+- ### IAM
 
   * [2023-04-22-cross-account-assume-role](aws/2023-04-22-cross-account-assume-role.md)
 
-- <h4>EKS</h4>
+- ### EKS
 
   * [2024-01-27-eks-rbac](aws/2024-01-27-eks-rbac.md)
   * [2024-01-29-iam-roles-and-serviceaccounts](aws/2024-01-29-iam-roles-and-serviceaccounts.md)
@@ -345,7 +373,7 @@
 
 ## GCP
 
-- <h4>VPC Networks</h4>
+- ### VPC Networks
 
   * [2023-05-30-gcp-networking](gcp/2023-05-30-gcp-networking.md)
   * [2023-05-30-gcp-ssh-tunneling](gcp/2023-05-30-gcp-ssh-tunneling.md)
