@@ -126,6 +126,80 @@ sliced_list = slice(2)
 print(sliced_list) # returns [1, 2]
 ```
 
+<h2>staticmethod()</h2>
+
+* This function converts a function to a static function. They are independent of class instances, allowing you to call that function without instantiation of the class
+  - `Static Methods` are methods that belong to the class rather than the instance of the class
+  - If a method does not use class properites, it should be made static
+
+```python
+class Testing:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    
+    # should be made a staticmethod because it does not use class properties
+    def add(a, b):
+        return a + b
+
+    # uses class properties, requires the class to be instantiated before calling this dunction
+    def diff(self):
+        return self,a - self.b
+
+# Convert the add() into a static method, so it can be called directly
+testing.add = staticmethod(Testing.add)
+# can also define this as a static method within the class itself 
+
+class Testing:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def add(a, b):
+        return a + b
+
+    add = staticmethod(add)
+```
+
+<h2>super()</h2>
+
+* This function is used to refer to parent classes and call methods defined in the parent class within the child class
+
+```python
+class Parent():
+    def __init__(self, name):
+        self.name = name
+
+class Child(Parent): # reference parent class in child class
+    def __init__(self, name):
+        super().__init__(name) # reference the __init__ function from Parent Class
+        # in so doing, we add name var to self by calling using super
+........
+```
+
+<h2>sum()</h2>
+
+* This function calculates the sum of items in an iterable
+  - `sum(iterable, start)
+
+```python
+listing = [1, 2, 3, 4, 5]
+print(sum(listing)) # returns 15
+print(sum(listing, 10)) # returns 25
+```
+
+<h2>zip()</h2>
+
+* The function combines multiple iterables into a single iterator of tuples
+
+```python
+names = ['John', 'Alice', 'Bob', 'Lucy']
+scores = [85, 90, 78, 92]
+
+res = zip(names, scores)
+print(list(res))
+```
+
 <h2>reversed()</h2>
 
 * reverses the sequence of a list, and returns as iterator object without modifying original sequence
