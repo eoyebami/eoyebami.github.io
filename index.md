@@ -101,7 +101,7 @@
   * [2024-02-19-dns](linux/2024-02-19-dns.md)
   * [2024-02-19-network-namespaces](linux/2024-02-19-network-namespaces.md)
 
-- ### Linux: APIs and HTTPs Methods
+- ### Linux: APIs and HTTP Methods
 
   * [2023-05-01-curl-and-rest-apis](http/2023-05-01-curl-and-rest-apis.md)
   * [2023-05-01-http-requests](http/2023-05-01-http-requests.md)
