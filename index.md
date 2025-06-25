@@ -84,8 +84,8 @@
 
   - #### Python: Fast Api
 
-    * [2025-06-23-python-fast-api-introduction](languages/python/2025-06-23-python-fast-api-introduction.md)
-    * [2025-06-27-python-fast-api-post-requests](languages/python/2025-06-27-python-fast-api-post-requests.md)
+    * [2025-06-23-python-fast-api-introduction](languages/python/fastapi/2025-06-23-python-fast-api-introduction.md)
+    * [2025-06-27-python-fast-api-post-requests](languages/python/fastapi/2025-06-27-python-fast-api-post-requests.md)
 
 ## Linux
 
