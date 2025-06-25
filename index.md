@@ -6,7 +6,7 @@
 - [Languages](#languages)
   - [Python](#python)
     - [Python: Basics](#python-basics)
-    - [Python: Fast](#python-fast-api)
+    - [Python: Fast Api](#python-fast-api)
 - [Linux](#linux)
   - [Linux: General Knowledge](#linux-general-knowledge)
   - [Linux: Command Operations](#linux-command-operations)
