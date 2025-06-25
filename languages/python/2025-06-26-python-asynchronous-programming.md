@@ -222,3 +222,15 @@
   ```
 
 ## Locks
+
+* While working with `asynchronous programming` you may find the need to modify vars or objects which could cause issues like race conditions
+  - Using `asyncio.Lock()` you can make sure an object is updated one at a time, make it safe for shared resources
+
+  ```python
+  import asyncio
+
+  lock = asyncio.lock
+
+  async with lock:
+    results["sucess"].append(var)
+  ```
