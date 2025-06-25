@@ -3,6 +3,7 @@
 - [Coroutines](#coroutines)
 - [Await](#await)
 - [Tasks](#tasks)
+- [Futures](#futures)
 
 ## Overview
 * To understand `asynchronous programming` we must first understand what `synchronous programming`
@@ -52,12 +53,122 @@
 
   async def foo(text):
       print(text)
-      await asyncio.sleep(1) # a coroutine function, must be awaited to run 
+      await asyncio.sleep(1) # a coroutine function, must be awaited to run
 
   asyncio.run(main()) # awaits the coroutine
   ```
+
+* NOTE: when we await `asyncio.sleep()`, we tell python to pause this coroutine and let the event loop run other things while i wait
 
 * The above code, though using async programs, will technically still run synchronously, since the `await` will force the process to wait for the completion of the coroutine before continuing with other statements
 
 ## Tasks
 * To actually configure the program to run `asynchronously` you must use what is known as a `tasks`
+* In the example below, python will run all the statements sequentially
+
+  ```python
+  import asynio
+
+  async def main():
+      print("Asynchronously Programming")
+      await foo("text") # calling a coroutine function, must also be awaited to run
+      print("Completed")
+
+  async def foo(text):
+      print(text)
+      await asyncio.sleep(1) # a coroutine function, must be awaited to run
+
+  asyncio.run(main()) # awaits the coroutine
+  ```
+
+* Now if we want to free up the processor to handle other tasks while that coroutine is waiting, we must create a task
+  - When we create a task, we essentially tell python to schedule that task to run in the background
+  - During that scheduling, the processor is free to execute other tasks, which is why in the code below, "Completed" is printed before "text"
+
+  ```python
+  import asynio
+
+  async def main():
+      print("Asynchronously Programming")
+      task = asyncio.create_task(foo("text")) # tells asyncio to execute coroutine as soon as it can, and to allow other code to run while this coroutine is staled
+      # because creating the task does not block the processor, the print("Completed") is able to be executed
+      # if we want to reestablish the "synchronous", we can also `await task` itself, to tell python to wait for this task to finish
+      print("Completed")
+
+  async def foo(text):
+      print(text)
+      await asyncio.sleep(1) # a coroutine function, must be awaited to run
+
+  asyncio.run(main()) # awaits the coroutine
+
+  # awaiting task
+  import asynio
+
+  async def main():
+      print("Asynchronously Programming")
+      task = asyncio.create_task(foo("text"))
+      await task # when we await, we're pausing execution until its completed (unless its awaiting a asyncio.sleep())
+      print("Completed")
+
+  async def foo(text):
+      print(text)
+      await asyncio.sleep(1)
+
+  asyncio.run(main()) # awaits the coroutine
+  ```
+
+* There can be multiple handoffs of resources using `asyncio`
+
+  ```python
+  import asynio
+
+  async def main():
+      print("Asynchronously Programming")
+      task = asyncio.create_task(foo("text")) # this task will be scheduled to run soon
+      await asyncio.sleep(0.5) # since this sleep is set to await, the task is allowed to continue to run once again
+      print("Completed") # after 0.5 this print will also be allowed to run, since the foo() sleep is now active
+
+  async def foo(text):
+      print(text)
+      await asyncio.sleep(1) # a coroutine function, must be awaited to run, during this await the processor is free to run the `print("Completed")`
+
+  asyncio.run(main()) # awaits the coroutine
+  ```
+
+## Futures
+* In the block of code below, we are running 2 concurrent task but want to retrieve the output of only one of them
+  - We're trying to assign the output of an async function to a value, before that coroutine has completed execution
+  - The nature by which `asyncio.create_task` works is by running in the background freeing up the execution to any other tasks
+  - But because the executioner has been freed, its attempts to pass the value of a pending program to a var, which returns an error
+  - We must `await` the task itself, so python waits for it to complete before assign the output of that coroutine to that variable
+  - This is known as a `Future`
+* Note, if a task is not awaited, should the function it resides it finishes execution, the program will exit before that task can complete it's run in the background
+  - In the block of code below, we see that same issue
+    - Main function only awaits task1 to completed before exiting the program
+
+  ```python
+  import asyncio
+  
+  async def fetch_data():
+      print("starting fetch")
+      await asyncio.sleep(2) # simulates api call, wait period for server to generate response, frees up processor to run the print_numbers()
+      print("finished fetch") # won't run until `asyncio.sleep(2)` completes
+      return {'data': 1}
+
+  async def print_numbers():
+      for i in range(10):
+          print(i) # will print i
+          await asyncio.sleep(0.25) # frees processor, but can't give execution back to any other tasks because asyncio.sleep(2) is still running for fetch_data()
+          # this loop will continue, until another task can pick up execution while in its own `asyncio.sleep(0.25)
+
+  async def main():
+      task1 = asyncio.create_task(fetch_data()) # schedules coroutine to run in the background
+      task2 = asyncio.create_task(print_numbers()) # schedules coroutine to run in the background
+ 
+      value = await task1 # if we do not await, main function will attempt to assign the pending task to value, which will cause an error
+      # should we await task2, the entire execution will run before program exits
+      
+      print(value)
+
+  asyncio.run(main()) # awaits coroutine 
+  ```
