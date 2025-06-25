@@ -81,6 +81,7 @@
     * [2025-06-22-python-classes-and-objects](languages/python/2025-06-22-python-classes-and-objects.md)
     * [2025-06-23-python-virtual-environments](languages/python/2025-06-23-python-virtual-environments.md)
     * [2025-06-25-python-asynchronous-programming](languages/python/2025-06-25-python-asynchronous-programming.md)
+    * [2025-06-25-python-pydantic-models](languages/python/2025-06-25-python-pydantic-models.md)
 
   - #### Python: Fast Api
 
