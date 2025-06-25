@@ -26,7 +26,7 @@
       return {"message": "Hello World"}
   ```
 
-* Use `uvicorn` to run our api: `uvicorn app:app` 
+* Use `uvicorn` to run our api: `uvicorn app:app` -- `(<python-file-name>:<FastAPI-object>)`
 
   ```python
   INFO:     Started server process [1041322]
