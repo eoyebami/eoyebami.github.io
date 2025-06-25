@@ -3,13 +3,16 @@
 - [Coroutines](#coroutines)
 - [Await](#await)
 - [Tasks](#tasks)
+  - [Running Tasks Concurrently](#running-tasks-concurrently)
 - [Futures](#futures)
+- [Locks](#locks)
 
 ## Overview
 * To understand `asynchronous programming` we must first understand what `synchronous programming`
   - `Synchronous Programming` is essentially what python does by default, running a bunch of statements in sequential order
   - `Asychronous Programming` does not need to run in sequential order
     * For example, while function `foo()` is running, waiting for something (networking packets, user input, etc), our processor will move ahead with other statements that it can execute while its free to do so
+* More on `asyncio` can be found [here](https://docs.python.org/3/library/asyncio.html)
 
 ## Coroutine
 * In order to use `asynchronous programming` we must create a coroutine
@@ -39,6 +42,16 @@
   asyncio.run(main()) # creates the event-loop, and passing the coroutine to that loop
   # this also runs the coroutine, effectively awaiting it
   ```
+
+* You can also use a runner context manager for managing multiple async function calls in the same event loop
+
+  ```python
+  import asyncio
+  
+  with asyncio.Runner() as runner:
+      runner.run(main())
+  ```
+
 
 ## Await
 * As stated earlier, in order to run a coroutine it must be awaited
@@ -83,7 +96,7 @@
 
 * Now if we want to free up the processor to handle other tasks while that coroutine is waiting, we must create a task
   - When we create a task, we essentially tell python to schedule that task to run in the background
-  - During that scheduling, the processor is free to execute other tasks, which is why in the code below, "Completed" is printed before "text"
+  - During that scheduling, the processor is free to execute other tasks, which is why in the code below, `"Completed"` is printed before `"text"`
 
   ```python
   import asynio
@@ -134,6 +147,41 @@
 
   asyncio.run(main()) # awaits the coroutine
   ```
+ 
+ - ### Running Tasks Concurrently
+   * If we want to run a number of tasks concurrently, we can use `asyncio.gather()` rather than creating the tasks individually
+
+     ```python
+     import asyncio
+           
+     async def foo(text):
+         print(text)
+         await asyncio.sleep(1)
+    
+     async def main():
+         tasks = [ foo(i) for i in range(10) ] # dynamically generating tasks, but we can call them one my one as separate args in `aynscio.gather()`
+         await asyncio.gather(*tasks, return_exception=True) # the `*` unpackes the lists so each task becomes a separate argument in `asyncio.gather()`
+         # return_exception=True: exceptions are treated as success and are aggregated in the results list
+         # return_exception=False: exceptions are immediately propagated to the task that awaits
+         return "completed"
+     ```
+
+    * Another way of running tasks concurrently, would be to use `asyncio.TaskGroup()`
+
+      ```python
+      import asyncio
+
+      async def foo(text):
+         print(text)
+         await asyncio.sleep(1)
+
+      async def main():
+         # With TaskGroup(), if a task in a group fails with an exception, other than `asyncio.CancelledError` the remaining tasks in the group are also cancelled
+         # You can terminate a taskgroup as well since its not natively supported
+         async with asyncio.TaskGroup as tg: # using async with will wait for all tasks to complete, runs without blocking event loop
+             for i in range(10):
+                 tg.create_task(foo(i))
+      ```
 
 ## Futures
 * In the block of code below, we are running 2 concurrent task but want to retrieve the output of only one of them
@@ -172,3 +220,5 @@
 
   asyncio.run(main()) # awaits coroutine 
   ```
+
+## Locks
