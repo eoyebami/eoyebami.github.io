@@ -80,12 +80,13 @@
     * [2025-05-30-python-built-in-functions](languages/python/2025-05-30-python-built-in-functions.md)
     * [2025-06-22-python-classes-and-objects](languages/python/2025-06-22-python-classes-and-objects.md)
     * [2025-06-23-python-virtual-environments](languages/python/2025-06-23-python-virtual-environments.md)
-    * [2025-06-26-python-asynchronous-programming](languages/python/2025-06-26-python-asynchronous-programming.md)
+    * [2025-06-25-python-asynchronous-programming](languages/python/2025-06-25-python-asynchronous-programming.md)
 
   - #### Python: Fast Api
 
     * [2025-06-23-python-fast-api-introduction](languages/python/fastapi/2025-06-23-python-fast-api-introduction.md)
-    * [2025-06-27-python-fast-api-post-requests](languages/python/fastapi/2025-06-27-python-fast-api-post-requests.md)
+    * [2025-06-25-python-fast-api-post-requests](languages/python/fastapi/2025-06-25-python-fast-api-post-requests.md)
+    * [2025-06-25-python-fast-api-pydantic](languages/python/fastapi/2025-06-25-python-fast-api-pydantic.md)
 
 ## Linux
 
