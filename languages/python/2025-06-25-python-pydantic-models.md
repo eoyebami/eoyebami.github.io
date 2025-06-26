@@ -59,3 +59,65 @@
   ```
 
 ## Data Validation
+* By default, `pydantic` has data validation, to validate whether or not the type of data passed to the model matches what is defined in said model
+
+  ```python
+  # define fields to associate to this model
+  class User(BaseModel):
+      name: str # define datatypes for each object
+      email: str
+      acount_id: int
+      class_number: int
+
+  # create instance of the model
+  user = User(
+      name = "jeff"
+      email = "jeffwashere@gmail.com"
+      account_id = '21343892' # here we pass in a str, python will throw a validationError
+      class_number = 12
+  )
+  ```
+
+* `Pydantic` also has its own built in validators, for instance we can verify if an email passed in is a valid address
+
+  ```python
+  from pydantic import BaseModel, EmailStr # import EmailStr
+  class User(BaseModel):
+      name: str # define datatypes for each object
+      email: EmailStr # set datatype to this import
+      acount_id: int
+      class_number: int
+
+  # create instance of the model
+  user = User(
+      name = "jeff"
+      email = "jeffwashere" # this will throw a validationError
+      account_id = 21343892
+      class_number = 12
+  )
+  ```
+
+* You can also create your own custom validators
+
+  ```python
+  from pydantic import BaseModel, EmailStr, validator # import validator
+  class User(BaseModel):
+      name: str 
+      email: EmailStr
+      acount_id: int
+      class_number: int
+
+      @validator("account_id")
+      def validate_account_id(cls, value):
+          if value <= 0:
+              raise ValueError("account_id must be postive")
+          return value
+
+  # create instance of the model
+  user = User(
+      name = "jeff"
+      email = "jeffwashere@gmail.com"
+      account_id = -21343892 # setting this to a negative will hit our validator
+      class_number = 12
+  )
+  ```
