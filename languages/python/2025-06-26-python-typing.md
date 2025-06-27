@@ -41,7 +41,7 @@
         return f"User's name is {str} and they are {age} years old"
 
     # default values can also be set in these functions
- `   def announement(name: str = "josh", age: int = 20) -> str:
+    def announement(name: str = "josh", age: int = 20) -> str:
         return f"User's name is {str} and they are {age} years old"
     ```
 
