@@ -136,6 +136,21 @@
         return cls(name, age)
     ```
 
+  - `NewType` class allows you to create distinct types
+
+    ```python
+    from typing import NewType
+
+    Id = NewType('Id', int)
+    Age = NewType('Age', int)
+ 
+    def user_age(student_id: Id, student_age: Age) -> None:
+    ...
+
+    # call function properly
+    student_1 = user_age(Id(123432), Age(23))
+    ```
+
 - ### Type Aliases
   * The `typing` module also provides use with aliases, which assign type definitions to vars that can be used in `type hints`
 
