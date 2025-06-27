@@ -114,6 +114,15 @@
     ...
     ```
 
+  - `Iterator` class indicates a function or class returns or consumes iterator objects
+
+    ```python
+    from typing import Iterator
+
+    def consume(numbers: Iterator[int]) -> None: # more generate than something like 'List'
+    ...
+    ```
+
   - `Union` class indicates a var can be one of several types
 
     ```python
