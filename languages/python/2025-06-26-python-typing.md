@@ -84,3 +84,63 @@
     ```
 
 ## Typing Module
+* There is a python package that is built to support `type hints`, more commonly used for the uncommon python `datatypes`
+  - The `typing` module
+
+* In our examples above, we wanted more detailed `type hints` for `datatypes` like `list, sets, dict, tuples`, the `typing` module supports this
+
+  ```python
+  from typing import List, Dict
+  
+  numbers: List[int]: [1, 2, 3] # list of ints
+  dict1 : Dict[str, str] # dict with key/value both being strings
+  ```
+
+* This module also has a variety of other use cases not native to python
+  - `Any` Class indicates var can be any datatype
+
+    ```python
+    from typing import Any
+ 
+    def example(data1: Any) -> None:
+    ```
+
+  - `Optional` Class indicates a var can be a specific type of `None`
+
+    ```python
+    from typing import Optional
+
+    def dict_example(key_value: Optional[dict[str, str]]) -> None:
+    ...
+    ```
+
+  - `Union` class indicates a var can be one of several types
+
+    ```python
+    from typing import Union
+
+    def example(age: Union[str, int]) -> str:
+    ...
+    
+    # Pipe operator is not another option that can be used as an alternative to this class
+    def example(age: str | int) -> str:
+    ...
+    ```
+
+  - `Type` class indicates that the variable will be a `class` not an instance of a `class`
+
+    ```python
+    from typing import Type
+   
+    def create_new_user(cls: Type[NewUser], name: str, age: int) -> NewUser:
+        return cls(name, age)
+    ```
+
+- ### Type Aliases
+  * The `typing` module also provides use with aliases, which assign type definitions to vars that can be used in `type hints`
+
+    ```python
+    Number = List[int]
+    def sum_nums(numbers: Number) -> int:
+        return sum(numbers)
+    ```
