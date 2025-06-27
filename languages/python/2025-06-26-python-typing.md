@@ -1,8 +1,11 @@
 ## Python Typing Module
--[Type Hinting](#type-hinting)
+- [Type Hinting](#type-hinting)
   - [Basic Type Hints](#basic-type-hints)
     - [Uncommon Datatypes](#uncommon-datatypes)
   - [Complex Type Hints](#complex-type-hints)
+  - [Define Types](#define-types)
+- [Typing Module](#typing-module)
+ 
 
 ## Type Hinting
 * In python, `type hinting` involves the addition of annoations to vars, funcs, params, and return values to indicate their expected `datatypes`
@@ -38,7 +41,7 @@
         return f"User's name is {str} and they are {age} years old"
 
     # default values can also be set in these functions
-    def announement(name: str = "josh", age: int = 20) -> str:
+ `   def announement(name: str = "josh", age: int = 20) -> str:
         return f"User's name is {str} and they are {age} years old"
     ```
 
@@ -61,3 +64,23 @@
     weights: dict[str, int] = {"josh": 1, "mack": 2} # dict with string keys and int values
     data: tuple[int, float, bool] = (1, 1.0, True)
     ```
+
+- ### Define Types
+  * You can even define your own types using `classes` that can then be used for `type hints`
+
+    ```python
+    class NewUser:
+        def __init__(self, name: str, age: int):
+            self.name = name
+            self.age = age
+
+    def print_name_and_age(new_user: NewUser) -> None: # expected to return `None` value
+        print(new_user.name, new_user.age)
+
+    # initiate class with values
+    n = NewUser("josh", 25)
+    # call function
+    print_name_and_age(n)
+    ```
+
+## Typing Module
