@@ -92,7 +92,7 @@
   ```python
   from typing import List, Dict
   
-  numbers: List[int]: [1, 2, 3] # list of ints
+  numbers: List[int] = [1, 2, 3] # list of ints
   dict1 : Dict[str, str] # dict with key/value both being strings
   ```
 
