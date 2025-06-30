@@ -4,6 +4,7 @@
 - [Model Methods](#model-methods)
 - [Data Validation](#data-validation)
   - [Data Conversion](#data-conversion)
+  - [Strict Mode](#strict-mode)
 - [JSON Serialization](#json-serialization)
 
 * In python there is no need to specify a `datatype` when creating a var, its as simple as:
@@ -68,19 +69,19 @@
   ```python
   # User Model from "Getting Started" section
   # model_validate
-  user_instance = User.model_validate(user_data) # validates object against pydantic model
+  user_instance = User.model_validate(**user_data) # validates object against pydantic model
 
   # model_validate_json
-  user_instance = User.model_validate(json.dumps(user_data)) # import json, same as model_validate() but passes data as json
+  user_instance = User.model_validate(json.dumps(**user_data)) # import json, same as model_validate() but passes data as json
 
   # model_construct
-  user_instance = User.model_construct(user_data) # skips validation, assumes data is already correct and trusted, faster than simply initiating a model
+  user_instance = User.model_construct(**user_data) # skips validation, assumes data is already correct and trusted, faster than simply initiating a model
 
   # model_dump
-  print(User(user_data).model_dump()) # generates dict representation of model, with ops to include or exclude fields
+  print(User(**user_data).model_dump()) # generates dict representation of model, with ops to include or exclude fields
 
   # model_dump_json()
-  print(User(user_data).model_dump_json()) # generates json representation of model, with ops to include or exclude fields
+  print(User(**user_data).model_dump_json()) # generates json representation of model, with ops to include or exclude fields
 
   # model_copy
   updated_user = user.model_copy(update={"name": "john"}) # shallow copy of model, but can update objects, or make a deep copy of the model
@@ -94,6 +95,7 @@
       email: str
       acount_id: int
       class_number: int
+
       model_config = ConfigDict(extra="allow") # import ConfigDict and configure Model to allow extra inputs
 
   data = User(name = "john", email = "john@gmail.com", acount_id = 123, class_number = 1, users = "eddy")
@@ -205,6 +207,52 @@
         print(e)
     ```
 - ### Data Conversion
+  * `Pydantic` may cast input data to force conformation to model field types
+
+    ```python
+    user = User(
+        name = "jeff"
+        email = "jeffwashere@gmail.com"
+        account_id = '21343892'
+        class_number = 12.0
+    )
+    print(user.model_dumps()) # account_id will be type casted to int, and class number will be converted to int
+    # similar casting may occur with list and tuples
+    ```
+
+- ### Strict Mode
+  * In order to prevent `pydantic` from `type casting`, you can enable `strict mode`
+
+    ```python
+    # strict mode in validation methods
+    User.model_validate(**user_data, strict=True) 
+
+    # setting model_config
+    class User(BaseModel):
+        name: str # define datatypes for each object 
+        email: str
+        acount_id: int
+        class_number: int
+ 
+        model_config = ConfigDict(strict=True)
+   
+    # use strict() in typing.Annotated
+    from typing import Annotated
+    from pydantic import BaseModel, Strict
+
+    class User(BaseModel):
+        name: str # define datatypes for each object
+        email: str
+        acount_id: int
+        class_number: Annotated[int, Strict()] 
+
+    # Set strict=True on the field
+    class User(BaseModel):
+        name: str # define datatypes for each object
+        email: str
+        acount_id: int
+        class_number: int = Field(strict=True)
+    ```
 
 ## JSON Serialization
 * `Pydantic Models` also support conversions to and from `json`
