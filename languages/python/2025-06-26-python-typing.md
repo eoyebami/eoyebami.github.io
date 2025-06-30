@@ -97,7 +97,24 @@
   ```
 
 * This module also has a variety of other use cases not native to python
-  - `Any` Class indicates var can be any datatype
+  - `Annotated` class enables you to add metadata to `type hints`
+    - It takes multiple args `Annotated[type1, metadata1, ... metadatan]`
+
+    ```python
+    from typing import Annotated
+
+    # add metadata, which is ignored by typing system
+    name: Annotated[str, "first letter is capital"] # name is a str type an name[0] is a capital letter
+
+    # this metadata can be used to perform runtime validation of values
+    Name = Annotated[str, "first letter is capital"]
+    def validate(value: Name) -> None:
+        _, metadata = Name.__metadata__
+        if not (value[0].isupper()):
+            raise ValueError(f"Invalid name: {metadata}
+    ```
+ 
+  - `Any` class indicates var can be any datatype
 
     ```python
     from typing import Any
