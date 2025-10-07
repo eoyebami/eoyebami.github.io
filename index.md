@@ -8,6 +8,7 @@
     - [Python: Basics](#python-basics)
     - [Python: Fast Api](#python-fast-api)
   - [GoLang](#golang)
+    - [GoLang: Basics](#golang-basics)
 - [Linux](#linux)
   - [Linux: General Knowledge](#linux-general-knowledge)
   - [Linux: Command Operations](#linux-command-operations)
