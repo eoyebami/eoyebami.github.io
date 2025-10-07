@@ -7,6 +7,7 @@
   - [Python](#python)
     - [Python: Basics](#python-basics)
     - [Python: Fast Api](#python-fast-api)
+  - [GoLang](#golang)
 - [Linux](#linux)
   - [Linux: General Knowledge](#linux-general-knowledge)
   - [Linux: Command Operations](#linux-command-operations)
@@ -88,6 +89,12 @@
 
     * [2025-06-23-python-fast-api-introduction](languages/python/fastapi/2025-06-23-python-fast-api-introduction.md)
     * [2025-06-25-python-fast-api-pydantic](languages/python/fastapi/2025-06-25-python-fast-api-pydantic.md)
+
+- ### GoLang
+
+  - #### GoLang: Basics
+
+    * [2025-10-07-go](languages/go/2025-10-07-go.md)
 
 ## Linux
 
