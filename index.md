@@ -173,7 +173,8 @@
 
   - #### Fundamentals
 
-    * [2026-02-12-infro-to-observability](monitoring/prometheus/2026-02-12-infro-to-observability.md)
+    * [2026-02-12-intro-to-observability](monitoring/prometheus/2026-02-12-intro-to-observability.md)
+    * [2026-02-12-intro-to-prometheus](monitoring/prometheus/2026-02-12-intro-to-prometheus.md)
 
 - ### ELK
 

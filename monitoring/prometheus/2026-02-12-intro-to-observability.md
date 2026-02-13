@@ -1,7 +1,7 @@
 ## Introduction to Observability
 - [Overview](#overview)
 - [Pillars of Observability](#pillars-of-observability)
-- [SLI/SLO/SLA](sli-slo-sla)
+- [SLI/SLO/SLA](#sli-slo-sla)
 
 ### Overview 
 
