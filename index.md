@@ -23,9 +23,12 @@
 - [Lightweight Directory Access Protocol](#ldap)
   - [LDAP: General Knowledge](#ldap-general-knowledge)
 - [Logging & Monitoring](#logging-and-monitoring)
-  - [ELK Stack ElasticSearch](#elk-stack-elasticsearch)
-  - [ELK Stack: Logstash](#elk-stack-logstash)
-  - [ELK Stack: Kibana](#elk-stack-kibana)
+  - [Prometheus](#prometheus)
+    - [Fundamentals](#fundamentals)
+  - [ELK](#elk)
+    - [ElasticSearch](#elasticsearch)
+    - [Logstash](#logstash)
+    - [Kibana](#kibana)
 - [Container Orchestration](#container-orchestration)
   - [Docker](#docker)
   - [Kubernetes](#kubernetes)
@@ -166,21 +169,29 @@
 
 ## Logging and Monitoring
 
-- ### ELK Stack: ElasticSearch
+- ### Prometheus
 
-  * [2023-05-27-intro-to-elk](elk/2023-05-27-intro-to-elk.md)
-  * [2023-05-28-elasticsearch.yml-config](elk/2023-05-28-elasticsearch.yml-config.md)
+  - #### Fundamentals
 
-- ### ELK Stack: Logstash
+    * [2026-02-12-infro-to-observability](monitoring/prometheus/2026-02-12-infro-to-observability.md)
 
-  * [2023-05-29-logstash.yml-config](elk/2023-05-29-logstash.yml-config.md)
-  * [2023-05-29-logstash-pipeline-input](elk/2023-05-29-logstash-pipeline-input.md)
-  * [2023-05-29-logstash-pipeline-filter](elk/2023-05-29-logstash-pipeline-filter.md)
+- ### ELK
 
-- ### ELK Stack: Kibana
+  - #### ElasticSearch
 
-  * [2023-05-28-kibana.yml-config](elk/2023-05-28-kibana.yml-config.md) 
-  * [2023-06-04-kibana-index-patterns](elk/2023-06-04-kibana-index-patterns.md)
+    * [2023-05-27-intro-to-elk](monitoring/elk/2023-05-27-intro-to-elk.md)
+    * [2023-05-28-elasticsearch.yml-config](monitoring/elk/2023-05-28-elasticsearch.yml-config.md)
+
+  - #### Logstash
+
+    * [2023-05-29-logstash.yml-config](monitoring/elk/2023-05-29-logstash.yml-config.md)
+    * [2023-05-29-logstash-pipeline-input](monitoring/elk/2023-05-29-logstash-pipeline-input.md)
+    * [2023-05-29-logstash-pipeline-filter](monitoring/elk/2023-05-29-logstash-pipeline-filter.md)
+
+  - #### Kibana
+
+    * [2023-05-28-kibana.yml-config](monitoring/elk/2023-05-28-kibana.yml-config.md) 
+    * [2023-06-04-kibana-index-patterns](monitoring/elk/2023-06-04-kibana-index-patterns.md)
 
 ## Container Orchestration
 
