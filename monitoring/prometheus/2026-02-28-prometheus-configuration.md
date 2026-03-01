@@ -48,7 +48,7 @@
 
 - #### Authentication and Encryption
 
-    ##### Authentication
+  - ##### Authentication
 
     * By default there is no authentication between `prometheus` and the `node_exporter` that it is pulling the metrics from. Meaning anyone with access to the exporter can also pull your metrics as well. 
     * When generating Authentication for prometheus-to-exporter, you'll need to first generate a hash of your password
@@ -90,7 +90,7 @@
         sudo systemctl restart prometheus
         ```
     
-    ##### Encryption
+  - ##### Encryption
     
     * Also by default, there is no encryption between the 2 services, so its all plaintext
 
