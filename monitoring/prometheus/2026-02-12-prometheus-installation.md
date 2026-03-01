@@ -69,7 +69,7 @@
   * Now that we've moved all these files, the command to run prometheus will be much different than just running the executable
 
     ```console
-    sudo -u prometheus /usr/local/bin/promethus \
+    sudo -u prometheus /usr/local/bin/prometheus \
       --config.file /etc/prometheus/prometheus.yml \
       --storage.tsdb.path /var/lib/prometheus \
       --web.console.templates=/etc/promethus/consoles \
@@ -88,7 +88,7 @@
     User=prometheus
     Group=prometheus
     Type=simple
-    ExecStart=/usr/local/bin/promethus \
+    ExecStart=/usr/local/bin/prometheus \
       --config.file /etc/prometheus/prometheus.yml \
       --storage.tsdb.path /var/lib/prometheus \
       --web.console.templates=/etc/promethus/consoles \
