@@ -1,7 +1,7 @@
 ## Firewalls
 - [Overview](#overview)
 - [NACLs](#nacls)
-- [Security ]
+- [Security Groups](#security-groups)
 
 ### Overview
 
@@ -20,11 +20,36 @@
 ### NACLs
 
 * `NACLs` filter traffic entering and leaving a `subnet`. They do not filter traffic within a `subnet`
+    - All `subnets` within a `vpc` must be associated with a `NACL`
+    - A `subnet` can only be associatde with only one `NACL` but a given `NACL` can be associated to multiple `subnets`
 * These are `stateless firewalls` so rules for both `outbound` and `inbound traffic` must be defined
+
+* `NACLs` allow you to specify allow or deny for each 
+    - Each rule has a rule number associated with it which determines precedence 
+    - By Default, `NACLs` allow all inbound traffic
+
+NOTE: 
+* `NACLs` do not filter traffic destined to and from:
+    1. AWS DNS
+    2. AWS BHCP
+    3. AWS EC2 metadata
+    4. AWS ECS task metadata endpoints
+    5. License activation for windows instances
+    6. AWS Time sync service
+    7. Reserved Ip addresses used by default vpc router
+
+Example:
+
+![Logo](https://aws.plainenglish.io/understanding-network-access-control-lists-and-security-groups-in-aws-7637ee51ce4b)
 
 ### Security Groups
 
 * `Security groups` are firewalls for individual resources. They are `stateful firewalls`, so you only need to allow the request. 
+
+* All `sg` rules are allow traffic, there are no deny options as by defauly `sg` deny all traffic
+    - By default all `outbound traffic` is allowed
+
+* You are also able to assign multi `sg` to a singe resource, these rules get merged at application to that resource
 
 Example:
 
