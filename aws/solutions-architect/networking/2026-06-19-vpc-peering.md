@@ -37,5 +37,5 @@
     - ![alt text](images/image-23.png)
 
 3. Modify main `route table` of each `vpc` to configuring routing to one another throguh peering 
-    - ![alt text](image/image-24.png)
+    - ![alt text](images/image-24.png)
     - ![alt text](images/image-25.png)
