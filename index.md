@@ -62,6 +62,8 @@
 - [Amazon Web Services](#amazon-web-services)
   - [Identity and Access Management](#identity-and-access-management)
   - [EKS](#eks)
+  - [Solution Architect](#solutions-architect)
+    - [Networking](#networking)
 - [Google Cloud Platform](#google-cloud-platform)
   - [VPC Networks](#vpc-networks)
 
@@ -403,6 +405,17 @@
   * [2024-01-27-eks-rbac](aws/2024-01-27-eks-rbac.md)
   * [2024-01-29-iam-roles-and-serviceaccounts](aws/2024-01-29-iam-roles-and-serviceaccounts.md)
   * [2024-01-31-aws-image-security](aws/2024-01-31-aws-image-security.md)
+
+- ### Solutions Architect
+
+  - #### Networking
+
+    * [2026-06-17-vpcs](aws/solutions-architect/networking/2026-06-17-vpcs.md)
+    * [2026-06-17-subnets](aws/solutions-architect/networking/2026-06-17-subnets.md)
+    * [2026-06-17-routing](aws/solutions-architect/networking/2026-06-17-routing.md)
+    * [2026-06-17-firewalls](aws/solutions-architect/networking/2026-06-17-firewalls.md)
+    * [2026-06-17-loadbalancers](aws/solutions-architect/networking/2026-06-17-loadbalancers.md)
+    * [2026-06-18-vpns](aws/solutions-architect/networking/2026-06-18-vpns.md)
 
 ## Google Cloud Platform
 

@@ -40,7 +40,7 @@ NOTE:
 
 Example:
 
-![Logo](https://aws.plainenglish.io/understanding-network-access-control-lists-and-security-groups-in-aws-7637ee51ce4b)
+![alt text](images/image-1.png)
 
 ### Security Groups
 
