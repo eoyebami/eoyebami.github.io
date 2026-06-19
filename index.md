@@ -419,6 +419,7 @@
     * [2026-06-19-direct-connect](aws/solutions-architect/networking/2026-06-19-direct-connect.md)
     * [2026-06-19-vpc-peering](aws/solutions-architect/networking/2026-06-19-vpc-peering.md)
     * [2026-06-19-transit-gateway](aws/solutions-architect/networking/2026-06-19-transit-gateway.md)
+    * [2026-06-19-privatelink](aws/solutions-architect/networking/2026-06-19-privatelink.md)
 
 ## Google Cloud Platform
 
