@@ -416,6 +416,8 @@
     * [2026-06-17-firewalls](aws/solutions-architect/networking/2026-06-17-firewalls.md)
     * [2026-06-17-loadbalancers](aws/solutions-architect/networking/2026-06-17-loadbalancers.md)
     * [2026-06-18-vpns](aws/solutions-architect/networking/2026-06-18-vpns.md)
+    * [2026-06-19-direct-connect](aws/solutions-architect/networking/2026-06-19-direct-connect.md)
+    * [2026-06-19-vpc-peering](aws/solutions-architect/networking/2026-06-19-vpc-peering.md)
 
 ## Google Cloud Platform
 
