@@ -420,6 +420,9 @@
     * [2026-06-19-vpc-peering](aws/solutions-architect/networking/2026-06-19-vpc-peering.md)
     * [2026-06-19-transit-gateway](aws/solutions-architect/networking/2026-06-19-transit-gateway.md)
     * [2026-06-19-privatelink](aws/solutions-architect/networking/2026-06-19-privatelink.md)
+    * [2026-06-19-cloudfront](aws/solutions-architect/networking/2026-06-19-cloudfront.md)
+    * [2026-06-21-global-accelerator](aws/solutions-architect/networking/2026-06-21-global-accelerator.md)
+    * [2026-06-21-route53](aws/solutions-architect/networking/2026-06-21-route53.md)
 
 ## Google Cloud Platform
 
