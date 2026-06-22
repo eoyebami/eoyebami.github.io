@@ -25,6 +25,7 @@
 * The `classic loadbalancer` is the first introduced loadbalancer by aws
     - Its super old and its not recommended because of its legacy failing points
         * One example being that it can only support one ssl certificate, so you're unable to use one loadbalancer to balance 2 different apps that may need different certificates
+    - It operates at both the L4 and L7 levels of the OSI model
 
 #### Application Loadbalancer
 
