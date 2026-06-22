@@ -426,6 +426,8 @@
 
   - #### Storage
 
+    * [2026-06-22-ebs](aws/solutions-architect/storage/2026-06-22-ebs.md)
+
 ## Google Cloud Platform
 
 - ### VPC Networks
