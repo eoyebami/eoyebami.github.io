@@ -424,6 +424,8 @@
     * [2026-06-21-global-accelerator](aws/solutions-architect/networking/2026-06-21-global-accelerator.md)
     * [2026-06-21-route53](aws/solutions-architect/networking/2026-06-21-route53.md)
 
+  - #### Storage
+
 ## Google Cloud Platform
 
 - ### VPC Networks
