@@ -431,6 +431,9 @@
     * [2026-06-23-efs](aws/solutions-architect/storage/2026-06-23-efs.md)
     * [2026-06-23-fsx](aws/solutions-architect/storage/2026-06-23-fsx.md)
     * [2026-06-24-s3](aws/solutions-architect/storage/2026-06-24-s3.md)
+    * [2026-06-25-aws-backup](aws/solutions-architect/storage/2026-06-25-aws-backup.md)
+    * [2026-06-25-elastic-disaster-recovery](aws/solutions-architect/storage/2026-06-25-elastic-disaster-recovery.md)
+    * [ 2026-06-25-storage-gateway](aws/solutions-architect/storage/2026-06-25-storage-gateway.md)
 
 ## Google Cloud Platform
 
