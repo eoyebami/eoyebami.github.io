@@ -64,6 +64,8 @@
   - [EKS](#eks)
   - [Solution Architect](#solutions-architect)
     - [Networking](#networking)
+    - [Storage](#storage)
+    - [Compute](#compute)
 - [Google Cloud Platform](#google-cloud-platform)
   - [VPC Networks](#vpc-networks)
 
@@ -434,6 +436,10 @@
     * [2026-06-25-aws-backup](aws/solutions-architect/storage/2026-06-25-aws-backup.md)
     * [2026-06-25-elastic-disaster-recovery](aws/solutions-architect/storage/2026-06-25-elastic-disaster-recovery.md)
     * [ 2026-06-25-storage-gateway](aws/solutions-architect/storage/2026-06-25-storage-gateway.md)
+
+  - #### Compute
+
+    * [2026-06-26-ec2](aws/solutions-architect/compute/2026-06-26-ec2.md)
 
 ## Google Cloud Platform
 
