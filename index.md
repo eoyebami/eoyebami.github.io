@@ -442,6 +442,8 @@
     * [2026-06-26-ec2](aws/solutions-architect/compute/2026-06-26-ec2.md)
     * [2025-07-07-eni](aws/solutions-architect/compute/2026-07-07-eni.md)
     * [2026-07-07-elastic-beanstalk](aws/solutions-architect/compute/2026-07-07-elastic-beanstalk.md)
+    * [2026-07-11-lightsail](aws/solutions-architect/compute/2026-07-11-lightsail.md)
+    * [2026-07-11-ecs](aws/solutions-architect/compute/2026-07-11-ecs.md)
 
 ## Google Cloud Platform
 
