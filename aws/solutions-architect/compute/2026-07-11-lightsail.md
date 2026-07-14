@@ -11,6 +11,7 @@
         - networking and dns
     * It there to make running applications in the cloud as simplified as possible
     - ![alt text](images/lightsail/image.png)
+    * Designed for standalone applications and predicatable billing
 
 * For instances you define:
     - location

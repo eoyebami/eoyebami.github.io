@@ -10,5 +10,6 @@
     - VCS: upload your code to github
         - `app runner` will take care of creating the ci/cd pipeline and deploy your code
     - Images: `ecr`
-        - upload your image to `ec`r and `app runner` will deploy the image for you
+        - upload your image to `ecr` and `app runner` will deploy the image for you
 * Once your app is created, `app runner` will provide a dns for you to use to access your app
+* NOTE: closed to new customers
