@@ -444,6 +444,15 @@
     * [2026-07-07-elastic-beanstalk](aws/solutions-architect/compute/2026-07-07-elastic-beanstalk.md)
     * [2026-07-11-lightsail](aws/solutions-architect/compute/2026-07-11-lightsail.md)
     * [2026-07-11-ecs](aws/solutions-architect/compute/2026-07-11-ecs.md)
+    * [2026-07-12-eks](aws/solutions-architect/compute/2026-07-12-eks.md)
+    * [2026-07-12-ecr](aws/solutions-architect/compute/2026-07-12-ecr.md)
+    * [2026-07-12-app-runner](aws/solutions-architect/compute/2026-07-12-app-runner.md)
+    * [2026-07-12-batch](aws/solutions-architect/compute/2026-07-12-batch.md)
+    * [2026-07-13-lambda](aws/solutions-architect/compute/2026-07-13-lambda.md)
+    * [2026-07-14-sam](aws/solutions-architect/compute/2026-07-14-sam.md)
+    * [2026-07-14-amplify](aws/solutions-architect/compute/2026-07-14-amplify.md)
+    * [2026-07-14-outposts](aws/solutions-architect/compute/2026-07-14-outposts.md)
+    * [2026-07-14-snowcone](aws/solutions-architect/compute/2026-07-14-snowcone.md)
 
 ## Google Cloud Platform
 
