@@ -66,6 +66,7 @@
     - [Networking](#networking)
     - [Storage](#storage)
     - [Compute](#compute)
+    - [Databases](#databases)
 - [Google Cloud Platform](#google-cloud-platform)
   - [VPC Networks](#vpc-networks)
 
@@ -453,6 +454,10 @@
     * [2026-07-14-amplify](aws/solutions-architect/compute/2026-07-14-amplify.md)
     * [2026-07-14-outposts](aws/solutions-architect/compute/2026-07-14-outposts.md)
     * [2026-07-14-snowcone](aws/solutions-architect/compute/2026-07-14-snowcone.md)
+
+  - #### Databases
+
+    * [2026-07-14-rds](aws/solutions-architect/databases/2026-07-14-rds.md)
 
 ## Google Cloud Platform
 
