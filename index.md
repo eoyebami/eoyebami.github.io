@@ -458,6 +458,8 @@
   - #### Databases
 
     * [2026-07-14-rds](aws/solutions-architect/databases/2026-07-14-rds.md)
+    * [2026-07-15-redshift](aws/solutions-architect/databases/2026-07-15-redshift.md)
+    * [2026-07-15-dynamodb](aws/solutions-architect/databases/2026-07-15-dynamodb.md)
 
 ## Google Cloud Platform
 
