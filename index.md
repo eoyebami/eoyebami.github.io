@@ -436,7 +436,7 @@
     * [2026-06-24-s3](aws/solutions-architect/storage/2026-06-24-s3.md)
     * [2026-06-25-aws-backup](aws/solutions-architect/storage/2026-06-25-aws-backup.md)
     * [2026-06-25-elastic-disaster-recovery](aws/solutions-architect/storage/2026-06-25-elastic-disaster-recovery.md)
-    * [ 2026-06-25-storage-gateway](aws/solutions-architect/storage/2026-06-25-storage-gateway.md)
+    * [2026-06-25-storage-gateway](aws/solutions-architect/storage/2026-06-25-storage-gateway.md)
 
   - #### Compute
 
@@ -460,6 +460,12 @@
     * [2026-07-14-rds](aws/solutions-architect/databases/2026-07-14-rds.md)
     * [2026-07-15-redshift](aws/solutions-architect/databases/2026-07-15-redshift.md)
     * [2026-07-15-dynamodb](aws/solutions-architect/databases/2026-07-15-dynamodb.md)
+    * [2026-07-15-opensearch](aws/solutions-architect/databases/2026-07-15-opensearch.md)
+    * [2026-07-15-elasticache](aws/solutions-architect/databases/2026-07-15-elasticache.md)
+    * [2026-07-17-documentdb](aws/solutions-architect/databases/2026-07-17-documentdb.md)
+    * [2026-07-17-keyspaces](aws/solutions-architect/databases/2026-07-17-keyspaces.md)
+    * [2026-07-17-neptune](aws/solutions-architect/databases/2026-07-17-neptune.md)
+    * [2026-07-17-timestream](aws/solutions-architect/databases/2026-07-17-timestream.md)
 
 ## Google Cloud Platform
 
