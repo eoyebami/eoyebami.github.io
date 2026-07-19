@@ -1,6 +1,9 @@
 <h1>GCP Networking</h1>
+
 First things first, GCP uses projects; which are organization units used to isolate and manage resources. Basically a namespace for GCP resources
+
 <h3>GCP: VPC</h3>
+
 GCP VPCs are contained in projects, and are isolated networks. Here is some information about VPC networks in GCP:
 * VPC networks are not associated with a region or zone
 * They can be connected to other VPC networks in different projects or organizations 
@@ -9,10 +12,14 @@ GCP VPCs are contained in projects, and are isolated networks. Here is some info
     * In automatic subnet creation mode: a subnet in each region are automaticall added using an ip range from the cidr
     * In custom mode, no subnets are automatically created, you have complete control over the subnets and its ip ranges
     * You can create subnets in different regions in a VPC network, with IP ranges that are outside the cidr and are completely different (they become sub-networks).
+
 <h3>GCP: Subnets/Subnetworks</h3>
+
 IN GCP subnets are known as subnetworks, which have their own CIDR
 * Each subnetwork has its own routing table, for traffic control within and between subnetworks
+
 <h3>GCP: Routes</h3>
+
 GCP routes define the paths that the network traffic takes from a VM to other destinations (these can be inside or outside the network)
 * NOTE: a `hop` is a device that receives the traffic and forwards it to the next hop until it reaches the final destination
 * System-generated routes:
@@ -43,10 +50,13 @@ GCP routes define the paths that the network traffic takes from a VM to other de
 | Policy-based routes   | TCP/UDP LB | matches traffic by a combination of protocol, source and dest ip ranges |
 
 <h3>Network Tags</h3>
+
 Are labels that you assign to a VM and other network Resources
 * Firewall Rules: if you assign a network tag to a firewall rule, you can define which instances the rule applies to
   - Using `targetTags`: you can place the tag of the Instance, and the rule will apply to all VMs with that tag.  
+
 <h3>Firewall Rules vs FireWall Policies</h3>
+
 * Firewall Rules:
   - A single rule that defines ingress or egress (similar to the inbound or exbound rules in AWS sg)
   - Works at the network level, controlling traffic based on the source and destination ips, ports, protocols, etc

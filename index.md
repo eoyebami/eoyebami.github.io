@@ -467,6 +467,10 @@
     * [2026-07-17-neptune](aws/solutions-architect/databases/2026-07-17-neptune.md)
     * [2026-07-17-timestream](aws/solutions-architect/databases/2026-07-17-timestream.md)
 
+  - #### Application Integration
+
+    * [2026-07-17-api-gateway](aws/solutions-architect/application-integration/2026-07-17-api-gateway.md)
+
 ## Google Cloud Platform
 
 - ### VPC Networks
