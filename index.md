@@ -472,6 +472,7 @@
     * [2026-07-17-api-gateway](aws/solutions-architect/application-integration/2026-07-17-api-gateway.md)
     * [2026-07-17-appflow](aws/solutions-architect/application-integration/2026-07-17-appflow.md)
     * [2026-07-19-sns-sqs](aws/solutions-architect/application-integration/2026-07-19-sns-sqs.md)
+    * [2026-07-19-mq](aws/solutions-architect/application-integration/2026-07-19-mq.md)
 
 ## Google Cloud Platform
 
