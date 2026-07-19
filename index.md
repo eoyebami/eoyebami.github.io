@@ -473,6 +473,9 @@
     * [2026-07-17-appflow](aws/solutions-architect/application-integration/2026-07-17-appflow.md)
     * [2026-07-19-sns-sqs](aws/solutions-architect/application-integration/2026-07-19-sns-sqs.md)
     * [2026-07-19-mq](aws/solutions-architect/application-integration/2026-07-19-mq.md)
+    * [2026-07-19-eventbridge](aws/solutions-architect/application-integration/2026-07-19-eventbridge.md)
+    * [2026-07-19-ses](aws/solutions-architect/application-integration/2026-07-19-ses.md)
+    * [2026-07-19-step-functions](aws/solutions-architect/application-integration/2026-07-19-step-functions.md)
 
 ## Google Cloud Platform
 
