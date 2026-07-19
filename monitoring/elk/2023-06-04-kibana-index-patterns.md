@@ -1,6 +1,9 @@
 <h1>Navigating Kibana: Index Patterns</h1>
+
 After setting up your pipeline to stash data from logstash into ElasticSearch. You can use kibana as a way to visualize the data.
+
 <h3>Creating Index Patterns</h3>
+
 * Login to your Kibana 
   - `http://1p-addr:5601`
 * Go into -> Stack Management -> Kibana -> Index Patterns
@@ -16,7 +19,9 @@ After setting up your pipeline to stash data from logstash into ElasticSearch. Y
     * ex: `YYYY-MM-DD HH:mm:ss,SSSZ`
   - `@logdate` : is not a reserved field, it is not automatically populated; needs to be parsed with the `date plugin`. 
 * Create the Index Pattern
+
 <h3>Viewing the Index Pattern</h3>
+
 * Go into Discover and Change the selected Index Pattern 
   - In this case select the `apache-test-logs*` you created
 * All the logs, filtered and parsed as specified in your configuration file, should be specified here

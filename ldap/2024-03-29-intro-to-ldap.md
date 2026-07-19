@@ -7,6 +7,7 @@
     * A protocol used to communicate with `AD`
 * Any system configured to use an LDAP server will follow a client-server model
   - In which a client will enter authentication information and the LDAP server will compare user creds to its LDAP databases to verify
+
 <h2>LDAP</h2>
  
 * LDAP is a protocol used to access information directories and lets users access centrally stored information over a network
@@ -21,6 +22,7 @@
     * `objectClass`
     * `dn`: distinguished name; used to identify an entry in LDAP
 * LDAP data is stored in binary, `LDAP Data Interchange Format (LDIF)` is a plain-text representation of a LDAP entry, that you can used to import/export/modify LDAP data
+
 <h2>LDAP Structure</h2>
  
 * `o`: is the organization, otherwise known as the root of a LDAP directory

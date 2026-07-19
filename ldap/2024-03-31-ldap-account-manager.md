@@ -2,6 +2,7 @@
  
 * LAM is a webfrontend for managing entries in an LDAP server
 * Its designed to make managing an ldap server as easy as possible
+
 <h2>Installation</h2>
  
 * Assuming you are using an Ubuntu/Debian Machine

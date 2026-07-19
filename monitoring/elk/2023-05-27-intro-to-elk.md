@@ -1,4 +1,5 @@
 <h1>What is ELK</h1>
+
 * ELK stack is an open-source software stack that is used for centralizing logging and data analyis. It is an acronym:
   - Elasticsearch: A distributed anlyics engine designed to store, search, and analyze large volumes of data in real-time
     * A NoSQL JSON based Data Store (DB)

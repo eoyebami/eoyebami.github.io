@@ -2,7 +2,7 @@
 
 <h3>REST Architectural Style:</h3>
 
-REST stands for `Representational state transfer`, it is a style that promotes the transfer, accessing, and manipulation of textual data representations in a stateless manner. In laymen's terms, the request (via a url) from the client to the server must contain all the information necesary for the server to understnad and complete the request. A RESTful API service is exposed through a Uniform Resource Locator (URL). [I[O
+REST stands for `Representational state transfer`, it is a style that promotes the transfer, accessing, and manipulation of textual data representations in a stateless manner. In laymen's terms, the request (via a url) from the client to the server must contain all the information necesary for the server to understnad and complete the request. A RESTful API service is exposed through a Uniform Resource Locator (URL).
   * You make a request to the API service through its URL (its locator, a request for a resource) in order to communicate with the web server. 
 In a RESTful architecture, the web services are able to be accessed and manipulated using HTTP methods. 
   * The specific resources we will be accessing are identified by unique URLs. 

@@ -1,7 +1,10 @@
 <h1>Logstash Pipeline: Filter Plugin</h1>
+
 The filter plugin is a powerful component that allows you to perform transformations and manipulations on incoming events
+
 <h3>Logstash Pipeline: Filter</h3>
-```
+
+```hcl
 filter {
   # Apply various filters to process and transform the incoming data
   fingerprint {
@@ -22,6 +25,7 @@ filter {
 ```
 
 * <h5>Pipeline Configuration Filter: Options</h5>
+
   - `date {}` : with this plugin you can parse timestamps from a from fields, and then using that date as the logstash timestamp for the event
     * `local => "en"` : used to set the date strings in different locales 
     * `match => [ "timestamp", "dd/MMM/YYYY:HH:mm:ss Z"]` : setting the field which the date is exrtacted and the expected format of the string (more info on format at [date-format](https://www.elastic.co/guide/en/logstash/current/plugins-filters-date.html) 

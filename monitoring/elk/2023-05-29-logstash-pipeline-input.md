@@ -1,4 +1,5 @@
 <h1>Logstash Pipeline: Inputs</h1>
+
 Logstash collects, process, and transforms log data from various sources before shipping to ElasticSearch for storage and analysis. 
 * A logstash pipeline is a configuration file or set of configuration files that define how Logstash should handle incoming data. It consists of a series of plugins, as follows:
   - input 
@@ -6,7 +7,9 @@ Logstash collects, process, and transforms log data from various sources before 
   - output
 * You can create a pipeline configuration file for various types of application logs in the `/etc/logstash/conf.g` directory
   - All your pipeline configuration files can be referenced in the `pipeline.yml` file
+
 <h3>Pipeline Configuration Inputs</h3>
+
 The input option specifies where Logstash will be retrieving the data from, it can also specify what do when its finished processing that data
 * First retrieve the sample logs:
   - `wget https://logz.io/sample-data`
@@ -24,7 +27,9 @@ input {
   }
 }
 ```
+
 * <h5>Pipeling Configuration Input: Options</h5> 
+
   - Specify an input source: (files, beats input, syslog, tcp/udp inputs, http, etc)
     * There are multiple different sources, but file sources are the most commonly used for applications. This will be the main use case for this example
   - `path => "/path/to/log_file"` : give path to your logfile
@@ -42,7 +47,7 @@ input {
     * `log` : Logstash will log a message indicating the file has been fully processed in its own logstash log file
     * `nothing` : this is the default, logstash will do nothing
     * `file_completed_log_path =>` must be specified when using this option that contains the values `log` or `log_delete`
-  -`file_completed_log_path => "/home/ubuntu/apache_completed.log"` : specifies the path to the file where logstash will write all complete logs
+  - `file_completed_log_path => "/home/ubuntu/apache_completed.log"` : specifies the path to the file where logstash will write all complete logs
   - `discover_interbal => 15` : controls how often logstash checks for new files matching the `path` pattern
     * default is 15 seconds
   - `ignore_older => "2hr"` : ignores files that have not been modified for a specified time 
