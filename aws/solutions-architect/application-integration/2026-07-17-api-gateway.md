@@ -12,6 +12,7 @@
     - `http apis`: optimized for serverless workloads (lambda) and http backends
     - `rest apis`: provides endpoints that provide api management capabilities
     - `websocket apis`: maintain bi directional connections ideal for real-time applications like chat apps and live gaming dashboards
+* Its integration with `lambda` is great for resilience and availability, because `lambda` can scale almost infinitly to handle traffic and it is distributed across multiple `AZs` for fault tolerance
 
 ### Features
 
@@ -30,6 +31,9 @@
     - can manage release stages for api (alpha, beta, prod)
     - each api can be confired to interact with different backend endpoints 
     - specific stages and versions of apis can be associated with a custom domain name
+* `API Caching`: a design pattern where your api gateway stores backend http responses in a temporary storage layer
+    - when a client makes a matching request, the gateway returns the cached response directly
+    - reduces latency, cutss infra cost (saves compute cycles), protects under load
 
 ### How To
 

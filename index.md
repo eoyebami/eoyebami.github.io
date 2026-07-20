@@ -476,6 +476,12 @@
     * [2026-07-19-eventbridge](aws/solutions-architect/application-integration/2026-07-19-eventbridge.md)
     * [2026-07-19-ses](aws/solutions-architect/application-integration/2026-07-19-ses.md)
     * [2026-07-19-step-functions](aws/solutions-architect/application-integration/2026-07-19-step-functions.md)
+    * [2026-07-19-sws](aws/solutions-architect/application-integration/2026-07-19-sws.md)
+    * [2026-07-19-managed-apache-airflow](aws/solutions-architect/application-integration/2026-07-19-managed-apache-airflow.md)
+
+  - #### Data & ML
+
+    * [2026-07-20-kinesis](aws/solutions-architect/data-ml/2026-07-20-kinesis.md)
 
 ## Google Cloud Platform
 

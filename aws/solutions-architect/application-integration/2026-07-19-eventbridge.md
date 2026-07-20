@@ -21,6 +21,7 @@
     - each aws account has a default bus configured
 * `Rules`: components tied to an event bus that evaulate the incoming events using defined patterns 
     - if an event matches a rule criteria, it sends it to one or more targets
+        * filtering rules can allow you to filter for specific critical events to avoid being overloaded and reducing unncessary processing
 * `Pipes`: for point to point integrations
     - allow you to create a direct flow from a single source to a single target
     - can filter, transform, and enrich data
