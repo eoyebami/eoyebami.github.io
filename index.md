@@ -482,6 +482,16 @@
   - #### Data & ML
 
     * [2026-07-20-kinesis](aws/solutions-architect/data-ml/2026-07-20-kinesis.md)
+    * [2026-07-20-managed-kafka](aws/solutions-architect/data-ml/2026-07-20-managed-kafka.md)
+    * [2026-07-20-glue](aws/solutions-architect/data-ml/2026-07-20-glue.md)
+    * [2026-07-20-emr](aws/solutions-architect/data-ml/2026-07-20-emr.md)
+    * [2026-07-20-glue-databrew](aws/solutions-architect/data-ml/2026-07-20-glue-databrew.md)
+    * [2026-07-21-lakeformation](aws/solutions-architect/data-ml/2026-07-21-lakeformation.md)
+    * [2026-07-21-athena](aws/solutions-architect/data-ml/2026-07-21-athena.md)
+    * [2026-07-21-quicksight](aws/solutions-architect/data-ml/2026-07-21-quicksight.md)
+    * [2026-07-21-sagemaker](aws/solutions-architect/data-ml/2026-07-21-sagemaker.md)
+    * [2026-07-21-rekognition](aws/solutions-architect/data-ml/2026-07-21-rekognition.md)
+    * [2026-07-21-polly](aws/solutions-architect/data-ml/2026-07-21-polly.md)
 
 ## Google Cloud Platform
 
