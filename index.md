@@ -492,6 +492,13 @@
     * [2026-07-21-sagemaker](aws/solutions-architect/data-ml/2026-07-21-sagemaker.md)
     * [2026-07-21-rekognition](aws/solutions-architect/data-ml/2026-07-21-rekognition.md)
     * [2026-07-21-polly](aws/solutions-architect/data-ml/2026-07-21-polly.md)
+    * [2026-07-24-lex](aws/solutions-architect/data-ml/2026-07-24-lex.md)
+    * [2026-07-24-comprehend](aws/solutions-architect/data-ml/2026-07-24-comprehend.md)
+    * [2026-07-24-forecas](aws/solutions-architect/data-ml/2026-07-24-forecast.md)
+    * [2026-07-24-augmented-ai](aws/solutions-architect/data-ml/2026-07-24-augmented-ai.md)
+    * [2026-07-24-transcribe](aws/solutions-architect/data-ml/2026-07-24-transcribe.md)
+    * [2026-07-24-translat](aws/solutions-architect/data-ml/2026-07-24-translate.md)
+    * [2026-07-24-textract](aws/solutions-architect/data-ml/2026-07-24-textract.md)
 
 ## Google Cloud Platform
 

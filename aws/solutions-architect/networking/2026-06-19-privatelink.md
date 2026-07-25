@@ -48,3 +48,18 @@
         * Once accepted the service consumer can modify private DNS Names on their `service endpoint` and enable it to use a custom private DNS Name
 
 * You can even do this from different accounts, service names are unique in aws, so you'd simply need to submite the request when you create the `endpoint` and then wait for approval
+
+* NOTE: there are two types of private link
+    - interface: provides a private ip to connect to downstream resource
+        * cost money because it requires an ip
+        * supports almost all aws servies
+        * puts an `eni` with a private ip into the subnet which allows the interface to be reach through the dns or the ip
+        * because it has an ip, it can be reached on prem through vpn or by other vpcs through peering or `tgw`
+        * because it has an `eni` security groups can be attached to it
+    - gateway: basically the privatelink dns name acts as a direct route to the resource
+        * binds directly to a route table and routes to specific aws services
+            - only s3 and dyanmo db
+        * behaves similarly to a `igw`
+        * free no hourly cost or data processing charges
+        * attached to route tables (not subnets or eni) so they are regional
+        * only works within the vpc it is attached to (no peering)
