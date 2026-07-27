@@ -9,3 +9,4 @@
     - its similar to `datasync` but with `datasync` you control both locations
         * with `transfer family` you do not control the other end
         * clients may need to retrieve or drop data from you and they aren't going to install a `datasync agent` to facilitate the process
+    - can be integrated with `mfa` to secure access during transfer
