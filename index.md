@@ -500,6 +500,14 @@
     * [2026-07-24-translat](aws/solutions-architect/data-ml/2026-07-24-translate.md)
     * [2026-07-24-textract](aws/solutions-architect/data-ml/2026-07-24-textract.md)
 
+  - #### Migration & Transfer
+
+    * [2026-07-25-transform-mgn](aws/solutions-architect/migration-transfer/2026-07-25-transform-mgn.md)
+    * [2026-07-26-drs](aws/solutions-architect/migration-transfer/2026-07-26-drs.md)
+    * [2026-07-26-mainframe-modernization](aws/solutions-architect/migration-transfer/2026-07-26-mainframe-modernization.md)
+    * [2026-07-26-datasync](aws/solutions-architect/migration-transfer/2026-07-26-datasync.md)
+    * [2026-07-26-transfer-family](aws/solutions-architect/migration-transfer/2026-07-26-transfer-family.md)
+
 ## Google Cloud Platform
 
 - ### VPC Networks
