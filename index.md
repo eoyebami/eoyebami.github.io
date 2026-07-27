@@ -508,6 +508,11 @@
     * [2026-07-26-datasync](aws/solutions-architect/migration-transfer/2026-07-26-datasync.md)
     * [2026-07-26-transfer-family](aws/solutions-architect/migration-transfer/2026-07-26-transfer-family.md)
 
+  - #### Management & Governance
+
+    * [2026-07-27-cloudformation](aws/solutions-architect/management-governance/2026-07-27-cloudformation.md)
+    * [2026-07-27-cdk](aws/solutions-architect/management-governance/2026-07-27-cdk.md)
+
 ## Google Cloud Platform
 
 - ### VPC Networks
