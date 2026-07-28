@@ -494,10 +494,10 @@
     * [2026-07-21-polly](aws/solutions-architect/data-ml/2026-07-21-polly.md)
     * [2026-07-24-lex](aws/solutions-architect/data-ml/2026-07-24-lex.md)
     * [2026-07-24-comprehend](aws/solutions-architect/data-ml/2026-07-24-comprehend.md)
-    * [2026-07-24-forecas](aws/solutions-architect/data-ml/2026-07-24-forecast.md)
+    * [2026-07-24-forecast](aws/solutions-architect/data-ml/2026-07-24-forecast.md)
     * [2026-07-24-augmented-ai](aws/solutions-architect/data-ml/2026-07-24-augmented-ai.md)
     * [2026-07-24-transcribe](aws/solutions-architect/data-ml/2026-07-24-transcribe.md)
-    * [2026-07-24-translat](aws/solutions-architect/data-ml/2026-07-24-translate.md)
+    * [2026-07-24-translate](aws/solutions-architect/data-ml/2026-07-24-translate.md)
     * [2026-07-24-textract](aws/solutions-architect/data-ml/2026-07-24-textract.md)
 
   - #### Migration & Transfer
@@ -512,6 +512,19 @@
 
     * [2026-07-27-cloudformation](aws/solutions-architect/management-governance/2026-07-27-cloudformation.md)
     * [2026-07-27-cdk](aws/solutions-architect/management-governance/2026-07-27-cdk.md)
+    * [2026-07-27-cloudwatch](aws/solutions-architect/management-governance/2026-07-27-cloudwatch.md)
+    * [2026-07-27-xray](aws/solutions-architect/management-governance/2026-07-27-xray.md)
+    * [2026-07-27-trusted-advisor](aws/solutions-architect/management-governance/2026-07-27-trusted-advisor.md)
+    * [2026-07-27-health-dashboard](aws/solutions-architect/management-governance/2026-07-27-health-dashboard.md)
+    * [2026-07-27-launch-wizard](aws/solutions-architect/management-governance/2026-07-27-launch-wizard.md)
+    * [2026-07-27-compute-optimizer](aws/solutions-architect/management-governance/2026-07-27-compute-optimizer.md)
+    * [2026-07-27-organizations](aws/solutions-architect/management-governance/2026-07-27-organizations.md)
+    * [2026-07-28-control-tower](aws/solutions-architect/management-governance/2026-07-28-control-tower.md)
+    * [2026-07-28-systems-manager](aws/solutions-architect/management-governance/2026-07-28-systems-manager.md)
+    * [2026-07-28-service-catalog](aws/solutions-architect/management-governance/2026-07-28-service-catalog.md)
+    * [2026-07-28-license-manager](aws/solutions-architect/management-governance/2026-07-28-license-manager.md)
+    * [2026-07-28-resource-group](aws/solutions-architect/management-governance/2026-07-28-resource-group.md)
+    * [2026-07-28-ram](aws/solutions-architect/management-governance/2026-07-28-ram.md)
 
 ## Google Cloud Platform
 
