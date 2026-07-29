@@ -526,6 +526,18 @@
     * [2026-07-28-resource-group](aws/solutions-architect/management-governance/2026-07-28-resource-group.md)
     * [2026-07-28-ram](aws/solutions-architect/management-governance/2026-07-28-ram.md)
 
+  - #### Security
+
+    * [2026-07-28-iam-identity-center](aws/solutions-architect/security/2026-07-28-iam-identity-center.md)
+    * [2026-07-28-cognito](aws/solutions-architect/security/2026-07-28-cognito.md)
+    * [2026-07-28-directory-service](aws/solutions-architect/security/2026-07-28-directory-service.md)
+    * [2026-07-28-verified_permission](aws/solutions-architect/security/2026-07-28-verified_permissions.md)
+    * [2026-07-28-config](aws/solutions-architect/security/2026-07-28-config.md)
+    * [2026-07-28-artifact](aws/solutions-architect/security/2026-07-28-artifact.md)
+    * [2026-07-28-guardduty](aws/solutions-architect/security/2026-07-28-guardduty.md)
+    * [2026-07-28-inspector](aws/solutions-architect/security/2026-07-28-inspector.md)
+    * [2026-07-28-macie](aws/solutions-architect/security/2026-07-28-macie.md)
+
 ## Google Cloud Platform
 
 - ### VPC Networks
