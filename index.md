@@ -543,6 +543,8 @@
     * [2026-07-29-private-ca](aws/solutions-architect/security/2026-07-29-private-ca.md)
     * [2026-07-29-security-lake](aws/solutions-architect/security/2026-07-29-security-lake.md)
     * [2026-07-29-waf](aws/solutions-architect/security/2026-07-29-waf.md)
+    * [2026-07-29-shield](aws/solutions-architect/security/2026-07-29-shield.md)
+    * [2026-07-29-network-firewall](aws/solutions-architect/security/2026-07-29-network-firewall.md)
 
 ## Google Cloud Platform
 
