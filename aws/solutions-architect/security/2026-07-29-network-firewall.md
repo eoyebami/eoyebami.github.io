@@ -36,56 +36,56 @@
 
 
 ```
-                          ┌─────────────┐
-                          │   END USER  │
-                          │ (internet)  │
-                          └──────┬──────┘
-                                 │
-                    ═════════════╪═════════════  INBOUND
-                                 ▼
-                          ┌─────────────┐
-                          │     IGW     │
-                          └──────┬──────┘
-                                 │  edge-association route table:
-                                 │  app-subnet CIDR ─► firewall VPCE
-                                 ▼
-                       ┌───────────────────┐
-                       │  FIREWALL SUBNET  │
-                       │   ┌───────────┐   │
-                       │   │   VPCE    │◄──┼──── Network Firewall
-                       │   │ (inspect) │   │      inspects here
-                       │   └─────┬─────┘   │
-                       └─────────┼─────────┘
-                                 │  local route ─► app subnet
-                                 ▼
-                       ┌───────────────────┐
-                       │ APPLICATION SUBNET│
-                       │   ┌───────────┐   │
-                       │   │  SERVER   │   │
-                       │   └─────┬─────┘   │
-                       └─────────┼─────────┘
-                                 │
-                    ═════════════╪═════════════  RETURN
-                                 │  app-subnet route table:
-                                 │  0.0.0.0/0 ─► firewall VPCE
-                                 ▼
-                       ┌───────────────────┐
-                       │  FIREWALL SUBNET  │
-                       │   ┌───────────┐   │
-                       │   │   VPCE    │   │  inspects again
-                       │   │ (inspect) │   │  (same endpoint)
-                       │   └─────┬─────┘   │
-                       └─────────┼─────────┘
-                                 │  firewall-subnet route table:
-                                 │  0.0.0.0/0 ─► IGW
-                                 ▼
-                          ┌─────────────┐
-                          │     IGW     │
-                          └──────┬──────┘
-                                 ▼
-                          ┌─────────────┐
-                          │  INTERNET   │
-                          └─────────────┘
+      ┌─────────────┐
+      │   END USER  │
+      │ (internet)  │
+      └──────┬──────┘
+             │
+═════════════╪═════════════  INBOUND
+             ▼
+      ┌─────────────┐
+      │     IGW     │
+      └──────┬──────┘
+             │  edge-association route table:
+             │  app-subnet CIDR ─► firewall VPCE
+             ▼
+   ┌───────────────────┐
+   │  FIREWALL SUBNET  │
+   │   ┌───────────┐   │
+   │   │   VPCE    │◄──┼──── Network Firewall
+   │   │ (inspect) │   │      inspects here
+   │   └─────┬─────┘   │
+   └─────────┼─────────┘
+             │  local route ─► app subnet
+             ▼
+   ┌───────────────────┐
+   │ APPLICATION SUBNET│
+   │   ┌───────────┐   │
+   │   │  SERVER   │   │
+   │   └─────┬─────┘   │
+   └─────────┼─────────┘
+             │
+═════════════╪═════════════  RETURN
+             │  app-subnet route table:
+             │  0.0.0.0/0 ─► firewall VPCE
+             ▼
+   ┌───────────────────┐
+   │  FIREWALL SUBNET  │
+   │   ┌───────────┐   │
+   │   │   VPCE    │   │  inspects again
+   │   │ (inspect) │   │  (same endpoint)
+   │   └─────┬─────┘   │
+   └─────────┼─────────┘
+             │  firewall-subnet route table:
+             │  0.0.0.0/0 ─► IGW
+             ▼
+      ┌─────────────┐
+      │     IGW     │
+      └──────┬──────┘
+             ▼
+      ┌─────────────┐
+      │  INTERNET   │
+      └─────────────┘
 ```
 
 1. Create a `vpc`
