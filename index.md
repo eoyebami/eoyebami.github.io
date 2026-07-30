@@ -537,6 +537,12 @@
     * [2026-07-28-guardduty](aws/solutions-architect/security/2026-07-28-guardduty.md)
     * [2026-07-28-inspector](aws/solutions-architect/security/2026-07-28-inspector.md)
     * [2026-07-28-macie](aws/solutions-architect/security/2026-07-28-macie.md)
+    * [2026-07-29-security-hub](aws/solutions-architect/security/2026-07-29-security-hub.md)
+    * [2026-07-29-kms](aws/solutions-architect/security/2026-07-29-kms.md)
+    * [2026-07-29-cloudhsm](aws/solutions-architect/security/2026-07-29-cloudhsm.md)
+    * [2026-07-29-private-ca](aws/solutions-architect/security/2026-07-29-private-ca.md)
+    * [2026-07-29-security-lake](aws/solutions-architect/security/2026-07-29-security-lake.md)
+    * [2026-07-29-waf](aws/solutions-architect/security/2026-07-29-waf.md)
 
 ## Google Cloud Platform
 
