@@ -13,6 +13,7 @@
     - you can create Organization OUs and `control tower` registers it and it appears in the `organizations` console too
     - `control tower` authors and attaches them
     - ![alt text](images/control-tower/image-1.png)
+* You can configure drift notifications to alert when changes occur that differ from configurations
 
 ### Components
 

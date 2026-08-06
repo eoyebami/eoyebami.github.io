@@ -15,6 +15,7 @@
     - automatically correlates security signals into actionable sequence assessments
     - you can pass it trusted and threat ip lists
         * trusted to ignore or threat to auto generate a finding on
+    - keyword is malicous activity
 * When `GuardDuty` finds something, its going to give it a severity score
     - ![alt text](images/guardduty/image-1.png)
 

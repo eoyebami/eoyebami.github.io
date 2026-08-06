@@ -14,3 +14,4 @@
     - ![alt text](images/comprehend/image-2.png)
         * Product reviews sent to `s3` that then trigger a `lambda` function that calls `comprehend` to gauge the reation of the reviews
         * Reviews aggregated and filtered by `athena` and visualized with `quicksight`
+        * `Comprehend Medical` uses `ml` to quickly identify medical info (PHI)

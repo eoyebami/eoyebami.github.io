@@ -17,3 +17,7 @@
             - use drag-drop visuals menu to select chart types
             - `quicksight` will auto suggest best chart for your data type
             - you can then share and push the created dashboard for others to see
+* NOTE: only supports users and groups, does NOT support IAM for viewing dashboards 
+    - IAM is specific to accessing the underlying infra
+    - user and groups managed application access (dashboards, analyses, and data sets)
+

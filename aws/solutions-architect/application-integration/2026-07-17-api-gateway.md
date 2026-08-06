@@ -34,6 +34,7 @@
 * `API Caching`: a design pattern where your api gateway stores backend http responses in a temporary storage layer
     - when a client makes a matching request, the gateway returns the cached response directly
     - reduces latency, cutss infra cost (saves compute cycles), protects under load
+* `Throttling`: you can enable throtting to prevent backend services from being overwhelmed with traffic
 
 ### How To
 

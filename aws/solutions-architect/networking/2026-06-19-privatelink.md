@@ -63,3 +63,4 @@
         * free no hourly cost or data processing charges
         * attached to route tables (not subnets or eni) so they are regional
         * only works within the vpc it is attached to (no peering)
+* NOTE: an attach `endpoint policies` to control who can access it

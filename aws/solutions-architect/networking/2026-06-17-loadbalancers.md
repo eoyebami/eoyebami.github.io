@@ -29,7 +29,7 @@
 
 #### Application Loadbalancer
 
-* The `application loadbalancer` is used to balance traffic for web-based applications, hence it manages traffic at L7(`http, https, websockets`)
+* The `application loadbalancer` is used to balance traffic for web-based applications, hence it manages traffic at L7(`http, https, gRPC, websockets`)
     - It has the ability to forward traffic based on:
         1. Url path conditions
         2. Host domain
